@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://covv3g8q43ifu"]
+
+[ext_resource type="Script" uid="uid://bdne0imwp85h2" path="res://task/task.gd" id="1_rogos"]
+[ext_resource type="Texture2D" uid="uid://c3gws3sshfflo" path="res://task/task.png" id="1_ti2eb"]
+[ext_resource type="Script" uid="uid://bskemnx3yc0dt" path="res://task/character_body_2d.gd" id="2_42cdb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukviy"]
+size = Vector2(1162, 1947)
+
+[node name="Task" type="PathFollow2D"]
+scale = Vector2(0.05, 0.05)
+script = ExtResource("1_rogos")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_42cdb")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_ti2eb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-6, 15.5)
+shape = SubResource("RectangleShape2D_ukviy")

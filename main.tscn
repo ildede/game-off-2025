@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8cdvr2tr0y4c"]
+
+[ext_resource type="Script" uid="uid://b1mqk1kknrr1k" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dcumfskefaxom" path="res://client/client.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dibf4fgjie87y" path="res://translator/translator.tscn" id="3_h2yge"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ig7tw")
+client_scene = ExtResource("2_0xm2m")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 30.0
+offset_top = 106.0
+offset_right = 350.0
+offset_bottom = 218.0
+text = "Accept new client"
+
+[node name="Translator" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(224, 856)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

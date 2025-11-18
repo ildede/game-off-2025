@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dibf4fgjie87y"]
+
+[ext_resource type="Script" uid="uid://cbc0hxujnugk5" path="res://translator/translator.gd" id="1_ljyet"]
+[ext_resource type="Texture2D" uid="uid://dmlao86bajfj2" path="res://translator/Translator.png" id="1_w51wl"]
+[ext_resource type="PackedScene" uid="uid://darjd76ufnyvc" path="res://letters/letter.tscn" id="2_jqv1b"]
+
+[node name="Translator" type="Node2D"]
+script = ExtResource("1_ljyet")
+letters = ExtResource("2_jqv1b")
+
+[node name="Translator" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_w51wl")
+
+[node name="WPM" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="WPM" to="." method="_on_timer_timeout"]
