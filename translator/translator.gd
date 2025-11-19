@@ -17,7 +17,7 @@ func new_task_arrived(item: PathFollow2D) -> void:
 
 func fire() -> void:
 	var l = letters.instantiate()
-	l.position = $Translator.position
+	l.position = $Translator.position + Vector2(randi_range(-50, 50), randi_range(-50, 50))
 	var target_task = tasks.pick_random()
 	l.target = target_task
 	l.target_id = target_task.get_node("CharacterBody2D").task_id
@@ -33,12 +33,6 @@ func task_hit(letter, task) -> void:
 		var task_found = tasks.pop_at(found_index)
 		task_found.queue_free()
 		letter.queue_free()
-
-func _on_more_pressed() -> void:
-	$WPM.wait_time -= 0.1
-
-func _on_less_pressed() -> void:
-	$WPM.wait_time += 0.1
 
 func _on_static_body_2d_body_entered(body: Node2D) -> void:
 	if "task_id" in body:

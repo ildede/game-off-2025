@@ -25,21 +25,5 @@ shape = SubResource("CircleShape2D_ljyet")
 wait_time = 0.2
 autostart = true
 
-[node name="more" type="Button" parent="."]
-offset_left = 5.0
-offset_top = -280.0
-offset_right = 105.0
-offset_bottom = -230.0
-text = "MORE"
-
-[node name="less" type="Button" parent="."]
-offset_left = -105.0
-offset_top = -280.0
-offset_right = -5.0
-offset_bottom = -230.0
-text = "LESS"
-
 [connection signal="body_entered" from="Translator/StaticBody2D" to="." method="_on_static_body_2d_body_entered"]
 [connection signal="timeout" from="WPM" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="more" to="." method="_on_more_pressed"]
-[connection signal="pressed" from="less" to="." method="_on_less_pressed"]
