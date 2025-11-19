@@ -123,4 +123,9 @@ text = "Accept new"
 [node name="Translator" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(224, 856)
 
+[node name="NewClient" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="NewClient" to="." method="add_new_client"]

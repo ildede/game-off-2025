@@ -24,8 +24,8 @@ func fire() -> void:
 	add_child(l)
 
 func task_hit(letter, task) -> void:
-	GlobalSignal.update_reputation.emit(0.5)
-	GlobalSignal.update_stress.emit(-2)
+	GlobalSignal.update_reputation.emit(0.2)
+	GlobalSignal.update_stress.emit(-0.5)
 
 	var found_index = tasks.find_custom(func has_task_id(t):
 		return t.get_node("CharacterBody2D").task_id == task.task_id)

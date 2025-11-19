@@ -2,9 +2,6 @@ extends Node2D
 
 const client_scene = preload("res://client/client.tscn")
 
-func _ready() -> void:
-	pass
-
 func _on_button_pressed() -> void:
 	add_new_client()
 
