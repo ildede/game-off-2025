@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcumfskefaxom"]
+[gd_scene load_steps=5 format=3 uid="uid://dcumfskefaxom"]
 
 [ext_resource type="Texture2D" uid="uid://ddfg25t1i5gqu" path="res://client/client.png" id="1_6t3qf"]
 [ext_resource type="Script" uid="uid://ce7obqaor6lhc" path="res://client/client.gd" id="1_gdxsl"]
+[ext_resource type="Script" uid="uid://bo4a6tlw5odlf" path="res://client/sprite.gd" id="3_7kp2r"]
 [ext_resource type="Script" uid="uid://bgf4komxmw4cx" path="res://client/timer.gd" id="4_7kp2r"]
 
 [node name="Client" type="Node2D"]
@@ -10,6 +11,14 @@ script = ExtResource("1_gdxsl")
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_6t3qf")
+script = ExtResource("3_7kp2r")
+
+[node name="Button" type="Button" parent="Sprite"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -489.99994
+offset_top = -860.0
+offset_right = 499.99994
+offset_bottom = 860.0
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
