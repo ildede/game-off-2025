@@ -10,7 +10,6 @@ func _ready() -> void:
 	GlobalSignal.update_quality.connect(quality_change)
 
 func reputation_change(value):
-	print("[InfoPanel] reputation change")
 	$MarginContainer/GridContainer/ReputationLabel/ReputationBar.value += value
 
 func stress_change(value):

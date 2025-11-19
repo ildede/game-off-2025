@@ -17,9 +17,6 @@ func initialize(my_position: Vector2, translator_position: Vector2):
 	path_to_translator = path
 	add_child(path_to_translator)
 
-func _ready() -> void:
-	print("Client ready")
-
 func _on_timer_timeout() -> void:
 	var task = task_scene.instantiate()
 	path_to_translator.add_child(task)

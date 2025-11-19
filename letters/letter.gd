@@ -3,6 +3,7 @@ extends Area2D
 var speed = 200
 var possible_letters = ["A","B","C","D"]
 var target: PathFollow2D
+var target_id: int
 
 func _ready() -> void:
 	var imported_resource = load("res://letters/{0}.png".format([possible_letters.pick_random()]))
@@ -16,4 +17,5 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if "task_id" in body:
-		GlobalSignal.letter_hit_task.emit(self, body)
+		if body.task_id == target_id:
+			GlobalSignal.letter_hit_task.emit(self, body)

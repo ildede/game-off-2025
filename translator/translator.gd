@@ -18,12 +18,12 @@ func new_task_arrived(item: PathFollow2D) -> void:
 func fire() -> void:
 	var l = letters.instantiate()
 	l.position = $Translator.position
-	l.target = tasks.pick_random()
+	var target_task = tasks.pick_random()
+	l.target = target_task
+	l.target_id = target_task.get_node("CharacterBody2D").task_id
 	add_child(l)
 
 func task_hit(letter, task) -> void:
-	print("[Translator] task hit")
-	print(letter)
 	GlobalSignal.update_reputation.emit(0.5)
 	GlobalSignal.update_stress.emit(-2)
 
@@ -32,6 +32,7 @@ func task_hit(letter, task) -> void:
 	if found_index >= 0:
 		var task_found = tasks.pop_at(found_index)
 		task_found.queue_free()
+		letter.queue_free()
 
 func _on_more_pressed() -> void:
 	$WPM.wait_time -= 0.1
@@ -41,7 +42,6 @@ func _on_less_pressed() -> void:
 
 func _on_static_body_2d_body_entered(body: Node2D) -> void:
 	if "task_id" in body:
-		print("colpito da task_id", body.task_id)
 		GlobalSignal.update_reputation.emit(-0.5)
 		GlobalSignal.update_stress.emit(2)
 		var found_index = tasks.find_custom(func has_task_id(t):
