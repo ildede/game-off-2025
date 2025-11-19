@@ -4,6 +4,10 @@ extends Node2D
 
 var tasks: Array
 
+func _ready() -> void:
+	GlobalSignal.client_send_task.connect(new_task_arrived)
+	GlobalSignal.letter_hit_task.connect(task_hit)
+
 func _on_timer_timeout() -> void:
 	if tasks.size() != 0:
 		fire()
@@ -12,18 +16,37 @@ func new_task_arrived(item: PathFollow2D) -> void:
 	tasks.append(item)
 
 func fire() -> void:
-	print("Task in lista: {0}, scrivo!".format([tasks.size()]))
 	var l = letters.instantiate()
 	l.position = $Translator.position
-	l.target = tasks[0]
-	l.task_colpito.connect(task_colpito)
+	l.target = tasks.pick_random()
 	add_child(l)
 
-func task_colpito(task) -> void:
-	print("Il task colpito: ", task)
-	print(task.task_id)
-	var found = tasks.find_custom(func has_task_id(t):
+func task_hit(letter, task) -> void:
+	print("[Translator] task hit")
+	print(letter)
+	GlobalSignal.update_reputation.emit(0.5)
+	GlobalSignal.update_stress.emit(-2)
+
+	var found_index = tasks.find_custom(func has_task_id(t):
 		return t.get_node("CharacterBody2D").task_id == task.task_id)
-	if found >= 0:
-		var preso = tasks.pop_at(found)
-		preso.queue_free()
+	if found_index >= 0:
+		var task_found = tasks.pop_at(found_index)
+		task_found.queue_free()
+
+func _on_more_pressed() -> void:
+	$WPM.wait_time -= 0.1
+
+func _on_less_pressed() -> void:
+	$WPM.wait_time += 0.1
+
+func _on_static_body_2d_body_entered(body: Node2D) -> void:
+	if "task_id" in body:
+		print("colpito da task_id", body.task_id)
+		GlobalSignal.update_reputation.emit(-0.5)
+		GlobalSignal.update_stress.emit(2)
+		var found_index = tasks.find_custom(func has_task_id(t):
+			return t.get_node("CharacterBody2D").task_id == body.task_id)
+		if found_index >= 0:
+			var task_found = tasks.pop_at(found_index)
+			task_found.queue_free()
+	
