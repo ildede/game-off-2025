@@ -1,4 +1,5 @@
 extends Area2D
+class_name Letter
 
 var speed = 200
 var possible_letters = ["A","B","C","D"]

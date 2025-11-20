@@ -1,4 +1,5 @@
 extends Node2D
+class_name Client
 
 const task_scene = preload("res://task/task.tscn")
 
