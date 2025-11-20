@@ -22,7 +22,7 @@ scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CircleShape2D_ljyet")
 
 [node name="WPM" type="Timer" parent="."]
-wait_time = 0.8
+wait_time = 0.2
 autostart = true
 
 [connection signal="body_entered" from="Translator/StaticBody2D" to="." method="_on_static_body_2d_body_entered"]

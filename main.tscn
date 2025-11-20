@@ -117,12 +117,12 @@ offset_bottom = 1079.0
 [node name="Translator" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(224, 856)
 
-[node name="NewClient" type="Timer" parent="."]
+[node name="EventSpawner" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 autostart = true
 
-[node name="AskNewClient" type="Window" parent="."]
+[node name="PopupMessage" type="Window" parent="."]
 oversampling_override = 1.0
 title = "New email!"
 size = Vector2i(800, 500)
@@ -132,7 +132,7 @@ popup_window = true
 content_scale_aspect = 4
 theme = ExtResource("4_1bvp3")
 
-[node name="GridContainer" type="GridContainer" parent="AskNewClient"]
+[node name="GridContainer" type="GridContainer" parent="PopupMessage"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -141,7 +141,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="AskNewClient/GridContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupMessage/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -153,26 +153,26 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="AskNewClient/GridContainer"]
+[node name="GridContainer" type="GridContainer" parent="PopupMessage/GridContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 2
 
-[node name="Accept" type="Button" parent="AskNewClient/GridContainer/GridContainer"]
+[node name="Accept" type="Button" parent="PopupMessage/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Accept"
 
-[node name="Refuse" type="Button" parent="AskNewClient/GridContainer/GridContainer"]
+[node name="Refuse" type="Button" parent="PopupMessage/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Refuse"
 
-[connection signal="timeout" from="NewClient" to="." method="new_email_from_client"]
-[connection signal="about_to_popup" from="AskNewClient" to="." method="_on_ask_new_client_about_to_popup"]
-[connection signal="close_requested" from="AskNewClient" to="." method="_on_ask_new_client_close_requested"]
-[connection signal="pressed" from="AskNewClient/GridContainer/GridContainer/Accept" to="." method="_on_accept_pressed"]
-[connection signal="pressed" from="AskNewClient/GridContainer/GridContainer/Refuse" to="." method="_on_refuse_pressed"]
+[connection signal="timeout" from="EventSpawner" to="." method="new_email_from_client"]
+[connection signal="about_to_popup" from="PopupMessage" to="." method="_on_ask_new_client_about_to_popup"]
+[connection signal="close_requested" from="PopupMessage" to="." method="_on_ask_new_client_close_requested"]
+[connection signal="pressed" from="PopupMessage/GridContainer/GridContainer/Accept" to="." method="_on_accept_pressed"]
+[connection signal="pressed" from="PopupMessage/GridContainer/GridContainer/Refuse" to="." method="_on_refuse_pressed"]

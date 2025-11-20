@@ -3,7 +3,7 @@ extends Node2D
 const client_scene = preload("res://client/client.tscn")
 
 func new_email_from_client() -> void:
-	$AskNewClient.popup_centered()
+	$PopupMessage.popup_centered()
 
 func add_new_client() -> void:
 	var client = client_scene.instantiate()
@@ -25,8 +25,8 @@ func _on_accept_pressed() -> void:
 	_on_ask_new_client_close_requested()
 
 func _on_ask_new_client_close_requested() -> void:
-	$NewClient.start(5.0)
-	$AskNewClient.visible = false
+	$EventSpawner.start(5.0)
+	$PopupMessage.hide()
 
 func _on_ask_new_client_about_to_popup() -> void:
-	$NewClient.stop()
+	$EventSpawner.stop()

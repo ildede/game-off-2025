@@ -1,4 +1,5 @@
 extends PathFollow2D
+class_name Task
 
 var speed = 150
 
