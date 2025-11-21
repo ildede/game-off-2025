@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddo2154sbvebq"
-path="res://.godot/imported/B.png-ced5fc7ace280bfacbf574ea0d9bdfb9.ctex"
+path="res://.godot/imported/B.png-f6451b3e1e922e659e9b1e511799976d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://letters/B.png"
-dest_files=["res://.godot/imported/B.png-ced5fc7ace280bfacbf574ea0d9bdfb9.ctex"]
+source_file="res://scenes/game/entities/letter/assets/B.png"
+dest_files=["res://.godot/imported/B.png-f6451b3e1e922e659e9b1e511799976d.ctex"]
 
 [params]
 

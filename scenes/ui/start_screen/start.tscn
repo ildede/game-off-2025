@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dje56ni0qcsut"]
 
-[ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://gameoff.tres" id="1_ots34"]
-[ext_resource type="Script" uid="uid://dr4w6yvj0xqjn" path="res://start.gd" id="1_qn1rc"]
+[ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://scenes/ui/global_themes/main_theme.tres" id="1_ots34"]
+[ext_resource type="Script" uid="uid://dr4w6yvj0xqjn" path="res://scenes/ui/start_screen/start.gd" id="1_qn1rc"]
 
 [node name="Start" type="Node"]
 script = ExtResource("1_qn1rc")

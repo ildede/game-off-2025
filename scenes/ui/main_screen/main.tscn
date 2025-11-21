@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://b8cdvr2tr0y4c"]
 
-[ext_resource type="Script" uid="uid://b1mqk1kknrr1k" path="res://main.gd" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://b5d226ud6fjao" path="res://info_panel.gd" id="3_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://dibf4fgjie87y" path="res://translator/translator.tscn" id="3_h2yge"]
-[ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://gameoff.tres" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://b1mqk1kknrr1k" path="res://scenes/ui/main_screen/main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://b5d226ud6fjao" path="res://scenes/ui/main_screen/info_panel.gd" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dibf4fgjie87y" path="res://scenes/game/translator/translator.tscn" id="3_h2yge"]
+[ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://scenes/ui/global_themes/main_theme.tres" id="4_1bvp3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
 bg_color = Color(0, 0, 1, 0.3529412)

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcumfskefaxom"]
 
-[ext_resource type="Texture2D" uid="uid://ddfg25t1i5gqu" path="res://client/client.png" id="1_6t3qf"]
-[ext_resource type="Script" uid="uid://ce7obqaor6lhc" path="res://client/client.gd" id="1_gdxsl"]
-[ext_resource type="Script" uid="uid://bo4a6tlw5odlf" path="res://client/sprite.gd" id="3_7kp2r"]
-[ext_resource type="Script" uid="uid://bgf4komxmw4cx" path="res://client/timer.gd" id="4_7kp2r"]
+[ext_resource type="Texture2D" uid="uid://ddfg25t1i5gqu" path="res://scenes/game/entities/client/client.png" id="1_6t3qf"]
+[ext_resource type="Script" uid="uid://ce7obqaor6lhc" path="res://scenes/game/entities/client/client.gd" id="1_gdxsl"]
+[ext_resource type="Script" uid="uid://bo4a6tlw5odlf" path="res://scenes/game/entities/client/sprite.gd" id="3_7kp2r"]
+[ext_resource type="Script" uid="uid://bgf4komxmw4cx" path="res://scenes/game/entities/client/timer.gd" id="4_7kp2r"]
 
 [node name="Client" type="Node2D"]
 script = ExtResource("1_gdxsl")

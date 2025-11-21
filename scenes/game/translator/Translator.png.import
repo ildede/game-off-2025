@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3gws3sshfflo"
-path="res://.godot/imported/task.png-f0141b788e4d8e9d2365baaac6394fe1.ctex"
+uid="uid://dmlao86bajfj2"
+path="res://.godot/imported/Translator.png-8c0a9f63cc7566afe85aeffdda37e885.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://task/task.png"
-dest_files=["res://.godot/imported/task.png-f0141b788e4d8e9d2365baaac6394fe1.ctex"]
+source_file="res://scenes/game/translator/Translator.png"
+dest_files=["res://.godot/imported/Translator.png-8c0a9f63cc7566afe85aeffdda37e885.ctex"]
 
 [params]
 

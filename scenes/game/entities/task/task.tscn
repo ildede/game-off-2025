@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://covv3g8q43ifu"]
 
-[ext_resource type="Script" uid="uid://bdne0imwp85h2" path="res://task/task.gd" id="1_rogos"]
-[ext_resource type="Texture2D" uid="uid://c3gws3sshfflo" path="res://task/task.png" id="1_ti2eb"]
-[ext_resource type="Script" uid="uid://bskemnx3yc0dt" path="res://task/character_body_2d.gd" id="2_42cdb"]
+[ext_resource type="Script" uid="uid://bdne0imwp85h2" path="res://scenes/game/entities/task/task.gd" id="1_rogos"]
+[ext_resource type="Texture2D" uid="uid://c3gws3sshfflo" path="res://scenes/game/entities/task/task.png" id="1_ti2eb"]
+[ext_resource type="Script" uid="uid://bskemnx3yc0dt" path="res://scenes/game/entities/task/character_body_2d.gd" id="2_42cdb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukviy"]
 size = Vector2(1162, 1947)

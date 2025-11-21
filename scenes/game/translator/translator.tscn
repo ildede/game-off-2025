@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dibf4fgjie87y"]
 
-[ext_resource type="Script" uid="uid://cbc0hxujnugk5" path="res://translator/translator.gd" id="1_ljyet"]
-[ext_resource type="Texture2D" uid="uid://dmlao86bajfj2" path="res://translator/Translator.png" id="1_w51wl"]
-[ext_resource type="PackedScene" uid="uid://darjd76ufnyvc" path="res://letters/letter.tscn" id="2_jqv1b"]
+[ext_resource type="Script" uid="uid://cbc0hxujnugk5" path="res://scenes/game/translator/translator.gd" id="1_ljyet"]
+[ext_resource type="Texture2D" uid="uid://dmlao86bajfj2" path="res://scenes/game/translator/Translator.png" id="1_w51wl"]
+[ext_resource type="PackedScene" uid="uid://darjd76ufnyvc" path="res://scenes/game/entities/letter/letter.tscn" id="2_jqv1b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ljyet"]
 radius = 550.02277

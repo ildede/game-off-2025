@@ -1,16 +1,16 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://cym7llujgpfif"]
 
-[ext_resource type="FontFile" uid="uid://tv25g4qciafk" path="res://asset/TYPEWR__.TTF" id="1_8gbjr"]
-[ext_resource type="Texture2D" uid="uid://bs86lbkmt0uju" path="res://asset/Rect.png" id="1_g8dqy"]
+[ext_resource type="Texture2D" uid="uid://bs86lbkmt0uju" path="res://scenes/ui/global_themes/assets/Rect.png" id="1_goo8p"]
+[ext_resource type="FontFile" uid="uid://tv25g4qciafk" path="res://scenes/ui/global_themes/fonts/TYPEWR__.TTF" id="2_3i2gq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g8dqy"]
-texture = ExtResource("1_g8dqy")
+texture = ExtResource("1_goo8p")
 texture_margin_left = 57.0
 texture_margin_top = 57.0
 texture_margin_right = 57.0
 texture_margin_bottom = 57.0
 
 [resource]
-default_font = ExtResource("1_8gbjr")
+default_font = ExtResource("2_3i2gq")
 default_font_size = 32
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_g8dqy")

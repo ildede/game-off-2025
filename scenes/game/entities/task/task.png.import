@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs86lbkmt0uju"
-path="res://.godot/imported/Rect.png-dd15962a6f6a143406026471b586bd31.ctex"
+uid="uid://c3gws3sshfflo"
+path="res://.godot/imported/task.png-a1a693f057600a8e6f3213ad6fec62f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/Rect.png"
-dest_files=["res://.godot/imported/Rect.png-dd15962a6f6a143406026471b586bd31.ctex"]
+source_file="res://scenes/game/entities/task/task.png"
+dest_files=["res://.godot/imported/task.png-a1a693f057600a8e6f3213ad6fec62f2.ctex"]
 
 [params]
 

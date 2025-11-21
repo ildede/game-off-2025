@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddfg25t1i5gqu"
-path="res://.godot/imported/client.png-bc5d6cc8a6191e83490b9426632dbf52.ctex"
+uid="uid://bs86lbkmt0uju"
+path="res://.godot/imported/Rect.png-1305a43d81bafaa31be0d7e0db27f2d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://client/client.png"
-dest_files=["res://.godot/imported/client.png-bc5d6cc8a6191e83490b9426632dbf52.ctex"]
+source_file="res://scenes/ui/global_themes/assets/Rect.png"
+dest_files=["res://.godot/imported/Rect.png-1305a43d81bafaa31be0d7e0db27f2d5.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mt1c8xg0260m"
-path="res://.godot/imported/D.png-7522f89990eb8400d61ce581e6d04d4e.ctex"
+path="res://.godot/imported/D.png-397e12aa809f67d78fa045138577be3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://letters/D.png"
-dest_files=["res://.godot/imported/D.png-7522f89990eb8400d61ce581e6d04d4e.ctex"]
+source_file="res://scenes/game/entities/letter/assets/D.png"
+dest_files=["res://.godot/imported/D.png-397e12aa809f67d78fa045138577be3f.ctex"]
 
 [params]
 
