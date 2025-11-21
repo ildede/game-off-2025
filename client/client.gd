@@ -21,4 +21,4 @@ func initialize(my_position: Vector2, translator_position: Vector2):
 func _on_timer_timeout() -> void:
 	var task = task_scene.instantiate()
 	path_to_translator.add_child(task)
-	GlobalSignal.client_send_task.emit(task)
+	Global.client_send_task.emit(task)

@@ -19,4 +19,4 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if "task_id" in body:
 		if body.task_id == target_id:
-			GlobalSignal.letter_hit_task.emit(self, body)
+			Global.letter_hit_task.emit(self, body)

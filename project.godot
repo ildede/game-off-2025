@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Game Off 2025"
-run/main_scene="uid://b8cdvr2tr0y4c"
+run/main_scene="uid://dje56ni0qcsut"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalSignal="*res://global_signal/global_signal.gd"
+Global="*res://global/global.gd"
+SceneTransition="*res://scene_transition.tscn"
 
 [display]
 

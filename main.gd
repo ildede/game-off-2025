@@ -1,4 +1,5 @@
 extends Node2D
+class_name Main
 
 const client_scene = preload("res://client/client.tscn")
 
@@ -17,10 +18,10 @@ func get_visible_screen() -> Vector2:
 	return get_viewport().get_visible_rect().size
 
 func _on_refuse_pressed() -> void:
-	_on_ask_new_client_close_requested()
+	get_tree().change_scene_to_file("res://start.tscn")
 
 func _on_accept_pressed() -> void:
-	GlobalSignal.update_reputation.emit(1)
+	Global.update_reputation.emit(1)
 	add_new_client()
 	_on_ask_new_client_close_requested()
 

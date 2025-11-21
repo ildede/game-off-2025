@@ -5,9 +5,9 @@ func _ready() -> void:
 	$MarginContainer/GridContainer/StressLabel/StressBar.value = 0
 	$MarginContainer/GridContainer/QualityLabel/QualityBar.value = 50
 	$MarginContainer/GridContainer/ReputationLabel/ReputationBar.value = 5
-	GlobalSignal.update_reputation.connect(reputation_change)
-	GlobalSignal.update_stress.connect(stress_change)
-	GlobalSignal.update_quality.connect(quality_change)
+	Global.update_reputation.connect(reputation_change)
+	Global.update_stress.connect(stress_change)
+	Global.update_quality.connect(quality_change)
 
 func reputation_change(value):
 	$MarginContainer/GridContainer/ReputationLabel/ReputationBar.value += value
