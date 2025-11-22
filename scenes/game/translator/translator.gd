@@ -32,6 +32,7 @@ func task_hit(letter, task) -> void:
 		return t.get_node("CharacterBody2D").task_id == task.task_id)
 	if found_index >= 0:
 		var task_found = tasks.pop_at(found_index)
+		Global.update_money.emit(0.01)
 		task_found.queue_free()
 		letter.queue_free()
 
