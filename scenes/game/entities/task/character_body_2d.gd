@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name TaskBody
 
 var task_id = 0;
 

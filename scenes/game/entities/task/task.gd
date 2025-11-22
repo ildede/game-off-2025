@@ -20,9 +20,12 @@ func move(delta):
 	set_progress(get_progress() + speed * delta)
 	rotation = 0
 
-func update_progress() -> bool:
-	$ProgressBar.value += 1
+func update_progress(letter: Letter) -> bool:
+	$ProgressBar.value += letter.word_count
 	if $ProgressBar.max_value == $ProgressBar.value:
 		return true
 	else:
 		return false
+
+func get_task_id() -> int:
+	return get_node("CharacterBody2D").task_id

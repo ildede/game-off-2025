@@ -24,27 +24,21 @@ func fire() -> void:
 	l.target_id = target_task.get_node("CharacterBody2D").task_id
 	add_child(l)
 
-func task_hit(letter, task) -> void:
-	Global.update_reputation.emit(0.2)
-	Global.update_stress.emit(-0.5)
+func task_hit(letter: Letter, task: Task) -> void:
 
 	var found_index = tasks.find_custom(func has_task_id(t):
-		return t.get_node("CharacterBody2D").task_id == task.task_id)
+		return t.get_task_id() == task.get_task_id())
 	if found_index >= 0:
-		var is_finished = tasks[found_index].update_progress()
+		var is_finished = tasks[found_index].update_progress(letter)
 		if is_finished:
 			var task_found = tasks.pop_at(found_index)
 			Global.update_money.emit(task_found.money_value)
+			Global.update_reputation.emit(0.2)
+			Global.update_stress.emit(-0.5)
 			task_found.queue_free()
 		letter.queue_free()
 
 func _on_static_body_2d_body_entered(body: Node2D) -> void:
-	if "task_id" in body:
-		Global.update_reputation.emit(-0.5)
-		Global.update_stress.emit(2)
-		var found_index = tasks.find_custom(func has_task_id(t):
-			return t.get_node("CharacterBody2D").task_id == body.task_id)
-		if found_index >= 0:
-			var task_found = tasks.pop_at(found_index)
-			task_found.queue_free()
-	
+	if body is TaskBody:
+		Global.update_reputation.emit(-1)
+		Global.update_stress.emit(4)
