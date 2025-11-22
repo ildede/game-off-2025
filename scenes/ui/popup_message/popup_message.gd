@@ -3,6 +3,7 @@ class_name PopupMessage
 
 signal new_client_accepted
 signal new_client_refused
+signal popup_closed
 
 var last_client_data: Dictionary
 
@@ -19,3 +20,6 @@ func _on_accept_pressed() -> void:
 
 func _on_refuse_pressed() -> void:
 	new_client_refused.emit()
+
+func _on_close_requested() -> void:
+	popup_closed.emit()
