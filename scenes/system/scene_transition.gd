@@ -1,8 +1,6 @@
 extends CanvasLayer
 
 func _ready() -> void:
-	print("SceneTransition ready")
-	#layer = 100
 	$ColorRect.visible = false
 
 func fade_to_main() -> void:

@@ -5,7 +5,6 @@ var speed = 50
 var money_value: float = 0
 
 func _ready() -> void:
-	print("task ready")
 	$ProgressBar.value = 0
 
 func _physics_process(delta: float) -> void:
