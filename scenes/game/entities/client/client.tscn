@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcumfskefaxom"]
+[gd_scene load_steps=4 format=3 uid="uid://dcumfskefaxom"]
 
 [ext_resource type="Texture2D" uid="uid://ddfg25t1i5gqu" path="res://scenes/game/entities/client/client.png" id="1_6t3qf"]
 [ext_resource type="Script" uid="uid://ce7obqaor6lhc" path="res://scenes/game/entities/client/client.gd" id="1_gdxsl"]
 [ext_resource type="Script" uid="uid://bo4a6tlw5odlf" path="res://scenes/game/entities/client/sprite.gd" id="3_7kp2r"]
-[ext_resource type="Script" uid="uid://bgf4komxmw4cx" path="res://scenes/game/entities/client/timer.gd" id="4_7kp2r"]
 
 [node name="Client" type="Node2D"]
 script = ExtResource("1_gdxsl")
@@ -22,6 +21,20 @@ offset_bottom = 860.0
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
-script = ExtResource("4_7kp2r")
+
+[node name="Name" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.5
+offset_top = -11.5
+offset_right = 90.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+text = "client-name"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

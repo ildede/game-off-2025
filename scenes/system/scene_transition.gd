@@ -10,7 +10,7 @@ func fade_to_main() -> void:
 	$AnimationPlayer.play("fade_in")
 	await $AnimationPlayer.animation_finished
 
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/main_screen/main.tscn")
 
 	await get_tree().process_frame
 

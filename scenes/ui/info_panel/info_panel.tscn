@@ -1,0 +1,129 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7gpddms8dggn"]
+
+[ext_resource type="Script" uid="uid://b5d226ud6fjao" path="res://scenes/ui/info_panel/info_panel.gd" id="1_f6qh3"]
+[ext_resource type="PackedScene" uid="uid://dahhp2f70drw" path="res://scenes/ui/clock/clock.tscn" id="2_g6785"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
+bg_color = Color(0, 0, 1, 0.3529412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
+bg_color = Color(0, 1, 0, 0.39215687)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+bg_color = Color(1, 0, 0, 0.3529412)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 412.0
+offset_bottom = 652.0
+
+[node name="Clock" parent="." instance=ExtResource("2_g6785")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 205.0
+offset_top = 160.0
+offset_right = 205.0
+offset_bottom = 160.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="InfoPanel" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_top = 318.0
+offset_right = 410.0
+offset_bottom = 650.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_f6qh3")
+
+[node name="MarginContainer" type="MarginContainer" parent="InfoPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="InfoPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="ReputationLabel" type="Label" parent="InfoPanel/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Reputation"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ReputationBar" type="ProgressBar" parent="InfoPanel/MarginContainer/GridContainer/ReputationLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_272bh")
+step = 0.1
+value = 45.0
+show_percentage = false
+
+[node name="QualityLabel" type="Label" parent="InfoPanel/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Quality"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="QualityBar" type="ProgressBar" parent="InfoPanel/MarginContainer/GridContainer/QualityLabel"]
+show_behind_parent = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_7mycd")
+step = 0.1
+value = 30.0
+show_percentage = false
+
+[node name="StressLabel" type="Label" parent="InfoPanel/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Stress"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="StressBar" type="ProgressBar" parent="InfoPanel/MarginContainer/GridContainer/StressLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_lquwl")
+step = 0.1
+value = 50.0
+show_percentage = false

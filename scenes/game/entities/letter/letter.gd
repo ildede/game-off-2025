@@ -7,7 +7,7 @@ var target: PathFollow2D
 var target_id: int
 
 func _ready() -> void:
-	var imported_resource = load("res://letters/{0}.png".format([possible_letters.pick_random()]))
+	var imported_resource = load("res://scenes/game/entities/letter/assets/{0}.png".format([possible_letters.pick_random()]))
 	$Sprite2D.texture = imported_resource
 
 func _physics_process(delta: float) -> void:

@@ -1,116 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8cdvr2tr0y4c"]
+[gd_scene load_steps=5 format=3 uid="uid://b8cdvr2tr0y4c"]
 
 [ext_resource type="Script" uid="uid://b1mqk1kknrr1k" path="res://scenes/ui/main_screen/main.gd" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://b5d226ud6fjao" path="res://scenes/ui/main_screen/info_panel.gd" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://c7gpddms8dggn" path="res://scenes/ui/info_panel/info_panel.tscn" id="2_iu1df"]
 [ext_resource type="PackedScene" uid="uid://dibf4fgjie87y" path="res://scenes/game/translator/translator.tscn" id="3_h2yge"]
-[ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://scenes/ui/global_themes/main_theme.tres" id="4_1bvp3"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
-bg_color = Color(0, 0, 1, 0.3529412)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
-bg_color = Color(0, 1, 0, 0.39215687)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
-bg_color = Color(1, 0, 0, 0.3529412)
+[ext_resource type="PackedScene" uid="uid://cgypytgu10ukf" path="res://scenes/ui/popup_message/popup_message.tscn" id="4_iu1df"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ig7tw")
 
-[node name="InfoPanel" type="PanelContainer" parent="."]
-offset_right = 407.0
-offset_bottom = 655.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("3_1bvp3")
-
-[node name="MarginContainer" type="MarginContainer" parent="InfoPanel"]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="GridContainer" type="GridContainer" parent="InfoPanel/MarginContainer"]
-layout_mode = 2
-theme_override_constants/v_separation = 20
-
-[node name="ReputationLabel" type="Label" parent="InfoPanel/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Reputation"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="ReputationBar" type="ProgressBar" parent="InfoPanel/MarginContainer/GridContainer/ReputationLabel"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_styles/fill = SubResource("StyleBoxFlat_272bh")
-step = 0.1
-value = 45.0
-show_percentage = false
-
-[node name="QualityLabel" type="Label" parent="InfoPanel/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Quality"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="QualityBar" type="ProgressBar" parent="InfoPanel/MarginContainer/GridContainer/QualityLabel"]
-show_behind_parent = true
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_styles/fill = SubResource("StyleBoxFlat_7mycd")
-step = 0.1
-value = 30.0
-show_percentage = false
-
-[node name="StressLabel" type="Label" parent="InfoPanel/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-text = "Stress"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="StressBar" type="ProgressBar" parent="InfoPanel/MarginContainer/GridContainer/StressLabel"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_styles/fill = SubResource("StyleBoxFlat_lquwl")
-step = 0.1
-value = 50.0
-show_percentage = false
+[node name="InfoPanel" parent="." instance=ExtResource("2_iu1df")]
 
 [node name="WorldPanel" type="PanelContainer" parent="."]
 offset_left = 400.0
+offset_top = 1.0
 offset_right = 1922.0
 offset_bottom = 1079.0
 
@@ -121,57 +23,6 @@ position = Vector2(224, 856)
 one_shot = true
 autostart = true
 
-[node name="PopupMessage" type="Window" parent="."]
-oversampling_override = 1.0
-title = "New email!"
-size = Vector2i(800, 500)
-visible = false
-always_on_top = true
-popup_window = true
-content_scale_aspect = 4
-theme = ExtResource("4_1bvp3")
-
-[node name="GridContainer" type="GridContainer" parent="PopupMessage"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="PopupMessage/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Hello, I'm a new client.
-
-Can you work for me?"
-fit_content = true
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="GridContainer" type="GridContainer" parent="PopupMessage/GridContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-columns = 2
-
-[node name="Accept" type="Button" parent="PopupMessage/GridContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Accept"
-
-[node name="Refuse" type="Button" parent="PopupMessage/GridContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Refuse"
+[node name="PopupMessage" parent="." instance=ExtResource("4_iu1df")]
 
 [connection signal="timeout" from="EventSpawner" to="." method="new_email_from_client"]
-[connection signal="about_to_popup" from="PopupMessage" to="." method="_on_ask_new_client_about_to_popup"]
-[connection signal="close_requested" from="PopupMessage" to="." method="_on_ask_new_client_close_requested"]
-[connection signal="pressed" from="PopupMessage/GridContainer/GridContainer/Accept" to="." method="_on_accept_pressed"]
-[connection signal="pressed" from="PopupMessage/GridContainer/GridContainer/Refuse" to="." method="_on_refuse_pressed"]

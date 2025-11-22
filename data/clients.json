@@ -1,0 +1,32 @@
+{
+  "clients": [
+    {
+      "id": "client_1",
+      "name": "Global News Network",
+      "engagement_email": "We need daily translation of 500 words from our international news feed. Can you handle this recurring assignment?",
+      "daily_words": 500,
+      "payment_per_word": 0.04
+    },
+    {
+      "id": "client_2",
+      "name": "TechManual Inc.",
+      "engagement_email": "Looking for a translator to handle 300 words daily of technical documentation. This is an ongoing daily requirement.",
+      "daily_words": 300,
+      "payment_per_word": 0.04
+    },
+    {
+      "id": "client_3",
+      "name": "E-commerce Solutions",
+      "engagement_email": "We require daily translation of product descriptions, it should be around 100 words per task. This is a recurring daily task for our online store.",
+      "daily_words": 100,
+      "payment_per_word": 0.08
+    },
+    {
+      "id": "client_4",
+      "name": "Academic Press",
+      "engagement_email": "We need 350 words translated daily for our research publications. This is a steady daily commitment we can offer.",
+      "daily_words": 350,
+      "payment_per_word": 0.04
+    }
+  ]
+}
