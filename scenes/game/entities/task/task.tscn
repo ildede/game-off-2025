@@ -20,3 +20,31 @@ texture = ExtResource("1_ti2eb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-6, 15.5)
 shape = SubResource("RectangleShape2D_ukviy")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+modulate = Color(0, 1, 0, 1)
+show_behind_parent = true
+offset_left = 580.0
+offset_top = -960.0
+offset_right = 780.0
+offset_bottom = 899.99976
+max_value = 20.0
+step = 1.0
+value = 15.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/font_size = 300
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1

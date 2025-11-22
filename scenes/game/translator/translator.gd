@@ -31,9 +31,11 @@ func task_hit(letter, task) -> void:
 	var found_index = tasks.find_custom(func has_task_id(t):
 		return t.get_node("CharacterBody2D").task_id == task.task_id)
 	if found_index >= 0:
-		var task_found = tasks.pop_at(found_index)
-		Global.update_money.emit(0.01)
-		task_found.queue_free()
+		var is_finished = tasks[found_index].update_progress()
+		if is_finished:
+			var task_found = tasks.pop_at(found_index)
+			Global.update_money.emit(task_found.money_value)
+			task_found.queue_free()
 		letter.queue_free()
 
 func _on_static_body_2d_body_entered(body: Node2D) -> void:

@@ -14,8 +14,8 @@ func _ready() -> void:
 func show_popup(client_data: Dictionary) -> void:
 	last_client_data = client_data
 	$GridContainer/ClientName.text = client_data.get("name", "Client")
-	$GridContainer/Interval.text = "Each %.1f seconds" % client_data.get("task_interval", 1.0)
-	$GridContainer/Payment.text = "Will pay %.1f sbleuri" % client_data.get("payment", 50)
+	$GridContainer/Interval.text = "%d daily words" % client_data.get("daily_words", 1)
+	$GridContainer/Payment.text = "Will pay %.2f $ per word" % client_data.get("payment_per_word", 0.01)
 	$GridContainer/RichTextLabel.text = client_data.get("engagement_email", "Email body")
 	popup_centered()
 

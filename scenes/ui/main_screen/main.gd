@@ -35,7 +35,7 @@ func _on_accept_pressed(client_info: Dictionary) -> void:
 	_on_ask_new_client_close_requested()
 
 func _on_ask_new_client_close_requested() -> void:
-	$EventSpawner.start(5.0)
+	$EventSpawner.start(31.0)
 	$PopupMessage.hide()
 
 func _on_ask_new_client_about_to_popup() -> void:

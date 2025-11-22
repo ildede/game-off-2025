@@ -20,6 +20,7 @@ offset_right = 499.99994
 offset_bottom = 860.0
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
 autostart = true
 
 [node name="Name" type="Label" parent="."]
