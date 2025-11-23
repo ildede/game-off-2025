@@ -44,10 +44,7 @@ func handle_closing_popup() -> void:
 	get_tree().paused = false
 
 func handle_end_of_the_day() -> void:
-	print("The end is nay")
 	get_tree().paused = true
-	print("nope or yes?")
 	SceneTransition.fade_to_new_day(func callback():
-		print("daje")
 		game_information.update_day_count(1)
 		get_tree().paused = false)
