@@ -1,24 +1,24 @@
 extends PathFollow2D
 class_name Task
 
-var speed = 50
 var money_value: float = 0
+var total_time = 60
+var running_time = 0
 
 func _ready() -> void:
 	$ProgressBar.value = 0
 
 func _physics_process(delta: float) -> void:
-	move(delta)
+	running_time += delta
+	if running_time >= total_time: running_time = 0
+	self.progress_ratio = lerp(0, 1, running_time / total_time)
+	rotation = 0
 
 func initialize(daily_words: int, payment_per_word: float):
 	var actual_words = daily_words + randi_range(-50, 50)
 	$ProgressBar.max_value = actual_words
 	$Label.text = str(actual_words)
 	money_value = actual_words * payment_per_word
-
-func move(delta):
-	set_progress(get_progress() + speed * delta)
-	rotation = 0
 
 func update_progress(letter: Letter) -> bool:
 	$ProgressBar.value += letter.word_count
