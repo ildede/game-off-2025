@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct2fig6us6q27"]
+
+[ext_resource type="Script" uid="uid://de8ewu77p8dqs" path="res://scenes/ui/end_screen/end.gd" id="1_0l03c"]
+[ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://scenes/ui/global_themes/main_theme.tres" id="2_q22wo"]
+
+[node name="End" type="Node"]
+script = ExtResource("1_0l03c")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_q22wo")
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+text = "BURNOUT!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+text = "START AGAIN"
+
+[connection signal="pressed" from="Panel/GridContainer/StartButton" to="." method="_on_start_button_pressed"]

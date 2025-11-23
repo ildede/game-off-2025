@@ -6,3 +6,4 @@ signal update_reputation
 signal update_stress
 signal update_quality
 signal update_money
+signal game_over

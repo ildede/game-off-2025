@@ -12,6 +12,7 @@ func _ready() -> void:
 	popup_message.new_client_refused.connect(handle_refused_client)
 	popup_message.popup_closed.connect(handle_closing_popup)
 	game_information.end_of_the_day.connect(handle_end_of_the_day)
+	Global.game_over.connect(handle_game_over)
 	add_child(client_data)
 
 func new_email_from_client() -> void:
@@ -48,3 +49,6 @@ func handle_end_of_the_day() -> void:
 	SceneTransition.fade_to_new_day(func callback():
 		game_information.update_day_count(1)
 		get_tree().paused = false)
+
+func handle_game_over() -> void:
+	SceneTransition.fade_to_end()

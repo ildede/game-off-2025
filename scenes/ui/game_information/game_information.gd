@@ -21,6 +21,8 @@ func reputation_change(value):
 
 func stress_change(value):
 	$InfoPanel/MarginContainer/GridContainer/StressLabel/StressBar.value += value
+	if $InfoPanel/MarginContainer/GridContainer/StressLabel/StressBar.value >= $InfoPanel/MarginContainer/GridContainer/StressLabel/StressBar.max_value:
+		Global.game_over.emit()
 
 func quality_change(value):
 	$InfoPanel/MarginContainer/GridContainer/QualityLabel/QualityBar.value += value
