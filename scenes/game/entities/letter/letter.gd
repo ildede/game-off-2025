@@ -2,7 +2,7 @@ extends Area2D
 class_name Letter
 
 var speed = 200
-var possible_letters = ["A","B","C","D"]
+var possible_letters = ["A","B","C","D", "E", "F", "G", "H", "I" , "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Z"]
 var target: PathFollow2D
 var target_id: int
 var word_count: int = 10
