@@ -34,3 +34,17 @@ tint_progress = Color(1, 1, 1, 0.78431374)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 60.0
 autostart = true
+
+[node name="DayCount" type="Label" parent="."]
+layout_mode = 0
+offset_left = -125.0
+offset_top = -40.0
+offset_right = 125.0
+offset_bottom = 40.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "356"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

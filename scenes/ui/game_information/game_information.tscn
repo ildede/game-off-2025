@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c7gpddms8dggn"]
 
-[ext_resource type="Script" uid="uid://b5d226ud6fjao" path="res://scenes/ui/info_panel/info_panel.gd" id="1_f6qh3"]
+[ext_resource type="Script" uid="uid://b5d226ud6fjao" path="res://scenes/ui/game_information/game_information.gd" id="1_f6qh3"]
 [ext_resource type="PackedScene" uid="uid://dahhp2f70drw" path="res://scenes/ui/clock/clock.tscn" id="2_g6785"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
@@ -12,13 +12,14 @@ bg_color = Color(0, 1, 0, 0.39215687)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
 bg_color = Color(1, 0, 0, 0.3529412)
 
-[node name="Control" type="Control"]
+[node name="GameInformation" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 412.0
 offset_bottom = 652.0
+script = ExtResource("1_f6qh3")
 
 [node name="Clock" parent="." instance=ExtResource("2_g6785")]
 layout_mode = 0
@@ -39,7 +40,6 @@ offset_right = 410.0
 offset_bottom = 650.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_f6qh3")
 
 [node name="MarginContainer" type="MarginContainer" parent="InfoPanel"]
 layout_mode = 2
@@ -150,3 +150,5 @@ size_flags_vertical = 3
 text = "$"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[connection signal="end_of_the_day" from="Clock" to="." method="_on_clock_end_of_the_day"]
