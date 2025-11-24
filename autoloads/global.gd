@@ -3,11 +3,13 @@ extends Node
 signal new_client_accepted(client_info: Dictionary)
 signal client_send_task(task: Task)
 signal letter_hit_task(letter: Letter, task: Task)
+signal task_finished(id: int, value: float)
 signal update_reputation(value: float)
 signal update_stress(value: float)
 signal update_quality(value: float)
 signal update_money(value: float)
 signal update_day_count(value: int)
+
 signal game_over
 signal ui_update
 
@@ -19,6 +21,7 @@ func _ready() -> void:
 	new_client_accepted.connect(handle_new_client_accepted)
 	client_send_task.connect(handle_client_send_task)
 	letter_hit_task.connect(handle_letter_hit_task)
+	task_finished.connect(handle_task_finished)
 	update_reputation.connect(handle_update_reputation)
 	update_stress.connect(handle_update_stress)
 	update_quality.connect(handle_update_quality)
@@ -27,8 +30,8 @@ func _ready() -> void:
 	game_over.connect(handle_game_over)
 
 func handle_new_client_accepted(client_info: Dictionary) -> void:
+	print("[GLOBAL] handle_new_client_accepted")
 	game_state.clients.append(client_info)
-	print("Client count", game_state.clients.size())
 
 func handle_client_send_task(_task: Task) -> void:
 	print("[GLOBAL] handle_client_send_task")
@@ -37,6 +40,13 @@ func handle_client_send_task(_task: Task) -> void:
 func handle_letter_hit_task(_letter: Letter, _task: Task) -> void:
 	print("[GLOBAL] handle_letter_hit_task")
 	game_state.translated_words += game_config.words_per_letter
+
+func handle_task_finished(id: int, value: float) -> void:
+	print("[GLOBAL] handle_task_finished")
+	game_state.task_finished += 1
+	game_state.reputation += 0.2
+	game_state.stress -= 0.5
+	ui_update.emit()
 
 func handle_update_reputation(value: float) -> void:
 	print("[GLOBAL] handle_update_reputation")
@@ -77,15 +87,16 @@ func start_new_game() -> void:
 	game_state = State.new()
 
 class Config:
-	var day_lenght_in_seconds: float = 30
-	var seconds_between_events: int = 10
-	var words_per_letter: int = 10
+	var day_lenght_in_seconds: float = 60
+	var seconds_between_events: int = 5
+	var words_per_letter: int = 40
 	var max_stress_level: float = 100
 
 class State:
 	var current_day = 1
 	var words_per_day: int = 2500
 	var task_received: int = 0
+	var task_finished: int = 0
 	var translated_words: int = 0
 
 	var reputation: float = 0

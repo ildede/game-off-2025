@@ -32,9 +32,7 @@ func task_hit(letter: Letter, task: Task) -> void:
 		var is_finished = tasks[found_index].update_progress(letter)
 		if is_finished:
 			var task_found = tasks.pop_at(found_index)
-			Global.update_money.emit(task_found.money_value)
-			Global.update_reputation.emit(0.2)
-			Global.update_stress.emit(-0.5)
+			Global.task_finished.emit(task_found.get_task_id(), task_found.money_value)
 			task_found.queue_free()
 		letter.queue_free()
 

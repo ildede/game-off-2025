@@ -16,7 +16,6 @@ func _ready() -> void:
 	Global.game_over.connect(handle_game_over)
 	add_child(client_data)
 	for client_info in Global.game_state.clients:
-		print("adding client")
 		add_new_client(client_info)
 	get_tree().paused = false
 
@@ -30,7 +29,7 @@ func add_new_client(client_info: Dictionary) -> void:
 	print("[MAIN] add_new_client")
 	var client: Client = client_scene.instantiate()
 	var screen = get_visible_screen()
-	var client_position = Vector2(randi_range(500, screen[0]-110), randi_range(140, screen[1]-160))
+	var client_position = Vector2(randi_range(700, screen[0]-110), randi_range(140, screen[1]-160))
 	var translator_position = $Translator.global_position
 	client.initialize(client_position, translator_position, client_info)
 	add_child(client)

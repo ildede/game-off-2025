@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8cdvr2tr0y4c"]
+[gd_scene load_steps=6 format=3 uid="uid://b8cdvr2tr0y4c"]
 
 [ext_resource type="Script" uid="uid://b1mqk1kknrr1k" path="res://scenes/ui/main_screen/main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c7gpddms8dggn" path="res://scenes/ui/game_information/game_information.tscn" id="2_iu1df"]
 [ext_resource type="PackedScene" uid="uid://dibf4fgjie87y" path="res://scenes/game/translator/translator.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cgypytgu10ukf" path="res://scenes/ui/popup_message/popup_message.tscn" id="4_iu1df"]
+[ext_resource type="PackedScene" uid="uid://b3cihatsnroda" path="res://scenes/ui/invoices/invoices.tscn" id="5_i25ov"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ig7tw")
@@ -11,13 +12,13 @@ script = ExtResource("1_ig7tw")
 [node name="GameInformation" parent="." instance=ExtResource("2_iu1df")]
 
 [node name="WorldPanel" type="PanelContainer" parent="."]
-offset_left = 400.0
+offset_left = 512.0
 offset_top = 1.0
 offset_right = 1922.0
 offset_bottom = 1079.0
 
 [node name="Translator" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(224, 856)
+position = Vector2(336, 858)
 
 [node name="EventSpawner" type="Timer" parent="."]
 wait_time = 0.5
@@ -25,5 +26,8 @@ one_shot = true
 autostart = true
 
 [node name="PopupMessage" parent="." instance=ExtResource("4_iu1df")]
+
+[node name="Invoices" parent="." instance=ExtResource("5_i25ov")]
+position = Vector2(80, 950)
 
 [connection signal="timeout" from="EventSpawner" to="." method="new_email_from_client"]

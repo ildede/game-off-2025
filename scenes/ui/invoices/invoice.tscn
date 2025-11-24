@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dejuwbvt3slkw"]
+
+[ext_resource type="Texture2D" uid="uid://c3gws3sshfflo" path="res://scenes/game/entities/task/task.png" id="1_7ft1s"]
+[ext_resource type="Script" uid="uid://cs63yaddrupxt" path="res://scenes/ui/invoices/invoice.gd" id="2_gu7gp"]
+
+[node name="Invoice" type="Node2D"]
+script = ExtResource("2_gu7gp")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.5)
+skew = 0.87266463
+texture = ExtResource("1_7ft1s")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 0.5)
+skew = 0.8726646
+
+[node name="CollisionShape" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-608.7213, 1026.7777, -605.6105, -675.18414, -375.01886, -973.8831, 599.4059, -983.2174, 583.6498, 886.7626)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

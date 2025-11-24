@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3cihatsnroda"]
+
+[ext_resource type="Script" uid="uid://b1y7bowxc4mdh" path="res://scenes/ui/invoices/invoices.gd" id="1_qkexr"]
+
+[node name="Invoices" type="Node2D"]
+scale = Vector2(0.08, 0.08)
+script = ExtResource("1_qkexr")
