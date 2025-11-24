@@ -9,6 +9,9 @@ var translator: Node2D
 var daily_words: int = 0
 var payment_per_word: float = 0
 
+func _ready() -> void:
+	$Timer.start(Global.game_config.day_lenght_in_seconds)
+
 func initialize(my_position: Vector2, translator_position: Vector2, client_data: Dictionary):
 	self.position = my_position
 	client_id = randi()
@@ -23,7 +26,6 @@ func initialize(my_position: Vector2, translator_position: Vector2, client_data:
 	daily_words = client_data.get("daily_words", 1)
 	payment_per_word = client_data.get("payment_per_word", 0.01)
 	_on_timer_timeout()
-	#$Timer.start(Global.game_config.day_lenght_in_seconds)
 
 func _on_timer_timeout() -> void:
 	var task = task_scene.instantiate()
