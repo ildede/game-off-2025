@@ -10,7 +10,7 @@ func _ready() -> void:
 	redraw_invoices()
 
 func add_invoice(id: int, value: float):
-	print("add_invoice {id} ${value}".format({"id":id,"value":value}))
+	print("[INVOICES] add_invoice")
 	var created = Global.InvoiceObject.new(id, value)
 	var new_invoice = invoice.instantiate()
 	new_invoice.position = self.global_position + Vector2(randi_range(-50,50), -(Global.game_state.tasks_waiting_to_be_processed.size()*100))
