@@ -6,29 +6,20 @@ var money: float = 0
 signal end_of_the_day
 
 func _ready() -> void:
-	$InfoPanel/MarginContainer/GridContainer/StressLabel/StressBar.value = 0
-	$InfoPanel/MarginContainer/GridContainer/QualityLabel/QualityBar.value = 50
-	$InfoPanel/MarginContainer/GridContainer/ReputationLabel/ReputationBar.value = 5
-	$InfoPanel/MarginContainer/GridContainer/GridContainer/Money.text = "%.2f" % money
-	Global.update_reputation.connect(reputation_change)
-	Global.update_stress.connect(stress_change)
-	Global.update_quality.connect(quality_change)
-	Global.update_money.connect(money_change)
+	var state = Global.game_state
+	$InfoPanel/MarginContainer/GridContainer/StressLabel/StressBar.value = state.stress
+	$InfoPanel/MarginContainer/GridContainer/StressLabel/StressBar.max_value = Global.game_config.max_stress_level
+	$InfoPanel/MarginContainer/GridContainer/QualityLabel/QualityBar.value = state.quality
+	$InfoPanel/MarginContainer/GridContainer/ReputationLabel/ReputationBar.value = state.reputation
+	$InfoPanel/MarginContainer/GridContainer/GridContainer/Money.text = "%.2f" % state.money
+	Global.ui_update.connect(ui_update)
 
-func reputation_change(value):
-	$InfoPanel/MarginContainer/GridContainer/ReputationLabel/ReputationBar.value += value
-
-func stress_change(value):
-	$InfoPanel/MarginContainer/GridContainer/StressLabel/StressBar.value += value
-	if $InfoPanel/MarginContainer/GridContainer/StressLabel/StressBar.value >= $InfoPanel/MarginContainer/GridContainer/StressLabel/StressBar.max_value:
-		Global.game_over.emit()
-
-func quality_change(value):
-	$InfoPanel/MarginContainer/GridContainer/QualityLabel/QualityBar.value += value
-
-func money_change(value):
-	money += value
-	$InfoPanel/MarginContainer/GridContainer/GridContainer/Money.text = "%.2f" % money
+func ui_update() -> void:
+	var state = Global.game_state
+	$InfoPanel/MarginContainer/GridContainer/ReputationLabel/ReputationBar.value = state.reputation
+	$InfoPanel/MarginContainer/GridContainer/StressLabel/StressBar.value = state.stress
+	$InfoPanel/MarginContainer/GridContainer/QualityLabel/QualityBar.value = state.quality
+	$InfoPanel/MarginContainer/GridContainer/GridContainer/Money.text = "%.2f" % state.money
 
 func _on_clock_end_of_the_day() -> void:
 	end_of_the_day.emit()

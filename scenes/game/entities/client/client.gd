@@ -23,7 +23,7 @@ func initialize(my_position: Vector2, translator_position: Vector2, client_data:
 	daily_words = client_data.get("daily_words", 1)
 	payment_per_word = client_data.get("payment_per_word", 0.01)
 	_on_timer_timeout()
-	#$Timer.wait_time = client_data.get("task_interval", 1.0)
+	#$Timer.start(Global.game_config.day_lenght_in_seconds)
 
 func _on_timer_timeout() -> void:
 	var task = task_scene.instantiate()

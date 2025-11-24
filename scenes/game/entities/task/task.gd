@@ -2,7 +2,7 @@ extends PathFollow2D
 class_name Task
 
 var money_value: float = 0
-var total_time = 60
+var total_time = Global.game_config.day_lenght_in_seconds
 var running_time = 0
 
 func _ready() -> void:

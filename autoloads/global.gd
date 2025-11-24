@@ -8,6 +8,7 @@ signal update_quality(value: float)
 signal update_money(value: float)
 signal update_day_count(value: int)
 signal game_over
+signal ui_update
 
 @onready var game_state: State = State.new()
 @onready var game_config: Config = Config.new()
@@ -34,22 +35,30 @@ func handle_letter_hit_task(_letter: Letter, _task: Task) -> void:
 func handle_update_reputation(value: float) -> void:
 	print("[GLOBAL] handle_update_reputation")
 	game_state.reputation += value
+	ui_update.emit()
 
 func handle_update_stress(value: float) -> void:
 	print("[GLOBAL] handle_update_stress")
 	game_state.stress += value
+	ui_update.emit()
+
+	if game_state.stress >= game_config.max_stress_level:
+		game_over.emit()
 
 func handle_update_quality(value: float) -> void:
 	print("[GLOBAL] handle_update_quality")
 	game_state.quality += value
+	ui_update.emit()
 
 func handle_update_money(value: float) -> void:
 	print("[GLOBAL] handle_update_money")
 	game_state.money += value
+	ui_update.emit()
 
 func handle_update_day_count(value: int) -> void:
 	print("[GLOBAL] handle_update_day_count")
 	game_state.current_day += value
+	ui_update.emit()
 
 func handle_game_over() -> void:
 	print("[GLOBAL] handle_game_over")
@@ -65,6 +74,7 @@ class Config:
 	var day_lenght_in_seconds: float = 60
 	var seconds_between_events: int = 20
 	var words_per_letter: int = 10
+	var max_stress_level: float = 100
 
 class State:
 	var current_day = 1
