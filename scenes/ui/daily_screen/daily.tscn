@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://bucgncfhv2yq8"]
+
+[ext_resource type="Script" uid="uid://rmuvkl2iy50m" path="res://scenes/ui/daily_screen/daily.gd" id="1_n7uhh"]
+[ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://scenes/ui/global_themes/main_theme.tres" id="2_vrdqk"]
+
+[node name="Daily" type="Node"]
+script = ExtResource("1_n7uhh")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_vrdqk")
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="Panel/GridContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Some text customly defined"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PayBills" type="Button" parent="Panel/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "PAY BILLS (50$)"
+
+[node name="Continue" type="Button" parent="Panel/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "CONTINUE"
+
+[connection signal="pressed" from="Panel/GridContainer/GridContainer/PayBills" to="." method="_on_pay_bills_button_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/GridContainer/Continue" to="." method="_on_continue_button_pressed"]

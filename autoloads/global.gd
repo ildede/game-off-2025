@@ -1,5 +1,6 @@
 extends Node
 
+signal new_client_accepted(client_info: Dictionary)
 signal client_send_task(task: Task)
 signal letter_hit_task(letter: Letter, task: Task)
 signal update_reputation(value: float)
@@ -15,6 +16,7 @@ signal ui_update
 
 func _ready() -> void:
 	print("[GLOBAL] _ready")
+	new_client_accepted.connect(handle_new_client_accepted)
 	client_send_task.connect(handle_client_send_task)
 	letter_hit_task.connect(handle_letter_hit_task)
 	update_reputation.connect(handle_update_reputation)
@@ -23,6 +25,10 @@ func _ready() -> void:
 	update_money.connect(handle_update_money)
 	update_day_count.connect(handle_update_day_count)
 	game_over.connect(handle_game_over)
+
+func handle_new_client_accepted(client_info: Dictionary) -> void:
+	game_state.clients.append(client_info)
+	print("Client count", game_state.clients.size())
 
 func handle_client_send_task(_task: Task) -> void:
 	print("[GLOBAL] handle_client_send_task")
@@ -85,5 +91,5 @@ class State:
 	var reputation: float = 0
 	var quality: float = 50
 	var stress: float = 0
-	var clients: Array[Client] = []
+	var clients: Array[Dictionary] = []
 	var money: float = 0

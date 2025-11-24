@@ -15,6 +15,10 @@ func _ready() -> void:
 	game_information.end_of_the_day.connect(handle_end_of_the_day)
 	Global.game_over.connect(handle_game_over)
 	add_child(client_data)
+	for client_info in Global.game_state.clients:
+		print("adding client")
+		add_new_client(client_info)
+	get_tree().paused = false
 
 func new_email_from_client() -> void:
 	print("[MAIN] new_email_from_client")
@@ -38,6 +42,7 @@ func get_visible_screen() -> Vector2:
 func handle_accepted_client(client_info: Dictionary) -> void:
 	print("[MAIN] handle_accepted_client")
 	Global.update_reputation.emit(1)
+	Global.new_client_accepted.emit(client_info)
 	add_new_client(client_info)
 	handle_closing_popup()
 
@@ -53,10 +58,8 @@ func handle_closing_popup() -> void:
 
 func handle_end_of_the_day() -> void:
 	print("[MAIN] handle_end_of_the_day")
-	Global.update_day_count.emit(1)
 	get_tree().paused = true
-	SceneTransition.fade_to_new_day(func callback():
-		get_tree().paused = false)
+	SceneTransition.fade_to_new_day()
 
 func handle_game_over() -> void:
 	print("[MAIN] handle_game_over")
