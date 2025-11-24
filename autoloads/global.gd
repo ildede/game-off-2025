@@ -104,3 +104,12 @@ class State:
 	var stress: float = 0
 	var clients: Array[Dictionary] = []
 	var money: float = 0
+	var tasks_waiting_to_be_processed: Array[InvoiceObject] = []
+
+class InvoiceObject:
+	var task_id: int
+	var money_value: float
+	
+	func _init(id: int, value: float) -> void:
+		task_id = id
+		money_value = value
