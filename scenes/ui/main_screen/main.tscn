@@ -20,6 +20,7 @@ offset_bottom = 1079.0
 position = Vector2(224, 856)
 
 [node name="EventSpawner" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 autostart = true
 

@@ -5,7 +5,6 @@ var money: float = 0
 
 signal end_of_the_day
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$InfoPanel/MarginContainer/GridContainer/StressLabel/StressBar.value = 0
 	$InfoPanel/MarginContainer/GridContainer/QualityLabel/QualityBar.value = 50
@@ -33,6 +32,3 @@ func money_change(value):
 
 func _on_clock_end_of_the_day() -> void:
 	end_of_the_day.emit()
-
-func update_day_count(days: int) -> void:
-	$Clock.update_day_count(days)
