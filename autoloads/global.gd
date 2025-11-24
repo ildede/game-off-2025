@@ -38,7 +38,7 @@ func handle_client_send_task(_task: Task) -> void:
 	game_state.task_received += 1
 
 func handle_letter_hit_task(_letter: Letter, _task: Task) -> void:
-	print("[GLOBAL] handle_letter_hit_task")
+	#print("[GLOBAL] handle_letter_hit_task")
 	game_state.translated_words += game_config.words_per_letter
 
 func handle_task_finished(id: int, value: float) -> void:
@@ -88,13 +88,13 @@ func start_new_game() -> void:
 
 class Config:
 	var day_lenght_in_seconds: float = 60
-	var seconds_between_events: int = 5
-	var words_per_letter: int = 40
+	var seconds_between_events: int = 15
+	var words_per_letter: int = 50
 	var max_stress_level: float = 100
+	var words_per_day: int = 2500
 
 class State:
 	var current_day = 1
-	var words_per_day: int = 2500
 	var task_received: int = 0
 	var task_finished: int = 0
 	var translated_words: int = 0

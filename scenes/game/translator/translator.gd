@@ -6,6 +6,10 @@ class_name Translator
 var tasks: Array
 
 func _ready() -> void:
+	#Each fired letter reppresent a certain amount of words
+	var max_words_per_day = Global.game_config.words_per_day as float / Global.game_config.words_per_letter
+	$WPM.start(Global.game_config.day_lenght_in_seconds/max_words_per_day)
+	print("TEST", $WPM.wait_time)
 	Global.client_send_task.connect(new_task_arrived)
 	Global.letter_hit_task.connect(task_hit)
 
