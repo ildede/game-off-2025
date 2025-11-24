@@ -8,6 +8,7 @@ var path_to_translator: Path2D
 var translator: Node2D
 var daily_words: int = 0
 var payment_per_word: float = 0
+var deadline_in_days: int = 0
 
 func _ready() -> void:
 	$Timer.start(Global.game_config.day_lenght_in_seconds)
@@ -25,10 +26,11 @@ func initialize(my_position: Vector2, translator_position: Vector2, client_data:
 	$Name.text = client_data.get("name", "Cliente")
 	daily_words = client_data.get("daily_words", 1)
 	payment_per_word = client_data.get("payment_per_word", 0.01)
+	deadline_in_days = client_data.get("deadline_in_days", 0)
 	_on_timer_timeout()
 
 func _on_timer_timeout() -> void:
-	var task = task_scene.instantiate()
-	task.initialize(daily_words, payment_per_word)
+	var task: Task = task_scene.instantiate()
+	task.initialize(daily_words, payment_per_word, deadline_in_days)
 	path_to_translator.add_child(task)
 	Global.client_send_task.emit(task)

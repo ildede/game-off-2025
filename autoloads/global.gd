@@ -71,8 +71,8 @@ func start_new_game() -> void:
 	game_state = State.new()
 
 class Config:
-	var day_lenght_in_seconds: float = 60
-	var seconds_between_events: int = 20
+	var day_lenght_in_seconds: float = 30
+	var seconds_between_events: int = 10
 	var words_per_letter: int = 10
 	var max_stress_level: float = 100
 

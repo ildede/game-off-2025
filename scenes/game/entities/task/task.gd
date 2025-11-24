@@ -14,11 +14,13 @@ func _physics_process(delta: float) -> void:
 	self.progress_ratio = lerp(0, 1, running_time / total_time)
 	rotation = 0
 
-func initialize(daily_words: int, payment_per_word: float):
-	var actual_words = daily_words + randi_range(-50, 50)
+func initialize(daily_words: int, payment_per_word: float, deadline_in_days: int):
+	var variation = roundi(daily_words * 0.05)
+	var actual_words = daily_words + randi_range(-variation, +variation)
 	$ProgressBar.max_value = actual_words
 	$Label.text = str(actual_words)
 	money_value = actual_words * payment_per_word
+	total_time = Global.game_config.day_lenght_in_seconds * (deadline_in_days + 1)
 
 func update_progress(letter: Letter) -> bool:
 	$ProgressBar.value += letter.word_count
