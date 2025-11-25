@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://tv25g4qciafk"
-path="res://.godot/imported/TYPEWR__.TTF-cbddc4f8fba583e3111be53bee9d6252.fontdata"
+uid="uid://80pp3wkw1fj"
+path="res://.godot/imported/SpecialElite.ttf-b341d03b02c8ee7247d1a7baf04d6d0c.fontdata"
 
 [deps]
 
-source_file="res://scenes/ui/global_themes/fonts/TYPEWR__.TTF"
-dest_files=["res://.godot/imported/TYPEWR__.TTF-cbddc4f8fba583e3111be53bee9d6252.fontdata"]
+source_file="res://scenes/ui/global_themes/fonts/SpecialElite.ttf"
+dest_files=["res://.godot/imported/SpecialElite.ttf-b341d03b02c8ee7247d1a7baf04d6d0c.fontdata"]
 
 [params]
 

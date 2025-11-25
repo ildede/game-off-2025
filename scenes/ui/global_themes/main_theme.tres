@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://cym7llujgpfif"]
 
 [ext_resource type="Texture2D" uid="uid://bs86lbkmt0uju" path="res://scenes/ui/global_themes/assets/Rect.png" id="1_goo8p"]
-[ext_resource type="FontFile" uid="uid://tv25g4qciafk" path="res://scenes/ui/global_themes/fonts/TYPEWR__.TTF" id="2_3i2gq"]
+[ext_resource type="FontFile" uid="uid://80pp3wkw1fj" path="res://scenes/ui/global_themes/fonts/SpecialElite.ttf" id="2_goo8p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g8dqy"]
 texture = ExtResource("1_goo8p")
@@ -11,6 +11,6 @@ texture_margin_right = 57.0
 texture_margin_bottom = 57.0
 
 [resource]
-default_font = ExtResource("2_3i2gq")
+default_font = ExtResource("2_goo8p")
 default_font_size = 32
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_g8dqy")
