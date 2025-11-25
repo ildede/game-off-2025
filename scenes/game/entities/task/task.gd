@@ -4,6 +4,7 @@ class_name Task
 var money_value: float = 0
 var total_time = Global.game_config.day_lenght_in_seconds
 var running_time = 0
+var remaining_words = 1
 
 func _ready() -> void:
 	$ProgressBar.value = 0
@@ -17,6 +18,7 @@ func _physics_process(delta: float) -> void:
 func initialize(daily_words: int, payment_per_word: float, deadline_in_days: int):
 	var variation = roundi(daily_words * 0.05)
 	var actual_words = daily_words + randi_range(-variation, +variation)
+	remaining_words = actual_words
 	$ProgressBar.max_value = actual_words
 	$Label.text = str(actual_words)
 	money_value = actual_words * payment_per_word
@@ -24,6 +26,8 @@ func initialize(daily_words: int, payment_per_word: float, deadline_in_days: int
 
 func update_progress(letter: Letter) -> bool:
 	$ProgressBar.value += letter.word_count
+	remaining_words -= letter.word_count
+	$Label.text = str(remaining_words)
 	if $ProgressBar.max_value == $ProgressBar.value:
 		return true
 	else:
