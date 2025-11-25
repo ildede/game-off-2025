@@ -17,10 +17,10 @@ theme = ExtResource("2_q22wo")
 [node name="GridContainer" type="GridContainer" parent="Panel"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/GridContainer"]
+[node name="Label" type="RichTextLabel" parent="Panel/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 10
+size_flags_vertical = 3
 text = "BURNOUT!"
 horizontal_alignment = 1
 vertical_alignment = 1

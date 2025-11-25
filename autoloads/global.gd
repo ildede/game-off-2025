@@ -37,15 +37,20 @@ func handle_client_send_task(_task: Task) -> void:
 	print("[GLOBAL] handle_client_send_task")
 	game_state.task_received += 1
 
-func handle_letter_hit_task(_letter: Letter, _task: Task) -> void:
+func handle_letter_hit_task(letter: Letter, task: Task) -> void:
 	#print("[GLOBAL] handle_letter_hit_task")
-	game_state.translated_words += game_config.words_per_letter
+	if letter.word_count > task.remaining_words:
+		game_state.translated_words += task.remaining_words
+	else:
+		game_state.translated_words += letter.word_count
 
 func handle_task_finished(id: int, value: float) -> void:
 	print("[GLOBAL] handle_task_finished")
 	game_state.task_finished += 1
 	game_state.reputation += 0.2
 	game_state.stress -= 0.5
+	if (game_state.stress < 0):
+		game_state.stress = 0
 	ui_update.emit()
 
 func handle_update_reputation(value: float) -> void:
@@ -87,8 +92,8 @@ func start_new_game() -> void:
 	game_state = State.new()
 
 class Config:
-	var day_lenght_in_seconds: float = 60
-	var seconds_between_events: int = 15
+	var day_lenght_in_seconds: float = 30
+	var seconds_between_events: int = 10
 	var words_per_letter: int = 9
 	var max_stress_level: float = 100
 	var words_per_day: int = 2500

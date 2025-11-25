@@ -4,7 +4,7 @@
       "id": "client_1",
       "name": "Global News Network",
       "engagement_email": "We need daily translation of 500 words from our international news feed. Can you handle this recurring assignment? Deadline is 3 days",
-      "deadline_in_days": 3,
+      "deadline_in_days": 0,
       "daily_words": 500,
       "payment_per_word": 0.04
     },
@@ -12,7 +12,7 @@
       "id": "client_2",
       "name": "TechManual Inc.",
       "engagement_email": "Looking for a translator to handle 300 words daily of technical documentation. This is an ongoing daily requirement. By the end of the day after the assignment you should have finished",
-      "deadline_in_days": 1,
+      "deadline_in_days": 0,
       "daily_words": 300,
       "payment_per_word": 0.04
     },
@@ -28,7 +28,7 @@
       "id": "client_4",
       "name": "Academic Press",
       "engagement_email": "We need 350 words translated daily for our research publications. This is a steady daily commitment we can offer. The day after tomorrow is the deadline",
-      "deadline_in_days": 2,
+      "deadline_in_days": 0,
       "daily_words": 350,
       "payment_per_word": 0.04
     }
