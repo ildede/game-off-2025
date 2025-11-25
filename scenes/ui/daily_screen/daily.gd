@@ -8,9 +8,12 @@ func _ready() -> void:
 	$Panel/GridContainer/Label.bbcode_enabled = true
 	$Panel/GridContainer/Label.append_text("[b]Daily recap: {0}[/b]".format([Global.game_state.current_day]))
 	$Panel/GridContainer/Label.newline()
+	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("[i]Bank account: {0}[/i]".format([Global.game_state.money]))
 	$Panel/GridContainer/Label.newline()
+	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("Task waiting invoice: {0}".format([Global.game_state.tasks_waiting_to_be_processed.size()]))
+	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text(
 		"Until now you translated {word_count} words, during your work on {task_received} tasks (only {task_finished} completely finished)"
@@ -21,11 +24,15 @@ func _ready() -> void:
 		})
 	)
 	$Panel/GridContainer/Label.newline()
+	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("Your reputation: {0}".format([Global.game_state.reputation]))
+	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("Your stress level: {0}/{1}".format([Global.game_state.stress, Global.game_config.max_stress_level]))
 	$Panel/GridContainer/Label.newline()
+	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("The quality perceived: {0}".format([Global.game_state.quality]))
+	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("Now, your {0} clients are waiting, what do you want to do?".format([Global.game_state.clients.size()]))

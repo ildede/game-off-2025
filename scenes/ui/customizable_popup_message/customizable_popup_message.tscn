@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0f5kyiejiap"]
+
+[ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://scenes/ui/global_themes/main_theme.tres" id="1_d6q5l"]
+[ext_resource type="Script" uid="uid://blpq5wmw1xksb" path="res://scenes/ui/customizable_popup_message/customizable_popup_message.gd" id="2_mh3np"]
+
+[node name="CustomPopupMessage" type="Window"]
+process_mode = 3
+oversampling_override = 1.0
+title = "Your title"
+size = Vector2i(800, 500)
+always_on_top = true
+popup_window = true
+content_scale_aspect = 4
+theme = ExtResource("1_d6q5l")
+script = ExtResource("2_mh3np")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "You're custom text"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2

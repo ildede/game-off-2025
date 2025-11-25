@@ -36,6 +36,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="PayBills" type="Button" parent="Panel/GridContainer/GridContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6

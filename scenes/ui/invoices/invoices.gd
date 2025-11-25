@@ -30,10 +30,32 @@ func redraw_invoices() -> void:
 		count += 1
 
 func _on_single_invoice_clicked():
-	print("[Invoices] _on_single_invoice_clicked, collecting everything")
+	print("[INVOICES] _on_single_invoice_clicked, collecting everything")
+	get_tree().paused = true
 	var total = Global.game_state.tasks_waiting_to_be_processed.reduce(func(acc, element): return acc + element.money_value, 0)
-	Global.update_money.emit(total)
-	Global.game_state.tasks_waiting_to_be_processed.clear()
-	for child in child_added:
-		child.queue_free()
-	child_added.clear()
+
+	var popup_data = CustomizablePopupMessage.PopupData.new()
+	popup_data.title = "Collecting invoices"
+	var message_lines: Array[String] = [
+		"You have {0} invoce waiting".format([Global.game_state.tasks_waiting_to_be_processed.size()]),
+		"For a total of {0}$ to collect".format([total])
+	]
+	popup_data.lines = message_lines
+	var button = CustomizablePopupMessage.PopupButton.new()
+	button.text = "Send & Collect"
+	button.action = func():
+		Global.update_money.emit(total)
+		Global.game_state.tasks_waiting_to_be_processed.clear()
+		for child in child_added:
+			child.queue_free()
+		child_added.clear()
+		get_tree().paused = false
+
+	var btns: Array[CustomizablePopupMessage.PopupButton] = [button]
+	popup_data.buttons = btns
+	popup_data.on_close = func(): get_tree().paused = false
+	$CustomPopupMessage.show_popup(popup_data)
+
+
+
+	

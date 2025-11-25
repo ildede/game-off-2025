@@ -3,6 +3,7 @@ class_name Main
 
 @onready var popup_message: PopupMessage = $PopupMessage
 @onready var game_information: GameInformation = $GameInformation
+@onready var custom_popup_message: CustomizablePopupMessage = $CustomPopupMessage
 
 @onready var client_data: ClientData = preload("res://scenes/game/entities/client/client_data.gd").new()
 @onready var client_scene = preload("res://scenes/game/entities/client/client.tscn")
