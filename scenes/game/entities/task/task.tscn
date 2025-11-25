@@ -1,33 +1,58 @@
-[gd_scene load_steps=5 format=3 uid="uid://covv3g8q43ifu"]
+[gd_scene load_steps=9 format=3 uid="uid://covv3g8q43ifu"]
 
 [ext_resource type="Script" uid="uid://bdne0imwp85h2" path="res://scenes/game/entities/task/task.gd" id="1_rogos"]
-[ext_resource type="Texture2D" uid="uid://c3gws3sshfflo" path="res://scenes/game/entities/task/task.png" id="1_ti2eb"]
 [ext_resource type="Script" uid="uid://bskemnx3yc0dt" path="res://scenes/game/entities/task/character_body_2d.gd" id="2_42cdb"]
+[ext_resource type="Texture2D" uid="uid://dh2womicg0r0v" path="res://scenes/game/entities/task/assets/PNG_0001.png" id="3_6ui4q"]
+[ext_resource type="Texture2D" uid="uid://deavqkfuu5d0e" path="res://scenes/game/entities/task/assets/PNG_0002.png" id="4_071qo"]
+[ext_resource type="Texture2D" uid="uid://b30wf1lw0v44h" path="res://scenes/game/entities/task/assets/PNG_0003.png" id="5_ovt2p"]
+[ext_resource type="Texture2D" uid="uid://i6eko5gkxoe5" path="res://scenes/game/entities/task/assets/PNG_0004.png" id="6_1pfua"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cprfc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6ui4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_071qo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ovt2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1pfua")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukviy"]
-size = Vector2(1162, 1947)
+size = Vector2(298, 492)
 
 [node name="Task" type="PathFollow2D"]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_rogos")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("2_42cdb")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("1_ti2eb")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_cprfc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-6, 15.5)
+visible = false
+position = Vector2(1, -6)
 shape = SubResource("RectangleShape2D_ukviy")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 modulate = Color(0, 1, 0, 1)
+self_modulate = Color(1.5706233, 1.5706233, 1.5706233, 1)
 show_behind_parent = true
-offset_left = 580.0
-offset_top = -960.0
-offset_right = 780.0
-offset_bottom = 899.99976
+offset_left = 120.0
+offset_top = -240.0
+offset_right = 223.33333
+offset_bottom = 235.33334
 max_value = 20.0
 step = 1.0
 value = 15.0
@@ -40,17 +65,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -575.0
-offset_top = -207.5
-offset_right = 575.0
-offset_bottom = 207.5
+offset_left = -150.0
+offset_top = -75.0
+offset_right = 150.0
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 10
 theme_override_constants/shadow_offset_y = 5
-theme_override_font_sizes/font_size = 600
+theme_override_font_sizes/font_size = 150
 text = "999"
 horizontal_alignment = 1
 vertical_alignment = 1
