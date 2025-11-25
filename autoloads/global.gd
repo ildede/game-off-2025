@@ -89,7 +89,7 @@ func start_new_game() -> void:
 class Config:
 	var day_lenght_in_seconds: float = 60
 	var seconds_between_events: int = 15
-	var words_per_letter: int = 50
+	var words_per_letter: int = 10
 	var max_stress_level: float = 100
 	var words_per_day: int = 2500
 
