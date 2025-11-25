@@ -2,14 +2,13 @@ extends Area2D
 class_name Letter
 
 var speed = 200
-var possible_letters = ["A","B","C","D", "E", "F", "G", "H", "I" , "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Z"]
+var possible_letters = ["A","B","C","D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var target: PathFollow2D
 var target_id: int
 var word_count: int = 10
 
 func _ready() -> void:
-	var imported_resource = load("res://scenes/game/entities/letter/assets/{0}.png".format([possible_letters.pick_random()]))
-	$Sprite2D.texture = imported_resource
+	$Sprite2D.play(possible_letters.pick_random())
 	word_count = Global.game_config.words_per_letter
 
 func _physics_process(delta: float) -> void:
