@@ -15,7 +15,10 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	if tasks.size() != 0:
+		$Translator.play("typing")
 		fire()
+	else:
+		$Translator.stop()
 
 func new_task_arrived(item: PathFollow2D) -> void:
 	tasks.append(item)

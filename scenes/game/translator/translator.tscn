@@ -1,29 +1,59 @@
-[gd_scene load_steps=5 format=3 uid="uid://dibf4fgjie87y"]
+[gd_scene load_steps=10 format=3 uid="uid://dibf4fgjie87y"]
 
 [ext_resource type="Script" uid="uid://cbc0hxujnugk5" path="res://scenes/game/translator/translator.gd" id="1_ljyet"]
-[ext_resource type="Texture2D" uid="uid://dmlao86bajfj2" path="res://scenes/game/translator/assets/Translator.png" id="1_w51wl"]
 [ext_resource type="PackedScene" uid="uid://darjd76ufnyvc" path="res://scenes/game/entities/letter/letter.tscn" id="2_jqv1b"]
+[ext_resource type="Texture2D" uid="uid://drbp167khr7ib" path="res://scenes/game/translator/assets/PNG_0001.png" id="3_bupml"]
+[ext_resource type="Texture2D" uid="uid://dm7gik5a6jj5s" path="res://scenes/game/translator/assets/PNG_0002.png" id="4_vxd46"]
+[ext_resource type="Texture2D" uid="uid://cg0d84etycm8t" path="res://scenes/game/translator/assets/PNG_0003.png" id="5_0b6hu"]
+[ext_resource type="Texture2D" uid="uid://c3f6yalt2bp2r" path="res://scenes/game/translator/assets/PNG_0004.png" id="6_585bd"]
+[ext_resource type="Texture2D" uid="uid://d060mkq5malbq" path="res://scenes/game/translator/assets/PNG_0005.png" id="7_vbttx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ljyet"]
 radius = 550.02277
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcpsr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bupml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vxd46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0b6hu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_585bd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vbttx")
+}],
+"loop": true,
+"name": &"typing",
+"speed": 10.0
+}]
 
 [node name="Translator" type="Node2D"]
 script = ExtResource("1_ljyet")
 letters = ExtResource("2_jqv1b")
 
-[node name="Translator" type="Sprite2D" parent="."]
+[node name="StaticBody2D" type="Area2D" parent="."]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_w51wl")
 
-[node name="StaticBody2D" type="Area2D" parent="Translator"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Translator/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CircleShape2D_ljyet")
+
+[node name="Translator" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_pcpsr")
+animation = &"typing"
+frame_progress = 0.2422564
 
 [node name="WPM" type="Timer" parent="."]
 wait_time = 0.24
 autostart = true
 
-[connection signal="body_entered" from="Translator/StaticBody2D" to="." method="_on_static_body_2d_body_entered"]
+[connection signal="body_entered" from="StaticBody2D" to="." method="_on_static_body_2d_body_entered"]
 [connection signal="timeout" from="WPM" to="." method="_on_timer_timeout"]
