@@ -25,7 +25,7 @@ func new_email_from_client() -> void:
 
 func add_new_client(client_info: Dictionary) -> void:
 	print("[MAIN] add_new_client")
-	var client: Client = client_scene.instantiate()
+	var client: ClientScene = client_scene.instantiate()
 	var screen = get_visible_screen()
 	var client_position = Vector2(randi_range(700, screen[0]-110), randi_range(140, screen[1]-160))
 	var translator_position = $Translator.global_position

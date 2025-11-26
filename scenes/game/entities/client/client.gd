@@ -1,5 +1,5 @@
 extends Node2D
-class_name Client
+class_name ClientScene
 
 const task_scene = preload("res://scenes/game/entities/task/task.tscn")
 
