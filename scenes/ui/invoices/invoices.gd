@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func add_invoice(id: int, value: float):
 	print("[INVOICES] add_invoice")
-	var created = Global.InvoiceObject.new(id, value)
+	var created = Models.InvoiceObject.new(id, value)
 	var new_invoice = invoice.instantiate()
 	new_invoice.position = self.global_position + Vector2(randi_range(-50,50), -(Global.game_state.tasks_waiting_to_be_processed.size()*100))
 	Global.game_state.tasks_waiting_to_be_processed.append(created)
@@ -55,7 +55,3 @@ func _on_single_invoice_clicked():
 	popup_data.buttons = btns
 	popup_data.on_close = func(): get_tree().paused = false
 	$CustomPopupMessage.show_popup(popup_data)
-
-
-
-	

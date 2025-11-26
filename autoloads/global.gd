@@ -13,7 +13,7 @@ signal update_day_count(value: int)
 signal game_over
 signal ui_update
 
-@onready var game_state: State = State.new()
+@onready var game_state: Models.State = Models.State.new()
 @onready var game_config: Config = Config.new()
 
 func _ready() -> void:
@@ -44,7 +44,7 @@ func handle_letter_hit_task(letter: Letter, task: Task) -> void:
 	else:
 		game_state.translated_words += letter.word_count
 
-func handle_task_finished(id: int, value: float) -> void:
+func handle_task_finished(_id: int, _value: float) -> void:
 	print("[GLOBAL] handle_task_finished")
 	game_state.task_finished += 1
 	game_state.reputation += 0.2
@@ -89,32 +89,4 @@ func handle_game_over() -> void:
 			print("game_state.", prop.name)
 
 func start_new_game() -> void:
-	game_state = State.new()
-
-class Config:
-	var day_lenght_in_seconds: float = 60
-	var seconds_between_events: int = 20
-	var words_per_letter: int = 11
-	var max_stress_level: float = 100
-	var words_per_day: int = 2500
-
-class State:
-	var current_day = 1
-	var task_received: int = 0
-	var task_finished: int = 0
-	var translated_words: int = 0
-
-	var reputation: float = 0
-	var quality: float = 50
-	var stress: float = 0
-	var clients: Array[Dictionary] = []
-	var money: float = 0
-	var tasks_waiting_to_be_processed: Array[InvoiceObject] = []
-
-class InvoiceObject:
-	var task_id: int
-	var money_value: float
-	
-	func _init(id: int, value: float) -> void:
-		task_id = id
-		money_value = value
+	game_state = Models.State.new()
