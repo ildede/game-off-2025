@@ -33,23 +33,6 @@ func get_visible_screen() -> Vector2:
 	print("[MAIN] get_visible_screen")
 	return get_viewport().get_visible_rect().size
 
-#func handle_accepted_client(client_info: Dictionary) -> void:
-	#print("[MAIN] handle_accepted_client")
-	#Global.update_reputation.emit(1)
-	#Global.new_client_accepted.emit(client_info)
-	#add_new_client(client_info)
-	#handle_closing_popup()
-
-#func handle_refused_client() -> void:
-	#print("[MAIN] handle_refused_client")
-	#handle_closing_popup()
-
-#func handle_closing_popup() -> void:
-	#print("[MAIN] handle_closing_popup")
-	#$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
-	#$PopupMessage.hide()
-	#get_tree().paused = false
-
 func handle_end_of_the_day() -> void:
 	print("[MAIN] handle_end_of_the_day")
 	get_tree().paused = true
