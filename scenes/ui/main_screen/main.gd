@@ -1,16 +1,12 @@
 extends Node2D
 class_name Main
 
-@onready var popup_message: PopupMessage = $PopupMessage
 @onready var game_information: GameInformation = $GameInformation
 
 @onready var client_scene = preload("res://scenes/game/entities/client/client.tscn")
 
 func _ready() -> void:
 	print("[MAIN] _ready")
-	popup_message.new_client_accepted.connect(handle_accepted_client)
-	popup_message.new_client_refused.connect(handle_refused_client)
-	popup_message.popup_closed.connect(handle_closing_popup)
 	game_information.end_of_the_day.connect(handle_end_of_the_day)
 	Global.game_over.connect(handle_game_over)
 	for client_info in Global.game_state.clients:
@@ -20,10 +16,11 @@ func _ready() -> void:
 func new_email_from_client() -> void:
 	print("[MAIN] new_email_from_client")
 	var client_info = ClientData.get_random_client()
+	print("client_info", client_info)
 	get_tree().paused = true
-	popup_message.show_popup(client_info)
+	open_popup_message_for_new_client(client_info)
 
-func add_new_client(client_info: Dictionary) -> void:
+func add_new_client(client_info: Models.ClientObject) -> void:
 	print("[MAIN] add_new_client")
 	var client: ClientScene = client_scene.instantiate()
 	var screen = get_visible_screen()
@@ -36,22 +33,22 @@ func get_visible_screen() -> Vector2:
 	print("[MAIN] get_visible_screen")
 	return get_viewport().get_visible_rect().size
 
-func handle_accepted_client(client_info: Dictionary) -> void:
-	print("[MAIN] handle_accepted_client")
-	Global.update_reputation.emit(1)
-	Global.new_client_accepted.emit(client_info)
-	add_new_client(client_info)
-	handle_closing_popup()
+#func handle_accepted_client(client_info: Dictionary) -> void:
+	#print("[MAIN] handle_accepted_client")
+	#Global.update_reputation.emit(1)
+	#Global.new_client_accepted.emit(client_info)
+	#add_new_client(client_info)
+	#handle_closing_popup()
 
-func handle_refused_client() -> void:
-	print("[MAIN] handle_refused_client")
-	handle_closing_popup()
+#func handle_refused_client() -> void:
+	#print("[MAIN] handle_refused_client")
+	#handle_closing_popup()
 
-func handle_closing_popup() -> void:
-	print("[MAIN] handle_closing_popup")
-	$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
-	$PopupMessage.hide()
-	get_tree().paused = false
+#func handle_closing_popup() -> void:
+	#print("[MAIN] handle_closing_popup")
+	#$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+	#$PopupMessage.hide()
+	#get_tree().paused = false
 
 func handle_end_of_the_day() -> void:
 	print("[MAIN] handle_end_of_the_day")
@@ -61,3 +58,36 @@ func handle_end_of_the_day() -> void:
 func handle_game_over() -> void:
 	print("[MAIN] handle_game_over")
 	SceneTransition.fade_to_end()
+
+func open_popup_message_for_new_client(client: Models.ClientObject) -> void:
+	var popup_data = CustomizablePopupMessage.PopupData.new()
+	popup_data.title = "New email"
+	var message_lines: Array[String] = [client.engagement_email]
+	popup_data.lines = message_lines
+
+	var accept_btn = CustomizablePopupMessage.PopupButton.new()
+	accept_btn.text = "Accept"
+	accept_btn.action = func():
+		print("client accpted")
+		Global.update_reputation.emit(1)
+		Global.new_client_accepted.emit(client)
+		add_new_client(client)
+		$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+		get_tree().paused = false
+
+	var refuse_btn = CustomizablePopupMessage.PopupButton.new()
+	refuse_btn.text = "Refuse"
+	refuse_btn.action = func():
+		print("client refused")
+		$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+		get_tree().paused = false
+
+	var btns: Array[CustomizablePopupMessage.PopupButton] = [accept_btn, refuse_btn]
+	popup_data.buttons = btns
+
+	popup_data.on_close = func():
+		print("popup closed")
+		$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+		get_tree().paused = false
+
+	$CustomPopupMessage.show_popup(popup_data)

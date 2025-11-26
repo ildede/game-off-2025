@@ -1,6 +1,6 @@
 extends Node
 
-signal new_client_accepted(client_info: Dictionary)
+signal new_client_accepted(client_info: Models.ClientObject)
 signal client_send_task(task: Task)
 signal letter_hit_task(letter: Letter, task: Task)
 signal task_finished(id: int, value: float)
@@ -28,9 +28,9 @@ func _ready() -> void:
 	update_day_count.connect(handle_update_day_count)
 	game_over.connect(handle_game_over)
 
-func handle_new_client_accepted(client_info: Dictionary) -> void:
+func handle_new_client_accepted(client: Models.ClientObject) -> void:
 	print("[GLOBAL] handle_new_client_accepted")
-	game_state.clients.append(client_info)
+	game_state.clients.append(client)
 
 func handle_client_send_task(_task: Task) -> void:
 	print("[GLOBAL] handle_client_send_task")

@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b1mqk1kknrr1k" path="res://scenes/ui/main_screen/main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c7gpddms8dggn" path="res://scenes/ui/game_information/game_information.tscn" id="2_iu1df"]
 [ext_resource type="PackedScene" uid="uid://dibf4fgjie87y" path="res://scenes/game/translator/translator.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://cgypytgu10ukf" path="res://scenes/ui/popup_message/popup_message.tscn" id="4_iu1df"]
 [ext_resource type="PackedScene" uid="uid://b3cihatsnroda" path="res://scenes/ui/invoices/invoices.tscn" id="5_i25ov"]
+[ext_resource type="PackedScene" uid="uid://b0f5kyiejiap" path="res://scenes/ui/customizable_popup_message/customizable_popup_message.tscn" id="6_5kqqw"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ig7tw")
@@ -25,9 +25,10 @@ wait_time = 0.5
 one_shot = true
 autostart = true
 
-[node name="PopupMessage" parent="." instance=ExtResource("4_iu1df")]
-
 [node name="Invoices" parent="." instance=ExtResource("5_i25ov")]
 position = Vector2(80, 950)
+
+[node name="CustomPopupMessage" parent="." instance=ExtResource("6_5kqqw")]
+visible = false
 
 [connection signal="timeout" from="EventSpawner" to="." method="new_email_from_client"]
