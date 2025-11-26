@@ -556,7 +556,7 @@ radius = 94.99999
 height = 249.99997
 
 [node name="Letter" type="Area2D"]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_i1cnd")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
