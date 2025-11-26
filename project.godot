@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://autoloads/global.gd"
 SceneTransition="*res://scenes/system/scene_transition.tscn"
+ClientData="*res://autoloads/client_data.gd"
 
 [display]
 

@@ -1,5 +1,4 @@
 extends Node
-class_name ClientData
 
 var clients_data: Array
 
@@ -20,15 +19,18 @@ func load_clients_data():
 		push_error("Failed to load clients.json")
 
 func get_random_client() -> Dictionary:
-	if clients_data.is_empty():
-		return create_fallback_client()
-
-	return clients_data[randi() % clients_data.size()]
+	return create_fallback_client()
+	#if clients_data.is_empty():
+		#return create_fallback_client()
+#
+	#return clients_data[randi() % clients_data.size()]
 
 func create_fallback_client() -> Dictionary:
 	return {
-		"name": "Cliente Default",
-		"task_interval": 4.0,
-		"payment": 60,
-		"engagement_email": "Traduzione necessaria."
+		"id": "client_2",
+		"name": "TechManual Inc.",
+		"engagement_email": "Looking for a translator to handle 300 words daily of technical documentation. This is an ongoing daily requirement. By the end of the day after the assignment you should have finished",
+		"deadline_in_days": 0,
+		"daily_words": 300,
+		"payment_per_word": 0.04
 	}

@@ -5,7 +5,6 @@ class_name Main
 @onready var game_information: GameInformation = $GameInformation
 @onready var custom_popup_message: CustomizablePopupMessage = $CustomPopupMessage
 
-@onready var client_data: ClientData = preload("res://scenes/game/entities/client/client_data.gd").new()
 @onready var client_scene = preload("res://scenes/game/entities/client/client.tscn")
 
 func _ready() -> void:
@@ -15,14 +14,13 @@ func _ready() -> void:
 	popup_message.popup_closed.connect(handle_closing_popup)
 	game_information.end_of_the_day.connect(handle_end_of_the_day)
 	Global.game_over.connect(handle_game_over)
-	add_child(client_data)
 	for client_info in Global.game_state.clients:
 		add_new_client(client_info)
 	get_tree().paused = false
 
 func new_email_from_client() -> void:
 	print("[MAIN] new_email_from_client")
-	var client_info = client_data.get_random_client()
+	var client_info = ClientData.get_random_client()
 	get_tree().paused = true
 	popup_message.show_popup(client_info)
 
