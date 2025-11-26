@@ -14,7 +14,6 @@ signal game_over
 signal ui_update
 
 @onready var game_state: Models.State = Models.State.new()
-@onready var game_config: Config = Config.new()
 
 func _ready() -> void:
 	print("[GLOBAL] _ready")
@@ -63,7 +62,7 @@ func handle_update_stress(value: float) -> void:
 	game_state.stress += value
 	ui_update.emit()
 
-	if game_state.stress >= game_config.max_stress_level:
+	if game_state.stress >= Config.MAX_STRESS_LEVEL:
 		game_over.emit()
 
 func handle_update_quality(value: float) -> void:

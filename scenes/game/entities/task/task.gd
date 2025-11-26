@@ -2,7 +2,7 @@ extends PathFollow2D
 class_name Task
 
 var money_value: float = 0
-var total_time = Global.game_config.day_lenght_in_seconds
+var total_time = Config.DAY_LENGHT_IN_SECONDS
 var running_time = 0
 var remaining_words = 1
 
@@ -22,7 +22,7 @@ func initialize(daily_words: int, payment_per_word: float, deadline_in_days: int
 	$ProgressBar.max_value = actual_words
 	$Label.text = str(actual_words)
 	money_value = actual_words * payment_per_word
-	total_time = Global.game_config.day_lenght_in_seconds * (deadline_in_days + 1)
+	total_time = Config.DAY_LENGHT_IN_SECONDS * (deadline_in_days + 1)
 
 func update_progress(letter: Letter) -> bool:
 	$ProgressBar.value += letter.word_count

@@ -9,7 +9,7 @@ var word_count: int = 10
 
 func _ready() -> void:
 	$Sprite2D.play(possible_letters.pick_random())
-	word_count = Global.game_config.words_per_letter
+	word_count = Config.WORDS_PER_LETTER
 
 func _physics_process(delta: float) -> void:
 	if is_instance_valid(target):

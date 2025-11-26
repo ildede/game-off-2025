@@ -7,9 +7,8 @@ var tasks: Array
 
 func _ready() -> void:
 	#Each fired letter reppresent a certain amount of words
-	var max_words_per_day = Global.game_config.words_per_day as float / Global.game_config.words_per_letter
-	$WPM.start(Global.game_config.day_lenght_in_seconds/max_words_per_day)
-	print("TEST", $WPM.wait_time)
+	var max_words_per_day = Config.WORDS_PER_DAY as float / Config.WORDS_PER_LETTER
+	$WPM.start(Config.DAY_LENGHT_IN_SECONDS/max_words_per_day)
 	Global.client_send_task.connect(new_task_arrived)
 	Global.letter_hit_task.connect(task_hit)
 

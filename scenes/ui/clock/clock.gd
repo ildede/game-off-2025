@@ -8,7 +8,7 @@ signal end_of_the_day
 
 func _ready() -> void:
 	print("[CLOCK] _ready")
-	timer.start(Global.game_config.day_lenght_in_seconds)
+	timer.start(Config.DAY_LENGHT_IN_SECONDS)
 	progress.value = 0
 	progress.max_value = timer.wait_time
 	$DayCount.text = str(Global.game_state.current_day)

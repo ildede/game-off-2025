@@ -52,7 +52,7 @@ func handle_refused_client() -> void:
 
 func handle_closing_popup() -> void:
 	print("[MAIN] handle_closing_popup")
-	$EventSpawner.start(Global.game_config.seconds_between_events)
+	$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
 	$PopupMessage.hide()
 	get_tree().paused = false
 

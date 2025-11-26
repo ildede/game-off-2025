@@ -23,7 +23,7 @@ func _ready() -> void:
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("Your reputation: {0}".format([Global.game_state.reputation]))
 	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("Your stress level: {0}/{1}".format([Global.game_state.stress, Global.game_config.max_stress_level]))
+	$Panel/GridContainer/Label.append_text("Your stress level: {0}/{1}".format([Global.game_state.stress, Config.MAX_STRESS_LEVEL]))
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("The quality perceived: {0}".format([Global.game_state.quality]))
 	$Panel/GridContainer/Label.newline()

@@ -11,7 +11,7 @@ var payment_per_word: float = 0
 var deadline_in_days: int = 0
 
 func _ready() -> void:
-	$Timer.start(Global.game_config.day_lenght_in_seconds)
+	$Timer.start(Config.DAY_LENGHT_IN_SECONDS)
 
 func initialize(my_position: Vector2, translator_position: Vector2, client_data: Dictionary):
 	self.position = my_position
