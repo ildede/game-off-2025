@@ -1,21 +1,14 @@
 extends Control
 class_name Clock
 
-@onready var timer = $Timer
 @onready var progress = $TextureProgressBar
-
-signal end_of_the_day
 
 func _ready() -> void:
 	print("[CLOCK] _ready")
-	timer.start(Config.DAY_LENGHT_IN_SECONDS)
 	progress.value = 0
-	progress.max_value = timer.wait_time
+	progress.max_value = Config.DAY_LENGHT_IN_SECONDS
 	$DayCount.text = str(Global.game_state.current_day)
 
 func _process(_delta: float) -> void:
-	progress.value = timer.time_left
-
-func _on_timer_timeout() -> void:
-	end_of_the_day.emit()
-	$DayCount.text = str(Global.game_state.current_day)
+	if Global.game_clock is Timer:
+		progress.value = Global.game_clock.time_left

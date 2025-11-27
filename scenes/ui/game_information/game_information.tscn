@@ -150,5 +150,3 @@ size_flags_vertical = 3
 text = "$"
 horizontal_alignment = 2
 vertical_alignment = 1
-
-[connection signal="end_of_the_day" from="Clock" to="." method="_on_clock_end_of_the_day"]

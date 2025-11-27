@@ -20,15 +20,18 @@ offset_bottom = 1079.0
 [node name="Translator" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(336, 858)
 
-[node name="EventSpawner" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
-autostart = true
-
 [node name="Invoices" parent="." instance=ExtResource("5_i25ov")]
 position = Vector2(80, 950)
 
 [node name="CustomPopupMessage" parent="." instance=ExtResource("6_5kqqw")]
 visible = false
 
+[node name="EventSpawner" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="GameClock" type="Timer" parent="."]
+
+[node name="TaskSpawner" type="Timer" parent="."]
+
 [connection signal="timeout" from="EventSpawner" to="." method="new_email_from_client"]
+[connection signal="timeout" from="TaskSpawner" to="." method="_spawn_pending_tasks"]

@@ -14,6 +14,7 @@ signal game_over
 signal ui_update
 
 @onready var game_state: Models.State = Models.State.new()
+var game_clock: Timer
 
 func _ready() -> void:
 	print("[GLOBAL] _ready")
@@ -27,6 +28,9 @@ func _ready() -> void:
 	update_money.connect(handle_update_money)
 	update_day_count.connect(handle_update_day_count)
 	game_over.connect(handle_game_over)
+
+func set_clock(timer: Timer):
+	game_clock = timer
 
 func handle_new_client_accepted(client: Models.ClientObject) -> void:
 	print("[GLOBAL] handle_new_client_accepted")

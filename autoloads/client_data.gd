@@ -23,9 +23,7 @@ func get_random_client() -> Models.ClientObject:
 	if clients_data.is_empty():
 		return create_fallback_client()
 
-	var dict = clients_data[randi() % clients_data.size()]
-	print(dict)
-	return dict
+	return clients_data[randi() % clients_data.size()]
 
 func create_fallback_client() -> Models.ClientObject:
 	var fallback_client = Models.ClientObject.new()
