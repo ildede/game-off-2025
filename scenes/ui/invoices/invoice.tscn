@@ -17,5 +17,3 @@ skew = 0.8726646
 
 [node name="CollisionShape" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-608.7213, 1026.7777, -605.6105, -675.18414, -375.01886, -973.8831, 599.4059, -983.2174, 583.6498, 886.7626)
-
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

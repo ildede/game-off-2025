@@ -32,6 +32,8 @@ size = Vector2(298, 492)
 
 [node name="Task" type="PathFollow2D"]
 scale = Vector2(0.3, 0.3)
+rotates = false
+loop = false
 script = ExtResource("1_rogos")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -55,7 +57,6 @@ offset_right = 223.33333
 offset_bottom = 235.33334
 max_value = 20.0
 step = 1.0
-value = 15.0
 fill_mode = 3
 show_percentage = false
 

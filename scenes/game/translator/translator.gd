@@ -3,7 +3,7 @@ class_name Translator
 
 @export var letters: PackedScene
 
-var tasks: Array
+var tasks: Array[Task]
 
 func _ready() -> void:
 	#Each fired letter reppresent a certain amount of words
@@ -19,7 +19,7 @@ func _on_timer_timeout() -> void:
 	else:
 		$Translator.stop()
 
-func new_task_arrived(item: PathFollow2D) -> void:
+func new_task_arrived(item: Task) -> void:
 	tasks.append(item)
 
 func fire() -> void:
@@ -38,7 +38,7 @@ func task_hit(letter: Letter, task: Task) -> void:
 		var is_finished = tasks[found_index].update_progress(letter)
 		if is_finished:
 			var task_found = tasks.pop_at(found_index)
-			Global.task_finished.emit(task_found.get_task_id(), task_found.money_value)
+			Global.task_finished.emit(task_found.get_task_id())
 			task_found.queue_free()
 		letter.queue_free()
 

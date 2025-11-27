@@ -3,11 +3,15 @@ extends RefCounted
 
 class InvoiceObject:
 	var task_id: int
+	var client_id: int
 	var money_value: float
+	var payment_terms: String
 
-	func _init(id: int, value: float) -> void:
-		task_id = id
-		money_value = value
+	func _init(ongoing_task: OngoingTask, client: Models.ClientObject) -> void:
+		task_id = ongoing_task.task_id
+		client_id = ongoing_task.client_id
+		money_value = ongoing_task.total_words * client.payment_per_word
+		payment_terms = client.payment_terms
 
 class State:
 	var current_day = 1
@@ -21,12 +25,14 @@ class State:
 	var clients: Array[ClientObject] = []
 	var money: float = 0
 	var tasks_waiting_to_be_processed: Array[InvoiceObject] = []
+	var ongoing_task: Array[Models.OngoingTask] = []
 
 class ClientObject:
 	var id: int
 	var name: String
 	var engagement_email: String
 	var payment_per_word: float
+	var payment_terms: String
 	var client_reliability: float
 
 	var public_reputation: PublicReputationObject
@@ -34,6 +40,17 @@ class ClientObject:
 
 	var recurring_tasks: Array[RecurringTaskObject]
 	var extemporaneous_tasks: Array[ExtemporaneousTaskObject]
+
+	func get_task_to_spawn(day: int) -> TaskObject:
+		for task in recurring_tasks:
+			if day % task.frequency_days == 0 and task.last_spawn != day:
+				task.last_spawn = day
+				return task
+		for task in extemporaneous_tasks:
+			if (task.last_spawn == 0 or task.last_spawn + task.deadline_days < day) and task.spawn_probability > randf():
+				task.last_spawn = day
+				return task
+		return null
 
 class PublicReputationObject:
 	var on_accept: float
@@ -48,11 +65,11 @@ class LoyaltyMeterObject:
 class TaskObject:
 	var words: int
 	var deadline_days: int
-	var payment_terms: String
 	var reputation_on_success: float
 	var reputation_on_failure: float
 	var loyalty_on_success: float
 	var loyalty_on_failure: float
+	var last_spawn: int = 0
 
 class RecurringTaskObject:
 	extends TaskObject
@@ -60,4 +77,33 @@ class RecurringTaskObject:
 
 class ExtemporaneousTaskObject:
 	extends TaskObject
-	var spawn_probability: int
+	var spawn_probability: float
+
+class OngoingTask:
+	var task_id: int
+	var client_id: int
+
+	var total_words: int
+	var remaining_words: int
+	var assigned_on: int
+	var deadline_days: int
+
+	var reputation_on_success: float
+	var reputation_on_failure: float
+	var loyalty_on_success: float
+	var loyalty_on_failure: float
+
+	func _init(cl_id: int, task: TaskObject):
+		task_id = randi()
+		client_id = cl_id
+
+		var variation = roundi(task.words * 0.05)
+		var actual_words = task.words + randi_range(-variation, +variation)
+		total_words = actual_words
+		remaining_words = actual_words
+		assigned_on = Global.game_state.current_day
+		deadline_days = task.deadline_days
+		reputation_on_success = task.reputation_on_success
+		reputation_on_failure = task.reputation_on_failure
+		loyalty_on_success = task.loyalty_on_success
+		loyalty_on_failure = task.loyalty_on_failure

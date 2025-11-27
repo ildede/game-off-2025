@@ -14,6 +14,7 @@ signal game_over
 signal ui_update
 
 @onready var game_state: Models.State = Models.State.new()
+
 var game_clock: Timer
 
 func _ready() -> void:
@@ -47,13 +48,9 @@ func handle_letter_hit_task(letter: Letter, task: Task) -> void:
 	else:
 		game_state.translated_words += letter.word_count
 
-func handle_task_finished(_id: int, _value: float) -> void:
+func handle_task_finished(_id: int) -> void:
 	print("[GLOBAL] handle_task_finished")
 	game_state.task_finished += 1
-	game_state.reputation += 0.2
-	game_state.stress -= 0.5
-	if (game_state.stress < 0):
-		game_state.stress = 0
 	ui_update.emit()
 
 func handle_update_reputation(value: float) -> void:

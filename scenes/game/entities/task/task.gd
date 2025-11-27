@@ -1,28 +1,27 @@
 extends PathFollow2D
 class_name Task
 
-var money_value: float = 0
 var total_time = Config.DAY_LENGHT_IN_SECONDS
 var running_time = 0
 var remaining_words = 1
 
 func _ready() -> void:
-	$ProgressBar.value = 0
+	set_progress_ratio(lerp(0, 1, running_time / total_time))
 
 func _physics_process(delta: float) -> void:
 	running_time += delta
-	if running_time >= total_time: running_time = 0
-	self.progress_ratio = lerp(0, 1, running_time / total_time)
+	set_progress_ratio(lerp(0, 1, running_time / total_time))
 	rotation = 0
 
-func initialize(daily_words: int, payment_per_word: float, deadline_in_days: int):
-	var variation = roundi(daily_words * 0.05)
-	var actual_words = daily_words + randi_range(-variation, +variation)
-	remaining_words = actual_words
-	$ProgressBar.max_value = actual_words
-	$Label.text = str(actual_words)
-	money_value = actual_words * payment_per_word
-	total_time = Config.DAY_LENGHT_IN_SECONDS * (deadline_in_days + 1)
+func initialize(task_info: Models.OngoingTask):
+	get_node("CharacterBody2D").task_id = task_info.task_id
+	remaining_words = task_info.remaining_words
+	$ProgressBar.max_value = task_info.total_words
+	$ProgressBar.value = task_info.total_words - task_info.remaining_words
+	$Label.text = str(task_info.remaining_words)
+	total_time = Config.DAY_LENGHT_IN_SECONDS * (task_info.deadline_days)
+	running_time = Config.DAY_LENGHT_IN_SECONDS * (Global.game_state.current_day - task_info.assigned_on)
+
 
 func update_progress(letter: Letter) -> bool:
 	$ProgressBar.value += letter.word_count

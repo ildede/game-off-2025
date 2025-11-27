@@ -31,6 +31,7 @@ func create_fallback_client() -> Models.ClientObject:
 	fallback_client.name = "TechManual Inc."
 	fallback_client.engagement_email = "Looking for ..."
 	fallback_client.payment_per_word = 0.04
+	fallback_client.payment_terms = "IMMEDIATE"
 	fallback_client.client_reliability = 1
 
 	var pb_rep = Models.PublicReputationObject.new()
@@ -50,7 +51,6 @@ func create_fallback_client() -> Models.ClientObject:
 	task.frequency_days = 1
 	task.words = 200
 	task.deadline_days = 1
-	task.payment_terms = "NET7"
 	task.on_task_success = 10.0
 	task.on_task_failure = -10.0
 	rcr_tsk.append(task)
@@ -66,6 +66,7 @@ func dictionary_to_class(obj_in: Dictionary) -> Models.ClientObject:
 	client.name = obj_in.get("name")
 	client.engagement_email = obj_in.get("engagement_email")
 	client.payment_per_word = obj_in.get("payment_per_word")
+	client.payment_terms = obj_in.get("payment_terms")
 	client.client_reliability = obj_in.get("client_reliability", 1)
 
 	var rcr_tsk: Array[Models.RecurringTaskObject] = []
@@ -74,7 +75,6 @@ func dictionary_to_class(obj_in: Dictionary) -> Models.ClientObject:
 		task.frequency_days = task_in.get("frequency_days")
 		task.words = task_in.get("words")
 		task.deadline_days = task_in.get("deadline_days")
-		task.payment_terms = task_in.get("payment_terms")
 		task.reputation_on_success = task_in.get("reputation_on_success", 0)
 		task.reputation_on_failure = task_in.get("reputation_on_failure", 0)
 		task.loyalty_on_success = task_in.get("loyalty_on_success", 0)
@@ -88,7 +88,6 @@ func dictionary_to_class(obj_in: Dictionary) -> Models.ClientObject:
 		task.spawn_probability = task_in.get("spawn_probability")
 		task.words = task_in.get("words")
 		task.deadline_days = task_in.get("deadline_days")
-		task.payment_terms = task_in.get("payment_terms")
 		task.reputation_on_success = task_in.get("reputation_on_success", 0)
 		task.reputation_on_failure = task_in.get("reputation_on_failure", 0)
 		task.loyalty_on_success = task_in.get("loyalty_on_success", 0)

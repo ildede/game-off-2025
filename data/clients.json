@@ -5,13 +5,13 @@
       "name": "Global News Network",
       "engagement_email": "Lots of bla bla",
       "payment_per_word": 0.05,
+      "payment_terms": "NET7",
       "client_reliability": 0.95,
       "recurring_tasks": [
         {
           "words": 200,
           "frequency_days": 1,
           "deadline_days": 1,
-          "payment_terms": "NET7",
           "reputation_on_success": 0.5,
           "reputation_on_failure": -3.0,
           "loyalty_on_success": 0.5,
@@ -21,7 +21,6 @@
           "words": 5000,
           "frequency_days": 7,
           "deadline_days": 7,
-          "payment_terms": "NET7",
           "reputation_on_success": 0.5,
           "reputation_on_failure": -3.0,
           "loyalty_on_success": 0.5,
@@ -31,9 +30,8 @@
       "extemporaneous_tasks": [
         {
           "words": 20000,
-          "spawn_probability": 0.3,
+          "spawn_probability": 0.9,
           "deadline_days": 15,
-          "payment_terms": "NET30",
           "reputation_on_success": 0.5,
           "reputation_on_failure": -3.0,
           "loyalty_on_success": 0.5,
@@ -56,13 +54,13 @@
       "name": "Tiger Prime",
       "engagement_email": "Bla ble bli blo blu",
       "payment_per_word": 0.05,
+      "payment_terms": "IMMEDIATE",
       "client_reliability": 0.95,
       "recurring_tasks": [
         {
           "words": 500,
           "frequency_days": 1,
           "deadline_days": 1,
-          "payment_terms": "IMMEDIATE",
           "reputation_on_success": 0.5,
           "reputation_on_failure": -3.0,
           "loyalty_on_success": 0.5,
