@@ -32,6 +32,3 @@ wait_time = 0.5
 [node name="GameClock" type="Timer" parent="."]
 
 [node name="TaskSpawner" type="Timer" parent="."]
-
-[connection signal="timeout" from="EventSpawner" to="." method="new_email_from_client"]
-[connection signal="timeout" from="TaskSpawner" to="." method="_spawn_pending_tasks"]
