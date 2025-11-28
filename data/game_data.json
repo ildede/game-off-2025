@@ -105,5 +105,25 @@
         "breakup_point": -10.0
       }
     }
+  ],
+  "bills": [
+    {
+      "id": "internet",
+      "name": "Internet Connection",
+      "amount": 10.0,
+      "payment_type": "automatic",
+      "due_day": 1,
+      "recurring": "monthly"
+    },
+    {
+      "id": "rent",
+      "name": "Your Rent",
+      "amount": 500.0,
+      "payment_type": "manual",
+      "due_day": 25,
+      "recurring": "monthly",
+      "late_fee": 50.0,
+      "early_fee": -10.0
+    }
   ]
 }

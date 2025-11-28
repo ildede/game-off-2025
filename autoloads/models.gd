@@ -31,7 +31,7 @@ class State:
 	var quality: float = 50
 	var stress: float = 0
 	var clients: Array[ClientObject] = []
-	var money: float = 0
+	var money: float = 100
 	var tasks_waiting_to_be_processed: Array[InvoiceObject] = []
 	var ongoing_task: Array[Models.OngoingTask] = []
 	var pending_payments: Array[PendingPayement] = []
@@ -45,6 +45,7 @@ class ClientObject:
 	var client_reliability: float
 
 	var public_reputation: PublicReputationObject
+	var loyalty: float
 	var loyalty_meter: LoyaltyMeterObject
 
 	var recurring_tasks: Array[RecurringTaskObject]

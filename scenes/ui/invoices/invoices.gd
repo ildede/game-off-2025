@@ -5,27 +5,6 @@ var invoice_scene = preload("res://scenes/ui/invoices/invoice.tscn")
 var child_added = []
 
 func _ready() -> void:
-	#var task_obj = Models.TaskObject.new()
-	#task_obj.words = 100
-#
-	#var ong1 = Models.OngoingTask.new(1, task_obj)
-	#ong1.client_id = 10
-	#var client1 = Models.ClientObject.new()
-	#client1.id = 10
-	#client1.payment_per_word = 0.04
-	#client1.payment_terms = "IMMEDIATE"
-	#var invoice_info1 = Models.InvoiceObject.new(ong1, client1)
-	#Global.game_state.tasks_waiting_to_be_processed.append(invoice_info1)
-#
-	#var ong2 = Models.OngoingTask.new(2, task_obj)
-	#ong2.client_id = 20
-	#var client2 = Models.ClientObject.new()
-	#client2.id = 20
-	#client2.payment_per_word = 0.04
-	#client2.payment_terms = "NET7"
-	#var invoice_info2 = Models.InvoiceObject.new(ong2, client2)
-	#Global.game_state.tasks_waiting_to_be_processed.append(invoice_info2)
-
 	print("[INVOICES] _ready")
 	redraw_invoices()
 
@@ -53,6 +32,7 @@ func _on_single_invoice_clicked():
 	get_tree().paused = true
 	var total = Global.game_state.tasks_waiting_to_be_processed.reduce(func(acc, element): return acc + element.money_value, 0)
 	var total_immediate = 0
+	var total_upon_receipt = 0
 	var total_NET7 = 0
 	var total_NET30 = 0
 	var total_NET60 = 0
@@ -62,14 +42,16 @@ func _on_single_invoice_clicked():
 		match invoice_obj.payment_terms:
 			"IMMEDIATE":
 				total_immediate += invoice_obj.money_value
+			"UPON_RECEIPT":
+				total_upon_receipt += invoice_obj.money_value
 			"NET7":
 				total_NET7 += invoice_obj.money_value
 			"NET30":
-				total_immediate += invoice_obj.money_value
+				total_NET30 += invoice_obj.money_value
 			"NET60":
-				total_NET7 += invoice_obj.money_value
+				total_NET60 += invoice_obj.money_value
 			"EOM":
-				total_immediate += invoice_obj.money_value
+				total_EOM += invoice_obj.money_value
 			"EONM":
 				total_NET7 += invoice_obj.money_value
 
@@ -80,6 +62,7 @@ func _on_single_invoice_clicked():
 		"You have {0} invoces waiting, for a total of {1}$ to collect".format([Global.game_state.tasks_waiting_to_be_processed.size(), total])
 	]
 	if total_immediate > 0: message_lines.append("{0}$ will be payed immediately".format([total_immediate]))
+	if total_upon_receipt > 0: message_lines.append("{0}$ will be payed overnight".format([total_upon_receipt]))
 	if total_NET7 > 0: message_lines.append("{0}$ will be payed in 7 days".format([total_NET7]))
 	if total_NET30 > 0: message_lines.append("{0}$ will be payed in 30 days".format([total_NET30]))
 	if total_NET60 > 0: message_lines.append("{0}$ will be payed in 60 days".format([total_NET60]))
@@ -96,6 +79,8 @@ func _on_single_invoice_clicked():
 		for invoice_obj in Global.game_state.tasks_waiting_to_be_processed:
 			match invoice_obj.payment_terms:
 				"IMMEDIATE":
+					Global.update_money.emit(invoice_obj.money_value)
+				"UPON_RECEIPT":
 					Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day, invoice_obj.money_value))
 				"NET7":
 					Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+7, invoice_obj.money_value))

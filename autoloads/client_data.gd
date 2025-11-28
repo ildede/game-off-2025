@@ -6,7 +6,7 @@ func _ready() -> void:
 	load_clients_data()
 
 func load_clients_data():
-	var file = FileAccess.open("res://data/clients.json", FileAccess.READ)
+	var file = FileAccess.open("res://data/game_data.json", FileAccess.READ)
 	if file:
 		var json = JSON.new()
 		var parse_result = json.parse(file.get_as_text())
@@ -31,8 +31,9 @@ func create_fallback_client() -> Models.ClientObject:
 	fallback_client.name = "TechManual Inc."
 	fallback_client.engagement_email = "Looking for ..."
 	fallback_client.payment_per_word = 0.04
-	fallback_client.payment_terms = "IMMEDIATE"
+	fallback_client.payment_terms = "UPON_RECEIPT"
 	fallback_client.client_reliability = 1
+	fallback_client.loyalty = 0
 
 	var pb_rep = Models.PublicReputationObject.new()
 	pb_rep.on_accept = 2
@@ -69,6 +70,7 @@ func dictionary_to_class(obj_in: Dictionary) -> Models.ClientObject:
 	client.payment_per_word = obj_in.get("payment_per_word")
 	client.payment_terms = obj_in.get("payment_terms")
 	client.client_reliability = obj_in.get("client_reliability", 1)
+	client.loyalty = obj_in.get("loyalty", 0)
 
 	var rcr_tsk: Array[Models.RecurringTaskObject] = []
 	for task_in in obj_in["recurring_tasks"]:
