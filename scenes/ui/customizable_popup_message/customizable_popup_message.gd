@@ -25,7 +25,7 @@ func show_popup(popup_data: PopupData) -> void:
 		var b = Button.new()
 		b.text = button.text
 		b.pressed.connect(func():_closing_function(button.action))
-		b.size_flags_horizontal = Control.SIZE_SHRINK_CENTER +  Control.SIZE_EXPAND
+		b.size_flags_horizontal = Control.SIZE_SHRINK_CENTER + Control.SIZE_EXPAND
 		$GridContainer/GridContainer.add_child(b)
 
 	close_requested.connect(func():_closing_function(popup_data.on_close))

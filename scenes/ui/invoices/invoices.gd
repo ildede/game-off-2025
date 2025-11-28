@@ -97,6 +97,7 @@ func _on_single_invoice_clicked():
 		for child in child_added:
 			child.queue_free()
 		child_added.clear()
+		Global.ui_update.emit()
 		get_tree().paused = false
 
 	var postpone_button = CustomizablePopupMessage.PopupButton.new()

@@ -36,7 +36,7 @@ grow_vertical = 1
 [node name="InfoPanel" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_top = 260.0
-offset_right = 410.0
+offset_right = 511.0
 offset_bottom = 650.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -150,3 +150,33 @@ size_flags_vertical = 3
 text = "$"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="FuturePanel" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 514.0
+offset_top = -2.0
+offset_right = 1918.0
+offset_bottom = 260.0
+
+[node name="MarginContainer" type="MarginContainer" parent="FuturePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="FuturePanel/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="NextPayment" type="RichTextLabel" parent="FuturePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 28
+
+[node name="NextBills" type="RichTextLabel" parent="FuturePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 28
