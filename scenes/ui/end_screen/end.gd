@@ -4,11 +4,15 @@ class_name End
 func _ready() -> void:
 	print("[END] _ready")
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	$Panel/GridContainer/Label.text = ""
-	$Panel/GridContainer/Label.bbcode_enabled = true
-	$Panel/GridContainer/Label.append_text("[b]BURNOUT! On day: {0}[/b]".format([Global.game_state.current_day]))
+	$Panel/GridContainer/Label.text = "On day: {0}".format([Global.game_state.current_day])
 	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("[i]Bank account: {0}[/i]".format([Global.game_state.money]))
+	if Global.game_state.stress >= Config.MAX_STRESS_LEVEL:
+		$Panel/GridContainer/Label.append_text("BURNOUT! Beeing a translator is too stressfull for you.")
+	if Global.game_state.money < 0:
+		$Panel/GridContainer/Label.append_text("MONEY BURN! You also need to pay your bills you know? Maybe it's better to go and open a Library Tea House Bistrot?")
+
+	$Panel/GridContainer/Label.newline()
+	$Panel/GridContainer/Label.append_text("Bank account: {0}".format([Global.game_state.money]))
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("Task waiting invoice: {0}".format([Global.game_state.tasks_waiting_to_be_processed.size()]))
 	$Panel/GridContainer/Label.newline()
