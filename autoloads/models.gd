@@ -52,7 +52,7 @@ class ClientObject:
 
 	func get_task_to_spawn(day: int) -> TaskObject:
 		for task in recurring_tasks:
-			if day % task.frequency_days == 0 and task.last_spawn != day:
+			if task.last_spawn == 0 or (day % task.frequency_days == 0 and task.last_spawn != day):
 				task.last_spawn = day
 				return task
 		for task in extemporaneous_tasks:
