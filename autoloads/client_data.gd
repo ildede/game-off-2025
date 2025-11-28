@@ -1,11 +1,13 @@
 extends Node
 
 var clients_data: Array[Models.ClientObject]
+var bills_data: Array[Models.BillObject]
 
 func _ready() -> void:
-	load_clients_data()
+	print("[CLIENT_DATA] ready")
+	load_json_data()
 
-func load_clients_data():
+func load_json_data():
 	var file = FileAccess.open("res://data/game_data.json", FileAccess.READ)
 	if file:
 		var json = JSON.new()
@@ -13,7 +15,9 @@ func load_clients_data():
 		if parse_result == OK:
 			var data = json.get_data()
 			for obj in data["clients"]:
-				clients_data.append(dictionary_to_class(obj))
+				clients_data.append(dictionary_to_client(obj))
+			for obj in data["bills"]:
+				bills_data.append(dictionary_to_bill(obj))
 		else:
 			push_error("JSON Parse Error: ", json.get_error_message())
 	else:
@@ -62,8 +66,9 @@ func create_fallback_client() -> Models.ClientObject:
 
 	return fallback_client
 
-func dictionary_to_class(obj_in: Dictionary) -> Models.ClientObject:
+func dictionary_to_client(obj_in: Dictionary) -> Models.ClientObject:
 	var client = Models.ClientObject.new()
+	client.is_accepted = false
 	client.id = obj_in.get("id", randi())
 	client.name = obj_in.get("name")
 	client.engagement_email = obj_in.get("engagement_email")
@@ -113,3 +118,14 @@ func dictionary_to_class(obj_in: Dictionary) -> Models.ClientObject:
 	client.loyalty_meter = lyt_mtr
 
 	return client
+
+func dictionary_to_bill(obj_in: Dictionary) -> Models.BillObject:
+	var bill = Models.BillObject.new()
+	bill.id = obj_in.get("id")
+	bill.name = obj_in.get("name")
+	bill.amount = obj_in.get("amount")
+	bill.due_day = obj_in.get("due_day")
+	bill.next_payment_day = bill.due_day
+	bill.recurring = obj_in.get("recurring")
+
+	return bill

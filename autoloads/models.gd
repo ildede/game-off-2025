@@ -35,8 +35,10 @@ class State:
 	var tasks_waiting_to_be_processed: Array[InvoiceObject] = []
 	var ongoing_task: Array[Models.OngoingTask] = []
 	var pending_payments: Array[PendingPayement] = []
+	var bills: Array[BillObject] = []
 
 class ClientObject:
+	var is_accepted: bool
 	var id: int
 	var name: String
 	var engagement_email: String
@@ -118,3 +120,11 @@ class OngoingTask:
 		reputation_on_failure = task.reputation_on_failure
 		loyalty_on_success = task.loyalty_on_success
 		loyalty_on_failure = task.loyalty_on_failure
+
+class BillObject:
+	var id: int
+	var name: String
+	var amount: float
+	var due_day: int
+	var next_payment_day: int
+	var recurring: bool

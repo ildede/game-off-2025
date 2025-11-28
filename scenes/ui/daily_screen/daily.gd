@@ -8,15 +8,11 @@ func _ready() -> void:
 	$Panel/GridContainer/Label.bbcode_enabled = true
 	$Panel/GridContainer/Label.append_text("[b]Daily recap: {0}[/b]".format([Global.game_state.current_day]))
 	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("[i]Bank account: {0}[/i]".format([Global.game_state.money]))
-	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("You are waiting for {0} payment from invoices you sent".format([Global.game_state.pending_payments.size()]))
 	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("Tasks that are waiting for an invoice: {0}".format([Global.game_state.tasks_waiting_to_be_processed.size()]))
-	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text(
 		"Until now you translated {word_count} words, during your work on {task_received} tasks (only {task_finished} completely finished)"
@@ -27,21 +23,29 @@ func _ready() -> void:
 		})
 	)
 	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("Your reputation: {0}".format([Global.game_state.reputation]))
-	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("Your stress level: {0}/{1}".format([Global.game_state.stress, Config.MAX_STRESS_LEVEL]))
 	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("The quality perceived: {0}".format([Global.game_state.quality]))
 	$Panel/GridContainer/Label.newline()
+	$Panel/GridContainer/Label.append_text("Bills that will be payed today: ")
+	for bill in Global.game_state.bills:
+		if bill.next_payment_day == Global.game_state.current_day:
+			$Panel/GridContainer/Label.append_text("	- {0}: {1}$".format([bill.name, bill.amount]))
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text("Now, your {0} clients are waiting, what do you want to do?".format([Global.game_state.clients.size()]))
 
 func _on_continue_button_pressed() -> void:
 	print("[DAILY] _on_continue_button_pressed")
+	for bill in Global.game_state.bills:
+		if bill.next_payment_day == Global.game_state.current_day:
+			Global.update_money.emit(-bill.amount)
+			if bill.recurring:
+				bill.next_payment_day = Global.game_state.current_day + Global.until_end_of_month(Global.game_state.current_day) + bill.due_day
+				print("bill update, now bill.next_payment_day is {0}, for a due_day of {1}".format([bill.next_payment_day, bill.due_day]))
+
 	Global.update_day_count.emit(1)
 	SceneTransition.fade_to_main()
 

@@ -90,6 +90,7 @@ func handle_game_over() -> void:
 
 func start_new_game() -> void:
 	game_state = Models.State.new()
+	game_state.bills = ClientData.bills_data.duplicate()
 
 class Date:
 	var day: String

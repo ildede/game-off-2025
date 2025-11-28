@@ -108,22 +108,18 @@
   ],
   "bills": [
     {
-      "id": "internet",
+      "id": 1,
       "name": "Internet Connection",
       "amount": 10.0,
-      "payment_type": "automatic",
       "due_day": 1,
-      "recurring": "monthly"
+      "recurring": true
     },
     {
-      "id": "rent",
+      "id": 2,
       "name": "Your Rent",
       "amount": 500.0,
-      "payment_type": "manual",
       "due_day": 25,
-      "recurring": "monthly",
-      "late_fee": 50.0,
-      "early_fee": -10.0
+      "recurring": true
     }
   ]
 }
