@@ -53,7 +53,6 @@ func handle_spawn_random_event() -> void:
 	print("[MAIN] handle_spawn_random_event")
 	var client_info = ClientData.get_random_client()
 	if not active_clients.has(client_info.id):
-		get_tree().paused = true
 		open_popup_message_for_new_client(client_info)
 
 func handle_spawn_tasks() -> void:
@@ -62,14 +61,10 @@ func handle_spawn_tasks() -> void:
 		if active_clients.has(client.id):
 			var task_object = client.get_task_to_spawn(Global.game_state.current_day)
 			if task_object:
-				var task: Task = task_scene.instantiate()
-				var ongoing_task = Models.OngoingTask.new(client.id, task_object)
-				task.initialize(ongoing_task)
-				Global.game_state.ongoing_task.append(ongoing_task)
-				active_clients.get(client.id).spawn_task(task)
-				active_tasks.set(task.get_task_id(), task)
-				Global.client_send_task.emit(task)
-				Global.handle_client_send_task(task)
+				if task_object.need_confirmation_email:
+					open_popup_message_for_new_task(client, task_object)
+				else:
+					add_new_task_to_scene(client.id, task_object)
 
 func handle_task_finished(task_id: int) -> void:
 	print("[MAIN] handle_task_finished for task_id ", task_id)
@@ -108,6 +103,7 @@ func add_new_client_to_scene(client_info: Models.ClientObject) -> ClientScene:
 	return client
 
 func open_popup_message_for_new_client(client: Models.ClientObject) -> void:
+	get_tree().paused = true
 	var popup_data = CustomizablePopupMessage.PopupData.new()
 	popup_data.title = "New email"
 	var message_lines: Array[String] = [client.engagement_email]
@@ -133,6 +129,46 @@ func open_popup_message_for_new_client(client: Models.ClientObject) -> void:
 
 	popup_data.on_close = func():
 		$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+		get_tree().paused = false
+
+	$CustomPopupMessage.show_popup(popup_data)
+
+func add_new_task_to_scene(client_id: int, task_info: Models.TaskObject) -> void:
+	var task_instance: Task = task_scene.instantiate()
+	var ongoing_task = Models.OngoingTask.new(client_id, task_info)
+	task_instance.initialize(ongoing_task)
+	Global.game_state.ongoing_task.append(ongoing_task)
+	active_clients.get(client_id).spawn_task(task_instance)
+	active_tasks.set(task_instance.get_task_id(), task_instance)
+	Global.client_send_task.emit(task_instance)
+	Global.handle_client_send_task(task_instance)
+
+func open_popup_message_for_new_task(client: Models.ClientObject, task: Models.TaskObject) -> void:
+	get_tree().paused = true
+	var popup_data = CustomizablePopupMessage.PopupData.new()
+	popup_data.title = "New email from {0}".format([client.name])
+	var message_lines: Array[String] = [
+		"We have a new task for you",
+		"Total words: {0}".format([task.words]),
+		"Deadline in days: {0}".format([task.deadline_days])
+	]
+	popup_data.lines = message_lines
+
+	var accept_btn = CustomizablePopupMessage.PopupButton.new()
+	accept_btn.text = "Accept"
+	accept_btn.action = func():
+		add_new_task_to_scene(client.id, task)
+		get_tree().paused = false
+
+	var refuse_btn = CustomizablePopupMessage.PopupButton.new()
+	refuse_btn.text = "Refuse"
+	refuse_btn.action = func():
+		get_tree().paused = false
+
+	var btns: Array[CustomizablePopupMessage.PopupButton] = [accept_btn, refuse_btn]
+	popup_data.buttons = btns
+
+	popup_data.on_close = func():
 		get_tree().paused = false
 
 	$CustomPopupMessage.show_popup(popup_data)

@@ -53,6 +53,7 @@ func create_fallback_client() -> Models.ClientObject:
 	task.deadline_days = 1
 	task.on_task_success = 10.0
 	task.on_task_failure = -10.0
+	task.need_confirmation_email = false
 	rcr_tsk.append(task)
 	fallback_client.recurring_tasks = rcr_tsk
 	var ext_tsk: Array[Models.ExtemporaneousTaskObject] = []
@@ -79,6 +80,7 @@ func dictionary_to_class(obj_in: Dictionary) -> Models.ClientObject:
 		task.reputation_on_failure = task_in.get("reputation_on_failure", 0)
 		task.loyalty_on_success = task_in.get("loyalty_on_success", 0)
 		task.loyalty_on_failure = task_in.get("loyalty_on_failure", 0)
+		task.need_confirmation_email = task_in.get("need_confirmation_email", false)
 		rcr_tsk.append(task)
 	client.recurring_tasks = rcr_tsk
 
@@ -92,6 +94,7 @@ func dictionary_to_class(obj_in: Dictionary) -> Models.ClientObject:
 		task.reputation_on_failure = task_in.get("reputation_on_failure", 0)
 		task.loyalty_on_success = task_in.get("loyalty_on_success", 0)
 		task.loyalty_on_failure = task_in.get("loyalty_on_failure", 0)
+		task.need_confirmation_email = task_in.get("need_confirmation_email", true)
 		ext_tsk.append(task)
 	client.extemporaneous_tasks = ext_tsk
 

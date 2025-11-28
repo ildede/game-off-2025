@@ -78,6 +78,7 @@ class TaskObject:
 	var reputation_on_failure: float
 	var loyalty_on_success: float
 	var loyalty_on_failure: float
+	var need_confirmation_email: bool
 	var last_spawn: int = 0
 
 class RecurringTaskObject:
