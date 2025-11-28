@@ -25,14 +25,14 @@ text = "BURNOUT!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VSplitContainer" type="VSplitContainer" parent="Panel/GridContainer"]
-custom_minimum_size = Vector2(0, 30)
+[node name="GridContainer" type="GridContainer" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
-[node name="StartButton" type="Button" parent="Panel/GridContainer"]
+[node name="StartButton" type="Button" parent="Panel/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
-size_flags_vertical = 2
+size_flags_vertical = 6
 text = "START AGAIN"
 
-[connection signal="pressed" from="Panel/GridContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/GridContainer/StartButton" to="." method="_on_start_button_pressed"]

@@ -14,10 +14,34 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ots34")
 
-[node name="StartButton" type="Button" parent="Panel"]
+[node name="GridContainer" type="GridContainer" parent="Panel"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+
+[node name="Label" type="RichTextLabel" parent="Panel/GridContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "You decide to start your career in the translation industry.
+Accept clients, they send task, you translate task, you send invoice, client hopfully pay.
+
+Remember that each month you'll have to pay some bills:
+- Internet connection 10$ (automatic on 1st of each month)
+- Rent 500$ (by the end of month)
+
+You start with 100$ in your bank.
+Good luck."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="Panel/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 text = "START"
 
-[connection signal="pressed" from="Panel/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/GridContainer/StartButton" to="." method="_on_start_button_pressed"]

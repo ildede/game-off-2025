@@ -26,14 +26,9 @@ text = "Some text customly defined"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VSplitContainer" type="VSplitContainer" parent="Panel/GridContainer"]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-
 [node name="GridContainer" type="GridContainer" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="PayBills" type="Button" parent="Panel/GridContainer/GridContainer"]
 visible = false
