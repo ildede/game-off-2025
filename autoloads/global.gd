@@ -91,7 +91,17 @@ func handle_game_over() -> void:
 func start_new_game() -> void:
 	game_state = Models.State.new()
 
-func day_number_to_date(day_number: int) -> String:
+class Date:
+	var day: String
+	var month: String
+	func _init(d: int, m: String) -> void:
+		day = Global.to_ordinal_day(d)
+		month = m
+
+func get_current_date() -> Date:
+	return day_number_to_date(game_state.current_day)
+
+func day_number_to_date(day_number: int) -> Date:
 	var day_to_look_for = day_number
 	if day_to_look_for < 1: day_to_look_for = 1
 	if day_to_look_for > 365: day_to_look_for = day_to_look_for % 365
@@ -113,9 +123,19 @@ func day_number_to_date(day_number: int) -> String:
 	var remaining_days = day_to_look_for
 	for month in months:
 		if remaining_days <= month.days:
-			return "%d %s" % [remaining_days, month.name]
+			return Date.new(remaining_days, month.name)
 		remaining_days -= month.days
-	return "1 Jan"
+	return Date.new(1, "Jan")
+
+func to_ordinal_day(day: int) -> String:
+	match day:
+		1, 21, 31:
+			return "{0}st".format([day])
+		2, 22:
+			return "{0}nd".format([day])
+		3, 23:
+			return "{0}rd".format([day])
+	return "{0}th".format([day])
 
 func until_end_of_month(day_number: int) -> int:
 	var day_to_look_for = day_number

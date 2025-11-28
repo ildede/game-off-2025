@@ -76,7 +76,7 @@ func _on_single_invoice_clicked():
 	var popup_data = CustomizablePopupMessage.PopupData.new()
 	popup_data.title = "Collecting invoices"
 	var message_lines: Array[String] = [
-		"Today is {0}".format([Global.day_number_to_date(Global.game_state.current_day)]),
+		"Today is {day} {month}".format(Global.get_current_date()),
 		"You have {0} invoces waiting, for a total of {1}$ to collect".format([Global.game_state.tasks_waiting_to_be_processed.size(), total])
 	]
 	if total_immediate > 0: message_lines.append("{0}$ will be payed immediately".format([total_immediate]))
