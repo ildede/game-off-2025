@@ -13,6 +13,14 @@ class InvoiceObject:
 		money_value = ongoing_task.total_words * client.payment_per_word
 		payment_terms = client.payment_terms
 
+class PendingPayement:
+	var due_date: int
+	var money_value: float
+
+	func _init(day: int, value: float) -> void:
+		due_date = day
+		money_value = value
+
 class State:
 	var current_day = 1
 	var task_received: int = 0
@@ -26,6 +34,7 @@ class State:
 	var money: float = 0
 	var tasks_waiting_to_be_processed: Array[InvoiceObject] = []
 	var ongoing_task: Array[Models.OngoingTask] = []
+	var pending_payments: Array[PendingPayement] = []
 
 class ClientObject:
 	var id: int

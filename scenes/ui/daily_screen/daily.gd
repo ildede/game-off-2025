@@ -12,7 +12,10 @@ func _ready() -> void:
 	$Panel/GridContainer/Label.append_text("[i]Bank account: {0}[/i]".format([Global.game_state.money]))
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("Task waiting invoice: {0}".format([Global.game_state.tasks_waiting_to_be_processed.size()]))
+	$Panel/GridContainer/Label.append_text("You are waiting for {0} payment from invoices you sent".format([Global.game_state.pending_payments.size()]))
+	$Panel/GridContainer/Label.newline()
+	$Panel/GridContainer/Label.newline()
+	$Panel/GridContainer/Label.append_text("Tasks that are waiting for an invoice: {0}".format([Global.game_state.tasks_waiting_to_be_processed.size()]))
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.append_text(

@@ -20,7 +20,7 @@ var game_clock: Timer
 func _ready() -> void:
 	print("[GLOBAL] _ready")
 	new_client_accepted.connect(handle_new_client_accepted)
-	client_send_task.connect(handle_client_send_task)
+	#client_send_task.connect(handle_client_send_task)
 	letter_hit_task.connect(handle_letter_hit_task)
 	task_finished.connect(handle_task_finished)
 	update_reputation.connect(handle_update_reputation)
@@ -90,3 +90,39 @@ func handle_game_over() -> void:
 
 func start_new_game() -> void:
 	game_state = Models.State.new()
+
+func day_number_to_date(day_number: int) -> String:
+	var day_to_look_for = day_number
+	if day_to_look_for < 1: day_to_look_for = 1
+	if day_to_look_for > 365: day_to_look_for = day_to_look_for % 365
+
+	var months = [
+		{"name": "Jan", "days": 31},
+		{"name": "Feb", "days": 28},
+		{"name": "Mar", "days": 31},
+		{"name": "Apr", "days": 30},
+		{"name": "May", "days": 31},
+		{"name": "Jun", "days": 30},
+		{"name": "Jul", "days": 31},
+		{"name": "Aug", "days": 31},
+		{"name": "Sep", "days": 30},
+		{"name": "Oct", "days": 31},
+		{"name": "Nov", "days": 30},
+		{"name": "Dec", "days": 31}
+	]
+	var remaining_days = day_to_look_for
+	for month in months:
+		if remaining_days <= month.days:
+			return "%d %s" % [remaining_days, month.name]
+		remaining_days -= month.days
+	return "1 Jan"
+
+func until_end_of_month(day_number: int) -> int:
+	var day_to_look_for = day_number
+	if day_to_look_for < 1: day_to_look_for = 1
+	if day_to_look_for > 365: day_to_look_for = day_to_look_for % 365
+	var month_ends = [31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365]
+	for end_day in month_ends:
+		if day_to_look_for <= end_day:
+			return end_day - day_to_look_for
+	return 1

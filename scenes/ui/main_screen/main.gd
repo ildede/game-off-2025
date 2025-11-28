@@ -27,6 +27,14 @@ func _ready() -> void:
 			active_tasks.set(task.get_task_id(), task)
 			Global.client_send_task.emit(task)
 
+	var remaining_payments: Array[Models.PendingPayement] = []
+	for payment in Global.game_state.pending_payments:
+		if payment.due_date <= Global.game_state.current_day:
+			Global.update_money.emit(payment.money_value)
+		else:
+			remaining_payments.append(payment)
+	Global.game_state.pending_payments = remaining_payments
+
 	if Global.game_state.current_day == 1:
 		$EventSpawner.start(0.2)
 	else:
@@ -61,6 +69,7 @@ func handle_spawn_tasks() -> void:
 				active_clients.get(client.id).spawn_task(task)
 				active_tasks.set(task.get_task_id(), task)
 				Global.client_send_task.emit(task)
+				Global.handle_client_send_task(task)
 
 func handle_task_finished(task_id: int) -> void:
 	print("[MAIN] handle_task_finished for task_id ", task_id)

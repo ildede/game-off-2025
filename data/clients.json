@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Global News Network",
-      "engagement_email": "Lots of bla bla",
+      "engagement_email": "We will send you daily tasks, and also a weekly task. It could be that we also have a big project from time to time. All payments are 7 days after your invoice",
       "payment_per_word": 0.05,
       "payment_terms": "NET7",
       "client_reliability": 0.95,
@@ -52,7 +52,7 @@
     {
       "id": 2,
       "name": "Tiger Prime",
-      "engagement_email": "Bla ble bli blo blu",
+      "engagement_email": "We have a daily task for you, be ready",
       "payment_per_word": 0.05,
       "payment_terms": "IMMEDIATE",
       "client_reliability": 0.95,
@@ -70,6 +70,34 @@
       "extemporaneous_tasks": [],
       "public_reputation": {
         "on_accept": 2.0
+      },
+      "loyalty_meter": {
+        "on_task_success": 1.0,
+        "on_task_failure": -2.0,
+        "breakup_point": -10.0
+      }
+    },
+    {
+      "id": 3,
+      "name": "LocReady",
+      "engagement_email": "We sent a task every week, with a deadline of 2 days, don't waste time! If you finish it we will publicly tell to everyone how smart you are!",
+      "payment_per_word": 0.05,
+      "payment_terms": "IMMEDIATE",
+      "client_reliability": 0.95,
+      "recurring_tasks": [
+        {
+          "words": 3000,
+          "frequency_days": 7,
+          "deadline_days": 2,
+          "reputation_on_success": 50,
+          "reputation_on_failure": -3.0,
+          "loyalty_on_success": 0.5,
+          "loyalty_on_failure": -3.0
+        }
+      ],
+      "extemporaneous_tasks": [],
+      "public_reputation": {
+        "on_accept": 5.0
       },
       "loyalty_meter": {
         "on_task_success": 1.0,
