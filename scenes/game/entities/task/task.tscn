@@ -71,7 +71,7 @@ script = ExtResource("2_42cdb")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_cprfc")
 animation = &"deadline"
-frame_progress = 0.8962669
+frame_progress = 0.78176564
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0.714288, -0.7142869)

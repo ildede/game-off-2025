@@ -19,7 +19,11 @@ func initialize(task_info: Models.OngoingTask):
 	$ProgressBar.max_value = task_info.total_words
 	$ProgressBar.value = task_info.total_words - task_info.remaining_words
 	$Label.text = str(task_info.remaining_words)
-	total_time = Config.DAY_LENGHT_IN_SECONDS * (task_info.deadline_days)
+	if task_info.deadline_days == 1:
+		total_time = Global.game_clock.time_left
+	else:
+		total_time = Config.DAY_LENGHT_IN_SECONDS * (task_info.deadline_days)
+	
 	running_time = Config.DAY_LENGHT_IN_SECONDS * (Global.game_state.current_day - task_info.assigned_on)
 
 
