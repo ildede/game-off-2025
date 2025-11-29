@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=3 uid="uid://c4n8ci1egtwik"]
+
+[ext_resource type="Texture2D" uid="uid://der7v00pi3xuk" path="res://scenes/ui/events_panel/assets/payment01.png" id="1_dflug"]
+[ext_resource type="Texture2D" uid="uid://dow8ilqjoa8ox" path="res://scenes/ui/events_panel/assets/bill01.png" id="1_v0jw3"]
+[ext_resource type="Texture2D" uid="uid://bsxuifbpltoqn" path="res://scenes/ui/events_panel/assets/bill02.png" id="2_3ar4q"]
+[ext_resource type="Texture2D" uid="uid://cw8mqaoosa6oj" path="res://scenes/ui/events_panel/assets/payment02.png" id="2_7725c"]
+[ext_resource type="Texture2D" uid="uid://x2lh3hj0mcd4" path="res://scenes/ui/events_panel/assets/bill03.png" id="3_0dipp"]
+[ext_resource type="Texture2D" uid="uid://d4fw6qpgr2kj2" path="res://scenes/ui/events_panel/assets/payment03.png" id="3_evdrb"]
+[ext_resource type="Texture2D" uid="uid://ch4aujtm4utux" path="res://scenes/ui/events_panel/assets/payment04.png" id="4_0nhtc"]
+[ext_resource type="Texture2D" uid="uid://bx62m6y3rvgfw" path="res://scenes/ui/events_panel/assets/bill04.png" id="4_xxm8a"]
+[ext_resource type="Texture2D" uid="uid://diwvr3yn2xma8" path="res://scenes/ui/events_panel/assets/payment05.png" id="5_ey4is"]
+[ext_resource type="Texture2D" uid="uid://brntt37dlsebu" path="res://scenes/ui/events_panel/assets/bill05.png" id="5_g2700"]
+[ext_resource type="Script" uid="uid://b8d5km5gevw84" path="res://scenes/ui/events_panel/event.gd" id="6_7725c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o53mr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v0jw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3ar4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0dipp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xxm8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g2700")
+}],
+"loop": true,
+"name": &"bill",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dflug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7725c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_evdrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0nhtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ey4is")
+}],
+"loop": true,
+"name": &"payment",
+"speed": 6.0
+}]
+
+[node name="Event" type="AnimatedSprite2D"]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_o53mr")
+animation = &"bill"
+script = ExtResource("6_7725c")
+
+[node name="Day" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = -140.0
+offset_right = -80.0
+offset_bottom = -103.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+text = "1st Jan"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Name" type="Label" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -217.0
+offset_right = -80.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Global News Network"
+horizontal_alignment = 1
+autowrap_mode = 2

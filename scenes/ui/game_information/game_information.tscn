@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7gpddms8dggn"]
+[gd_scene load_steps=7 format=3 uid="uid://c7gpddms8dggn"]
 
 [ext_resource type="Script" uid="uid://b5d226ud6fjao" path="res://scenes/ui/game_information/game_information.gd" id="1_f6qh3"]
 [ext_resource type="PackedScene" uid="uid://dahhp2f70drw" path="res://scenes/ui/clock/clock.tscn" id="2_g6785"]
+[ext_resource type="PackedScene" uid="uid://dquq8idt0crs5" path="res://scenes/ui/events_panel/events_panel.tscn" id="3_g4cjn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
 bg_color = Color(0, 0, 1, 0.3529412)
@@ -151,32 +152,9 @@ text = "$"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="FuturePanel" type="PanelContainer" parent="."]
+[node name="EventsPanel" parent="." instance=ExtResource("3_g4cjn")]
 layout_mode = 0
-offset_left = 514.0
-offset_top = -2.0
-offset_right = 1918.0
-offset_bottom = 260.0
-
-[node name="MarginContainer" type="MarginContainer" parent="FuturePanel"]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="GridContainer" type="GridContainer" parent="FuturePanel/MarginContainer"]
-layout_mode = 2
-columns = 2
-
-[node name="NextPayment" type="RichTextLabel" parent="FuturePanel/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 28
-
-[node name="NextBills" type="RichTextLabel" parent="FuturePanel/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 28
+offset_left = 501.0
+offset_top = -1.0
+offset_right = 1917.0
+offset_bottom = 264.0

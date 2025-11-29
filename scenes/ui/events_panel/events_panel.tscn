@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dquq8idt0crs5"]
+
+[ext_resource type="Script" uid="uid://cl72ssdxgkwim" path="res://scenes/ui/events_panel/events_panel.gd" id="1_kojp0"]
+
+[node name="EventsPanel" type="PanelContainer"]
+offset_left = 514.0
+offset_top = -2.0
+offset_right = 1918.0
+offset_bottom = 260.0
+script = ExtResource("1_kojp0")

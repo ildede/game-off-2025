@@ -4,22 +4,26 @@ extends RefCounted
 class InvoiceObject:
 	var task_id: int
 	var client_id: int
+	var client_name: String
 	var money_value: float
 	var payment_terms: String
 
 	func _init(ongoing_task: OngoingTask, client: Models.ClientObject) -> void:
 		task_id = ongoing_task.task_id
 		client_id = ongoing_task.client_id
+		client_name = client.name
 		money_value = ongoing_task.total_words * client.payment_per_word
 		payment_terms = client.payment_terms
 
 class PendingPayement:
 	var due_date: int
 	var money_value: float
+	var client_name: String
 
-	func _init(day: int, value: float) -> void:
+	func _init(day: int, value: float, client: String) -> void:
 		due_date = day
 		money_value = value
+		client_name = client
 
 class State:
 	var current_day = 1

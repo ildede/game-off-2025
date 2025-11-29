@@ -81,17 +81,17 @@ func _on_single_invoice_clicked():
 				"IMMEDIATE":
 					Global.update_money.emit(invoice_obj.money_value)
 				"UPON_RECEIPT":
-					Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day, invoice_obj.money_value))
+					Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day, invoice_obj.money_value, invoice_obj.client_name))
 				"NET7":
-					Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+7, invoice_obj.money_value))
+					Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+7, invoice_obj.money_value, invoice_obj.client_name))
 				"NET30":
-					Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+30, invoice_obj.money_value))
+					Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+30, invoice_obj.money_value, invoice_obj.client_name))
 				"NET60":
-					Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+60, invoice_obj.money_value))
+					Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+60, invoice_obj.money_value, invoice_obj.client_name))
 				"EOM":
-					Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+Global.until_end_of_month(Global.game_state.current_day), invoice_obj.money_value))
+					Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+Global.until_end_of_month(Global.game_state.current_day), invoice_obj.money_value, invoice_obj.client_name))
 				"EONM":
-					Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+Global.until_end_of_month(Global.game_state.current_day)+30, invoice_obj.money_value))
+					Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+Global.until_end_of_month(Global.game_state.current_day)+30, invoice_obj.money_value, invoice_obj.client_name))
 
 		Global.game_state.tasks_waiting_to_be_processed.clear()
 		for child in child_added:
