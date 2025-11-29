@@ -96,8 +96,8 @@ func add_new_client_to_scene(client_info: Models.ClientObject) -> ClientScene:
 	print("[MAIN] add_new_client_to_scene")
 	var client: ClientScene = client_scene.instantiate()
 	var client_position = Vector2(
-		randi_range($WorldPanel.position[0], $WorldPanel.position[0]+$WorldPanel.size[0]),
-		randi_range($WorldPanel.position[1], $WorldPanel.position[1]+$WorldPanel.size[1])
+		randi_range($WorldPanel.position[0]+140, $WorldPanel.position[0]+$WorldPanel.size[0]-140),
+		randi_range($WorldPanel.position[1]+110, $WorldPanel.position[1]+$WorldPanel.size[1]-110)
 	)
 	var translator_position = $Translator.global_position
 	client.initialize(client_position, translator_position, client_info)
