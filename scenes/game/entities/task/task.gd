@@ -38,3 +38,22 @@ func update_progress(letter: Letter) -> bool:
 
 func get_task_id() -> int:
 	return get_node("CharacterBody2D").task_id
+
+
+func _on_character_body_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		get_tree().paused = true
+		$Delete.visible = !$Delete.visible
+		$Priority.visible = !$Priority.visible
+
+func _on_delete_pressed() -> void:
+	get_tree().paused = false
+	print("deleted pressed")
+	$Delete.visible = false
+	$Priority.visible = false
+
+func _on_priority_pressed() -> void:
+	get_tree().paused = false
+	Global.new_priority_task.emit(self)
+	$Delete.visible = false
+	$Priority.visible = false

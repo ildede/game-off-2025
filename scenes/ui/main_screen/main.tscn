@@ -17,9 +17,10 @@ offset_bottom = 656.0
 
 [node name="WorldPanel" type="PanelContainer" parent="."]
 offset_left = 512.0
-offset_top = 263.0
+offset_top = 304.0
 offset_right = 1922.0
 offset_bottom = 1079.0
+mouse_filter = 1
 
 [node name="Translator" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(336, 858)
