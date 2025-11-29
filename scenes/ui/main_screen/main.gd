@@ -15,6 +15,7 @@ func _ready() -> void:
 	Global.game_over.connect(handle_game_over)
 	Global.task_finished.connect(handle_task_finished)
 	Global.task_failed.connect(handle_task_failed)
+	Global.task_deleted.connect(handle_task_deleted)
 
 	for client_info in Global.game_state.clients:
 		var added = add_new_client_to_scene(client_info)
@@ -89,6 +90,15 @@ func handle_task_failed(task_id: int) -> void:
 		var finished_task = Global.game_state.ongoing_task.pop_at(found_index)
 		Global.update_reputation.emit(finished_task.reputation_on_failure)
 		Global.update_stress.emit(Config.STRESS_ON_TASK_FAILED)
+
+func handle_task_deleted(task_id: int) -> void:
+	print("[MAIN] handle_task_deleted for task_id ", task_id)
+	active_tasks.erase(task_id)
+
+	var found_index = Global.game_state.ongoing_task.find_custom(func(t): return t.task_id == task_id)
+	if found_index >= 0:
+		var finished_task = Global.game_state.ongoing_task.pop_at(found_index)
+		Global.update_reputation.emit(finished_task.reputation_on_failure)
 
 func handle_end_of_the_day() -> void:
 	print("[MAIN] handle_end_of_the_day")

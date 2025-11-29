@@ -42,18 +42,17 @@ func get_task_id() -> int:
 
 func _on_character_body_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		get_tree().paused = true
-		$Delete.visible = !$Delete.visible
-		$Priority.visible = !$Priority.visible
+		Global.new_priority_task.emit(self)
+	
+	if event is InputEventMouseButton and not event.pressed:
+		print(event)
 
 func _on_delete_pressed() -> void:
-	get_tree().paused = false
 	print("deleted pressed")
-	$Delete.visible = false
-	$Priority.visible = false
+	Global.task_deleted.emit(get_task_id())
 
-func _on_priority_pressed() -> void:
-	get_tree().paused = false
-	Global.new_priority_task.emit(self)
+func _on_character_body_2d_mouse_entered() -> void:
+	$Delete.visible = true
+
+func _on_character_body_2d_mouse_exited() -> void:
 	$Delete.visible = false
-	$Priority.visible = false

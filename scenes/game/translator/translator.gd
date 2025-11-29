@@ -13,6 +13,7 @@ func _ready() -> void:
 	Global.client_send_task.connect(new_task_arrived)
 	Global.letter_hit_task.connect(task_hit)
 	Global.new_priority_task.connect(set_priority_task)
+	Global.task_deleted.connect(handle_task_deleted)
 
 func _on_timer_timeout() -> void:
 	if tasks.size() != 0:
@@ -36,6 +37,15 @@ func fire() -> void:
 	l.target = target_task
 	l.target_id = target_task.get_node("CharacterBody2D").task_id
 	add_child(l)
+
+func handle_task_deleted(task_id: int) -> void:
+	var found_index = tasks.find_custom(func has_task_id(t):
+		return t.get_task_id() == task_id)
+	if found_index >= 0:
+		var task_found = tasks.pop_at(found_index)
+		if priority_task and priority_task.get_task_id() == task_found.get_task_id():
+			priority_task = null
+		task_found.queue_free()
 
 func task_hit(letter: Letter, task: Task) -> void:
 
