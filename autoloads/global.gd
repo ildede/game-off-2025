@@ -3,7 +3,8 @@ extends Node
 signal new_client_accepted(client_info: Models.ClientObject)
 signal client_send_task(task: Task)
 signal letter_hit_task(letter: Letter, task: Task)
-signal task_finished(id: int, value: float)
+signal task_finished(id: int)
+signal task_failed(id: int)
 signal update_reputation(value: float)
 signal update_stress(value: float)
 signal update_quality(value: float)
@@ -23,6 +24,7 @@ func _ready() -> void:
 	#client_send_task.connect(handle_client_send_task)
 	letter_hit_task.connect(handle_letter_hit_task)
 	task_finished.connect(handle_task_finished)
+	task_failed.connect(handle_task_failed)
 	update_reputation.connect(handle_update_reputation)
 	update_stress.connect(handle_update_stress)
 	update_quality.connect(handle_update_quality)
@@ -51,6 +53,11 @@ func handle_letter_hit_task(letter: Letter, task: Task) -> void:
 func handle_task_finished(_id: int) -> void:
 	print("[GLOBAL] handle_task_finished")
 	game_state.task_finished += 1
+	ui_update.emit()
+
+func handle_task_failed(_id: int) -> void:
+	print("[GLOBAL] handle_task_failed")
+	game_state.task_failed += 1
 	ui_update.emit()
 
 func handle_update_reputation(value: float) -> void:

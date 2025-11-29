@@ -7,3 +7,4 @@ const SECONDS_BETWEEN_TASKS: int = 3
 const WORDS_PER_LETTER: int = 11
 const MAX_STRESS_LEVEL: float = 100
 const WORDS_PER_DAY: int = 2500
+const STRESS_ON_TASK_FAILED: float = 5

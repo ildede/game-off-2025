@@ -54,7 +54,7 @@
       "name": "Tiger Prime",
       "engagement_email": "We have a daily task for you, be ready",
       "payment_per_word": 0.05,
-      "payment_terms": "IMMEDIATE",
+      "payment_terms": "NET30",
       "client_reliability": 0.95,
       "recurring_tasks": [
         {
@@ -82,7 +82,7 @@
       "name": "LocReady",
       "engagement_email": "We sent a task every week, with a deadline of 2 days, don't waste time! If you finish it we will publicly tell to everyone how smart you are!",
       "payment_per_word": 0.05,
-      "payment_terms": "IMMEDIATE",
+      "payment_terms": "NET30",
       "client_reliability": 0.95,
       "recurring_tasks": [
         {
@@ -109,14 +109,14 @@
   "bills": [
     {
       "id": 1,
-      "name": "Internet Connection",
+      "name": "Internet",
       "amount": 10.0,
       "due_day": 1,
       "recurring": true
     },
     {
       "id": 2,
-      "name": "Your Rent",
+      "name": "Rent",
       "amount": 500.0,
       "due_day": 25,
       "recurring": true

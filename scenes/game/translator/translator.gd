@@ -44,5 +44,11 @@ func task_hit(letter: Letter, task: Task) -> void:
 
 func _on_static_body_2d_body_entered(body: Node2D) -> void:
 	if body is TaskBody:
-		Global.update_reputation.emit(-1)
-		Global.update_stress.emit(4)
+		body.deadline_reached()
+		var found_index = tasks.find_custom(func has_task_id(t):
+			return t.get_task_id() == body.task_id)
+		if found_index >= 0:
+			var task_found = tasks.pop_at(found_index)
+			Global.task_failed.emit(body.task_id)
+			await get_tree().create_timer(2).timeout
+			task_found.queue_free()

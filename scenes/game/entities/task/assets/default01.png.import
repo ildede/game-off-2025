@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh2womicg0r0v"
-path="res://.godot/imported/PNG_0001.png-14d97106971bacc759d93cee252b6256.ctex"
+uid="uid://dh6jtkoxaxwhl"
+path="res://.godot/imported/default01.png-ac710ebc19b55ba26a7980beaa38d0d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/game/entities/task/assets/PNG_0001.png"
-dest_files=["res://.godot/imported/PNG_0001.png-14d97106971bacc759d93cee252b6256.ctex"]
+source_file="res://scenes/game/entities/task/assets/default01.png"
+dest_files=["res://.godot/imported/default01.png-ac710ebc19b55ba26a7980beaa38d0d3.ctex"]
 
 [params]
 

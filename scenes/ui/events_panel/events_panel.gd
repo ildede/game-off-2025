@@ -13,16 +13,14 @@ func update_events(ar: Array[Event]):
 		c.queue_free()
 	childs.clear()
 	ar.sort_custom(func(a, b): return a.day < b.day)
-	var count = 0
 	for e in ar:
-		var ev_instance: EventSprite = event_scene.instantiate()
+		var ev_instance: EventControl = event_scene.instantiate()
 		ev_instance.day = Global.day_number_to_date(e.day)
+		ev_instance.money_value = e.amount
 		ev_instance.display_name = e.name
 		ev_instance.event_type = e.type
-		ev_instance.position = self.global_position + Vector2(-380 + (120 * count), 150)
-		add_child(ev_instance)
+		$HBoxContainer.add_child(ev_instance)
 		childs.append(ev_instance)
-		count += 1
 
 enum EventType {
 	PAYMENT,

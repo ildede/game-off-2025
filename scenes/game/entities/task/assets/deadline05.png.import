@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i6eko5gkxoe5"
-path="res://.godot/imported/PNG_0004.png-99db23841703753d0254890b374d5948.ctex"
+uid="uid://djtynlqr4sqcq"
+path="res://.godot/imported/deadline05.png-6be2e7cab571b616382bd320fc856a28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/game/entities/task/assets/PNG_0004.png"
-dest_files=["res://.godot/imported/PNG_0004.png-99db23841703753d0254890b374d5948.ctex"]
+source_file="res://scenes/game/entities/task/assets/deadline05.png"
+dest_files=["res://.godot/imported/deadline05.png-6be2e7cab571b616382bd320fc856a28.ctex"]
 
 [params]
 

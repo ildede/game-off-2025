@@ -1,37 +1,66 @@
-[gd_scene load_steps=9 format=3 uid="uid://covv3g8q43ifu"]
+[gd_scene load_steps=15 format=3 uid="uid://covv3g8q43ifu"]
 
 [ext_resource type="Script" uid="uid://bdne0imwp85h2" path="res://scenes/game/entities/task/task.gd" id="1_rogos"]
 [ext_resource type="Script" uid="uid://bskemnx3yc0dt" path="res://scenes/game/entities/task/character_body_2d.gd" id="2_42cdb"]
-[ext_resource type="Texture2D" uid="uid://dh2womicg0r0v" path="res://scenes/game/entities/task/assets/PNG_0001.png" id="3_6ui4q"]
-[ext_resource type="Texture2D" uid="uid://deavqkfuu5d0e" path="res://scenes/game/entities/task/assets/PNG_0002.png" id="4_071qo"]
-[ext_resource type="Texture2D" uid="uid://b30wf1lw0v44h" path="res://scenes/game/entities/task/assets/PNG_0003.png" id="5_ovt2p"]
-[ext_resource type="Texture2D" uid="uid://i6eko5gkxoe5" path="res://scenes/game/entities/task/assets/PNG_0004.png" id="6_1pfua"]
+[ext_resource type="Texture2D" uid="uid://bxepn0sgubhwd" path="res://scenes/game/entities/task/assets/deadline01.png" id="3_ctq7e"]
+[ext_resource type="Texture2D" uid="uid://4x83nji4abbm" path="res://scenes/game/entities/task/assets/deadline02.png" id="4_q7iwt"]
+[ext_resource type="Texture2D" uid="uid://b0pru31okls5u" path="res://scenes/game/entities/task/assets/deadline03.png" id="5_of1kn"]
+[ext_resource type="Texture2D" uid="uid://c5333o1lj3skr" path="res://scenes/game/entities/task/assets/deadline04.png" id="6_ql8ey"]
+[ext_resource type="Texture2D" uid="uid://djtynlqr4sqcq" path="res://scenes/game/entities/task/assets/deadline05.png" id="7_kqt4b"]
+[ext_resource type="Texture2D" uid="uid://dh6jtkoxaxwhl" path="res://scenes/game/entities/task/assets/default01.png" id="8_r5isl"]
+[ext_resource type="Texture2D" uid="uid://cpu3cekmvwrg6" path="res://scenes/game/entities/task/assets/default02.png" id="9_l3hm3"]
+[ext_resource type="Texture2D" uid="uid://cxsi0t6bphxeu" path="res://scenes/game/entities/task/assets/default03.png" id="10_riryx"]
+[ext_resource type="Texture2D" uid="uid://b184f43nunidi" path="res://scenes/game/entities/task/assets/default04.png" id="11_uxrd1"]
+[ext_resource type="Texture2D" uid="uid://dfoythl7dms23" path="res://scenes/game/entities/task/assets/default05.png" id="12_g1kpc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cprfc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_6ui4q")
+"texture": ExtResource("3_ctq7e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_071qo")
+"texture": ExtResource("4_q7iwt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ovt2p")
+"texture": ExtResource("5_of1kn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_1pfua")
+"texture": ExtResource("6_ql8ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kqt4b")
+}],
+"loop": true,
+"name": &"deadline",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_r5isl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l3hm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_riryx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_uxrd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_g1kpc")
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukviy"]
-size = Vector2(298, 492)
+size = Vector2(127.14288, 175.71436)
 
 [node name="Task" type="PathFollow2D"]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.7, 0.7)
 rotates = false
 loop = false
 script = ExtResource("1_rogos")
@@ -41,20 +70,22 @@ script = ExtResource("2_42cdb")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_cprfc")
+animation = &"deadline"
+frame_progress = 0.8962669
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-visible = false
-position = Vector2(1, -6)
+position = Vector2(0.714288, -0.7142869)
+scale = Vector2(0.99999964, 0.99999964)
 shape = SubResource("RectangleShape2D_ukviy")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 modulate = Color(0, 1, 0, 1)
 self_modulate = Color(1.5706233, 1.5706233, 1.5706233, 1)
 show_behind_parent = true
-offset_left = 120.0
-offset_top = -240.0
-offset_right = 223.33333
-offset_bottom = 235.33334
+offset_left = 51.0
+offset_top = -91.0
+offset_right = 100.0
+offset_bottom = 90.0
 max_value = 20.0
 step = 1.0
 fill_mode = 3
@@ -74,9 +105,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 10
-theme_override_constants/shadow_offset_y = 5
-theme_override_font_sizes/font_size = 150
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 50
 text = "999"
 horizontal_alignment = 1
 vertical_alignment = 1

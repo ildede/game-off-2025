@@ -29,6 +29,7 @@ class State:
 	var current_day = 1
 	var task_received: int = 0
 	var task_finished: int = 0
+	var task_failed: int = 0
 	var translated_words: int = 0
 
 	var reputation: float = 0
