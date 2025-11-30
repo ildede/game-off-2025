@@ -34,9 +34,10 @@ func fire() -> void:
 	var target_task = tasks.pick_random()
 	if priority_task:
 		target_task = priority_task
-	l.target = target_task
-	l.target_id = target_task.get_node("CharacterBody2D").task_id
-	add_child(l)
+	if is_instance_valid(target_task):
+		l.target = target_task
+		l.target_id = target_task.get_node("CharacterBody2D").task_id
+		add_child(l)
 
 func handle_task_deleted(task_id: int) -> void:
 	var found_index = tasks.find_custom(func has_task_id(t):

@@ -68,7 +68,7 @@ func create_fallback_client() -> Models.ClientObject:
 
 func dictionary_to_client(obj_in: Dictionary) -> Models.ClientObject:
 	var client = Models.ClientObject.new()
-	client.is_accepted = false
+	client.is_removed = false
 	client.id = obj_in.get("id", randi())
 	client.name = obj_in.get("name")
 	client.engagement_email = obj_in.get("engagement_email")

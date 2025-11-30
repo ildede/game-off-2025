@@ -16,10 +16,15 @@ func _ready() -> void:
 	Global.task_finished.connect(handle_task_finished)
 	Global.task_failed.connect(handle_task_failed)
 	Global.task_deleted.connect(handle_task_deleted)
+	Global.client_deleted.connect(handle_client_deleted)
 
 	for client_info in Global.game_state.clients:
-		var added = add_new_client_to_scene(client_info)
-		active_clients.set(client_info.id, added)
+		if client_info.is_removed:
+			active_clients.set(client_info.id, {})
+		else:
+			var added = add_new_client_to_scene(client_info)
+			active_clients.set(client_info.id, added)
+			
 
 	for task_info: Models.OngoingTask in Global.game_state.ongoing_task:
 		if active_clients.has(task_info.client_id):
@@ -60,7 +65,7 @@ func handle_spawn_random_event() -> void:
 func handle_spawn_tasks() -> void:
 	print("[MAIN] handle_spawn_tasks")
 	for client in Global.game_state.clients:
-		if active_clients.has(client.id):
+		if active_clients.has(client.id) and not client.is_removed:
 			var task_object = client.get_task_to_spawn(Global.game_state.current_day)
 			if task_object:
 				if task_object.need_confirmation_email:
@@ -99,6 +104,20 @@ func handle_task_deleted(task_id: int) -> void:
 	if found_index >= 0:
 		var finished_task = Global.game_state.ongoing_task.pop_at(found_index)
 		Global.update_reputation.emit(finished_task.reputation_on_failure)
+
+func handle_client_deleted(client_id: int) -> void:
+	print("[MAIN] handle_task_deleted for task_id ", client_id)
+	active_clients.set(client_id, {})
+
+	var client_index = Global.game_state.clients.find_custom(func(c): return c.id == client_id)
+	if client_index >= 0:
+		Global.game_state.clients[client_index].is_removed = true
+		Global.update_reputation.emit(-5)
+
+	var ids_to_delete = Global.game_state.ongoing_task.filter(func(t): return t.client_id == client_id).map(func(t): return t.task_id)
+	for id in ids_to_delete:
+		Global.task_deleted.emit(id)
+
 
 func handle_end_of_the_day() -> void:
 	print("[MAIN] handle_end_of_the_day")

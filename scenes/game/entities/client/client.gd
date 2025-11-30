@@ -21,3 +21,16 @@ func initialize(my_position: Vector2, translator_position: Vector2, client_data:
 
 func spawn_task(task: Task) -> void:
 	path_to_translator.add_child(task)
+
+
+func _on_area_2d_mouse_entered() -> void:
+	$Delete.visible = true
+
+func _on_area_2d_mouse_exited() -> void:
+	$Delete.visible = false
+
+func _on_delete_pressed() -> void:
+	Global.client_deleted.emit(client_id)
+	$Sprite.play("delete")
+	await get_tree().create_timer(2).timeout
+	queue_free()

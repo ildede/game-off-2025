@@ -43,7 +43,7 @@ class State:
 	var bills: Array[BillObject] = []
 
 class ClientObject:
-	var is_accepted: bool
+	var is_removed: bool
 	var id: int
 	var name: String
 	var engagement_email: String

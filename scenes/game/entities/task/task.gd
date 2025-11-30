@@ -50,7 +50,6 @@ func _on_character_body_2d_input_event(_viewport: Node, event: InputEvent, _shap
 		Global.new_priority_task.emit(self)
 
 func _on_delete_pressed() -> void:
-	print("deleted pressed")
 	Global.task_deleted.emit(get_task_id())
 
 func _on_character_body_2d_mouse_entered() -> void:
