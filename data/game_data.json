@@ -3,7 +3,6 @@
     {
       "id": 1,
       "name": "Foreign prize",
-      "engagement_email": "xxx",
       "payment_per_word": 0.09,
       "payment_terms": "NET7",
       "recurring_tasks": [
@@ -32,7 +31,6 @@
     {
       "id": 2,
       "name": "To the abyss",
-      "engagement_email": "xxx",
       "payment_per_word": 0.10,
       "payment_terms": "NET7",
       "recurring_tasks": [
@@ -61,7 +59,6 @@
     {
       "id": 3,
       "name": "Locust",
-      "engagement_email": "xxx",
       "payment_per_word": 0.10,
       "payment_terms": "NET7",
       "recurring_tasks": [
@@ -90,7 +87,6 @@
     {
       "id": 4,
       "name": "Jupiter translations",
-      "engagement_email": "xxx",
       "payment_per_word": 0.08,
       "payment_terms": "EONM",
       "recurring_tasks": [
@@ -119,7 +115,6 @@
     {
       "id": 5,
       "name": "Quizzatron",
-      "engagement_email": "xxx",
       "payment_per_word": 0.08,
       "payment_terms": "NET30",
       "recurring_tasks": [
@@ -148,7 +143,6 @@
     {
       "id": 6,
       "name": "Glytch",
-      "engagement_email": "xxx",
       "payment_per_word": 0.08,
       "payment_terms": "EONM",
       "recurring_tasks": [
@@ -177,7 +171,6 @@
     {
       "id": 7,
       "name": "Bassaliter",
-      "engagement_email": "xxx",
       "payment_per_word": 0.08,
       "payment_terms": "NET7",
       "recurring_tasks": [
@@ -206,7 +199,6 @@
     {
       "id": 8,
       "name": "Tigerviaduct",
-      "engagement_email": "xxx",
       "payment_per_word": 0.03,
       "payment_terms": "EONM",
       "recurring_tasks": [
@@ -235,7 +227,6 @@
     {
       "id": 9,
       "name": "NekoArmy",
-      "engagement_email": "xxx",
       "payment_per_word": 0.04,
       "payment_terms": "NET7",
       "recurring_tasks": [
@@ -264,7 +255,6 @@
     {
       "id": 10,
       "name": "LeTitsNow",
-      "engagement_email": "xxx",
       "payment_per_word": 0.05,
       "payment_terms": "NET30",
       "recurring_tasks": [
@@ -293,7 +283,6 @@
     {
       "id": 11,
       "name": "All the Woe",
-      "engagement_email": "xxx",
       "payment_per_word": 0.03,
       "payment_terms": "EOM",
       "recurring_tasks": [
@@ -322,7 +311,6 @@
     {
       "id": 12,
       "name": "All the Delay",
-      "engagement_email": "xxx",
       "payment_per_word": 0.03,
       "payment_terms": "EONM",
       "recurring_tasks": [
@@ -351,7 +339,6 @@
     {
       "id": 13,
       "name": "Fall the Way",
-      "engagement_email": "xxx",
       "payment_per_word": 0.03,
       "payment_terms": "NET60",
       "recurring_tasks": [
@@ -380,7 +367,6 @@
     {
       "id": 14,
       "name": "Tabbyte",
-      "engagement_email": "xxx",
       "payment_per_word": 0.06,
       "payment_terms": "NET7",
       "recurring_tasks": [
@@ -409,7 +395,6 @@
     {
       "id": 15,
       "name": "Voxelspleen",
-      "engagement_email": "xxx",
       "payment_per_word": 0.07,
       "payment_terms": "IMMEDIATE",
       "recurring_tasks": [
@@ -438,7 +423,6 @@
     {
       "id": 16,
       "name": "Subatomic workshop",
-      "engagement_email": "xxx",
       "payment_per_word": 0.07,
       "payment_terms": "NET30",
       "recurring_tasks": [
@@ -467,7 +451,6 @@
     {
       "id": 17,
       "name": "Thor",
-      "engagement_email": "xxx",
       "payment_per_word": 0.03,
       "payment_terms": "NET60",
       "recurring_tasks": [
@@ -496,7 +479,6 @@
     {
       "id": 18,
       "name": "The worst place",
-      "engagement_email": "xxx",
       "payment_per_word": 0.03,
       "payment_terms": "NET60",
       "recurring_tasks": [
@@ -525,7 +507,6 @@
     {
       "id": 19,
       "name": "The last resort",
-      "engagement_email": "xxx",
       "payment_per_word": 0.03,
       "payment_terms": "EONM",
       "recurring_tasks": [
@@ -554,7 +535,6 @@
     {
       "id": 20,
       "name": "Random Bottom feeder",
-      "engagement_email": "xxx",
       "payment_per_word": 0.02,
       "payment_terms": "UPON_RECEIPT",
       "recurring_tasks": [
@@ -583,7 +563,6 @@
     {
       "id": 21,
       "name": "Peanuts Payer",
-      "engagement_email": "xxx",
       "payment_per_word": 0.02,
       "payment_terms": "NET60",
       "recurring_tasks": [
@@ -612,7 +591,6 @@
     {
       "id": 22,
       "name": "Wyvern child",
-      "engagement_email": "xxx",
       "payment_per_word": 0.08,
       "payment_terms": "NET7",
       "recurring_tasks": [
@@ -641,7 +619,6 @@
     {
       "id": 23,
       "name": "TranslateThat!",
-      "engagement_email": "xxx",
       "payment_per_word": 0.08,
       "payment_terms": "UPON_RECEIPT",
       "recurring_tasks": [
@@ -670,7 +647,6 @@
     {
       "id": 24,
       "name": "Monkey wordsmith",
-      "engagement_email": "xxx",
       "payment_per_word": 0.04,
       "payment_terms": "EONM",
       "recurring_tasks": [
@@ -699,7 +675,6 @@
     {
       "id": 25,
       "name": "MostlyOK",
-      "engagement_email": "xxx",
       "payment_per_word": 0.08,
       "payment_terms": "NET30",
       "recurring_tasks": [
@@ -728,7 +703,6 @@
     {
       "id": 26,
       "name": "Peacetrance",
-      "engagement_email": "xxx",
       "payment_per_word": 0.08,
       "payment_terms": "NET7",
       "recurring_tasks": [
@@ -757,7 +731,6 @@
     {
       "id": 27,
       "name": "Quiworse",
-      "engagement_email": "xxx",
       "payment_per_word": 0.04,
       "payment_terms": "EONM",
       "recurring_tasks": [
@@ -786,7 +759,6 @@
     {
       "id": 28,
       "name": "Trancepartial",
-      "engagement_email": "xxx",
       "payment_per_word": 0.02,
       "payment_terms": "EOM",
       "recurring_tasks": [
@@ -815,7 +787,6 @@
     {
       "id": 29,
       "name": "Purplesound",
-      "engagement_email": "xxx",
       "payment_per_word": 0.05,
       "payment_terms": "IMMEDIATE",
       "recurring_tasks": [
@@ -844,7 +815,6 @@
     {
       "id": 30,
       "name": "Leechtranslation",
-      "engagement_email": "xxx",
       "payment_per_word": 0.04,
       "payment_terms": "NET60",
       "recurring_tasks": [
@@ -873,7 +843,6 @@
     {
       "id": 31,
       "name": "Loca-lies oblique",
-      "engagement_email": "xxx",
       "payment_per_word": 0.04,
       "payment_terms": "NET30",
       "recurring_tasks": [
@@ -902,7 +871,6 @@
     {
       "id": 32,
       "name": "Globalhard",
-      "engagement_email": "xxx",
       "payment_per_word": 0.06,
       "payment_terms": "NET60",
       "recurring_tasks": [
@@ -931,7 +899,6 @@
     {
       "id": 33,
       "name": "Defective",
-      "engagement_email": "xxx",
       "payment_per_word": 0.05,
       "payment_terms": "NET30",
       "recurring_tasks": [
@@ -960,7 +927,6 @@
     {
       "id": 34,
       "name": "SwordGuardian",
-      "engagement_email": "xxx",
       "payment_per_word": 0.08,
       "payment_terms": "IMMEDIATE",
       "recurring_tasks": [
@@ -989,7 +955,6 @@
     {
       "id": 35,
       "name": "GoalToFail",
-      "engagement_email": "xxx",
       "payment_per_word": 0.03,
       "payment_terms": "NET30",
       "recurring_tasks": [
@@ -1018,7 +983,6 @@
     {
       "id": 36,
       "name": "PostToLose",
-      "engagement_email": "xxx",
       "payment_per_word": 0.03,
       "payment_terms": "EOM",
       "recurring_tasks": [
@@ -1047,7 +1011,6 @@
     {
       "id": 37,
       "name": "Beretta",
-      "engagement_email": "xxx",
       "payment_per_word": 0.07,
       "payment_terms": "EOM",
       "recurring_tasks": [
@@ -1076,7 +1039,6 @@
     {
       "id": 38,
       "name": "RevolTrance",
-      "engagement_email": "xxx",
       "payment_per_word": 0.07,
       "payment_terms": "EONM",
       "recurring_tasks": [
@@ -1105,7 +1067,6 @@
     {
       "id": 39,
       "name": "Fran’s late indirect",
-      "engagement_email": "xxx",
       "payment_per_word": 0.05,
       "payment_terms": "NET30",
       "recurring_tasks": [
@@ -1134,7 +1095,6 @@
     {
       "id": 40,
       "name": "AI Games",
-      "engagement_email": "xxx",
       "payment_per_word": 0.06,
       "payment_terms": "NET30",
       "recurring_tasks": [
@@ -1163,7 +1123,6 @@
     {
       "id": 41,
       "name": "WanRoad",
-      "engagement_email": "xxx",
       "payment_per_word": 0.03,
       "payment_terms": "NET60",
       "recurring_tasks": [
@@ -1192,7 +1151,6 @@
     {
       "id": 42,
       "name": "WeLotOfLies",
-      "engagement_email": "xxx",
       "payment_per_word": 0.05,
       "payment_terms": "NET7",
       "recurring_tasks": [
@@ -1221,7 +1179,6 @@
     {
       "id": 43,
       "name": "ScreamTech",
-      "engagement_email": "xxx",
       "payment_per_word": 0.07,
       "payment_terms": "NET7",
       "recurring_tasks": [
@@ -1250,7 +1207,6 @@
     {
       "id": 44,
       "name": "人10$",
-      "engagement_email": "xxx",
       "payment_per_word": 0.06,
       "payment_terms": "NET30",
       "recurring_tasks": [
@@ -1279,7 +1235,6 @@
     {
       "id": 45,
       "name": "Gramsci",
-      "engagement_email": "xxx",
       "payment_per_word": 0.05,
       "payment_terms": "NET60",
       "recurring_tasks": [
@@ -1308,7 +1263,6 @@
     {
       "id": 46,
       "name": "Locagator",
-      "engagement_email": "xxx",
       "payment_per_word": 0.09,
       "payment_terms": "IMMEDIATE",
       "recurring_tasks": [
@@ -1337,7 +1291,6 @@
     {
       "id": 47,
       "name": "Lemma Wolves",
-      "engagement_email": "xxx",
       "payment_per_word": 0.06,
       "payment_terms": "NET30",
       "recurring_tasks": [
@@ -1366,7 +1319,6 @@
     {
       "id": 48,
       "name": "Botoro",
-      "engagement_email": "xxx",
       "payment_per_word": 0.05,
       "payment_terms": "EONM",
       "recurring_tasks": [
@@ -1395,7 +1347,6 @@
     {
       "id": 49,
       "name": "TermBow",
-      "engagement_email": "xxx",
       "payment_per_word": 0.06,
       "payment_terms": "NET7",
       "recurring_tasks": [
@@ -1410,6 +1361,50 @@
         }
       ],
       "extemporaneous_tasks": [],
+      "public_reputation": {
+        "on_accept": 0.0,
+        "on_task_success": 0.0,
+        "on_task_failure": 0.0
+      },
+      "loyalty_meter": {
+        "on_task_success": 0.0,
+        "on_task_failure": 0.0,
+        "breakup_point": 0.0
+      }
+    },
+    {
+      "id": 50,
+      "name": "Many Words Multi Lang",
+      "payment_per_word": 0.07,
+      "payment_terms": "NET7",
+      "custom_email": "HALLO! Please.\nWe give you many word.\nYou write word in you language for us.\nMoney arrive soon.",
+      "recurring_tasks": [],
+      "extemporaneous_tasks": [
+        {
+          "words": 10,
+          "spawn_probability": 0.05,
+          "deadline_days": 2,
+          "need_confirmation_email": false
+        },
+        {
+          "words": 100,
+          "spawn_probability": 0.05,
+          "deadline_days": 2,
+          "need_confirmation_email": false
+        },
+        {
+          "words": 10000,
+          "spawn_probability": 0.01,
+          "deadline_days": 20,
+          "need_confirmation_email": true
+        },
+        {
+          "words": 100000,
+          "spawn_probability": 0.01,
+          "deadline_days": 100,
+          "need_confirmation_email": true
+        }
+      ],
       "public_reputation": {
         "on_accept": 0.0,
         "on_task_success": 0.0,

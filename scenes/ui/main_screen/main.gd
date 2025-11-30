@@ -153,7 +153,7 @@ func open_popup_message_for_new_client(client: Models.ClientObject) -> void:
 	get_tree().paused = true
 	var popup_data = CustomizablePopupMessage.PopupData.new()
 	popup_data.title = "New email"
-	var message_lines: Array[String] = [client.engagement_email]
+	var message_lines: Array[String] = [client.engagement_email()]
 	popup_data.lines = message_lines
 
 	var accept_btn = CustomizablePopupMessage.PopupButton.new()

@@ -42,17 +42,25 @@ class State:
 	var pending_payments: Array[PendingPayement] = []
 	var bills: Array[BillObject] = []
 
+const _engagement_mails = [
+		"Dear resource, we would like to work with you. In general, tasks will come to you following this schedule, but sometimes there may be emergencies or irregular flows.\n{workload}\nRates per word: {price}\nPayment terms: {invoicing}",
+		"Esteemed talent, we want to work together with you. Tasks will usually arrive with this plan, but there can be urgent tasks or days with different timing.\n{workload}\nRates per word: {price}\nPayment terms: {invoicing}",
+		"Hi dear, we are interested in working with you. Tasks should come in this approximate schedule, but there may be sudden requests or days with no tasks.\n{workload}\nRates per word: {price}\nPayment terms: {invoicing}",
+		"Dear individual, we would like to start working with you. Most tasks will follow this schedule, but sometimes there can be emergency tasks or changes in the flow.\n{workload}\nRates per word: {price}\nPayment terms: {invoicing}",
+		"Hi team, we want to collaborate with you. Tasks will normally follow this timeline, but please note there might be urgent tasks or times when the flow is not regular.\n{workload}\nRates per word: {price}\nPayment terms: {invoicing}"
+	]
+
 class ClientObject:
 	var is_removed: bool
 	var loyalty: float
 
 	var id: int
 	var name: String
-	var engagement_email: String
+	var workload: String
 	var payment_per_word: float
 	var payment_terms: String
 	var client_reliability: float
-
+	var custom_email: String
 	var public_reputation: PublicReputationObject
 
 	var loyalty_meter: LoyaltyMeterObject
@@ -70,6 +78,15 @@ class ClientObject:
 				task.last_spawn = day
 				return task
 		return null
+
+	func engagement_email() -> String:
+		if not custom_email == "":
+			return custom_email
+		return _engagement_mails.pick_random().format({
+			"workload": workload,
+			"price": payment_per_word,
+			"invoicing": payment_terms
+		})
 
 class PublicReputationObject:
 	var on_accept: float

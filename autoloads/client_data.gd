@@ -33,7 +33,7 @@ func create_fallback_client() -> Models.ClientObject:
 	var fallback_client = Models.ClientObject.new()
 	fallback_client.id = randi()
 	fallback_client.name = "TechManual Inc."
-	fallback_client.engagement_email = "Looking for ..."
+	fallback_client.workload = "We send 200 words daily!"
 	fallback_client.payment_per_word = 0.04
 	fallback_client.payment_terms = "UPON_RECEIPT"
 	fallback_client.client_reliability = 1
@@ -71,9 +71,10 @@ func dictionary_to_client(obj_in: Dictionary) -> Models.ClientObject:
 	client.is_removed = false
 	client.id = obj_in.get("id", randi())
 	client.name = obj_in.get("name")
-	client.engagement_email = obj_in.get("engagement_email")
+	client.workload = obj_in.get("workload", "")
 	client.payment_per_word = obj_in.get("payment_per_word")
 	client.payment_terms = obj_in.get("payment_terms")
+	client.custom_email = obj_in.get("custom_email", "")
 	client.client_reliability = obj_in.get("client_reliability", 1)
 	client.loyalty = Config.MAX_CLIENT_LOYALTY
 
