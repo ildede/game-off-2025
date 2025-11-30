@@ -28,7 +28,37 @@ func redraw_invoices() -> void:
 		count += 1
 
 func _on_single_invoice_clicked():
-	print("[INVOICES] _on_single_invoice_clicked, day ", Global.game_state.current_day)
+	print("[INVOICES] _on_single_invoice_clicked");
+	elaborate_single_invoice_with_time()
+
+func elaborate_single_invoice_with_time():
+	print("[INVOICES] elaborate_single_invoice_with_time, day ", Global.game_state.current_day)
+	get_tree().paused = true
+	var invoice_obj = Global.game_state.tasks_waiting_to_be_processed.pop_front()
+	match invoice_obj.payment_terms:
+		"IMMEDIATE":
+			Global.update_money.emit(invoice_obj.money_value)
+		"UPON_RECEIPT":
+			Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day, invoice_obj.money_value, invoice_obj.client_name))
+		"NET7":
+			Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+7, invoice_obj.money_value, invoice_obj.client_name))
+		"NET30":
+			Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+30, invoice_obj.money_value, invoice_obj.client_name))
+		"NET60":
+			Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+60, invoice_obj.money_value, invoice_obj.client_name))
+		"EOM":
+			Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+Global.until_end_of_month(Global.game_state.current_day), invoice_obj.money_value, invoice_obj.client_name))
+		"EONM":
+			Global.game_state.pending_payments.append(Models.PendingPayement.new(Global.game_state.current_day+Global.until_end_of_month(Global.game_state.current_day)+30, invoice_obj.money_value, invoice_obj.client_name))
+	var child = child_added.pop_back()
+	child.queue_free()
+	Global.ui_update.emit()
+	var new_time = max(Global.game_clock.time_left - Config.DAY_LENGHT_IN_SECONDS/24, 0.01)
+	Global.game_clock.start(new_time)
+	get_tree().paused = false
+
+func elaborate_invoices_with_popup():
+	print("[INVOICES] elaborate_invoices_with_popup, day ", Global.game_state.current_day)
 	get_tree().paused = true
 	var total = Global.game_state.tasks_waiting_to_be_processed.reduce(func(acc, element): return acc + element.money_value, 0)
 	var total_immediate = 0

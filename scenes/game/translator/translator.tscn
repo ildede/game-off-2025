@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d060mkq5malbq" path="res://scenes/game/translator/assets/PNG_0005.png" id="7_vbttx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bupml"]
-size = Vector2(1105.0006, 2085.0012)
+size = Vector2(710.00037, 2075.0015)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pcpsr"]
 animations = [{
@@ -42,8 +42,8 @@ letters = ExtResource("2_jqv1b")
 scale = Vector2(0.2, 0.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-87.49996, 17.499998)
-scale = Vector2(0.99999934, 0.99999934)
+position = Vector2(-284.9999, 22.49993)
+scale = Vector2(0.9999992, 0.9999992)
 shape = SubResource("RectangleShape2D_bupml")
 
 [node name="Translator" type="AnimatedSprite2D" parent="."]
