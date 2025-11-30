@@ -71,6 +71,6 @@ func _on_static_body_2d_body_entered(body: Node2D) -> void:
 			var task_found = tasks.pop_at(found_index)
 			if priority_task and priority_task.get_task_id() == task_found.get_task_id():
 				priority_task = null
-			Global.task_failed.emit(body.task_id)
 			await get_tree().create_timer(2).timeout
+			Global.task_failed.emit(body.task_id)
 			task_found.queue_free()

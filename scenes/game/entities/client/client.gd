@@ -46,7 +46,9 @@ func loyalty_updated(loyalty: float):
 		$Skull3.visible = true
 		Global.client_deleted.emit(client_id)
 		$Sprite.play("delete")
-		await get_tree().create_timer(2).timeout
+		var tree = get_tree()
+		if not tree == null:
+			await tree.create_timer(2).timeout
 		queue_free()
 	else:
 		$Skull3.visible = false

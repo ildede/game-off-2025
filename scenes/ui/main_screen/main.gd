@@ -24,7 +24,6 @@ func _ready() -> void:
 		else:
 			var added = add_new_client_to_scene(client_info)
 			active_clients.set(client_info.id, added)
-			
 
 	for task_info: Models.OngoingTask in Global.game_state.ongoing_task:
 		if active_clients.has(task_info.client_id):
@@ -54,6 +53,7 @@ func _ready() -> void:
 	$TaskSpawner.start(Config.SECONDS_BETWEEN_TASKS)
 	$TaskSpawner.timeout.connect(handle_spawn_tasks)
 
+	Global.ui_update.emit()
 	get_tree().paused = false
 
 func handle_spawn_random_event() -> void:
@@ -133,6 +133,7 @@ func handle_end_of_the_day() -> void:
 
 func handle_game_over() -> void:
 	print("[MAIN] handle_game_over")
+	get_tree().paused = true
 	SceneTransition.fade_to_end()
 
 
