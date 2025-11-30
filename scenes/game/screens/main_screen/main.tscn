@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b8cdvr2tr0y4c"]
 
-[ext_resource type="Script" uid="uid://b1mqk1kknrr1k" path="res://scenes/ui/main_screen/main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://b1mqk1kknrr1k" path="res://scenes/game/screens/main_screen/main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c7gpddms8dggn" path="res://scenes/ui/game_information/game_information.tscn" id="2_iu1df"]
 [ext_resource type="PackedScene" uid="uid://dibf4fgjie87y" path="res://scenes/game/translator/translator.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://b3cihatsnroda" path="res://scenes/ui/invoices/invoices.tscn" id="5_i25ov"]
@@ -10,8 +10,6 @@
 script = ExtResource("1_ig7tw")
 
 [node name="GameInformation" parent="." instance=ExtResource("2_iu1df")]
-offset_left = 0.0
-offset_top = 0.0
 offset_right = 1920.0
 offset_bottom = 656.0
 

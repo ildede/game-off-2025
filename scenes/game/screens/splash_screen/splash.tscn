@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbkuumbsn0h32"]
+
+[ext_resource type="Script" uid="uid://cd4xudv0v4u1d" path="res://scenes/game/screens/splash_screen/splash.gd" id="1_r7jb1"]
+[ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://scenes/ui/global_themes/main_theme.tres" id="2_rpmpj"]
+
+[node name="Splash" type="Node"]
+script = ExtResource("1_r7jb1")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_rpmpj")
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "BURN-OUT-RUNNER"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "was brought to you by"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="Panel/GridContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 30
+text = "Coding, accidental doodling, frame-by frame panic, game design, executive procrastination, acoustic typing FX:
+Davide HappyDev Pedron
+
+Original concept, game design, midnight epiphanies, texts, balance(ish), freelance realism consulting, coffee&catering logistics:
+Chiara LoQAce Di Modica
+
+Special consultants for boosts&malus, achievements&chaos:
+The PorcaLoc geese:
+(Beatrice Ceruti, Chiara Di Modica, Veronica Faroldi, Maurizio Massari)
+Placeholders: pngegg.com
+"
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Warning" type="RichTextLabel" parent="Panel/GridContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 30
+text = "Warning: any reference to people, tools, or projects might not be purely coincidental."
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="Panel/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 45
+text = "LET'S GO!"
+
+[connection signal="pressed" from="Panel/GridContainer/GridContainer/StartButton" to="." method="_on_start_button_pressed"]

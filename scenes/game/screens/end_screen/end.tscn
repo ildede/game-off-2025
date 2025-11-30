@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ct2fig6us6q27"]
 
-[ext_resource type="Script" uid="uid://de8ewu77p8dqs" path="res://scenes/ui/end_screen/end.gd" id="1_0l03c"]
+[ext_resource type="Script" uid="uid://de8ewu77p8dqs" path="res://scenes/game/screens/end_screen/end.gd" id="1_0l03c"]
 [ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://scenes/ui/global_themes/main_theme.tres" id="2_q22wo"]
 
 [node name="End" type="Node"]

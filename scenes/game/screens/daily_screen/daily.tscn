@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bucgncfhv2yq8"]
 
-[ext_resource type="Script" uid="uid://rmuvkl2iy50m" path="res://scenes/ui/daily_screen/daily.gd" id="1_n7uhh"]
+[ext_resource type="Script" uid="uid://rmuvkl2iy50m" path="res://scenes/game/screens/daily_screen/daily.gd" id="1_n7uhh"]
 [ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://scenes/ui/global_themes/main_theme.tres" id="2_vrdqk"]
 
 [node name="Daily" type="Node"]
