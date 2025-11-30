@@ -122,14 +122,20 @@ texture_normal = SubResource("AnimatedTexture_2jr2s")
 
 [node name="Skull1" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(-35, 110.00001)
-scale = Vector2(0.7, 0.7)
+position = Vector2(-50, 110.00001)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_g2rsv")
 
 [node name="Skull2" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(35, 110.00001)
-scale = Vector2(0.7, 0.7)
+position = Vector2(0, 110.00001)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_g2rsv")
+
+[node name="Skull3" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(50, 110.00001)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_g2rsv")
 
 [node name="Area2D" type="Area2D" parent="."]
