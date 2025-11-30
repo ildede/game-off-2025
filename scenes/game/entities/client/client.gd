@@ -1,8 +1,11 @@
-extends Node2D
+extends Control
 class_name ClientScene
 
 var client_id = 0;
 var path_to_translator: Path2D
+
+func _ready() -> void:
+	$Sprite.play("default")
 
 func initialize(my_position: Vector2, translator_position: Vector2, client_data: Models.ClientObject):
 	self.position = my_position
