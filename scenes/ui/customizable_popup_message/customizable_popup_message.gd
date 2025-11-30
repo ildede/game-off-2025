@@ -26,6 +26,7 @@ func show_popup(popup_data: PopupData) -> void:
 		b.text = button.text
 		b.pressed.connect(func():_closing_function(button.action))
 		b.size_flags_horizontal = Control.SIZE_SHRINK_CENTER + Control.SIZE_EXPAND
+		b.custom_minimum_size = Vector2(250,70)
 		$GridContainer/GridContainer.add_child(b)
 
 	close_requested.connect(func():_closing_function(popup_data.on_close))

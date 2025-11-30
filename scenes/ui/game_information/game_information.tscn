@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7gpddms8dggn"]
+[gd_scene load_steps=8 format=3 uid="uid://c7gpddms8dggn"]
 
 [ext_resource type="Script" uid="uid://b5d226ud6fjao" path="res://scenes/ui/game_information/game_information.gd" id="1_f6qh3"]
 [ext_resource type="PackedScene" uid="uid://dahhp2f70drw" path="res://scenes/ui/clock/clock.tscn" id="2_g6785"]
 [ext_resource type="PackedScene" uid="uid://dquq8idt0crs5" path="res://scenes/ui/events_panel/events_panel.tscn" id="3_g4cjn"]
+[ext_resource type="PackedScene" uid="uid://b0f5kyiejiap" path="res://scenes/ui/customizable_popup_message/customizable_popup_message.tscn" id="4_umi8m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
 bg_color = Color(0, 0, 1, 0.3529412)
@@ -15,29 +16,49 @@ bg_color = Color(1, 0, 0, 0.3529412)
 
 [node name="GameInformation" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 412.0
-offset_bottom = 652.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_f6qh3")
 
-[node name="Clock" parent="." instance=ExtResource("2_g6785")]
+[node name="ClockAndButtons" type="GridContainer" parent="."]
 layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 205.0
-offset_top = 135.0
-offset_right = 205.0
-offset_bottom = 135.0
-grow_horizontal = 1
-grow_vertical = 1
+offset_right = 510.0
+offset_bottom = 261.0
+columns = 2
+
+[node name="Clock" parent="ClockAndButtons" instance=ExtResource("2_g6785")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="GridContainer" parent="ClockAndButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DayOff" type="Button" parent="ClockAndButtons/Buttons"]
+custom_minimum_size = Vector2(175, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+disabled = true
+text = "Day off"
+
+[node name="Holiday" type="Button" parent="ClockAndButtons/Buttons"]
+custom_minimum_size = Vector2(175, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+disabled = true
+text = "Holiday"
 
 [node name="InfoPanel" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_top = 260.0
-offset_right = 511.0
+offset_right = 510.0
 offset_bottom = 650.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -154,7 +175,13 @@ vertical_alignment = 1
 
 [node name="EventsPanel" parent="." instance=ExtResource("3_g4cjn")]
 layout_mode = 0
-offset_left = 513.0
+offset_left = 510.0
 offset_top = -1.0
 offset_right = 1917.0
 offset_bottom = 306.0
+
+[node name="CustomPopupMessage" parent="." instance=ExtResource("4_umi8m")]
+visible = false
+
+[connection signal="pressed" from="ClockAndButtons/Buttons/DayOff" to="." method="dispaly_dayoff_message"]
+[connection signal="pressed" from="ClockAndButtons/Buttons/Holiday" to="." method="dispaly_holiday_message"]

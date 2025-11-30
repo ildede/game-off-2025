@@ -35,15 +35,15 @@ func _ready() -> void:
 			$Panel/GridContainer/Label.append_text("	- {0}: {1}$".format([bill.name, bill.amount]))
 	$Panel/GridContainer/Label.newline()
 	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("Now, your {0} clients are waiting, what do you want to do?".format([Global.game_state.clients.size()]))
+	$Panel/GridContainer/Label.append_text("Now, your {0} clients are waiting, what do you want to do?".format([Global.game_state.clients.filter(func(c):return not c.is_removed).size()]))
 
 func _on_continue_button_pressed() -> void:
 	print("[DAILY] _on_continue_button_pressed")
 	for bill in Global.game_state.bills:
-		if bill.next_payment_day == Global.game_state.current_day:
+		if bill.next_payment_day <= Global.game_state.current_day:
 			Global.update_money.emit(-bill.amount)
 			if bill.recurring:
-				bill.next_payment_day = Global.game_state.current_day + Global.until_end_of_month(Global.game_state.current_day) + bill.due_day
+				bill.next_payment_day = bill.next_payment_day + Global.until_end_of_month(bill.next_payment_day) + bill.due_day
 				print("bill update, now bill.next_payment_day is {0}, for a due_day of {1}".format([bill.next_payment_day, bill.due_day]))
 
 	if Global.game_state.money < 0:
