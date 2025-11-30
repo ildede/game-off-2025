@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dcumfskefaxom"]
+[gd_scene load_steps=22 format=3 uid="uid://dcumfskefaxom"]
 
 [ext_resource type="Script" uid="uid://ce7obqaor6lhc" path="res://scenes/game/entities/client/client.gd" id="1_gdxsl"]
 [ext_resource type="Texture2D" uid="uid://cr7gnttryrull" path="res://scenes/game/entities/client/assets/client01.png" id="2_4ht41"]
@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://gseo7tudly75" path="res://scenes/game/entities/task/assets/close03.png" id="8_swdha"]
 [ext_resource type="Texture2D" uid="uid://bc8slt3fttv8t" path="res://scenes/game/entities/task/assets/close04.png" id="9_n2ha8"]
 [ext_resource type="Texture2D" uid="uid://cp7q3dshthqh7" path="res://scenes/game/entities/client/assets/delete04.png" id="9_o48si"]
+[ext_resource type="Texture2D" uid="uid://dk1rvh6q5xa8n" path="res://scenes/game/entities/client/assets/skull01.png" id="14_cj6qq"]
+[ext_resource type="Texture2D" uid="uid://1wbu1emdtoif" path="res://scenes/game/entities/client/assets/skull02.png" id="15_t7x5u"]
+[ext_resource type="Texture2D" uid="uid://bvns5cltmwl17" path="res://scenes/game/entities/client/assets/skull03.png" id="16_pug2c"]
+[ext_resource type="Texture2D" uid="uid://btbroxj3evwtu" path="res://scenes/game/entities/client/assets/skull04.png" id="17_fnp2x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7d8ro"]
 animations = [{
@@ -62,6 +66,26 @@ frame_2/duration = 0.2
 frame_3/texture = ExtResource("9_n2ha8")
 frame_3/duration = 0.2
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2rsv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_cj6qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_t7x5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pug2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fnp2x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7d8ro"]
 size = Vector2(141, 188)
 
@@ -83,7 +107,7 @@ offset_bottom = 100.0
 theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
 text = "client name"
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Delete" type="TextureButton" parent="."]
@@ -96,7 +120,20 @@ offset_right = 77.14285
 offset_bottom = -1.428566
 texture_normal = SubResource("AnimatedTexture_2jr2s")
 
+[node name="Skull1" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-35, 110.00001)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_g2rsv")
+
+[node name="Skull2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(35, 110.00001)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_g2rsv")
+
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.5, -3)

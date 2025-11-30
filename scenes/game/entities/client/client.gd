@@ -18,6 +18,29 @@ func initialize(my_position: Vector2, translator_position: Vector2, client_data:
 	path_to_translator = path
 	add_child(path_to_translator)
 	$Name.text = client_data.name
+	if client_data.loyalty <= (Config.MAX_CLIENT_LOYALTY/3)*2:
+		$Skull1.visible = true
+		$Skull1.play("default")
+	if client_data.loyalty <= Config.MAX_CLIENT_LOYALTY/3:
+		$Skull2.visible = true
+		$Skull2.play("default")
+
+func loyalty_updated(loyalty: float):
+	if loyalty <= (Config.MAX_CLIENT_LOYALTY/3)*2:
+		$Skull1.visible = true
+		$Skull1.play("default")
+	else:
+		$Skull1.visible = false
+	if loyalty <= Config.MAX_CLIENT_LOYALTY/3:
+		$Skull2.visible = true
+		$Skull2.play("default")
+	else:
+		$Skull2.visible = false
+	if loyalty <= Config.MIN_CLIENT_LOYALTY:
+		Global.client_deleted.emit(client_id)
+		$Sprite.play("delete")
+		await get_tree().create_timer(2).timeout
+		queue_free()
 
 func spawn_task(task: Task) -> void:
 	path_to_translator.add_child(task)

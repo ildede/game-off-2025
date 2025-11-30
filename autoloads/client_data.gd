@@ -37,7 +37,7 @@ func create_fallback_client() -> Models.ClientObject:
 	fallback_client.payment_per_word = 0.04
 	fallback_client.payment_terms = "UPON_RECEIPT"
 	fallback_client.client_reliability = 1
-	fallback_client.loyalty = 0
+	fallback_client.loyalty = Config.MAX_CLIENT_LOYALTY
 
 	var pb_rep = Models.PublicReputationObject.new()
 	pb_rep.on_accept = 2
@@ -75,7 +75,7 @@ func dictionary_to_client(obj_in: Dictionary) -> Models.ClientObject:
 	client.payment_per_word = obj_in.get("payment_per_word")
 	client.payment_terms = obj_in.get("payment_terms")
 	client.client_reliability = obj_in.get("client_reliability", 1)
-	client.loyalty = obj_in.get("loyalty", 0)
+	client.loyalty = Config.MAX_CLIENT_LOYALTY
 
 	var rcr_tsk: Array[Models.RecurringTaskObject] = []
 	for task_in in obj_in["recurring_tasks"]:

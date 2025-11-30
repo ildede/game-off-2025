@@ -44,6 +44,8 @@ class State:
 
 class ClientObject:
 	var is_removed: bool
+	var loyalty: float
+
 	var id: int
 	var name: String
 	var engagement_email: String
@@ -52,7 +54,7 @@ class ClientObject:
 	var client_reliability: float
 
 	var public_reputation: PublicReputationObject
-	var loyalty: float
+
 	var loyalty_meter: LoyaltyMeterObject
 
 	var recurring_tasks: Array[RecurringTaskObject]

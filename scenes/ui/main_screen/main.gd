@@ -95,6 +95,10 @@ func handle_task_failed(task_id: int) -> void:
 		var finished_task = Global.game_state.ongoing_task.pop_at(found_index)
 		Global.update_reputation.emit(finished_task.reputation_on_failure)
 		Global.update_stress.emit(Config.STRESS_ON_TASK_FAILED)
+		var client_index = Global.game_state.clients.find_custom(func(c): return c.id == finished_task.client_id)
+		Global.game_state.clients[client_index].loyalty -= Config.MAX_CLIENT_LOYALTY/3
+		var client_instance = active_clients.get(finished_task.client_id)
+		client_instance.loyalty_updated(Global.game_state.clients[client_index].loyalty)
 
 func handle_task_deleted(task_id: int) -> void:
 	print("[MAIN] handle_task_deleted for task_id ", task_id)
