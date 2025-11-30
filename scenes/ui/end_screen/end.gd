@@ -4,39 +4,33 @@ class_name End
 func _ready() -> void:
 	print("[END] _ready")
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	$Panel/GridContainer/Label.text = "On day: {0}".format([Global.game_state.current_day])
-	$Panel/GridContainer/Label.newline()
-	if Global.game_state.stress >= Config.MAX_STRESS_LEVEL:
-		$Panel/GridContainer/Label.append_text("BURNOUT! Beeing a translator is too stressfull for you.")
+	$Panel/GridContainer/MarginContainer/Title.text = ""
+	if Global.game_state.stress >= 0:
+		$Panel/GridContainer/MarginContainer/Title.append_text("BURNOUT!")
 	if Global.game_state.money < 0:
-		$Panel/GridContainer/Label.append_text("MONEY BURN! You also need to pay your bills you know? Maybe it's better to go and open a Library Tea House Bistrot?")
+		$Panel/GridContainer/MarginContainer/Title.append_text("NOT ENOUGH MONEY!".format([Global.game_state.current_day]))
 
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("Bank account: {0}".format([Global.game_state.money]))
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("Task waiting invoice: {0}".format([Global.game_state.tasks_waiting_to_be_processed.size()]))
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text(
-		"Until now you translated {word_count} words, during your work on {task_received} tasks (only {task_finished} completely finished)"
-		.format({
-			"word_count":Global.game_state.translated_words,
-			"task_received": Global.game_state.task_received,
-			"task_finished": Global.game_state.task_finished
-		})
-	)
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("Your reputation: {0}".format([Global.game_state.reputation]))
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("Your stress level: {0}/{1}".format([Global.game_state.stress, Config.MAX_STRESS_LEVEL]))
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("The quality perceived: {0}".format([Global.game_state.quality]))
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("Now, your {0} clients will find someone else, and you?".format([Global.game_state.clients.size()]))
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("what do you want to do?")
+	$Panel/GridContainer/Description.text = ""
+	$Panel/GridContainer/Description.append_text("Too bad :(  you are too weak to survive in such an unfair and unlucky job.\n
+	But if you are masochistic enough and you still want more, you can TRY AGAIN
+Or you can GIVE UP and work on that small backup plan of yours for a ")
+	var backup_plan = ["TEA ROOM", "BOOKSTORE", "CAFETERIA", "CAT CAFE"]
+	$Panel/GridContainer/Description.append_text(backup_plan.pick_random())
 
-func _on_start_button_pressed() -> void:
-	print("[END] _on_start_button_pressed")
+	$Panel/GridContainer/Statistics.text = ""
+	$Panel/GridContainer/Statistics.append_text("Days survived: {0}
+Translated words: {1}
+You'll be missed by {2} clients".format([
+		Global.game_state.current_day,
+		Global.game_state.translated_words,
+		Global.game_state.clients.filter(func(c: Models.ClientObject): return not c.is_removed).size()
+	]))
+
+func _on_try_again_pressed() -> void:
+	print("[END] _on_try_again_pressed")
 	Global.start_new_game()
 	SceneTransition.fade_to_main()
+
+func _on_quit_pressed() -> void:
+	print("[END] _on_quit_pressed")
+	get_tree().quit()

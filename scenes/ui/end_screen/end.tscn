@@ -17,22 +17,65 @@ theme = ExtResource("2_q22wo")
 [node name="GridContainer" type="GridContainer" parent="Panel"]
 layout_mode = 2
 
-[node name="Label" type="RichTextLabel" parent="Panel/GridContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Title" type="RichTextLabel" parent="Panel/GridContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_font_sizes/normal_font_size = 100
+text = "BURNOUT!
+On day 5"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="Panel/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "BURNOUT!"
+theme_override_font_sizes/normal_font_size = 35
+text = "Too bad :(  you are too weak to survive in such an unfair and unlucky job.
+But if you are masochistic enough and you still want more, you can  TRY AGAIN
+Or you can GIVE UP and work on that small backup plan of yours for a TEA ROOM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Statistics" type="RichTextLabel" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 35
+text = "Day survived: 10
+Translated words: 1000
+You'll be missed by 10 clients"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="Panel/GridContainer"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
 
-[node name="StartButton" type="Button" parent="Panel/GridContainer/GridContainer"]
+[node name="TryAgain" type="Button" parent="Panel/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-text = "START AGAIN"
+theme_override_font_sizes/font_size = 45
+text = "TRY AGAIN"
 
-[connection signal="pressed" from="Panel/GridContainer/GridContainer/StartButton" to="." method="_on_start_button_pressed"]
+[node name="Quit" type="Button" parent="Panel/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 45
+text = "GIVE UP"
+
+[connection signal="pressed" from="Panel/GridContainer/GridContainer/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/GridContainer/Quit" to="." method="_on_quit_pressed"]
