@@ -17,21 +17,46 @@ theme = ExtResource("1_ots34")
 [node name="GridContainer" type="GridContainer" parent="Panel"]
 layout_mode = 2
 
+[node name="Title" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Welcome to your new life as a translator"
+horizontal_alignment = 1
+
 [node name="Label" type="RichTextLabel" parent="Panel/GridContainer"]
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "You decide to start your career in the translation industry.
-Accept clients, they send task, you translate task, you send invoice, client hopfully pay.
-
-Remember that each month you'll have to pay some bills:
-- Internet connection 10$ (automatic on 1st of each month)
-- Rent 500$ (by the end of month)
-
-You start with 100$ in your bank.
-Good luck."
+size_flags_vertical = 4
+text = "Finish tasks and try to survive by paying your bills and avoiding burnout."
+fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HowTo" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "How to play"
+horizontal_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="Panel/GridContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "- Accept or refuse clients based on your needs.
+If a client is no longer good for you, you can delete them by clicking on the red X.
+
+- Tasks are handled automatically, but you can assign priority by clicking on the most urgent paper. When the task is delivered, priority goes back to automatic.
+- If you think you cannot finish a task already in progress, you can delete it by clicking on the red X. This will not affect your stress level, but you won’t be paid and you will lose reputation.
+- If you fail three tasks from the same client, you’ll lose the client.
+
+- Don’t forget to send your invoices or you won’t get paid!
+Every client has their own payment terms, so choose carefully the ones that work best for you! Invoicing will cost you time."
 vertical_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="Panel/GridContainer"]
@@ -39,9 +64,11 @@ custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
 [node name="StartButton" type="Button" parent="Panel/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 45
 text = "START"
 
 [connection signal="pressed" from="Panel/GridContainer/GridContainer/StartButton" to="." method="_on_start_button_pressed"]
