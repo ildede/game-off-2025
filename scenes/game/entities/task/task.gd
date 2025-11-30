@@ -7,6 +7,11 @@ var remaining_words = 1
 
 func _ready() -> void:
 	set_progress_ratio(lerp(0, 1, running_time / total_time))
+	$Target.play("default")
+	Global.new_priority_task.connect(handle_priority_task)
+
+func handle_priority_task(task: Task) -> void:
+	$Target.visible = get_task_id() == task.get_task_id()
 
 func _physics_process(delta: float) -> void:
 	running_time += delta
@@ -43,9 +48,6 @@ func get_task_id() -> int:
 func _on_character_body_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		Global.new_priority_task.emit(self)
-	
-	if event is InputEventMouseButton and not event.pressed:
-		print(event)
 
 func _on_delete_pressed() -> void:
 	print("deleted pressed")

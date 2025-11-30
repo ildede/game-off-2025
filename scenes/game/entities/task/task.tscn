@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://covv3g8q43ifu"]
+[gd_scene load_steps=25 format=3 uid="uid://covv3g8q43ifu"]
 
 [ext_resource type="Script" uid="uid://bdne0imwp85h2" path="res://scenes/game/entities/task/task.gd" id="1_rogos"]
 [ext_resource type="Script" uid="uid://bskemnx3yc0dt" path="res://scenes/game/entities/task/character_body_2d.gd" id="2_42cdb"]
@@ -16,6 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://bxbkh7jfnf8d8" path="res://scenes/game/entities/task/assets/close02.png" id="14_r5isl"]
 [ext_resource type="Texture2D" uid="uid://gseo7tudly75" path="res://scenes/game/entities/task/assets/close03.png" id="15_l3hm3"]
 [ext_resource type="Texture2D" uid="uid://bc8slt3fttv8t" path="res://scenes/game/entities/task/assets/close04.png" id="16_riryx"]
+[ext_resource type="Texture2D" uid="uid://bptrstjpufvl6" path="res://scenes/game/entities/task/assets/target01.png" id="17_uxrd1"]
+[ext_resource type="Texture2D" uid="uid://pffm1cmqnfxq" path="res://scenes/game/entities/task/assets/target02.png" id="18_g1kpc"]
+[ext_resource type="Texture2D" uid="uid://2mke85uj4oow" path="res://scenes/game/entities/task/assets/target03.png" id="19_0jlj1"]
+[ext_resource type="Texture2D" uid="uid://dooh5g58sw1yy" path="res://scenes/game/entities/task/assets/target04.png" id="20_ax00y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cprfc"]
 animations = [{
@@ -74,6 +78,26 @@ frame_2/duration = 0.2
 frame_3/texture = ExtResource("16_riryx")
 frame_3/duration = 0.2
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_bptyo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_uxrd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_g1kpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0jlj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ax00y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Task" type="PathFollow2D"]
 scale = Vector2(0.7, 0.7)
 rotates = false
@@ -87,7 +111,7 @@ script = ExtResource("2_42cdb")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_cprfc")
 animation = &"deadline"
-frame_progress = 0.5066534
+frame_progress = 0.24271658
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0.714288, -0.7142869)
@@ -136,6 +160,12 @@ offset_top = -101.428566
 offset_right = 77.14285
 offset_bottom = -1.428566
 texture_normal = SubResource("AnimatedTexture_ctq7e")
+
+[node name="Target" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-4.7683716e-07, 57.142857)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_bptyo")
 
 [connection signal="input_event" from="CharacterBody2D" to="." method="_on_character_body_2d_input_event"]
 [connection signal="mouse_entered" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_entered"]
