@@ -29,11 +29,17 @@ func load_json_data():
 	else:
 		push_error("Failed to load clients.json")
 
+func client_accepted(client_id: int) -> void:
+	var found_index = clients_data.find_custom(func(c): return c.id == client_id);
+	if found_index >= 0:
+		clients_data.remove_at(found_index)
+
 func get_random_client() -> Models.ClientObject:
 	if clients_data.is_empty():
 		return create_fallback_client()
-
-	return clients_data[randi() % clients_data.size()]
+	
+	var tmp = clients_data.filter(func(c): return c.min_reputation <= Global.game_state.reputation)
+	return tmp[randi() % tmp.size()]
 
 func get_random_event() -> Models.EventObject:
 	if events_data.is_empty():
@@ -100,6 +106,7 @@ func dictionary_to_client(obj_in: Dictionary) -> Models.ClientObject:
 	client.payment_terms = obj_in.get("payment_terms")
 	client.custom_email = obj_in.get("custom_email", "")
 	client.client_reliability = obj_in.get("client_reliability", 1)
+	client.min_reputation = obj_in.get("min_reputation", 0)
 	client.loyalty = Config.MAX_CLIENT_LOYALTY
 
 	var rcr_tsk: Array[Models.RecurringTaskObject] = []

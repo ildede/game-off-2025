@@ -163,7 +163,7 @@ func add_new_client_to_scene(client_info: Models.ClientObject) -> ClientScene:
 func open_popup_message_for_new_client(client: Models.ClientObject) -> void:
 	get_tree().paused = true
 	var popup_data = CustomizablePopupMessage.PopupData.new()
-	popup_data.title = "New email"
+	popup_data.title = "New email from {0}".format([client.name])
 	var message_lines: Array[String] = [client.engagement_email()]
 	popup_data.lines = message_lines
 
@@ -174,6 +174,7 @@ func open_popup_message_for_new_client(client: Models.ClientObject) -> void:
 		var added = add_new_client_to_scene(client)
 		active_clients.set(client.id, added)
 		$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+		ClientData.client_accepted(client.id)
 		get_tree().paused = false
 
 	var refuse_btn = CustomizablePopupMessage.PopupButton.new()

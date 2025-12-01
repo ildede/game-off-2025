@@ -5,6 +5,8 @@
       "name": "Foreign prize",
       "payment_per_word": 0.09,
       "payment_terms": "NET7",
+      "workload": "1 big and prestigious project per year.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -33,6 +35,8 @@
       "name": "To the abyss",
       "payment_per_word": 0.10,
       "payment_terms": "NET7",
+      "workload": "200 to 1000 words per week, but we might get some bigger project too.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -61,6 +65,8 @@
       "name": "Locust",
       "payment_per_word": 0.10,
       "payment_terms": "NET7",
+      "workload": "2-3 mid sized projects per year.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -89,6 +95,8 @@
       "name": "Jupiter translations",
       "payment_per_word": 0.08,
       "payment_terms": "EONM",
+      "workload": "2k words every two weeks, usually. Sometimes we have bigger batches.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -117,6 +125,8 @@
       "name": "Quizzatron",
       "payment_per_word": 0.08,
       "payment_terms": "NET30",
+      "workload": "2 to 3 mid-sized or bigger projects per year, average reputation.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -145,6 +155,8 @@
       "name": "Glytch",
       "payment_per_word": 0.08,
       "payment_terms": "EONM",
+      "workload": "Recurrent mini batches, 2k to 7k per month.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -173,6 +185,8 @@
       "name": "Bassaliter",
       "payment_per_word": 0.08,
       "payment_terms": "NET7",
+      "workload": "2-3 medium or big projects per year, usually prestigious.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -201,6 +215,8 @@
       "name": "Tigerviaduct",
       "payment_per_word": 0.03,
       "payment_terms": "EONM",
+      "workload": "Constant flow, but projects can be messy. Also, you won't get any reputation from them.",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -229,6 +245,8 @@
       "name": "NekoArmy",
       "payment_per_word": 0.04,
       "payment_terms": "NET7",
+      "workload": "Random workflow, no reputation gained from our projects.",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -257,6 +275,8 @@
       "name": "LeTitsNow",
       "payment_per_word": 0.05,
       "payment_terms": "NET30",
+      "workload": "A couple of huge and prestigious projects per year.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -285,6 +305,8 @@
       "name": "All the Woe",
       "payment_per_word": 0.03,
       "payment_terms": "EOM",
+      "workload": "Constant flow of small batches.",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -313,6 +335,8 @@
       "name": "All the Delay",
       "payment_per_word": 0.03,
       "payment_terms": "EONM",
+      "workload": "Big batches, completely random flow, no reputation gained.",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -341,6 +365,8 @@
       "name": "Fall the Way",
       "payment_per_word": 0.03,
       "payment_terms": "NET60",
+      "workload": "12 to 16k per month, without any notice. No reputation gained.",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -369,6 +395,8 @@
       "name": "Tabbyte",
       "payment_per_word": 0.06,
       "payment_terms": "NET7",
+      "workload": "~5.000 words per week. Projects have average prestige.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -397,6 +425,8 @@
       "name": "Voxelspleen",
       "payment_per_word": 0.07,
       "payment_terms": "IMMEDIATE",
+      "workload": "2 huge projects per year, great for visibility.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -425,6 +455,8 @@
       "name": "Subatomic workshop",
       "payment_per_word": 0.07,
       "payment_terms": "NET30",
+      "workload": "4 to 7 medium tasks per year, random prestige.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -453,6 +485,8 @@
       "name": "Thor",
       "payment_per_word": 0.03,
       "payment_terms": "NET60",
+      "workload": "Constant flow, small batches, no disclosure on our tasks (0 reputation acquired).",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -481,6 +515,8 @@
       "name": "The worst place",
       "payment_per_word": 0.03,
       "payment_terms": "NET60",
+      "workload": "Constant workflow of medium sized batches. ~20k words per month. 0 Prestige.",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -509,6 +545,8 @@
       "name": "The last resort",
       "payment_per_word": 0.03,
       "payment_terms": "EONM",
+      "workload": "2-3 huge projects per year. Sorry, no prestige acquired.",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -537,6 +575,8 @@
       "name": "Random Bottom feeder",
       "payment_per_word": 0.02,
       "payment_terms": "UPON_RECEIPT",
+      "workload": "Daily flow, ~5k per week. No prestige gained.",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -565,6 +605,8 @@
       "name": "Peanuts Payer",
       "payment_per_word": 0.02,
       "payment_terms": "NET60",
+      "workload": "Daily flow, ~11k per week. Moderate prestige.",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -593,6 +635,8 @@
       "name": "Wyvern child",
       "payment_per_word": 0.08,
       "payment_terms": "NET7",
+      "workload": "Variable workflow; frequent small batches or sporadic big ones. Good reputation.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -621,6 +665,8 @@
       "name": "TranslateThat!",
       "payment_per_word": 0.08,
       "payment_terms": "UPON_RECEIPT",
+      "workload": "1 huge project per year, great reputation.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -649,6 +695,8 @@
       "name": "Monkey wordsmith",
       "payment_per_word": 0.04,
       "payment_terms": "EONM",
+      "workload": "4 big projects per year. Stellar reputation, if you get to disclose the game.",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -677,6 +725,8 @@
       "name": "MostlyOK",
       "payment_per_word": 0.08,
       "payment_terms": "NET30",
+      "workload": "A bunch of medium sized projects, can also get a couple of major ones. Rare chance to get great reputation.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -705,6 +755,8 @@
       "name": "Peacetrance",
       "payment_per_word": 0.08,
       "payment_terms": "NET7",
+      "workload": "1 huge project per year, average reputation.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -733,6 +785,8 @@
       "name": "Quiworse",
       "payment_per_word": 0.04,
       "payment_terms": "EONM",
+      "workload": "6 to 7 medium sized projects per year. Low reputation.",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -761,6 +815,8 @@
       "name": "Trancepartial",
       "payment_per_word": 0.02,
       "payment_terms": "EOM",
+      "workload": "Constant weekly flow around 9k words. Reputation? What's reputation?",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -789,6 +845,8 @@
       "name": "Purplesound",
       "payment_per_word": 0.05,
       "payment_terms": "IMMEDIATE",
+      "workload": "~7k words per week. Reputation may vary.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -817,6 +875,8 @@
       "name": "Leechtranslation",
       "payment_per_word": 0.04,
       "payment_terms": "NET60",
+      "workload": "~500 words per day. No prestigious projects, sorry.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -845,6 +905,8 @@
       "name": "Loca-lies oblique",
       "payment_per_word": 0.04,
       "payment_terms": "NET30",
+      "workload": "Random workload, random projects. Frequent small batches or sporadic bigger ones.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -873,6 +935,8 @@
       "name": "Globalhard",
       "payment_per_word": 0.06,
       "payment_terms": "NET60",
+      "workload": "3 to 5 mid-sized or major projects per year, medium to great reputation.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -901,6 +965,8 @@
       "name": "Defective",
       "payment_per_word": 0.05,
       "payment_terms": "NET30",
+      "workload": "We can't foresee the workload, nor the projects' prestige. Sorry.",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -929,6 +995,8 @@
       "name": "SwordGuardian",
       "payment_per_word": 0.08,
       "payment_terms": "IMMEDIATE",
+      "workload": "5 to 10 small to mid-sized projects per year, fair reputation.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -957,6 +1025,8 @@
       "name": "GoalToFail",
       "payment_per_word": 0.03,
       "payment_terms": "NET30",
+      "workload": "Constant workflow, ~40k words per year. Random prestige.",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -985,6 +1055,8 @@
       "name": "PostToLose",
       "payment_per_word": 0.03,
       "payment_terms": "EOM",
+      "workload": "Constant workflow, ~50k per month. No prestige acquired.",
+      "min_reputation": 0,
       "recurring_tasks": [
         {
           "words": 500,
@@ -1011,8 +1083,10 @@
     {
       "id": 37,
       "name": "Beretta",
-      "payment_per_word": 0.07,
+      "payment_per_word": 0.06,
       "payment_terms": "EOM",
+      "workload": "Unpredictable workflow, but great reputation!",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -1041,6 +1115,8 @@
       "name": "RevolTrance",
       "payment_per_word": 0.07,
       "payment_terms": "EONM",
+      "workload": "2 massive tasks per year, good prestige.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -1069,6 +1145,8 @@
       "name": "Fran’s late indirect",
       "payment_per_word": 0.05,
       "payment_terms": "NET30",
+      "workload": "Constant flow of small and mid sized projects. No prestige acquired.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -1097,6 +1175,8 @@
       "name": "AI Games",
       "payment_per_word": 0.06,
       "payment_terms": "NET30",
+      "workload": "1 massive project per year, great reputation.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -1125,6 +1205,8 @@
       "name": "WanRoad",
       "payment_per_word": 0.03,
       "payment_terms": "NET60",
+      "workload": "Constant flow of ~4k words per week. No reputation gained.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -1153,6 +1235,8 @@
       "name": "WeLotOfLies",
       "payment_per_word": 0.05,
       "payment_terms": "NET7",
+      "workload": "Average workload of 300 to 600 words per day. Sometimes you also get some reputation.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -1181,6 +1265,8 @@
       "name": "ScreamTech",
       "payment_per_word": 0.07,
       "payment_terms": "NET7",
+      "workload": "Unpredictable workflow, but reputation is decent.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -1209,6 +1295,8 @@
       "name": "人10$",
       "payment_per_word": 0.06,
       "payment_terms": "NET30",
+      "workload": "3 gorgeous projects per year. But no one will ever know you worked on them.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -1237,6 +1325,8 @@
       "name": "Gramsci",
       "payment_per_word": 0.05,
       "payment_terms": "NET60",
+      "workload": "Constant workflow, ~200 words per day, sometimes you can get some mid sized projects too. Reputation not available.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -1265,6 +1355,8 @@
       "name": "Locagator",
       "payment_per_word": 0.09,
       "payment_terms": "IMMEDIATE",
+      "workload": "5 to 10 mid sized projects per year, plus small batches from time to time. Fair prestige.",
+      "min_reputation": 65,
       "recurring_tasks": [
         {
           "words": 500,
@@ -1293,6 +1385,8 @@
       "name": "Lemma Wolves",
       "payment_per_word": 0.06,
       "payment_terms": "NET30",
+      "workload": "~5 mid sized projects per year. Sometimes you get a bigger one too. Low chances of getting a good reputation.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -1321,6 +1415,8 @@
       "name": "Botoro",
       "payment_per_word": 0.05,
       "payment_terms": "EONM",
+      "workload": "~9k words per week, no big projects, no reputation.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -1349,6 +1445,8 @@
       "name": "TermBow",
       "payment_per_word": 0.06,
       "payment_terms": "NET7",
+      "workload": "~10 mid sized tasks per year, fair amount of reputation acquired for each task.",
+      "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
@@ -1377,6 +1475,7 @@
       "name": "Many Words Multi Lang",
       "payment_per_word": 0.07,
       "payment_terms": "NET7",
+      "min_reputation": 50,
       "custom_email": "HALLO! Please.\nWe give you many word.\nYou write word in you language for us.\nMoney arrive soon.",
       "recurring_tasks": [],
       "extemporaneous_tasks": [
@@ -1455,205 +1554,205 @@
       "id": 5,
       "name": "NIGHTMARE FUEL",
       "description": "Surprise, surprise: the text is in rhyme! So now you’ll spend twice the time.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 6,
       "name": "FREE DRINKS AT THE SWISS BOOTH (only during gamescom)",
       "description": "+3 reputation, but for the next 10 seconds you are drunk (you see twice as many tasks, but only half of them are real).",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 7,
       "name": "MTPEEEEEW",
       "description": "The revision task was actually post-editing in disguise. You spend double time but get the same pay.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 8,
       "name": "RESISTANCE IS FUTILE",
       "description": "A random client is suddenly acquired by Q-worse and from now it pays you -50%",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 9,
       "name": "TUTTY FUZZY",
       "description": "A new fuzzy grid just dropped, you earn -33% for the task.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 10,
       "name": "WORKING AT BULL SPEED",
       "description": "Energy drinks boost your speed but take a toll on your health, increasing your chances of getting sick.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 11,
       "name": "VARIABLE REX",
       "description": "You learn RegEx and your productivity goes up. (lose some time)",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 12,
       "name": "BENEVOLENT REX",
       "description": "Your colleague helps you with RegEx formulas, you get a productivity boost.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 13,
       "name": "MORE THAN NATIVE",
       "description": "You type twice as fast.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 14,
       "name": "I'VE SEEN THINGS YOU PEOPLE WOULDN’T BELIEVE",
       "description": "The client asked ChatGPT to check your text. You lose one turn replying to useless comments.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 15,
       "name": "ROCK THE CASTAH",
       "description": "You spend some time chatting with your close colleagues. Stress is partially restored.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 16,
       "name": "CAT ON THE KEYBOARD",
       "description": "You write many words per minute, but quality is 100% random.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 17,
       "name": "DOG DUTY",
       "description": "You earn nothing for X seconds but recover mental health.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 18,
       "name": "TRANSLATOR'S BEST FRIEND",
       "description": "You spend some time with your pet and recover some stress.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 19,
       "name": "YOUR PARTNER IS A DEV",
       "description": "Your lovely partner creates your website. You save money, you gain reputation and recover some stress.(spawn rate molto bassa)",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 20,
       "name": "YOU WEREN’T WORKING, RIGHT?",
       "description": "Your mother keeps you on the phone for 30 minutes in the middle of a task. (in alcuni casi può triggerare la seguente)",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 21,
       "name": "NEED FOR SPID",
       "description": "Your mother needs assistance with bureaucracy and IT stuff. The 30 minutes become 1 hour.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 22,
       "name": "PET TAX",
       "description": "You gain reputation by sending one client cute photos of your pet.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 23,
       "name": "FAST AS LIGHTNING",
       "description": "You install fast fiber and your productivity goes up.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 24,
       "name": "WORK FOR EXPOSURE",
       "description": "The client asks you to cut your rate for a very big and prestigious project. Stress and reputation go up. You earn less money.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 25,
       "name": "CLOCKWORK ORANGE KEYBOARD",
       "description": "You boost your productivity for today, but waste time arguing with neighbors who knock on your door to complain about the noise.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 26,
       "name": "MONEY MAKING MONEY TAKING",
       "description": "A payment of $X has not been paid for over two months. Do you want to pay $X to hire a lawyer to scare the client and get your payment in 3 months?",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 27,
       "name": "GHOSTIN’ & SHAMELESS",
       "description": "Without warning, one of your clients stops sending you tasks for an indefinite period.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 28,
       "name": "SHEET, I’LL MISS MY DEADLINE!",
       "description": "The client’s responses to the query sheet have arrived, you need to implement them immediately. (-x minutes, no money)",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 29,
       "name": "HONEY, I SCRAMBLED THE KIT",
       "description": "The localization kit is completely disorganized, so you end up spending one and a half times more time.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 30,
       "name": "MINIMUM FEE",
       "description": "One client agrees to pay you $10 for all tasks under $10.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 31,
       "name": "CUT TOOL",
       "description": "Your localization tool’s server is down. You lose time and your stress increases.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 32,
       "name": "WHAM! BAM! IT’S IN! THE SPAM!",
       "description": "The client’s email went to spam. You lose reputation for not replying. They’re definitely not enjoying what you do.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 33,
       "name": "TOO MANY TOOLS WILL SPOIL THEM BOTH",
       "description": "You forgot to open Slack, Teams, Discord, Skype, whatnot. You lose reputation, and one client stops sending you tasks for two weeks.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 34,
       "name": "NON DISCLOSURE DISAGREEMENT",
       "description": "The big client with the prestigious project didn’t include you in the credits. You can’t mention the game, and you don’t gain the promised reputation.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 35,
       "name": "WEEKDAY HIGH FEVER",
       "description": "You have a fever. You can keep working and sacrifice your health, or you can rest and miss your deadlines.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 36,
       "name": "THE GREEDS OF SEPARATION",
       "description": "You discover that one of your clients is also a client of another client of yours. You have to drop them due to a conflict of interest.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 37,
       "name": "PONZI SCHEME",
       "description": "You can subcontract some tasks. You earn $X in a continuous stream, even while filling out invoices. Stress doesn’t increase, but the pay is meager. (decidere se aggiungere tasto “subappalta” ad alcuni task.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 38,
       "name": "DID YOU TRY TURNING IT OFF AND ON?",
       "description": "Today your connection is acting up. You are forced to work from an internet café. Your productivity is halved.",
-      "can_spawn":  false
+      "can_spawn": false
     },
     {
       "id": 39,

@@ -62,6 +62,7 @@ class ClientObject:
 	var client_reliability: float
 	var custom_email: String
 	var public_reputation: PublicReputationObject
+	var min_reputation: int
 
 	var loyalty_meter: LoyaltyMeterObject
 

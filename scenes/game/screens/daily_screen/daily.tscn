@@ -14,15 +14,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_vrdqk")
 
-[node name="GridContainer" type="GridContainer" parent="Panel"]
-layout_mode = 2
-
-[node name="StatisticGrid" type="GridContainer" parent="Panel/GridContainer"]
+[node name="StatisticGrid" type="GridContainer" parent="Panel"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Statistics" type="RichTextLabel" parent="Panel/GridContainer/StatisticGrid"]
+[node name="Statistics" type="RichTextLabel" parent="Panel/StatisticGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -33,7 +30,10 @@ Your budget: 100.5$"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Continue" type="Button" parent="Panel/GridContainer/StatisticGrid"]
+[node name="ItemList" type="ItemList" parent="Panel/StatisticGrid"]
+layout_mode = 2
+
+[node name="Continue" type="Button" parent="Panel/StatisticGrid"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -41,7 +41,4 @@ size_flags_vertical = 6
 theme_override_font_sizes/font_size = 45
 text = "CONTINUE"
 
-[node name="ItemList" type="ItemList" parent="Panel/GridContainer"]
-layout_mode = 2
-
-[connection signal="pressed" from="Panel/GridContainer/StatisticGrid/Continue" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Panel/StatisticGrid/Continue" to="." method="_on_continue_button_pressed"]

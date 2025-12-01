@@ -5,8 +5,8 @@ func _ready() -> void:
 	print("[DAILY] _ready")
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
-	$Panel/GridContainer/StatisticGrid/Statistics.text = ""
-	$Panel/GridContainer/StatisticGrid/Statistics.append_text("Days survived: {0}\nTranslated words: {1}\nYour budget: {2}$"
+	$Panel/StatisticGrid/Statistics.text = ""
+	$Panel/StatisticGrid/Statistics.append_text("Days survived: {0}\nTranslated words: {1}\nYour budget: {2}$"
 		.format([
 			Global.game_state.current_day,
 			Global.game_state.translated_words,
