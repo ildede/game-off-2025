@@ -42,6 +42,7 @@ func set_clock(timer: Timer):
 func handle_new_client_accepted(client: Models.ClientObject) -> void:
 	print("[GLOBAL] handle_new_client_accepted")
 	game_state.clients.append(client)
+	game_state.reputation += client.public_reputation.on_accept
 
 func handle_client_send_task(_task: Task) -> void:
 	print("[GLOBAL] handle_client_send_task")
