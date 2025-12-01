@@ -7,7 +7,7 @@
       "payment_terms": "NET7",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -35,7 +35,7 @@
       "payment_terms": "NET7",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -63,7 +63,7 @@
       "payment_terms": "NET7",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -91,7 +91,7 @@
       "payment_terms": "EONM",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -119,7 +119,7 @@
       "payment_terms": "NET30",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -147,7 +147,7 @@
       "payment_terms": "EONM",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -175,7 +175,7 @@
       "payment_terms": "NET7",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -203,7 +203,7 @@
       "payment_terms": "EONM",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -231,7 +231,7 @@
       "payment_terms": "NET7",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -259,7 +259,7 @@
       "payment_terms": "NET30",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -287,7 +287,7 @@
       "payment_terms": "EOM",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -315,7 +315,7 @@
       "payment_terms": "EONM",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -343,7 +343,7 @@
       "payment_terms": "NET60",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -371,7 +371,7 @@
       "payment_terms": "NET7",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -399,7 +399,7 @@
       "payment_terms": "IMMEDIATE",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -427,7 +427,7 @@
       "payment_terms": "NET30",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -455,7 +455,7 @@
       "payment_terms": "NET60",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -483,7 +483,7 @@
       "payment_terms": "NET60",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -511,7 +511,7 @@
       "payment_terms": "EONM",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -539,7 +539,7 @@
       "payment_terms": "UPON_RECEIPT",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -567,7 +567,7 @@
       "payment_terms": "NET60",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -595,7 +595,7 @@
       "payment_terms": "NET7",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -623,7 +623,7 @@
       "payment_terms": "UPON_RECEIPT",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -651,7 +651,7 @@
       "payment_terms": "EONM",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -679,7 +679,7 @@
       "payment_terms": "NET30",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -707,7 +707,7 @@
       "payment_terms": "NET7",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -735,7 +735,7 @@
       "payment_terms": "EONM",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -763,7 +763,7 @@
       "payment_terms": "EOM",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -791,7 +791,7 @@
       "payment_terms": "IMMEDIATE",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -819,7 +819,7 @@
       "payment_terms": "NET60",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -847,7 +847,7 @@
       "payment_terms": "NET30",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -875,7 +875,7 @@
       "payment_terms": "NET60",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -903,7 +903,7 @@
       "payment_terms": "NET30",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -931,7 +931,7 @@
       "payment_terms": "IMMEDIATE",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -959,7 +959,7 @@
       "payment_terms": "NET30",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -987,7 +987,7 @@
       "payment_terms": "EOM",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -1015,7 +1015,7 @@
       "payment_terms": "EOM",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -1043,7 +1043,7 @@
       "payment_terms": "EONM",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -1071,7 +1071,7 @@
       "payment_terms": "NET30",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -1099,7 +1099,7 @@
       "payment_terms": "NET30",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -1127,7 +1127,7 @@
       "payment_terms": "NET60",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -1155,7 +1155,7 @@
       "payment_terms": "NET7",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -1183,7 +1183,7 @@
       "payment_terms": "NET7",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -1211,7 +1211,7 @@
       "payment_terms": "NET30",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -1239,7 +1239,7 @@
       "payment_terms": "NET60",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -1267,7 +1267,7 @@
       "payment_terms": "IMMEDIATE",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -1295,7 +1295,7 @@
       "payment_terms": "NET30",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -1323,7 +1323,7 @@
       "payment_terms": "EONM",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
@@ -1351,7 +1351,7 @@
       "payment_terms": "NET7",
       "recurring_tasks": [
         {
-          "words": 200,
+          "words": 500,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,

@@ -4,38 +4,20 @@ class_name Daily
 func _ready() -> void:
 	print("[DAILY] _ready")
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	$Panel/GridContainer/Label.text = ""
-	$Panel/GridContainer/Label.bbcode_enabled = true
-	$Panel/GridContainer/Label.append_text("[b]Daily recap: {0}[/b]".format([Global.game_state.current_day]))
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("[i]Bank account: {0}[/i]".format([Global.game_state.money]))
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("You are waiting for {0} payment from invoices you sent".format([Global.game_state.pending_payments.size()]))
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("Tasks that are waiting for an invoice: {0}".format([Global.game_state.tasks_waiting_to_be_processed.size()]))
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text(
-		"Until now you translated {word_count} words, during your work on {task_received} tasks (only {task_finished} completely finished)"
-		.format({
-			"word_count":Global.game_state.translated_words,
-			"task_received": Global.game_state.task_received,
-			"task_finished": Global.game_state.task_finished
-		})
-	)
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("Your reputation: {0}".format([Global.game_state.reputation]))
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("Your stress level: {0}/{1}".format([Global.game_state.stress, Config.MAX_STRESS_LEVEL]))
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("The quality perceived: {0}".format([Global.game_state.quality]))
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("Bills that will be payed today: ")
-	for bill in Global.game_state.bills:
-		if bill.next_payment_day == Global.game_state.current_day:
-			$Panel/GridContainer/Label.append_text("	- {0}: {1}$".format([bill.name, bill.amount]))
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.newline()
-	$Panel/GridContainer/Label.append_text("Now, your {0} clients are waiting, what do you want to do?".format([Global.game_state.clients.filter(func(c):return not c.is_removed).size()]))
+	if Global.game_state.ongoing_task.size() > 0:
+		$Panel/GridContainer/OvertimeGrid.visible = true
+		$Panel/GridContainer/OvertimeGrid/Description.text = ""
+		$Panel/GridContainer/OvertimeGrid/Description.append_text("You have {0} ongoing tasks. Do you want to work overtime?\nYou'll clear one pending task with under 2000 words, but your stress will increase by 1 point for every 400 words."
+			.format([Global.game_state.ongoing_task.size()]))
+
+	$Panel/GridContainer/StatisticGrid/Statistics.text = ""
+	$Panel/GridContainer/StatisticGrid/Statistics.append_text("Days survived: {0}\nTranslated words: {1}\nYour budget: {2}$"
+		.format([
+			Global.game_state.current_day,
+			Global.game_state.translated_words,
+			Global.game_state.money
+		]))
+
 
 func _on_continue_button_pressed() -> void:
 	print("[DAILY] _on_continue_button_pressed")
@@ -52,6 +34,20 @@ func _on_continue_button_pressed() -> void:
 		Global.update_day_count.emit(1)
 		SceneTransition.fade_to_main()
 
-func _on_pay_bills_button_pressed() -> void:
-	print("[DAILY] _on_pay_bills_button_pressed")
-	Global.update_money.emit(-50)
+func _on_overtime_button_pressed() -> void:
+	print("[DAILY] _on_overtime_button_pressed")
+	var get_rid = Global.game_state.ongoing_task.filter(func(t:Models.OngoingTask):return t.remaining_words < 2000).pick_random()
+	if get_rid != null:
+		var found_index = Global.game_state.ongoing_task.find_custom(func(t): return t.task_id == get_rid.task_id)
+		if found_index >= 0:
+			var finished_task = Global.game_state.ongoing_task.pop_at(found_index)
+			var client_index = Global.game_state.clients.find_custom(func(c): return c.id == finished_task.client_id)
+			var client_info: Models.ClientObject = Global.game_state.clients[client_index]
+			var invoice_info = Models.InvoiceObject.new(finished_task, client_info)
+			Global.game_state.translated_words += finished_task.total_words
+			Global.game_state.reputation += finished_task.reputation_on_success
+			Global.game_state.tasks_waiting_to_be_processed.append(invoice_info)
+			Global.game_state.stress += finished_task.remaining_words/400
+
+	Global.update_day_count.emit(1)
+	SceneTransition.fade_to_main()
