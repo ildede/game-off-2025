@@ -64,8 +64,8 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukviy"]
-size = Vector2(127.14288, 175.71436)
+[sub_resource type="CircleShape2D" id="CircleShape2D_uxrd1"]
+radius = 55.0
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_ctq7e"]
 frames = 4
@@ -114,9 +114,9 @@ animation = &"deadline"
 frame_progress = 0.24271658
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0.714288, -0.7142869)
-scale = Vector2(0.99999964, 0.99999964)
-shape = SubResource("RectangleShape2D_ukviy")
+position = Vector2(0.714288, -0.714288)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("CircleShape2D_uxrd1")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 modulate = Color(0, 1, 0, 1)

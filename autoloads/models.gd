@@ -33,7 +33,7 @@ class State:
 	var translated_words: int = 0
 
 	var reputation: float = 0
-	var quality: float = 50
+	var quality: float = 30
 	var stress: float = 0
 	var clients: Array[ClientObject] = []
 	var money: float = 100

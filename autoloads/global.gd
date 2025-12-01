@@ -83,7 +83,8 @@ func handle_update_stress(value: float) -> void:
 
 func handle_update_quality(value: float) -> void:
 	print("[GLOBAL] handle_update_quality")
-	game_state.quality += value
+	if game_state.quality < Config.MAX_QUALITY_LEVEL:
+		game_state.quality += value
 	ui_update.emit()
 
 func handle_update_money(value: float) -> void:
