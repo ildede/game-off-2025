@@ -33,27 +33,44 @@ func ui_update() -> void:
 	events_panel.update_events(events)
 	if Global.game_state.ongoing_task.is_empty():
 		$ClockAndButtons/Buttons/DayOff.disabled = false
-		$ClockAndButtons/Buttons/Holiday.disabled = false
+		if Global.game_state.money < 500:
+			$ClockAndButtons/Buttons/Holiday.disabled = true
+			$ClockAndButtons/Buttons/Holiday.tooltip_text = "You wished, you need at least 500$"
+		else:
+			$ClockAndButtons/Buttons/Holiday.disabled = false
 	else:
 		$ClockAndButtons/Buttons/DayOff.disabled = true
+		$ClockAndButtons/Buttons/DayOff.tooltip_text = "Not until you have ongoing tasks"
 		$ClockAndButtons/Buttons/Holiday.disabled = true
+		$ClockAndButtons/Buttons/Holiday.tooltip_text = "Not until you have ongoing tasks"
+
 
 func dispaly_holiday_message():
 	get_tree().paused = true
 	var popup_data = CustomizablePopupMessage.PopupData.new()
-	popup_data.title = "Do you want to go on holiday?"
+	popup_data.title = "Do you want to take a week of vacation?"
 	var message_lines: Array[String] = [
-		"Today is {day} {month}, an holiday is waiting".format(Global.get_current_date()),
-		"You'll be back to work again at {day} {month}".format(Global.day_number_to_date(Global.game_state.current_day+7))
+		"You won’t get any tasks for the rest of today and for the next 7 days.",
+		"Stress will be fully restored.",
+		"You will earn nothing, and you will have to pay the vacation cost: 500$.",
+		"Reputation won’t change."
 	]
 	popup_data.lines = message_lines
 
 	var accept_button = CustomizablePopupMessage.PopupButton.new()
-	accept_button.text = "YES"
-	accept_button.action = func():
-		Global.game_state.current_day += 6
-		Global.game_clock.start(0.01)
-		get_tree().paused = false
+	if Global.game_state.money >= 500:
+		accept_button.text = "YES"
+		accept_button.action = func():
+			Global.game_state.current_day += 6
+			Global.game_clock.start(0.01)
+			Global.update_money.emit(-500)
+			Global.update_stress.emit(-Global.game_state.stress)
+			get_tree().paused = false
+	else:
+		accept_button.text = "YOU WISHED"
+		accept_button.disabled = true
+		accept_button.action = func():
+			get_tree().paused = false
 
 	var postpone_button = CustomizablePopupMessage.PopupButton.new()
 	postpone_button.text = "NO"
@@ -68,10 +85,12 @@ func dispaly_holiday_message():
 func dispaly_dayoff_message():
 	get_tree().paused = true
 	var popup_data = CustomizablePopupMessage.PopupData.new()
-	popup_data.title = "Do you want to go on holiday?"
+	popup_data.title = "Do you want to take a day off?"
 	var message_lines: Array[String] = [
-		"Today is {day} {month}, a Day off is waiting".format(Global.get_current_date()),
-		"You'll be back to work again at {day} {month}".format(Global.day_number_to_date(Global.game_state.current_day+2))
+		"You won’t get any tasks for the rest of today and for all tomorrow.",
+		"Stress will be restored by 5 points.",
+		"You will earn nothing, but you will also spend nothing.",
+		"Reputation won’t change."
 	]
 	popup_data.lines = message_lines
 
@@ -79,6 +98,7 @@ func dispaly_dayoff_message():
 	accept_button.text = "YES"
 	accept_button.action = func():
 		Global.game_state.current_day += 1
+		Global.update_stress.emit(-5)
 		Global.game_clock.start(0.01)
 		get_tree().paused = false
 

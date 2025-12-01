@@ -24,10 +24,11 @@ var game_clock: Timer
 func _ready() -> void:
 	print("[GLOBAL] _ready")
 	new_client_accepted.connect(handle_new_client_accepted)
-	#client_send_task.connect(handle_client_send_task)
+	client_send_task.connect(handle_client_send_task)
 	letter_hit_task.connect(handle_letter_hit_task)
 	task_finished.connect(handle_task_finished)
 	task_failed.connect(handle_task_failed)
+	task_deleted.connect(handle_task_deleted)
 	update_reputation.connect(handle_update_reputation)
 	update_stress.connect(handle_update_stress)
 	update_quality.connect(handle_update_quality)
@@ -44,7 +45,7 @@ func handle_new_client_accepted(client: Models.ClientObject) -> void:
 
 func handle_client_send_task(_task: Task) -> void:
 	print("[GLOBAL] handle_client_send_task")
-	game_state.task_received += 1
+	ui_update.emit()
 
 func handle_letter_hit_task(letter: Letter, task: Task) -> void:
 	#print("[GLOBAL] handle_letter_hit_task")
@@ -61,6 +62,10 @@ func handle_task_finished(_id: int) -> void:
 func handle_task_failed(_id: int) -> void:
 	print("[GLOBAL] handle_task_failed")
 	game_state.task_failed += 1
+	ui_update.emit()
+
+func handle_task_deleted(_id: int) -> void:
+	print("[GLOBAL] handle_task_deleted")
 	ui_update.emit()
 
 func handle_update_reputation(value: float) -> void:

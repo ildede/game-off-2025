@@ -10,6 +10,7 @@ class PopupData:
 class PopupButton:
 	var text: String = ""
 	var action: Callable = func():pass
+	var disabled: bool = false
 
 func show_popup(popup_data: PopupData) -> void:
 	title = popup_data.title
@@ -27,6 +28,7 @@ func show_popup(popup_data: PopupData) -> void:
 		b.pressed.connect(func():_closing_function(button.action))
 		b.size_flags_horizontal = Control.SIZE_SHRINK_CENTER + Control.SIZE_EXPAND
 		b.custom_minimum_size = Vector2(250,70)
+		b.disabled = button.disabled
 		$GridContainer/GridContainer.add_child(b)
 
 	close_requested.connect(func():_closing_function(popup_data.on_close))

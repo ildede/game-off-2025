@@ -52,6 +52,7 @@ custom_minimum_size = Vector2(175, 60)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 2
+tooltip_text = "A week to chill, no more stress"
 disabled = true
 text = "Holiday"
 
