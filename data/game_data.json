@@ -19,14 +19,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -47,14 +40,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -75,14 +61,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -103,14 +82,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -131,14 +103,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -159,14 +124,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -187,14 +145,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -215,14 +166,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -243,14 +187,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -271,14 +208,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -299,14 +229,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -327,14 +250,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -355,14 +271,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -383,14 +292,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -411,14 +313,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -439,14 +334,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -467,14 +355,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -495,14 +376,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -523,14 +397,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -551,14 +418,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -579,14 +439,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -607,14 +460,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -635,14 +481,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -663,14 +502,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -691,14 +523,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -719,14 +544,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -747,14 +565,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -775,14 +586,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -803,14 +607,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -831,14 +628,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -859,14 +649,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -887,14 +670,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -915,14 +691,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -943,14 +712,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -971,14 +733,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -999,14 +754,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -1027,14 +775,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -1055,14 +796,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -1083,14 +817,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -1111,14 +838,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -1139,14 +859,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -1167,14 +880,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -1195,14 +901,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -1223,14 +922,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -1251,14 +943,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -1279,14 +964,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -1307,14 +985,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -1335,14 +1006,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -1363,14 +1027,7 @@
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     },
     {
@@ -1408,14 +1065,7 @@
         }
       ],
       "public_reputation": {
-        "on_accept": 0.0,
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0
-      },
-      "loyalty_meter": {
-        "on_task_success": 0.0,
-        "on_task_failure": 0.0,
-        "breakup_point": 0.0
+        "on_accept": 0.0
       }
     }
   ],

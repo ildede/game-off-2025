@@ -71,23 +71,13 @@ func create_fallback_client() -> Models.ClientObject:
 
 	var pb_rep = Models.PublicReputationObject.new()
 	pb_rep.on_accept = 2
-	pb_rep.on_task_success = 0.5
-	pb_rep.on_task_failure = -0.5
 	fallback_client.public_reputation = pb_rep
-
-	var lyt_mtr = Models.LoyaltyMeterObject.new()
-	lyt_mtr.on_task_success = 0.5
-	lyt_mtr.on_task_failure = -0.5
-	lyt_mtr.breakup_point = -10
-	fallback_client.loyalty_meter = lyt_mtr
 
 	var rcr_tsk: Array[Models.RecurringTaskObject] = []
 	var task: Models.RecurringTaskObject = Models.RecurringTaskObject.new()
 	task.frequency_days = 1
 	task.words = 200
 	task.deadline_days = 1
-	task.on_task_success = 10.0
-	task.on_task_failure = -10.0
 	task.need_confirmation_email = false
 	rcr_tsk.append(task)
 	fallback_client.recurring_tasks = rcr_tsk
@@ -135,15 +125,7 @@ func dictionary_to_client(obj_in: Dictionary) -> Models.ClientObject:
 
 	var pb_rep = Models.PublicReputationObject.new()
 	pb_rep.on_accept = obj_in["public_reputation"].get("on_accept", 0)
-	pb_rep.on_task_success = obj_in["public_reputation"].get("on_task_success", 0)
-	pb_rep.on_task_failure = obj_in["public_reputation"].get("on_task_failure", 0)
 	client.public_reputation = pb_rep
-
-	var lyt_mtr = Models.LoyaltyMeterObject.new()
-	lyt_mtr.on_task_success = obj_in["loyalty_meter"].get("on_task_success", 0)
-	lyt_mtr.on_task_failure = obj_in["loyalty_meter"].get("on_task_failure", 0)
-	lyt_mtr.breakup_point = obj_in["loyalty_meter"].get("breakup_point", -1)
-	client.loyalty_meter = lyt_mtr
 
 	return client
 

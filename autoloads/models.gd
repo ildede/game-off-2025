@@ -64,8 +64,6 @@ class ClientObject:
 	var public_reputation: PublicReputationObject
 	var min_reputation: int
 
-	var loyalty_meter: LoyaltyMeterObject
-
 	var recurring_tasks: Array[RecurringTaskObject]
 	var extemporaneous_tasks: Array[ExtemporaneousTaskObject]
 
@@ -91,13 +89,6 @@ class ClientObject:
 
 class PublicReputationObject:
 	var on_accept: float
-	var on_task_success: float
-	var on_task_failure: float
-
-class LoyaltyMeterObject:
-	var on_task_success: float
-	var on_task_failure: float
-	var breakup_point: float
 
 class TaskObject:
 	var words: int
