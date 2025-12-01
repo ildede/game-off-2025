@@ -1083,151 +1083,151 @@
       "id": 1,
       "name": "CLUMSY-FILHIMBOOSTIER",
       "description": "Your creative translations make you lose a client.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 2,
       "name": "0.05 + VAT",
       "description": "Your reputation doubles and you get more clients, but your money is halved for the whole run.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 3,
       "name": "SCHOOL OF LOC",
       "description": "You earn 0.015 per word passively by exploiting your ex-students.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 4,
       "name": "WORDY RAPPINGHOOD",
       "description": "Today you feel swag: you can process up to 10k words.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 5,
       "name": "NIGHTMARE FUEL",
       "description": "Surprise, surprise: the text is in rhyme! So now you’ll spend twice the time.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 6,
-      "name": "FREE DRINKS AT THE SWISS BOOTH (only during gamescom)",
+      "name": "FREE DRINKS AT THE SWISS BOOTH",
       "description": "+3 reputation, but for the next 10 seconds you are drunk (you see twice as many tasks, but only half of them are real).",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 7,
       "name": "MTPEEEEEW",
       "description": "The revision task was actually post-editing in disguise. You spend double time but get the same pay.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 8,
       "name": "RESISTANCE IS FUTILE",
       "description": "A random client is suddenly acquired by Q-worse and from now it pays you -50%",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 9,
       "name": "TUTTY FUZZY",
       "description": "A new fuzzy grid just dropped, you earn -33% for the task.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 10,
       "name": "WORKING AT BULL SPEED",
       "description": "Energy drinks boost your speed but take a toll on your health, increasing your chances of getting sick.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 11,
       "name": "VARIABLE REX",
-      "description": "You learn RegEx and your productivity goes up. (lose some time)",
-      "can_spawn": false
+      "description": "You learn RegEx and your productivity goes up.",
+      "can_spawn": true
     },
     {
       "id": 12,
       "name": "BENEVOLENT REX",
       "description": "Your colleague helps you with RegEx formulas, you get a productivity boost.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 13,
       "name": "MORE THAN NATIVE",
       "description": "You type twice as fast.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 14,
       "name": "I'VE SEEN THINGS YOU PEOPLE WOULDN’T BELIEVE",
-      "description": "The client asked ChatGPT to check your text. You lose one turn replying to useless comments.",
-      "can_spawn": false
+      "description": "The client asked ChatGPT to check your text. You lose 30 minutes replying to useless comments.",
+      "can_spawn": true
     },
     {
       "id": 15,
       "name": "ROCK THE CASTAH",
       "description": "You spend some time chatting with your close colleagues. Stress is partially restored.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 16,
       "name": "CAT ON THE KEYBOARD",
       "description": "You write many words per minute, but quality is 100% random.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 17,
       "name": "DOG DUTY",
-      "description": "You earn nothing for X seconds but recover mental health.",
-      "can_spawn": false
+      "description": "You earn nothing special, but recover mental health.",
+      "can_spawn": true
     },
     {
       "id": 18,
       "name": "TRANSLATOR'S BEST FRIEND",
       "description": "You spend some time with your pet and recover some stress.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 19,
       "name": "YOUR PARTNER IS A DEV",
-      "description": "Your lovely partner creates your website. You save money, you gain reputation and recover some stress.(spawn rate molto bassa)",
-      "can_spawn": false
+      "description": "Your lovely partner creates your website. You save money, you gain reputation and recover some stress.",
+      "can_spawn": true
     },
     {
       "id": 20,
       "name": "YOU WEREN’T WORKING, RIGHT?",
-      "description": "Your mother keeps you on the phone for 30 minutes in the middle of a task. (in alcuni casi può triggerare la seguente)",
-      "can_spawn": false
+      "description": "Your mother keeps you on the phone for 30 minutes in the middle of a task.",
+      "can_spawn": true
     },
     {
       "id": 21,
       "name": "NEED FOR SPID",
       "description": "Your mother needs assistance with bureaucracy and IT stuff. The 30 minutes become 1 hour.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 22,
       "name": "PET TAX",
       "description": "You gain reputation by sending one client cute photos of your pet.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 23,
       "name": "FAST AS LIGHTNING",
       "description": "You install fast fiber and your productivity goes up.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 24,
       "name": "WORK FOR EXPOSURE",
       "description": "The client asks you to cut your rate for a very big and prestigious project. Stress and reputation go up. You earn less money.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 25,
       "name": "CLOCKWORK ORANGE KEYBOARD",
       "description": "You boost your productivity for today, but waste time arguing with neighbors who knock on your door to complain about the noise.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 26,
@@ -1239,61 +1239,61 @@
       "id": 27,
       "name": "GHOSTIN’ & SHAMELESS",
       "description": "Without warning, one of your clients stops sending you tasks for an indefinite period.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 28,
       "name": "SHEET, I’LL MISS MY DEADLINE!",
       "description": "The client’s responses to the query sheet have arrived, you need to implement them immediately. (-x minutes, no money)",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 29,
       "name": "HONEY, I SCRAMBLED THE KIT",
       "description": "The localization kit is completely disorganized, so you end up spending one and a half times more time.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 30,
       "name": "MINIMUM FEE",
       "description": "One client agrees to pay you $10 for all tasks under $10.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 31,
       "name": "CUT TOOL",
       "description": "Your localization tool’s server is down. You lose time and your stress increases.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 32,
       "name": "WHAM! BAM! IT’S IN! THE SPAM!",
       "description": "The client’s email went to spam. You lose reputation for not replying. They’re definitely not enjoying what you do.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 33,
       "name": "TOO MANY TOOLS WILL SPOIL THEM BOTH",
       "description": "You forgot to open Slack, Teams, Discord, Skype, whatnot. You lose reputation, and one client stops sending you tasks for two weeks.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 34,
       "name": "NON DISCLOSURE DISAGREEMENT",
       "description": "The big client with the prestigious project didn’t include you in the credits. You can’t mention the game, and you don’t gain the promised reputation.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 35,
       "name": "WEEKDAY HIGH FEVER",
       "description": "You have a fever. You can keep working and sacrifice your health, or you can rest and miss your deadlines.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 36,
       "name": "THE GREEDS OF SEPARATION",
       "description": "You discover that one of your clients is also a client of another client of yours. You have to drop them due to a conflict of interest.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 37,
@@ -1305,13 +1305,13 @@
       "id": 38,
       "name": "DID YOU TRY TURNING IT OFF AND ON?",
       "description": "Today your connection is acting up. You are forced to work from an internet café. Your productivity is halved.",
-      "can_spawn": false
+      "can_spawn": true
     },
     {
       "id": 39,
       "name": "Too comfy sweatpants",
-      "description": "You forget how to dress properly, wearing your sweatpants even when going out or meeting colleagues. You lose reputation. (You need to have comfy sweatpants bonus)",
-      "can_spawn": false
+      "description": "You forget how to dress properly, wearing your sweatpants even when going out or meeting colleagues. You lose reputation.",
+      "can_spawn": true
     }
   ],
   "bonus": [
