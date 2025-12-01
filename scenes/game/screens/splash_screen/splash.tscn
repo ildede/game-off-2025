@@ -39,14 +39,15 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Coding, accidental doodling, frame-by frame panic, game design, executive procrastination, acoustic typing FX:
 Davide HappyDev Pedron
 
-Original concept, game design, midnight epiphanies, texts, balance(ish), freelance realism consulting, coffee&catering logistics:
+Original concept, game design, midnight epiphanies, texts, balance(ish), freelance realism consulting, sound design, coffee&catering logistics:
 Chiara LoQAce Di Modica
 
-Special consultants for boosts&malus, achievements&chaos:
+Special consultants for buffs&debuffs, achievements&chaos:
 The PorcaLoc geese:
 (Beatrice Ceruti, Chiara Di Modica, Veronica Faroldi, Maurizio Massari)
+
 Placeholders: pngegg.com
-"
+Sound FX: epidemicsound.com"
 vertical_alignment = 1
 
 [node name="HSeparator2" type="HSeparator" parent="Panel/GridContainer"]
