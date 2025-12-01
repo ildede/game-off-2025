@@ -1654,6 +1654,176 @@
       "name": "DID YOU TRY TURNING IT OFF AND ON?",
       "description": "Today your connection is acting up. You are forced to work from an internet café. Your productivity is halved.",
       "can_spawn":  false
+    },
+    {
+      "id": 39,
+      "name": "Too comfy sweatpants",
+      "description": "You forget how to dress properly, wearing your sweatpants even when going out or meeting colleagues. You lose reputation. (You need to have comfy sweatpants bonus)",
+      "can_spawn": false
+    }
+  ],
+  "bonus": [
+    {
+      "id": 1,
+      "name": "Health insurance",
+      "description": "You don’t lose any money when you get sick.",
+      "can_spawn": false
+    },
+    {
+      "id": 2,
+      "name": "Proper lighting",
+      "description": "Quality increases, monthly bills are slightly reduced.",
+      "can_spawn": false
+    },
+    {
+      "id": 3,
+      "name": "Wall planner",
+      "description": "Stress reduced, reputation increases.",
+      "can_spawn": false
+    },
+    {
+      "id": 4,
+      "name": "Cat",
+      "description": "Stress reduced, reputation increased. Occasionally affects negatively quality and time spent. (malus: ogni tanto ti fa perdere tempo o qualità)",
+      "can_spawn": false
+    },
+    {
+      "id": 5,
+      "name": "Docking station",
+      "description": "Productivity increased.",
+      "can_spawn": false
+    },
+    {
+      "id": 6,
+      "name": "Melatonine pills",
+      "description": "Quality increased, stress reduced.",
+      "can_spawn": false
+    },
+    {
+      "id": 7,
+      "name": "Gym membership",
+      "description": "Less chances to get sick, productivity increases.",
+      "can_spawn": false
+    },
+    {
+      "id": 8,
+      "name": "Coffee machine",
+      "description": "Productivity boost, quality increases. Stress is also increased.",
+      "can_spawn": false
+    },
+    {
+      "id": 9,
+      "name": "High speed fiber",
+      "description": "Productivity is increased, stress is reduced.",
+      "can_spawn": false
+    },
+    {
+      "id": 10,
+      "name": "CAT tool",
+      "description": "Productivity, quality and reputation are increased.",
+      "can_spawn": false
+    },
+    {
+      "id": 11,
+      "name": "Mechanical keyboard",
+      "description": "Productivity is increased.",
+      "can_spawn": false
+    },
+    {
+      "id": 12,
+      "name": "Ergonomic chair",
+      "description": "Stress is reduced.",
+      "can_spawn": false
+    },
+    {
+      "id": 13,
+      "name": "Standing desk",
+      "description": "Productivity is reduced. Less chances to get sick.",
+      "can_spawn": false
+    },
+    {
+      "id": 14,
+      "name": "Triple screen",
+      "description": "Productivity is boosted.",
+      "can_spawn": false
+    },
+    {
+      "id": 15,
+      "name": "Footrest",
+      "description": "Stress is reduced.",
+      "can_spawn": false
+    },
+    {
+      "id": 16,
+      "name": "Ergonomic mouse",
+      "description": "Productivity increased.",
+      "can_spawn": false
+    },
+    {
+      "id": 17,
+      "name": "Heated blanket",
+      "description": "Monthly bills are slightly reduced.",
+      "can_spawn": false
+    },
+    {
+      "id": 18,
+      "name": "Heated socks",
+      "description": "Monthly bills are slightly reduced, less chances to get sick.",
+      "can_spawn": false
+    },
+    {
+      "id": 19,
+      "name": "Comfy sweatpants",
+      "description": "Stress is reduced. ( causa malus reputazione - di tanto in tanto, causa evento 'Too comfy sweatpants')",
+      "can_spawn": false
+    },
+    {
+      "id": 21,
+      "name": "Double screen",
+      "description": "Productivity is increased.",
+      "can_spawn": false
+    },
+    {
+      "id": 22,
+      "name": "Noise cancelling headphones",
+      "description": "Stress is reduced, productivity is increased.",
+      "can_spawn": false
+    },
+    {
+      "id": 23,
+      "name": "Wrist-rest for mouse",
+      "description": "Stress is reduced.",
+      "can_spawn": false
+    },
+    {
+      "id": 24,
+      "name": "Wrist-rest for keyboard",
+      "description": "Stress is reduced. Productivity and quality are increased.",
+      "can_spawn": false
+    },
+    {
+      "id": 25,
+      "name": "Organized desk",
+      "description": "Stress is reduced, productivity is increased. (only temporary)",
+      "can_spawn": false
+    },
+    {
+      "id": 26,
+      "name": "Professional website",
+      "description": "Reputation is increased.",
+      "can_spawn": false
+    },
+    {
+      "id": 27,
+      "name": "Cozy herbal tea",
+      "description": "Stress is reduced.",
+      "can_spawn": false
+    },
+    {
+      "id": 28,
+      "name": "Business cards",
+      "description": "Reputation is increased.",
+      "can_spawn": false
     }
   ]
 }

@@ -3,6 +3,7 @@ extends Node
 var clients_data: Array[Models.ClientObject]
 var bills_data: Array[Models.BillObject]
 var events_data: Array[Models.EventObject]
+var bonus_data: Array[Models.BonusObject]
 
 func _ready() -> void:
 	print("[CLIENT_DATA] ready")
@@ -21,6 +22,8 @@ func load_json_data():
 				bills_data.append(dictionary_to_bill(obj))
 			for obj in data["events"]:
 				events_data.append(dictionary_to_event(obj))
+			for obj in data["bonus"]:
+				bonus_data.append(dictionary_to_bonus(obj))
 		else:
 			push_error("JSON Parse Error: ", json.get_error_message())
 	else:
@@ -37,6 +40,9 @@ func get_random_event() -> Models.EventObject:
 		return create_fallback_event()
 
 	return events_data.filter(func(e):return e.can_spawn).pick_random()
+
+func get_random_bonus() -> Models.BonusObject:
+	return bonus_data.filter(func(e):return e.can_spawn).pick_random()
 
 func create_fallback_event() -> Models.EventObject:
 	var fallback_event = Models.EventObject.new()
@@ -151,6 +157,15 @@ func dictionary_to_bill(obj_in: Dictionary) -> Models.BillObject:
 
 func dictionary_to_event(obj_in: Dictionary) -> Models.EventObject:
 	var event = Models.EventObject.new()
+	event.id = obj_in.get("id")
+	event.name = obj_in.get("name")
+	event.description = obj_in.get("description")
+	event.can_spawn = obj_in.get("can_spawn")
+
+	return event
+
+func dictionary_to_bonus(obj_in: Dictionary) -> Models.BonusObject:
+	var event = Models.BonusObject.new()
 	event.id = obj_in.get("id")
 	event.name = obj_in.get("name")
 	event.description = obj_in.get("description")

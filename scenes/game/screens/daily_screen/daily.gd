@@ -7,7 +7,8 @@ func _ready() -> void:
 	if Global.game_state.ongoing_task.size() > 0:
 		$Panel/GridContainer/OvertimeGrid.visible = true
 		$Panel/GridContainer/OvertimeGrid/Description.text = ""
-		$Panel/GridContainer/OvertimeGrid/Description.append_text("You have {0} ongoing tasks. Do you want to work overtime?\nYou'll clear one pending task with under 2000 words, but your stress will increase by 1 point for every 400 words."
+		# Cambiare verso 'You have {0} ongoing tasks due tomorrow' ed elenco dei task. Si possono fare max 2k parole su un solo task, stesso gioco di stress.
+		$Panel/GridContainer/OvertimeGrid/Description.append_text("You have {0} ongoing tasks due tomorrow. Do you want to work overtime?\nYou'll clear one pending task with under 2000 words, but your stress will increase by 1 point for every 400 words."
 			.format([Global.game_state.ongoing_task.size()]))
 
 	$Panel/GridContainer/StatisticGrid/Statistics.text = ""

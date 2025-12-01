@@ -158,3 +158,9 @@ class EventObject:
 	var name: String
 	var description: String
 	var can_spawn: bool
+
+class BonusObject:
+	var id: int
+	var name: String
+	var description: String
+	var can_spawn: bool
