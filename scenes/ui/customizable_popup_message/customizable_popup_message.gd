@@ -14,8 +14,8 @@ class PopupButton:
 
 func show_popup(popup_data: PopupData) -> void:
 	title = popup_data.title
+	$GridContainer/MarginContainer/Title.text = popup_data.title
 	$GridContainer/RichTextLabel.text = ""
-	$GridContainer/RichTextLabel.bbcode_enabled = true
 	for line in popup_data.lines:
 		$GridContainer/RichTextLabel.append_text(line)
 		$GridContainer/RichTextLabel.newline()
