@@ -41,4 +41,7 @@ size_flags_vertical = 6
 theme_override_font_sizes/font_size = 45
 text = "CONTINUE"
 
+[node name="ItemList" type="ItemList" parent="Panel/GridContainer"]
+layout_mode = 2
+
 [connection signal="pressed" from="Panel/GridContainer/StatisticGrid/Continue" to="." method="_on_continue_button_pressed"]

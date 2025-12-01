@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://712sanv7ul8u" path="res://scenes/game/screens/overtime/overtime.gd" id="1_q72v6"]
 [ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://scenes/ui/global_themes/main_theme.tres" id="2_305ml"]
-[ext_resource type="Texture2D" uid="uid://cvaxghcsay80s" path="res://icon.svg" id="3_rsegk"]
+[ext_resource type="Texture2D" uid="uid://c3gws3sshfflo" path="res://scenes/game/screens/overtime/task.png" id="2_q72v6"]
 
 [node name="Overtime" type="Node"]
 script = ExtResource("1_q72v6")
-texture = ExtResource("3_rsegk")
+texture = ExtResource("2_q72v6")
 
 [node name="Panel" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -37,9 +37,10 @@ vertical_alignment = 2
 layout_mode = 2
 size_flags_vertical = 3
 allow_search = false
+max_text_lines = 2
 auto_width = true
 auto_height = true
-max_columns = 5
+max_columns = 10
 same_column_width = true
 icon_mode = 0
 

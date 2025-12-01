@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dejuwbvt3slkw"]
 
-[ext_resource type="Texture2D" uid="uid://c3gws3sshfflo" path="res://scenes/game/entities/task/task.png" id="1_7ft1s"]
+[ext_resource type="Texture2D" uid="uid://bytck8jlqx24w" path="res://scenes/ui/invoices/task.png" id="2_3mnsi"]
 [ext_resource type="Script" uid="uid://cs63yaddrupxt" path="res://scenes/ui/invoices/invoice.gd" id="2_gu7gp"]
 
 [node name="Invoice" type="Node2D"]
@@ -9,7 +9,7 @@ script = ExtResource("2_gu7gp")
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(1, 0.5)
 skew = 0.87266463
-texture = ExtResource("1_7ft1s")
+texture = ExtResource("2_3mnsi")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(1, 0.5)

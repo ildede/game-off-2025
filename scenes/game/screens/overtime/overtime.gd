@@ -15,7 +15,7 @@ func _ready() -> void:
 
 	for task: Models.OngoingTask in Global.game_state.ongoing_task.filter(func(t:Models.OngoingTask):return t.deadline_days <= 2):
 		var index_added = $Panel/OvertimeGrid/ItemList.add_item(
-			"Words left: {0}".format([task.remaining_words]),
+			"Words left\n{0}".format([task.remaining_words]),
 			texture
 		)
 		selectable.set(index_added, task.task_id)

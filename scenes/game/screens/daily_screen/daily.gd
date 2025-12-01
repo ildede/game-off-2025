@@ -13,7 +13,6 @@ func _ready() -> void:
 			Global.game_state.money
 		]))
 
-
 func _on_continue_button_pressed() -> void:
 	print("[DAILY] _on_continue_button_pressed")
 	for bill in Global.game_state.bills:
