@@ -1372,31 +1372,48 @@
       "id": 8,
       "name": "Coffee machine",
       "description": "Productivity boost, quality increases. Stress is also increased.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 30.0,
+      "productivity_change": 50,
+      "quality_change": 0.9,
+      "stress_change": 5.0
     },
     {
       "id": 9,
       "name": "High speed fiber",
-      "description": "Productivity is increased, stress is reduced.",
-      "can_spawn": false
+      "description": "Productivity is increased, stress is reduced. Has also a monthly cost.",
+      "can_spawn": true,
+      "cost": 30.0,
+      "default_bill_change": 20.0,
+      "productivity_change": 100,
+      "stress_change": -4.0
     },
     {
       "id": 10,
       "name": "CAT tool",
-      "description": "Productivity, quality and reputation are increased.",
-      "can_spawn": false
+      "description": "Productivity, quality and reputation are increased. Has also a monthly cost.",
+      "can_spawn": true,
+      "cost": 50.0,
+      "default_bill_change": 20.0,
+      "productivity_change": 200,
+      "quality_change": 4.0,
+      "reputation_change": 2.0
     },
     {
       "id": 11,
       "name": "Mechanical keyboard",
       "description": "Productivity is increased.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 55.5,
+      "productivity_change": 50
     },
     {
       "id": 12,
       "name": "Ergonomic chair",
       "description": "Stress is reduced.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 55.5,
+      "stress_change": -20
     },
     {
       "id": 13,
@@ -1408,61 +1425,84 @@
       "id": 14,
       "name": "Triple screen",
       "description": "Productivity is boosted.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 199.90,
+      "productivity_change": 50
     },
     {
       "id": 15,
       "name": "Footrest",
       "description": "Stress is reduced.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 24.90,
+      "stress_change": -5
     },
     {
       "id": 16,
       "name": "Ergonomic mouse",
       "description": "Productivity increased.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 99.75,
+      "productivity_change": 50
     },
     {
       "id": 17,
       "name": "Heated blanket",
       "description": "Monthly bills are slightly reduced.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 45.0,
+      "default_bill_change": -19.0
     },
     {
       "id": 18,
       "name": "Heated socks",
       "description": "Monthly bills are slightly reduced, less chances to get sick.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 25.0,
+      "default_bill_change": -8.0
     },
     {
       "id": 19,
       "name": "Comfy sweatpants",
-      "description": "Stress is reduced. ( causa malus reputazione - di tanto in tanto, causa evento 'Too comfy sweatpants')",
-      "can_spawn": false
+      "description": "Stress is reduced.",
+      "can_spawn": true,
+      "cost": 35.0,
+      "stress_change": -8.0
     },
     {
       "id": 21,
       "name": "Double screen",
       "description": "Productivity is increased.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 99.0,
+      "productivity_change": 50
     },
     {
       "id": 22,
       "name": "Noise cancelling headphones",
       "description": "Stress is reduced, productivity is increased.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 89.0,
+      "stress_change": -7.0,
+      "productivity_change": 50
     },
     {
       "id": 23,
       "name": "Wrist-rest for mouse",
       "description": "Stress is reduced.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 29.0,
+      "stress_change": -2.0
     },
     {
       "id": 24,
       "name": "Wrist-rest for keyboard",
       "description": "Stress is reduced. Productivity and quality are increased.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 39.0,
+      "stress_change": -2.0,
+      "productivity_change": 20,
+      "quality_change": 5
     },
     {
       "id": 25,
@@ -1474,19 +1514,25 @@
       "id": 26,
       "name": "Professional website",
       "description": "Reputation is increased.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 500.0,
+      "reputation_change": 40
     },
     {
       "id": 27,
       "name": "Cozy herbal tea",
       "description": "Stress is reduced.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 9,
+      "stress_change": -1
     },
     {
       "id": 28,
       "name": "Business cards",
       "description": "Reputation is increased.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 99.0,
+      "reputation_change": 4
     }
   ]
 }

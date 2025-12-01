@@ -20,19 +20,24 @@ func _ready() -> void:
 	if bonus1:
 		var index_added1 = $Panel/StatisticGrid/ItemList.add_item("{name}: {cost}$\n{description}".format(bonus1), texture)
 		selectable.set(index_added1, bonus1)
+		if bonus1.cost > Global.game_state.money:
+			$Panel/StatisticGrid/ItemList.set_item_disabled(index_added1, true)
 
 		var bonus2 = ClientData.get_random_bonus()
 		if bonus2:
 			if not bonus2.id == bonus1.id:
 				var index_added2 = $Panel/StatisticGrid/ItemList.add_item("{name}: {cost}$\n{description}".format(bonus2), texture)
 				selectable.set(index_added2, bonus2)
+				if bonus2.cost > Global.game_state.money:
+					$Panel/StatisticGrid/ItemList.set_item_disabled(index_added2, true)
 
 			var bonus3 = ClientData.get_random_bonus()
 			if bonus3:
 				if not bonus3.id == bonus1.id and not bonus3.id == bonus2.id:
 					var index_added3 = $Panel/StatisticGrid/ItemList.add_item("{name}: {cost}$\n{description}".format(bonus3), texture)
 					selectable.set(index_added3, bonus3)
-
+					if bonus3.cost > Global.game_state.money:
+						$Panel/StatisticGrid/ItemList.set_item_disabled(index_added3, true)
 	if selectable.is_empty():
 		$Panel/StatisticGrid/ItemList.visible = false
 
