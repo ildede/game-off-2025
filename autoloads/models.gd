@@ -37,7 +37,7 @@ class State:
 	var stress: float = 0
 	var productivity: int = 0
 	var clients: Array[ClientObject] = []
-	var money: float = 100
+	var money: float = 1200
 	var tasks_waiting_to_be_processed: Array[InvoiceObject] = []
 	var ongoing_task: Array[Models.OngoingTask] = []
 	var pending_payments: Array[PendingPayement] = []
@@ -80,12 +80,29 @@ class ClientObject:
 		return null
 
 	func engagement_email() -> String:
+		var pay_terms = ""
+		match payment_terms:
+			"IMMEDIATE":
+				pay_terms = "immediate after receiving the invoice"
+			"UPON_RECEIPT":
+				pay_terms = "we will pay overnight after receiving the invoice"
+			"NET7":
+				pay_terms = "7 days after invoice"
+			"NET30":
+				pay_terms = "30 days after invoice"
+			"NET60":
+				pay_terms = "60 days after invoice"
+			"EOM":
+				pay_terms = "At the end of the month"
+			"EONM":
+				pay_terms = "At the end of next month"
+
 		if not custom_email == "":
 			return custom_email
 		return _engagement_mails.pick_random().format({
 			"workload": workload,
 			"price": payment_per_word,
-			"invoicing": payment_terms #Tradurre NET(7) in "in (7) days" e EO(N)M in "at the end of the (next) month"
+			"invoicing": pay_terms
 		})
 
 class PublicReputationObject:

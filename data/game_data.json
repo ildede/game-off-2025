@@ -31,14 +31,23 @@
       "min_reputation": 65,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 800,
+          "frequency_days": 6,
+          "deadline_days": 6,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
       ],
-      "extemporaneous_tasks": [],
+      "extemporaneous_tasks": [
+        {
+          "words": 20000,
+          "spawn_probability": 0.05,
+          "deadline_days": 60,
+          "reputation_on_success": 15,
+          "reputation_on_failure": 0,
+          "need_confirmation_email": true
+        }
+      ],
       "public_reputation": {
         "on_accept": 2.5
       }
@@ -52,10 +61,10 @@
       "min_reputation": 65,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
+          "words": 10000,
+          "frequency_days": 90,
+          "deadline_days": 90,
+          "reputation_on_success": 10,
           "reputation_on_failure": 0
         }
       ],
@@ -73,10 +82,10 @@
       "min_reputation": 30,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
+          "words": 2000,
+          "frequency_days": 45,
+          "deadline_days": 45,
+          "reputation_on_success": 1,
           "reputation_on_failure": 0
         }
       ],
@@ -94,10 +103,10 @@
       "min_reputation": 30,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
+          "words": 15000,
+          "frequency_days": 90,
+          "deadline_days": 80,
+          "reputation_on_success": 5,
           "reputation_on_failure": 0
         }
       ],
@@ -115,9 +124,9 @@
       "min_reputation": 30,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 800,
+          "frequency_days": 7,
+          "deadline_days": 9,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
@@ -136,16 +145,16 @@
       "min_reputation": 65,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "words": 10000,
+          "frequency_days": 45,
+          "deadline_days": 60,
+          "reputation_on_success": 10,
+          "reputation_on_failure": 6
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 4
       }
     },
     {
@@ -157,16 +166,37 @@
       "min_reputation": 0,
       "recurring_tasks": [
         {
-          "words": 500,
+          "words": 100,
+          "frequency_days": 5,
+          "deadline_days": 6,
+          "reputation_on_success": 0,
+          "reputation_on_failure": 0
+        },
+        {
+          "words": 300,
+          "frequency_days": 8,
+          "deadline_days": 6,
+          "reputation_on_success": 0,
+          "reputation_on_failure": 0
+        },
+        {
+          "words": 800,
+          "frequency_days": 13,
+          "deadline_days": 6,
+          "reputation_on_success": 0,
+          "reputation_on_failure": 0
+        },
+        {
+          "words": 100,
           "frequency_days": 1,
-          "deadline_days": 2,
+          "deadline_days": 6,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 0
       }
     },
     {
@@ -176,18 +206,43 @@
       "payment_terms": "NET7",
       "workload": "Random workflow, no reputation gained from our projects.",
       "min_reputation": 0,
-      "recurring_tasks": [
+      "recurring_tasks": [],
+      "extemporaneous_tasks": [
+        {
+          "words": 100,
+          "spawn_probability": 0.005,
+          "deadline_days": 7,
+          "reputation_on_success": 0,
+          "reputation_on_failure": 0,
+          "need_confirmation_email": false
+        },
+        {
+          "words": 1000,
+          "spawn_probability": 0.005,
+          "deadline_days": 7,
+          "reputation_on_success": 0,
+          "reputation_on_failure": 0,
+          "need_confirmation_email": false
+        },
         {
           "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "spawn_probability": 0.005,
+          "deadline_days": 7,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "reputation_on_failure": 0,
+          "need_confirmation_email": false
+        },
+        {
+          "words": 250,
+          "spawn_probability": 0.005,
+          "deadline_days": 7,
+          "reputation_on_success": 0,
+          "reputation_on_failure": 0,
+          "need_confirmation_email": false
         }
       ],
-      "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 0.5
       }
     },
     {
@@ -199,16 +254,25 @@
       "min_reputation": 30,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "words": 80000,
+          "frequency_days": 120,
+          "deadline_days": 120,
+          "reputation_on_success": 15,
+          "reputation_on_failure": 10
         }
       ],
-      "extemporaneous_tasks": [],
+      "extemporaneous_tasks": [
+        {
+          "words": 80000,
+          "spawn_probability": 0.05,
+          "deadline_days": 120,
+          "reputation_on_success": 15,
+          "reputation_on_failure": 10,
+          "need_confirmation_email": true
+        }
+      ],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 5
       }
     },
     {
@@ -220,9 +284,9 @@
       "min_reputation": 0,
       "recurring_tasks": [
         {
-          "words": 500,
+          "words": 200,
           "frequency_days": 1,
-          "deadline_days": 2,
+          "deadline_days": 3,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
@@ -241,9 +305,9 @@
       "min_reputation": 0,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 2000,
+          "frequency_days": 7,
+          "deadline_days": 7,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
@@ -262,16 +326,16 @@
       "min_reputation": 0,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 15000,
+          "frequency_days": 28,
+          "deadline_days": 28,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 0.5
       }
     },
     {
@@ -279,15 +343,15 @@
       "name": "Tabbyte",
       "payment_per_word": 0.06,
       "payment_terms": "NET7",
-      "workload": "~5.000 words per week. Projects have average prestige.",
+      "workload": "around 5.000 words per week. Projects have average prestige.",
       "min_reputation": 65,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "words": 5000,
+          "frequency_days": 7,
+          "deadline_days": 9,
+          "reputation_on_success": 10,
+          "reputation_on_failure": 4
         }
       ],
       "extemporaneous_tasks": [],
@@ -304,11 +368,11 @@
       "min_reputation": 65,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "words": 150000,
+          "frequency_days": 120,
+          "deadline_days": 200,
+          "reputation_on_success": 30,
+          "reputation_on_failure": 30
         }
       ],
       "extemporaneous_tasks": [],
@@ -325,11 +389,11 @@
       "min_reputation": 65,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "words": 57000,
+          "frequency_days": 90,
+          "deadline_days": 100,
+          "reputation_on_success": 5,
+          "reputation_on_failure": 10
         }
       ],
       "extemporaneous_tasks": [],
@@ -346,16 +410,16 @@
       "min_reputation": 0,
       "recurring_tasks": [
         {
-          "words": 500,
+          "words": 200,
           "frequency_days": 1,
-          "deadline_days": 2,
+          "deadline_days": 4,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 1
       }
     },
     {
@@ -363,20 +427,20 @@
       "name": "The worst place",
       "payment_per_word": 0.03,
       "payment_terms": "NET60",
-      "workload": "Constant workflow of medium sized batches. ~20k words per month. 0 Prestige.",
+      "workload": "Constant workflow of medium sized batches. around 20k words per month. 0 Prestige.",
       "min_reputation": 0,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 1200,
+          "frequency_days": 2,
+          "deadline_days": 5,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 0
       }
     },
     {
@@ -388,16 +452,16 @@
       "min_reputation": 0,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 40000,
+          "frequency_days": 90,
+          "deadline_days": 100,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 0.5
       }
     },
     {
@@ -405,20 +469,20 @@
       "name": "Random Bottom feeder",
       "payment_per_word": 0.02,
       "payment_terms": "UPON_RECEIPT",
-      "workload": "Daily flow, ~5k per week. No prestige gained.",
+      "workload": "Daily flow, around 5k per week. No prestige gained.",
       "min_reputation": 0,
       "recurring_tasks": [
         {
-          "words": 500,
+          "words": 700,
           "frequency_days": 1,
-          "deadline_days": 2,
+          "deadline_days": 4,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 1.5
       }
     },
     {
@@ -426,20 +490,20 @@
       "name": "Peanuts Payer",
       "payment_per_word": 0.02,
       "payment_terms": "NET60",
-      "workload": "Daily flow, ~11k per week. Moderate prestige.",
+      "workload": "Daily flow, around 11k per week. Moderate prestige.",
       "min_reputation": 0,
       "recurring_tasks": [
         {
-          "words": 500,
+          "words": 1500,
           "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "deadline_days": 6,
+          "reputation_on_success": 6,
+          "reputation_on_failure": 3
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 3.0
       }
     },
     {
@@ -451,16 +515,16 @@
       "min_reputation": 65,
       "recurring_tasks": [
         {
-          "words": 500,
+          "words": 150,
           "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "deadline_days": 4,
+          "reputation_on_success": 5,
+          "reputation_on_failure": 2
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 5
       }
     },
     {
@@ -472,16 +536,16 @@
       "min_reputation": 65,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "words": 1000000,
+          "frequency_days": 350,
+          "deadline_days": 350,
+          "reputation_on_success": 100,
+          "reputation_on_failure": 40
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 10
       }
     },
     {
@@ -493,16 +557,16 @@
       "min_reputation": 0,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "words": 20000,
+          "frequency_days": 90,
+          "deadline_days": 90,
+          "reputation_on_success": 20,
+          "reputation_on_failure": 10
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 10
       }
     },
     {
@@ -514,16 +578,16 @@
       "min_reputation": 65,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 1500,
+          "frequency_days": 12,
+          "deadline_days": 12,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 1.5
       }
     },
     {
@@ -535,11 +599,11 @@
       "min_reputation": 65,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "words": 50000,
+          "frequency_days": 300,
+          "deadline_days": 300,
+          "reputation_on_success": 10,
+          "reputation_on_failure": 10
         }
       ],
       "extemporaneous_tasks": [],
@@ -556,11 +620,11 @@
       "min_reputation": 0,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 5000,
+          "frequency_days": 60,
+          "deadline_days": 10,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "reputation_on_failure": 4
         }
       ],
       "extemporaneous_tasks": [],
@@ -577,16 +641,16 @@
       "min_reputation": 0,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 4500,
+          "frequency_days": 4,
+          "deadline_days": 7,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 0
       }
     },
     {
@@ -594,20 +658,20 @@
       "name": "Purplesound",
       "payment_per_word": 0.05,
       "payment_terms": "IMMEDIATE",
-      "workload": "~7k words per week. Reputation may vary.",
+      "workload": "around 7k words per week. Reputation may vary.",
       "min_reputation": 30,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 7000,
+          "frequency_days": 7,
+          "deadline_days": 7,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 2.0
       }
     },
     {
@@ -615,7 +679,7 @@
       "name": "Leechtranslation",
       "payment_per_word": 0.04,
       "payment_terms": "NET60",
-      "workload": "~500 words per day. No prestigious projects, sorry.",
+      "workload": "around 500 words per day. No prestigious projects, sorry.",
       "min_reputation": 30,
       "recurring_tasks": [
         {
@@ -638,18 +702,10 @@
       "payment_terms": "NET30",
       "workload": "Random workload, random projects. Frequent small batches or sporadic bigger ones.",
       "min_reputation": 30,
-      "recurring_tasks": [
-        {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
-        }
-      ],
+      "recurring_tasks": [],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 10
       }
     },
     {
@@ -661,11 +717,11 @@
       "min_reputation": 30,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "words": 12000,
+          "frequency_days": 30,
+          "deadline_days": 45,
+          "reputation_on_success": 15,
+          "reputation_on_failure": 5
         }
       ],
       "extemporaneous_tasks": [],
@@ -680,18 +736,10 @@
       "payment_terms": "NET30",
       "workload": "We can't foresee the workload, nor the projects' prestige. Sorry.",
       "min_reputation": 0,
-      "recurring_tasks": [
-        {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
-        }
-      ],
+      "recurring_tasks": [],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 5.0
       }
     },
     {
@@ -703,11 +751,11 @@
       "min_reputation": 65,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "words": 3000,
+          "frequency_days": 20,
+          "deadline_days": 24,
+          "reputation_on_success": 5,
+          "reputation_on_failure": 2
         }
       ],
       "extemporaneous_tasks": [],
@@ -720,15 +768,15 @@
       "name": "GoalToFail",
       "payment_per_word": 0.03,
       "payment_terms": "NET30",
-      "workload": "Constant workflow, ~40k words per year. Random prestige.",
+      "workload": "Constant workflow, around 40k words per year. Random prestige.",
       "min_reputation": 0,
       "recurring_tasks": [
         {
-          "words": 500,
+          "words": 100,
           "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "deadline_days": 4,
+          "reputation_on_success": 1,
+          "reputation_on_failure": 1
         }
       ],
       "extemporaneous_tasks": [],
@@ -741,20 +789,20 @@
       "name": "PostToLose",
       "payment_per_word": 0.03,
       "payment_terms": "EOM",
-      "workload": "Constant workflow, ~50k per month. No prestige acquired.",
+      "workload": "Constant workflow, around 50k per month. No prestige acquired.",
       "min_reputation": 0,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 12500,
+          "frequency_days": 8,
+          "deadline_days": 10,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 0.5
       }
     },
     {
@@ -767,15 +815,15 @@
       "recurring_tasks": [
         {
           "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "frequency_days": 10,
+          "deadline_days": 10,
+          "reputation_on_success": 15,
+          "reputation_on_failure": 5
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 2.0
       }
     },
     {
@@ -787,11 +835,12 @@
       "min_reputation": 30,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 50000,
+          "frequency_days": 100,
+          "deadline_days": 150,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "reputation_on_failure": 0,
+          "need_confirmation_email": true
         }
       ],
       "extemporaneous_tasks": [],
@@ -810,7 +859,7 @@
         {
           "words": 500,
           "frequency_days": 1,
-          "deadline_days": 2,
+          "deadline_days": 3,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
@@ -829,16 +878,17 @@
       "min_reputation": 30,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "words": 200000,
+          "frequency_days": 350,
+          "deadline_days": 350,
+          "reputation_on_success": 20,
+          "reputation_on_failure": 10,
+          "need_confirmation_email": true
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 5.0
       }
     },
     {
@@ -846,7 +896,7 @@
       "name": "WanRoad",
       "payment_per_word": 0.03,
       "payment_terms": "NET60",
-      "workload": "Constant flow of ~4k words per week. No reputation gained.",
+      "workload": "Constant flow of around 4k words per week. No reputation gained.",
       "min_reputation": 30,
       "recurring_tasks": [
         {
@@ -871,9 +921,9 @@
       "min_reputation": 30,
       "recurring_tasks": [
         {
-          "words": 500,
+          "words": 400,
           "frequency_days": 1,
-          "deadline_days": 2,
+          "deadline_days": 4,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
@@ -893,9 +943,9 @@
       "recurring_tasks": [
         {
           "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
+          "frequency_days": 2,
+          "deadline_days": 3,
+          "reputation_on_success": 2,
           "reputation_on_failure": 0
         }
       ],
@@ -913,16 +963,16 @@
       "min_reputation": 65,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 30000,
+          "frequency_days": 90,
+          "deadline_days": 120,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 2.0
       }
     },
     {
@@ -930,18 +980,26 @@
       "name": "Gramsci",
       "payment_per_word": 0.05,
       "payment_terms": "NET60",
-      "workload": "Constant workflow, ~200 words per day, sometimes you can get some mid sized projects too. Reputation not available.",
+      "workload": "Constant workflow, around 200 words per day, sometimes you can get some mid sized projects too. Reputation not available.",
       "min_reputation": 30,
       "recurring_tasks": [
         {
-          "words": 500,
+          "words": 200,
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
       ],
-      "extemporaneous_tasks": [],
+      "extemporaneous_tasks": [
+        {
+          "words": 2000,
+          "spawn_probability": 0.02,
+          "deadline_days": 20,
+          "reputation_on_success": 0,
+          "reputation_on_failure": 0
+        }
+      ],
       "public_reputation": {
         "on_accept": 2.5
       }
@@ -955,12 +1013,20 @@
       "min_reputation": 65,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 1000,
+          "frequency_days": 13,
+          "deadline_days": 10,
+          "reputation_on_success": 0,
+          "reputation_on_failure": 0
+        },
+        {
+          "words": 15000,
+          "frequency_days": 45,
+          "deadline_days": 60,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
+
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
@@ -972,18 +1038,27 @@
       "name": "Lemma Wolves",
       "payment_per_word": 0.06,
       "payment_terms": "NET30",
-      "workload": "~5 mid sized projects per year. Sometimes you get a bigger one too. Low chances of getting a good reputation.",
+      "workload": "around 5 mid sized projects per year. Sometimes you get a bigger one too. Low chances of getting a good reputation.",
       "min_reputation": 30,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
+          "words": 15000,
+          "frequency_days": 29,
+          "deadline_days": 34,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
       ],
-      "extemporaneous_tasks": [],
+      "extemporaneous_tasks": [
+        {
+          "words": 20000,
+          "spawn_probability": 0.02,
+          "deadline_days": 60,
+          "reputation_on_success": 0,
+          "reputation_on_failure": 0,
+          "need_confirmation_email": true
+        }
+      ],
       "public_reputation": {
         "on_accept": 2.5
       }
@@ -993,13 +1068,13 @@
       "name": "Botoro",
       "payment_per_word": 0.05,
       "payment_terms": "EONM",
-      "workload": "~9k words per week, no big projects, no reputation.",
+      "workload": "around 9k words per week, no big projects, no reputation.",
       "min_reputation": 30,
       "recurring_tasks": [
         {
           "words": 500,
           "frequency_days": 1,
-          "deadline_days": 2,
+          "deadline_days": 3,
           "reputation_on_success": 0,
           "reputation_on_failure": 0
         }
@@ -1014,20 +1089,20 @@
       "name": "TermBow",
       "payment_per_word": 0.06,
       "payment_terms": "NET7",
-      "workload": "~10 mid sized tasks per year, fair amount of reputation acquired for each task.",
+      "workload": "around 10 mid sized tasks per year, fair amount of reputation acquired for each task.",
       "min_reputation": 30,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
-          "reputation_on_failure": 0
+          "words": 14000,
+          "frequency_days": 30,
+          "deadline_days": 40,
+          "reputation_on_success": 10,
+          "reputation_on_failure": 10
         }
       ],
       "extemporaneous_tasks": [],
       "public_reputation": {
-        "on_accept": 2.5
+        "on_accept": 5
       }
     },
     {

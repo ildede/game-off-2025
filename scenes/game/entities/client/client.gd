@@ -78,11 +78,25 @@ func _on_info_pressed() -> void:
 	get_tree().paused = true
 	var popup_data = CustomizablePopupMessage.PopupData.new()
 	popup_data.title = _client_data.name
+	var pay_terms = ""
+	match _client_data.payment_terms:
+		"IMMEDIATE":
+			pay_terms = "immediate after receiving the invoice"
+		"UPON_RECEIPT":
+			pay_terms = "we will pay overnight after receiving the invoice"
+		"NET7":
+			pay_terms = "7 days after invoice"
+		"NET30":
+			pay_terms = "30 days after invoice"
+		"NET60":
+			pay_terms = "60 days after invoice"
+		"EOM":
+			pay_terms = "At the end of the month"
+		"EONM":
+			pay_terms = "At the end of next month"
 	var message_lines: Array[String] = [
 		"Rates: {0}$ per word".format([_client_data.payment_per_word]),
-		"Payment terms: {0}".format([_client_data.payment_terms]),
-		"Reputation: <TBD>",
-		"Stress when you fail: <TBD>"
+		"Payment terms: {0}".format([pay_terms])
 	]
 	popup_data.lines = message_lines
 
