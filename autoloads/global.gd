@@ -58,11 +58,13 @@ func handle_letter_hit_task(letter: Letter, task: Task) -> void:
 func handle_task_finished(_id: int) -> void:
 	print("[GLOBAL] handle_task_finished")
 	game_state.task_finished += 1
+	game_state.quality += 0.1
 	ui_update.emit()
 
 func handle_task_failed(_id: int) -> void:
 	print("[GLOBAL] handle_task_failed")
 	game_state.task_failed += 1
+	game_state.quality -= 0.2
 	ui_update.emit()
 
 func handle_task_deleted(_id: int) -> void:

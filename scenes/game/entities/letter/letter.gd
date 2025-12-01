@@ -26,4 +26,3 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is TaskBody:
 		if body.task_id == target_id:
 			Global.letter_hit_task.emit(self, body.get_parent())
-			Global.update_quality.emit(0.1)
