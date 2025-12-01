@@ -95,6 +95,9 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+tooltip_text = "Higher reputation attracts reliable clients.
+Gain it by completing tasks on time and finishing high-visibility projects (shown in client recap).
+Lose it by rejecting and canceling tasks or missing deadlines."
 theme_override_styles/fill = SubResource("StyleBoxFlat_272bh")
 step = 0.1
 value = 45.0
@@ -121,6 +124,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+tooltip_text = "Quality rises with professional tools and experience,
+but drops when overworking or stressed.
+The higher the quality the higher the chance to pass a test
+to acquire a new client and the more efficient are the processed words."
 theme_override_styles/fill = SubResource("StyleBoxFlat_7mycd")
 step = 0.1
 value = 30.0
@@ -146,6 +153,9 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+tooltip_text = "Stress affects quality and rises with overtime and missed deadlines.
+It can be reduced with days off, vacations, or certain upgrades.
+At maximum stress, you burn out and it’s GAME OVER."
 theme_override_styles/fill = SubResource("StyleBoxFlat_lquwl")
 step = 0.1
 value = 50.0
