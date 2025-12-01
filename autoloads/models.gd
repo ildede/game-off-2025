@@ -35,6 +35,7 @@ class State:
 	var reputation: float = 0
 	var quality: float = 30
 	var stress: float = 0
+	var productivity: int = 0
 	var clients: Array[ClientObject] = []
 	var money: float = 100
 	var tasks_waiting_to_be_processed: Array[InvoiceObject] = []
@@ -155,4 +156,5 @@ class BonusObject:
 	var stress_change: float
 	var reputation_change: float
 	var default_bill_change: float
+	var productivity_change: int
 	

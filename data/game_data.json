@@ -1349,7 +1349,9 @@
       "id": 5,
       "name": "Docking station",
       "description": "Productivity increased.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 15.0,
+      "productivity_change": 100
     },
     {
       "id": 6,

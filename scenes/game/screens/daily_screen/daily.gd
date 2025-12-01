@@ -55,6 +55,7 @@ func _on_continue_button_pressed() -> void:
 			Global.game_state.quality += bonus.quality_change
 			Global.game_state.stress += bonus.stress_change
 			Global.game_state.reputation += bonus.reputation_change
+			Global.game_state.productivity += bonus.productivity_change
 			if not bonus.default_bill_change == 0:
 				for bill in Global.game_state.bills:
 					bill.amount += bonus.default_bill_change

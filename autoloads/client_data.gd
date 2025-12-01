@@ -160,5 +160,6 @@ func dictionary_to_bonus(obj_in: Dictionary) -> Models.BonusObject:
 	event.stress_change = obj_in.get("stress_change", 0.0)
 	event.reputation_change = obj_in.get("reputation_change", 0.0)
 	event.default_bill_change = obj_in.get("default_bill_change", 0.0)
+	event.productivity_change = obj_in.get("productivity_change", 0)
 
 	return event
