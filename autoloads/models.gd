@@ -104,8 +104,6 @@ class TaskObject:
 	var deadline_days: int
 	var reputation_on_success: float
 	var reputation_on_failure: float
-	var loyalty_on_success: float
-	var loyalty_on_failure: float
 	var need_confirmation_email: bool
 	var last_spawn: int = 0
 
@@ -128,8 +126,6 @@ class OngoingTask:
 
 	var reputation_on_success: float
 	var reputation_on_failure: float
-	var loyalty_on_success: float
-	var loyalty_on_failure: float
 
 	func _init(cl_id: int, task: TaskObject):
 		task_id = randi()
@@ -143,8 +139,6 @@ class OngoingTask:
 		deadline_days = task.deadline_days
 		reputation_on_success = task.reputation_on_success
 		reputation_on_failure = task.reputation_on_failure
-		loyalty_on_success = task.loyalty_on_success
-		loyalty_on_failure = task.loyalty_on_failure
 
 class BillObject:
 	var id: int

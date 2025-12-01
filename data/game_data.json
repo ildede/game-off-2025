@@ -9,13 +9,12 @@
       "min_reputation": 65,
       "recurring_tasks": [
         {
-          "words": 500,
-          "frequency_days": 1,
-          "deadline_days": 2,
-          "reputation_on_success": 0,
+          "words": 500000,
+          "frequency_days": 360,
+          "deadline_days": 350,
+          "reputation_on_success": 15,
           "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "need_confirmation_email": true
         }
       ],
       "extemporaneous_tasks": [],
@@ -43,9 +42,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -73,9 +70,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -103,9 +98,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -133,9 +126,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -163,9 +154,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -193,9 +182,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -223,9 +210,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -253,9 +238,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -283,9 +266,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -313,9 +294,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -343,9 +322,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -373,9 +350,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -403,9 +378,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -433,9 +406,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -463,9 +434,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -493,9 +462,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -523,9 +490,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -553,9 +518,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -583,9 +546,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -613,9 +574,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -643,9 +602,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -673,9 +630,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -703,9 +658,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -733,9 +686,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -763,9 +714,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -793,9 +742,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -823,9 +770,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -853,9 +798,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -883,9 +826,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -913,9 +854,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -943,9 +882,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -973,9 +910,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1003,9 +938,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1033,9 +966,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1063,9 +994,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1093,9 +1022,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1123,9 +1050,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1153,9 +1078,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1183,9 +1106,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1213,9 +1134,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1243,9 +1162,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1273,9 +1190,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1303,9 +1218,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1333,9 +1246,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1363,9 +1274,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1393,9 +1302,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1423,9 +1330,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],
@@ -1453,9 +1358,7 @@
           "frequency_days": 1,
           "deadline_days": 2,
           "reputation_on_success": 0,
-          "reputation_on_failure": 0,
-          "loyalty_on_success": 0,
-          "loyalty_on_failure": 0
+          "reputation_on_failure": 0
         }
       ],
       "extemporaneous_tasks": [],

@@ -117,8 +117,6 @@ func dictionary_to_client(obj_in: Dictionary) -> Models.ClientObject:
 		task.deadline_days = task_in.get("deadline_days")
 		task.reputation_on_success = task_in.get("reputation_on_success", 0)
 		task.reputation_on_failure = task_in.get("reputation_on_failure", 0)
-		task.loyalty_on_success = task_in.get("loyalty_on_success", 0)
-		task.loyalty_on_failure = task_in.get("loyalty_on_failure", 0)
 		task.need_confirmation_email = task_in.get("need_confirmation_email", false)
 		rcr_tsk.append(task)
 	client.recurring_tasks = rcr_tsk
@@ -131,8 +129,6 @@ func dictionary_to_client(obj_in: Dictionary) -> Models.ClientObject:
 		task.deadline_days = task_in.get("deadline_days")
 		task.reputation_on_success = task_in.get("reputation_on_success", 0)
 		task.reputation_on_failure = task_in.get("reputation_on_failure", 0)
-		task.loyalty_on_success = task_in.get("loyalty_on_success", 0)
-		task.loyalty_on_failure = task_in.get("loyalty_on_failure", 0)
 		task.need_confirmation_email = task_in.get("need_confirmation_email", true)
 		ext_tsk.append(task)
 	client.extemporaneous_tasks = ext_tsk

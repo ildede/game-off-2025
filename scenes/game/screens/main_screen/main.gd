@@ -116,7 +116,7 @@ func handle_task_deleted(task_id: int) -> void:
 	var found_index = Global.game_state.ongoing_task.find_custom(func(t): return t.task_id == task_id)
 	if found_index >= 0:
 		var finished_task = Global.game_state.ongoing_task.pop_at(found_index)
-		Global.update_reputation.emit(finished_task.reputation_on_failure)
+		Global.update_reputation.emit(finished_task.reputation_on_failure/2)
 
 func handle_client_deleted(client_id: int) -> void:
 	print("[MAIN] handle_task_deleted for task_id ", client_id)
