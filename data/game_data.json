@@ -1325,13 +1325,19 @@
       "id": 2,
       "name": "Proper lighting",
       "description": "Quality increases, monthly bills are slightly reduced.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 10.0,
+      "quality_change": 2.0,
+      "default_bill_change": -20.0
     },
     {
       "id": 3,
       "name": "Wall planner",
       "description": "Stress reduced, reputation increases.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 15.0,
+      "stress_change": -5.0,
+      "reputation_change": 5.0
     },
     {
       "id": 4,
@@ -1349,7 +1355,10 @@
       "id": 6,
       "name": "Melatonine pills",
       "description": "Quality increased, stress reduced.",
-      "can_spawn": false
+      "can_spawn": true,
+      "cost": 2.0,
+      "quality_change": 2.0,
+      "stress_change": -2.0
     },
     {
       "id": 7,

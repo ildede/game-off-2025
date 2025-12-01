@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bucgncfhv2yq8"]
+[gd_scene load_steps=4 format=3 uid="uid://bucgncfhv2yq8"]
 
 [ext_resource type="Script" uid="uid://rmuvkl2iy50m" path="res://scenes/game/screens/daily_screen/daily.gd" id="1_n7uhh"]
 [ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://scenes/ui/global_themes/main_theme.tres" id="2_vrdqk"]
+[ext_resource type="Texture2D" uid="uid://cvaxghcsay80s" path="res://icon.svg" id="3_s02k1"]
 
 [node name="Daily" type="Node"]
 script = ExtResource("1_n7uhh")
+texture = ExtResource("3_s02k1")
 
 [node name="Panel" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -20,9 +22,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Statistics" type="RichTextLabel" parent="Panel/StatisticGrid"]
+custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 35
 text = "Day survived: 10
 Translated words: 1000
@@ -31,7 +33,18 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ItemList" type="ItemList" parent="Panel/StatisticGrid"]
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+allow_search = false
+max_text_lines = 10
+auto_height = true
+wraparound_items = false
+max_columns = 3
+same_column_width = true
+fixed_column_width = 600
+icon_mode = 0
 
 [node name="Continue" type="Button" parent="Panel/StatisticGrid"]
 custom_minimum_size = Vector2(300, 100)
@@ -41,4 +54,6 @@ size_flags_vertical = 6
 theme_override_font_sizes/font_size = 45
 text = "CONTINUE"
 
+[connection signal="empty_clicked" from="Panel/StatisticGrid/ItemList" to="." method="_on_item_list_empty_clicked"]
+[connection signal="item_selected" from="Panel/StatisticGrid/ItemList" to="." method="_on_item_list_item_selected"]
 [connection signal="pressed" from="Panel/StatisticGrid/Continue" to="." method="_on_continue_button_pressed"]
