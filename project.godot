@@ -13,7 +13,7 @@ config_version=5
 config/name="Game Off 2025"
 run/main_scene="uid://bbkuumbsn0h32"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bckc8dgni1p3v"
 
 [autoload]
 
