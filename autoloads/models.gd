@@ -152,3 +152,9 @@ class BillObject:
 	var due_day: int
 	var next_payment_day: int
 	var recurring: bool
+
+class EventObject:
+	var id: int
+	var name: String
+	var description: String
+	var can_spawn: bool

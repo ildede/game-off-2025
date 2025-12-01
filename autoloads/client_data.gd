@@ -2,6 +2,7 @@ extends Node
 
 var clients_data: Array[Models.ClientObject]
 var bills_data: Array[Models.BillObject]
+var events_data: Array[Models.EventObject]
 
 func _ready() -> void:
 	print("[CLIENT_DATA] ready")
@@ -18,6 +19,8 @@ func load_json_data():
 				clients_data.append(dictionary_to_client(obj))
 			for obj in data["bills"]:
 				bills_data.append(dictionary_to_bill(obj))
+			for obj in data["events"]:
+				events_data.append(dictionary_to_event(obj))
 		else:
 			push_error("JSON Parse Error: ", json.get_error_message())
 	else:
@@ -28,6 +31,21 @@ func get_random_client() -> Models.ClientObject:
 		return create_fallback_client()
 
 	return clients_data[randi() % clients_data.size()]
+
+func get_random_event() -> Models.EventObject:
+	if events_data.is_empty():
+		return create_fallback_event()
+
+	return events_data.filter(func(e):return e.can_spawn).pick_random()
+
+func create_fallback_event() -> Models.EventObject:
+	var fallback_event = Models.EventObject.new()
+	fallback_event.id = randi()
+	fallback_event.name = "Routine Work"
+	fallback_event.description = "Standard translation tasks keep you busy. Nothing extraordinary, just steady progress."
+	fallback_event.can_spawn = true
+
+	return fallback_event
 
 func create_fallback_client() -> Models.ClientObject:
 	var fallback_client = Models.ClientObject.new()
@@ -130,3 +148,12 @@ func dictionary_to_bill(obj_in: Dictionary) -> Models.BillObject:
 	bill.recurring = obj_in.get("recurring")
 
 	return bill
+
+func dictionary_to_event(obj_in: Dictionary) -> Models.EventObject:
+	var event = Models.EventObject.new()
+	event.id = obj_in.get("id")
+	event.name = obj_in.get("name")
+	event.description = obj_in.get("description")
+	event.can_spawn = obj_in.get("can_spawn")
+
+	return event

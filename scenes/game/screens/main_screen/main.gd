@@ -58,9 +58,18 @@ func _ready() -> void:
 
 func handle_spawn_random_event() -> void:
 	print("[MAIN] handle_spawn_random_event")
-	var client_info = ClientData.get_random_client()
-	if not active_clients.has(client_info.id):
+	if active_clients.is_empty():
+		var client_info = ClientData.get_random_client()
 		open_popup_message_for_new_client(client_info)
+	else:
+		if randf() < 0.6:
+			var event_info = ClientData.get_random_event()
+			if event_info:
+				open_popup_message_for_new_event(event_info)
+		else:
+			var client_info = ClientData.get_random_client()
+			if not active_clients.has(client_info.id):
+				open_popup_message_for_new_client(client_info)
 
 func handle_spawn_tasks() -> void:
 	print("[MAIN] handle_spawn_tasks")
@@ -179,6 +188,23 @@ func open_popup_message_for_new_client(client: Models.ClientObject) -> void:
 		get_tree().paused = false
 
 	$CustomPopupMessage.show_popup(popup_data)
+
+func open_popup_message_for_new_event(event: Models.EventObject) -> void:
+	get_tree().paused = true
+	var popup_data = CustomizablePopupMessage.PopupData.new()
+	popup_data.title = event.name
+	var message_lines: Array[String] = [event.description]
+	popup_data.lines = message_lines
+
+	var btns: Array[CustomizablePopupMessage.PopupButton] = []
+	popup_data.buttons = btns
+
+	popup_data.on_close = func():
+		$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+		get_tree().paused = false
+
+	$CustomPopupMessage.show_popup(popup_data)
+
 
 func add_new_task_to_scene(client_id: int, task_info: Models.TaskObject) -> void:
 	var task_instance: Task = task_scene.instantiate()
