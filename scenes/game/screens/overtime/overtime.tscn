@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://1cdlev1n18eg"]
+
+[ext_resource type="Script" uid="uid://712sanv7ul8u" path="res://scenes/game/screens/overtime/overtime.gd" id="1_q72v6"]
+[ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://scenes/ui/global_themes/main_theme.tres" id="2_305ml"]
+[ext_resource type="Texture2D" uid="uid://cvaxghcsay80s" path="res://icon.svg" id="3_rsegk"]
+
+[node name="Overtime" type="Node"]
+script = ExtResource("1_q72v6")
+texture = ExtResource("3_rsegk")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_305ml")
+
+[node name="OvertimeGrid" type="GridContainer" parent="Panel"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Description" type="RichTextLabel" parent="Panel/OvertimeGrid"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 35
+text = "You have x ongoing tasks, do you want to work overtime?
+Stress will increase by 5 point, but you'll get rid of one pending task with under 2000 words"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ItemList" type="ItemList" parent="Panel/OvertimeGrid"]
+layout_mode = 2
+size_flags_vertical = 3
+allow_search = false
+auto_width = true
+auto_height = true
+max_columns = 5
+same_column_width = true
+icon_mode = 0
+
+[node name="Overtime" type="Button" parent="Panel/OvertimeGrid"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 45
+text = "NO WAY!"
+
+[connection signal="empty_clicked" from="Panel/OvertimeGrid/ItemList" to="." method="_on_item_list_empty_clicked"]
+[connection signal="item_selected" from="Panel/OvertimeGrid/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="Panel/OvertimeGrid/Overtime" to="." method="_on_overtime_button_pressed"]

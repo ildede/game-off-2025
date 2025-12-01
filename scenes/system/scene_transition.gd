@@ -16,6 +16,12 @@ func fade_to_main() -> void:
 	get_tree().change_scene_to_file("res://scenes/game/screens/main_screen/main.tscn")
 	black_fade_out()
 
+func fade_to_overtime() -> void:
+	print("[SceneTransition] fade_to_overtime")
+	black_fade_in()
+	get_tree().change_scene_to_file("res://scenes/game/screens/overtime/overtime.tscn")
+	black_fade_out()
+
 func fade_to_new_day() -> void:
 	print("[SceneTransition] fade_to_new_day")
 	black_fade_in()

@@ -39,6 +39,26 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Title" type="RichTextLabel" parent="GridContainer/MarginContainer/Title"]
+layout_mode = 0
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 45
+text = "Yout title"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="RichTextLabel" parent="GridContainer/MarginContainer/Title/Title"]
+layout_mode = 0
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 45
+text = "Yout title"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="RichTextLabel" type="RichTextLabel" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3

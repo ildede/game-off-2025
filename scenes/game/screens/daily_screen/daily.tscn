@@ -17,32 +17,6 @@ theme = ExtResource("2_vrdqk")
 [node name="GridContainer" type="GridContainer" parent="Panel"]
 layout_mode = 2
 
-[node name="OvertimeGrid" type="GridContainer" parent="Panel/GridContainer"]
-visible = false
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Description" type="RichTextLabel" parent="Panel/GridContainer/OvertimeGrid"]
-clip_contents = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 35
-text = "You have x ongoing tasks, do you want to work overtime?
-Stress will increase by 5 point, but you'll get rid of one pending task with under 2000 words"
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="Overtime" type="Button" parent="Panel/GridContainer/OvertimeGrid"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-theme_override_font_sizes/font_size = 45
-text = "OVERTIME"
-
 [node name="StatisticGrid" type="GridContainer" parent="Panel/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -67,5 +41,4 @@ size_flags_vertical = 6
 theme_override_font_sizes/font_size = 45
 text = "CONTINUE"
 
-[connection signal="pressed" from="Panel/GridContainer/OvertimeGrid/Overtime" to="." method="_on_overtime_button_pressed"]
 [connection signal="pressed" from="Panel/GridContainer/StatisticGrid/Continue" to="." method="_on_continue_button_pressed"]

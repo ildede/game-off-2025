@@ -131,14 +131,16 @@ func handle_client_deleted(client_id: int) -> void:
 	for id in ids_to_delete:
 		Global.task_deleted.emit(id)
 
-
 func handle_end_of_the_day() -> void:
 	print("[MAIN] handle_end_of_the_day")
 	for ongoing_task in Global.game_state.ongoing_task:
 		var task: Task = active_tasks.get(ongoing_task.task_id)
 		ongoing_task.remaining_words = task.remaining_words
 	get_tree().paused = true
-	SceneTransition.fade_to_new_day()
+	if Global.game_state.ongoing_task.filter(func(t:Models.OngoingTask):return t.deadline_days <= 2).size() > 0:
+		SceneTransition.fade_to_overtime()
+	else:
+		SceneTransition.fade_to_new_day()
 
 func handle_game_over() -> void:
 	print("[MAIN] handle_game_over")
