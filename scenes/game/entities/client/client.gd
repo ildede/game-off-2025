@@ -3,11 +3,13 @@ class_name ClientScene
 
 var client_id = 0;
 var path_to_translator: Path2D
+var _client_data: Models.ClientObject = Models.ClientObject.new()
 
 func _ready() -> void:
 	$Sprite.play("default")
 
 func initialize(my_position: Vector2, translator_position: Vector2, client_data: Models.ClientObject):
+	_client_data = client_data
 	self.position = my_position
 	client_id = client_data.id
 	var curve = Curve2D.new()
@@ -59,12 +61,33 @@ func spawn_task(task: Task) -> void:
 
 func _on_area_2d_mouse_entered() -> void:
 	$Delete.visible = true
+	$Info.visible = true
 
 func _on_area_2d_mouse_exited() -> void:
 	$Delete.visible = false
+	$Info.visible = false
 
 func _on_delete_pressed() -> void:
 	Global.client_deleted.emit(client_id)
 	$Sprite.play("delete")
 	await get_tree().create_timer(2).timeout
 	queue_free()
+
+
+func _on_info_pressed() -> void:
+	get_tree().paused = true
+	var popup_data = CustomizablePopupMessage.PopupData.new()
+	popup_data.title = _client_data.name
+	var message_lines: Array[String] = [
+		"Rates: {0}$ per word".format([_client_data.payment_per_word]),
+		"Payment terms: {0}".format([_client_data.payment_terms]),
+		"Reputation: <TBD>",
+		"Stress when you fail: <TBD>"
+	]
+	popup_data.lines = message_lines
+
+	var btns: Array[CustomizablePopupMessage.PopupButton] = []
+	popup_data.buttons = btns
+	popup_data.on_close = func(): get_tree().paused = false
+
+	$CustomPopupMessage.show_popup(popup_data)
