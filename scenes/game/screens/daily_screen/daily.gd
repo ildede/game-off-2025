@@ -47,7 +47,7 @@ func _on_overtime_button_pressed() -> void:
 			Global.game_state.translated_words += finished_task.total_words
 			Global.game_state.reputation += finished_task.reputation_on_success
 			Global.game_state.tasks_waiting_to_be_processed.append(invoice_info)
-			Global.game_state.stress += finished_task.remaining_words/400
+			Global.game_state.stress += finished_task.remaining_words as float/400.0
 
 	Global.update_day_count.emit(1)
 	SceneTransition.fade_to_main()
