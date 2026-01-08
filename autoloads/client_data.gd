@@ -5,10 +5,6 @@ var bills_data: Array[Models.BillObject]
 var events_data: Array[Models.EventObject]
 var bonus_data: Array[Models.BonusObject]
 
-func _ready() -> void:
-	print("[CLIENT_DATA] ready")
-	load_json_data()
-
 func load_json_data():
 	var file = FileAccess.open("res://data/game_data.json", FileAccess.READ)
 	if file:
@@ -16,12 +12,16 @@ func load_json_data():
 		var parse_result = json.parse(file.get_as_text())
 		if parse_result == OK:
 			var data = json.get_data()
+			clients_data = []
 			for obj in data["clients"]:
 				clients_data.append(dictionary_to_client(obj))
+			bills_data = []
 			for obj in data["bills"]:
 				bills_data.append(dictionary_to_bill(obj))
+			events_data = []
 			for obj in data["events"]:
 				events_data.append(dictionary_to_event(obj))
+			bonus_data = []
 			for obj in data["bonus"]:
 				bonus_data.append(dictionary_to_bonus(obj))
 		else:
