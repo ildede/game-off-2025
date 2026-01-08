@@ -10,6 +10,7 @@ func _ready() -> void:
 	$InfoPanel/MarginContainer/GridContainer/QualityLabel/QualityBar.value = state.quality
 	$InfoPanel/MarginContainer/GridContainer/QualityLabel/QualityBar.max_value = Config.MAX_QUALITY_LEVEL
 	$InfoPanel/MarginContainer/GridContainer/ReputationLabel/ReputationBar.value = state.reputation
+	$InfoPanel/MarginContainer/GridContainer/ReputationLabel/ReputationBar.max_value = Config.MAX_REPUTATION_LEVEL
 	$InfoPanel/MarginContainer/GridContainer/GridContainer/Money.text = "%.2f" % state.money
 	var events: Array[EventsPanel.Event] = []
 	for bill: Models.BillObject in state.bills:
