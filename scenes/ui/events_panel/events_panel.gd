@@ -19,7 +19,7 @@ func update_events(ar: Array[Event]):
 		ev_instance.money_value = e.amount
 		ev_instance.display_name = e.name
 		ev_instance.event_type = e.type
-		$HBoxContainer.add_child(ev_instance)
+		$ScrollContainer/HBoxContainer.add_child(ev_instance)
 		childs.append(ev_instance)
 
 enum EventType {
