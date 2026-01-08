@@ -27,6 +27,7 @@ func ui_update() -> void:
 	$InfoPanel/MarginContainer/GridContainer/QualityLabel/QualityBar.value = state.quality
 	$InfoPanel/MarginContainer/GridContainer/ReputationLabel/ReputationBar.value = state.reputation
 	$InfoPanel/MarginContainer/GridContainer/GridContainer/Money.text = "%.2f" % state.money
+	$InfoPanel/MarginContainer/GridContainer/Productivity/Words.text = str(state.productivity)
 	var events: Array[EventsPanel.Event] = []
 	for bill: Models.BillObject in state.bills:
 		events.append(EventsPanel.Event.new(EventsPanel.EventType.BILL, bill.next_payment_day, bill.amount, bill.name))

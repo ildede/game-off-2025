@@ -8,7 +8,7 @@ var priority_task: Task
 
 func _ready() -> void:
 	print("[TRANSLATOR] _ready")
-	var max_words_per_day = (Config.WORDS_PER_DAY + Global.game_state.productivity) as float / Config.WORDS_PER_LETTER
+	var max_words_per_day = Global.game_state.productivity as float / Config.WORDS_PER_LETTER
 	$WPM.start(Config.DAY_LENGHT_IN_SECONDS/max_words_per_day)
 	Global.client_send_task.connect(new_task_arrived)
 	Global.letter_hit_task.connect(task_hit)

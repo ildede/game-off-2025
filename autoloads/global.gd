@@ -120,6 +120,7 @@ func handle_game_over() -> void:
 
 func start_new_game() -> void:
 	game_state = Models.State.new()
+	game_state.productivity = Config.WORDS_PER_DAY
 	ClientData.load_json_data()
 	game_state.bills = ClientData.bills_data.duplicate()
 
