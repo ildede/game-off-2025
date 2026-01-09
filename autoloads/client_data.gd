@@ -34,6 +34,12 @@ func client_accepted(client_id: int) -> void:
 	if found_index >= 0:
 		clients_data.remove_at(found_index)
 
+func bonus_used(bonus_id: int) -> void:
+	var found_index = bonus_data.find_custom(func(b): return b.id == bonus_id);
+	if found_index >= 0:
+		if not bonus_data[found_index].consumable:
+			bonus_data.remove_at(found_index)
+
 func get_random_client() -> Models.ClientObject:
 	if clients_data.is_empty():
 		return create_fallback_client()
@@ -155,6 +161,7 @@ func dictionary_to_bonus(obj_in: Dictionary) -> Models.BonusObject:
 	event.name = obj_in.get("name")
 	event.description = obj_in.get("description")
 	event.can_spawn = obj_in.get("can_spawn")
+	event.consumable = obj_in.get("consumable", false)
 	event.cost = obj_in.get("cost", 0.0)
 	event.quality_change = obj_in.get("quality_change", 0.0)
 	event.stress_change = obj_in.get("stress_change", 0.0)

@@ -1433,6 +1433,7 @@
       "name": "Melatonine pills",
       "description": "Quality increased, stress reduced.",
       "can_spawn": true,
+      "consumable": true,
       "cost": 2.0,
       "quality_change": 2.0,
       "stress_change": -2.0
@@ -1583,7 +1584,8 @@
       "id": 25,
       "name": "Organized desk",
       "description": "Stress is reduced, productivity is increased. (only temporary)",
-      "can_spawn": false
+      "can_spawn": false,
+      "consumable": true
     },
     {
       "id": 26,
@@ -1598,6 +1600,7 @@
       "name": "Cozy herbal tea",
       "description": "Stress is reduced.",
       "can_spawn": true,
+      "consumable": true,
       "cost": 9,
       "stress_change": -1
     },

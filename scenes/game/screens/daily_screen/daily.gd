@@ -64,6 +64,7 @@ func _on_continue_button_pressed() -> void:
 			if not bonus.default_bill_change == 0:
 				for bill in Global.game_state.bills:
 					bill.amount += bonus.default_bill_change
+			ClientData.bonus_used(bonus.id)
 
 	if Global.game_state.money < 0:
 		SceneTransition.fade_to_end()

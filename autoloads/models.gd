@@ -168,10 +168,10 @@ class BonusObject:
 	var name: String
 	var description: String
 	var can_spawn: bool
+	var consumable: bool
 	var cost: float
 	var quality_change: float
 	var stress_change: float
 	var reputation_change: float
 	var default_bill_change: float
 	var productivity_change: int
-	
