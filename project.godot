@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Game Off 2025"
+config/name="BurnOutRunner"
 run/main_scene="uid://bbkuumbsn0h32"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/image="uid://b52e1ngfga8i5"
 config/icon="uid://bckc8dgni1p3v"
 
 [autoload]
@@ -30,3 +31,7 @@ window/stretch/mode="viewport"
 [gui]
 
 theme/custom="uid://cym7llujgpfif"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
