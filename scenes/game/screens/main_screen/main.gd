@@ -151,12 +151,13 @@ func handle_game_over() -> void:
 func add_new_client_to_scene(client_info: Models.ClientObject) -> ClientScene:
 	print("[MAIN] add_new_client_to_scene")
 	var client: ClientScene = client_scene.instantiate()
-	var client_position = Vector2(
-		randi_range($WorldPanel.position[0]+140, $WorldPanel.position[0]+$WorldPanel.size[0]-140),
-		randi_range($WorldPanel.position[1]+110, $WorldPanel.position[1]+$WorldPanel.size[1]-110)
-	)
+	if client_info.position == Vector2.ZERO:
+		client_info.position = Vector2(
+			randi_range($WorldPanel.position[0]+140, $WorldPanel.position[0]+$WorldPanel.size[0]-140),
+			randi_range($WorldPanel.position[1]+110, $WorldPanel.position[1]+$WorldPanel.size[1]-110)
+		)
 	var translator_position = $Translator.global_position
-	client.initialize(client_position, translator_position, client_info)
+	client.initialize(translator_position, client_info)
 	add_child(client)
 	return client
 

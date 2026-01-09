@@ -64,6 +64,7 @@ class ClientObject:
 	var custom_email: String
 	var public_reputation: PublicReputationObject
 	var min_reputation: int
+	var position: Vector2
 
 	var recurring_tasks: Array[RecurringTaskObject]
 	var extemporaneous_tasks: Array[ExtemporaneousTaskObject]

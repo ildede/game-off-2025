@@ -8,13 +8,13 @@ var _client_data: Models.ClientObject = Models.ClientObject.new()
 func _ready() -> void:
 	$Sprite.play("default")
 
-func initialize(my_position: Vector2, translator_position: Vector2, client_data: Models.ClientObject):
+func initialize(translator_position: Vector2, client_data: Models.ClientObject):
 	_client_data = client_data
-	self.position = my_position
+	self.position = client_data.position
 	client_id = client_data.id
 	var curve = Curve2D.new()
 	curve.add_point($Sprite.position)
-	curve.add_point(translator_position - my_position)
+	curve.add_point(translator_position - client_data.position)
 	var path = Path2D.new()
 	path.curve = curve
 	path_to_translator = path
