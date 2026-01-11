@@ -11,7 +11,7 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	$Panel/OvertimeGrid/Description.text = ""
 	$Panel/OvertimeGrid/Description.append_text("You have {0} ongoing tasks due tomorrow. Do you want to work overtime on one of theme?\nYou'll clear a maximum of 2000 words on that task, but your stress will increase by 1 point for every 400 words."
-		.format([Global.game_state.ongoing_task.size()]))
+		.format([Global.game_state.ongoing_task.filter(func(t:Models.OngoingTask):return t.deadline_days <= 2).size()]))
 
 	for task: Models.OngoingTask in Global.game_state.ongoing_task.filter(func(t:Models.OngoingTask):return t.deadline_days <= 2):
 		var index_added = $Panel/OvertimeGrid/ItemList.add_item(
