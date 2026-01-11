@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 	if is_instance_valid(target):
 		#global_position = global_position.move_toward(target.global_position + Vector2(randi_range(-500, 500), randi_range(-500, 500)), speed * delta) <-- EFFETTO UBRIACO
 		global_position = global_position.move_toward(target.global_position + quality_vector, speed * delta)
-		if global_position.x >= (target.global_position.x + quality_vector.x):
+		if global_position.x >= (target.global_position.x + quality_vector.x/2):
 			queue_free()
 	else:
 		queue_free()

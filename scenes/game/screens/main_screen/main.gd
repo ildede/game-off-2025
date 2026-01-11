@@ -9,8 +9,13 @@ class_name Main
 @onready var active_clients: Dictionary = {}
 @onready var active_tasks: Dictionary = {}
 
+var clients_sent_something_today: Array[int]
+var active_clients_count: int
+
 func _ready() -> void:
 	print("[MAIN] _ready")
+	clients_sent_something_today = []
+	active_clients_count = 0
 	Global.set_clock($GameClock)
 	Global.game_over.connect(handle_game_over)
 	Global.task_finished.connect(handle_task_finished)
@@ -58,7 +63,7 @@ func _ready() -> void:
 
 func handle_spawn_random_event() -> void:
 	print("[MAIN] handle_spawn_random_event")
-	if active_clients.is_empty():
+	if active_clients_count <= 0:
 		var client_info = ClientData.get_random_client()
 		open_popup_message_for_new_client(client_info)
 	else:
@@ -74,7 +79,7 @@ func handle_spawn_random_event() -> void:
 func handle_spawn_tasks() -> void:
 	print("[MAIN] handle_spawn_tasks")
 	for client in Global.game_state.clients:
-		if active_clients.has(client.id) and not client.is_removed:
+		if active_clients.has(client.id) and not client.is_removed and not clients_sent_something_today.has(client.id):
 			var task_object = client.get_task_to_spawn(Global.game_state.current_day)
 			if task_object:
 				if task_object.need_confirmation_email:
@@ -119,8 +124,9 @@ func handle_task_deleted(task_id: int) -> void:
 		Global.update_reputation.emit(finished_task.reputation_on_failure/2)
 
 func handle_client_deleted(client_id: int) -> void:
-	print("[MAIN] handle_task_deleted for task_id ", client_id)
+	print("[MAIN] handle_client_deleted for client_id ", client_id)
 	active_clients.set(client_id, {})
+	active_clients_count -= 1
 
 	var client_index = Global.game_state.clients.find_custom(func(c): return c.id == client_id)
 	if client_index >= 0:
@@ -159,6 +165,7 @@ func add_new_client_to_scene(client_info: Models.ClientObject) -> ClientScene:
 	var translator_position = $Translator.global_position
 	client.initialize(translator_position, client_info)
 	add_child(client)
+	active_clients_count += 1
 	return client
 
 func open_popup_message_for_new_client(client: Models.ClientObject) -> void:
@@ -219,6 +226,7 @@ func add_new_task_to_scene(client_id: int, task_info: Models.TaskObject) -> void
 	active_tasks.set(task_instance.get_task_id(), task_instance)
 	Global.client_send_task.emit(task_instance)
 	Global.handle_client_send_task(task_instance)
+	clients_sent_something_today.append(client_id)
 
 func open_popup_message_for_new_task(client: Models.ClientObject, task: Models.TaskObject) -> void:
 	get_tree().paused = true
