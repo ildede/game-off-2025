@@ -204,7 +204,7 @@
       "name": "NekoArmy",
       "payment_per_word": 0.04,
       "payment_terms": "NET7",
-      "workload": "Random workflow, no reputation gained from our projects.",
+      "workload": "Random workflow, no reputation earned from our projects.",
       "min_reputation": 0,
       "recurring_tasks": [],
       "extemporaneous_tasks": [
@@ -301,7 +301,7 @@
       "name": "All the Delay",
       "payment_per_word": 0.03,
       "payment_terms": "EONM",
-      "workload": "Big batches, completely random flow, no reputation gained.",
+      "workload": "Big batches, completely random flow, no reputation earned.",
       "min_reputation": 0,
       "recurring_tasks": [
         {
@@ -322,7 +322,7 @@
       "name": "Fall the Way",
       "payment_per_word": 0.03,
       "payment_terms": "NET60",
-      "workload": "12 to 16k per month, without any notice. No reputation gained.",
+      "workload": "12 to 16k per month, without any notice. No reputation earned.",
       "min_reputation": 0,
       "recurring_tasks": [
         {
@@ -469,7 +469,7 @@
       "name": "Random Bottom feeder",
       "payment_per_word": 0.02,
       "payment_terms": "UPON_RECEIPT",
-      "workload": "Daily flow, around 5k per week. No prestige gained.",
+      "workload": "Daily flow, around 5k per week. No prestige earned.",
       "min_reputation": 0,
       "recurring_tasks": [
         {
@@ -896,7 +896,7 @@
       "name": "WanRoad",
       "payment_per_word": 0.03,
       "payment_terms": "NET60",
-      "workload": "Constant flow of around 4k words per week. No reputation gained.",
+      "workload": "Constant flow of around 4k words per week. No reputation earned.",
       "min_reputation": 30,
       "recurring_tasks": [
         {
@@ -1265,7 +1265,7 @@
     {
       "id": 19,
       "name": "YOUR PARTNER IS A DEV",
-      "description": "Your lovely partner creates your website. You save money, you gain reputation and recover some stress.",
+      "description": "Your lovely partner creates your website. You save money, you earn reputation and recover some stress.",
       "can_spawn": true
     },
     {
@@ -1283,7 +1283,7 @@
     {
       "id": 22,
       "name": "PET TAX",
-      "description": "You gain reputation by sending one client cute photos of your pet.",
+      "description": "You earn reputation by sending one client cute photos of your pet.",
       "can_spawn": true
     },
     {
@@ -1355,7 +1355,7 @@
     {
       "id": 34,
       "name": "NON DISCLOSURE DISAGREEMENT",
-      "description": "The big client with the prestigious project didn’t include you in the credits. You can’t mention the game, and you don’t gain the promised reputation.",
+      "description": "The big client with the prestigious project didn’t include you in the credits. You can’t mention the game, and you don’t earn the promised reputation.",
       "can_spawn": true
     },
     {
