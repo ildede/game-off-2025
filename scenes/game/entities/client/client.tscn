@@ -130,18 +130,18 @@ autowrap_mode = 2
 process_mode = 3
 visible = false
 layout_mode = 0
-offset_left = -22.857145
-offset_top = -101.428566
-offset_right = 77.14285
-offset_bottom = -1.428566
+offset_left = 59.142853
+offset_top = -98.42856
+offset_right = 159.14285
+offset_bottom = 1.5714417
 texture_normal = SubResource("AnimatedTexture_2jr2s")
 
 [node name="Info" type="TextureButton" parent="."]
 process_mode = 3
 visible = false
 layout_mode = 0
-offset_left = -18.0
-offset_right = 82.0
+offset_left = 59.0
+offset_right = 159.0
 offset_bottom = 100.0
 texture_normal = SubResource("AnimatedTexture_i6ass")
 
