@@ -11,7 +11,7 @@ A hybrid game where you manage a translator's workflow. Defend against **waves**
 ## Development
 
 - **Engine**: Godot 4.5
-- **Status**: In development for GitHub Game Off 2025
+- **Status**: Polishing phase after GitHub Game Off 2025
 
 ---
 
