@@ -9,6 +9,7 @@ signal task_deleted(id: int)
 signal task_finished(id: int)
 signal task_failed(id: int)
 signal update_reputation(value: float)
+signal update_productivity(value: float)
 signal update_stress(value: float)
 signal update_quality(value: float)
 signal update_money(value: float)
@@ -30,6 +31,7 @@ func _ready() -> void:
 	task_failed.connect(handle_task_failed)
 	task_deleted.connect(handle_task_deleted)
 	update_reputation.connect(handle_update_reputation)
+	update_productivity.connect(handle_update_productivity)
 	update_stress.connect(handle_update_stress)
 	update_quality.connect(handle_update_quality)
 	update_money.connect(handle_update_money)
@@ -78,6 +80,13 @@ func handle_update_reputation(value: float) -> void:
 		game_state.reputation = 0
 	if (game_state.reputation > Config.MAX_REPUTATION_LEVEL):
 		game_state.reputation = Config.MAX_REPUTATION_LEVEL
+	ui_update.emit()
+
+func handle_update_productivity(value: int) -> void:
+	print("[GLOBAL] handle_update_productivity")
+	game_state.productivity += value
+	if (game_state.productivity < 0):
+		game_state.productivity = 0
 	ui_update.emit()
 
 func handle_update_stress(value: float) -> void:

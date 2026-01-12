@@ -163,6 +163,13 @@ class EventObject:
 	var name: String
 	var description: String
 	var can_spawn: bool
+	var accept_btn: String
+	var quality_change: float
+	var stress_change: float
+	var reputation_change: float
+	var default_bill_change: float
+	var productivity_change: int
+	var custom_functions: Array[String]
 
 class BonusObject:
 	var id: int

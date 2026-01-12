@@ -152,7 +152,15 @@ func dictionary_to_event(obj_in: Dictionary) -> Models.EventObject:
 	event.name = obj_in.get("name")
 	event.description = obj_in.get("description")
 	event.can_spawn = obj_in.get("can_spawn")
-
+	event.accept_btn = obj_in.get("accept_btn", "")
+	event.quality_change = obj_in.get("quality_change", 0.0)
+	event.stress_change = obj_in.get("stress_change", 0.0)
+	event.reputation_change = obj_in.get("reputation_change", 0.0)
+	event.default_bill_change = obj_in.get("default_bill_change", 0.0)
+	event.productivity_change = obj_in.get("productivity_change", 0)
+	event.custom_functions = [] as Array[String]
+	for obj in obj_in.get("custom_functions", []):
+		event.custom_functions.append(obj)
 	return event
 
 func dictionary_to_bonus(obj_in: Dictionary) -> Models.BonusObject:

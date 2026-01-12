@@ -7,6 +7,7 @@ var _client_data: Models.ClientObject = Models.ClientObject.new()
 
 func _ready() -> void:
 	$Sprite.play("default")
+	Global.client_deleted.connect(handle_a_client_is_deleted)
 
 func initialize(translator_position: Vector2, client_data: Models.ClientObject):
 	_client_data = client_data
@@ -58,7 +59,6 @@ func loyalty_updated(loyalty: float):
 func spawn_task(task: Task) -> void:
 	path_to_translator.add_child(task)
 
-
 func _on_area_2d_mouse_entered() -> void:
 	$Delete.visible = true
 	$Info.visible = true
@@ -69,10 +69,12 @@ func _on_area_2d_mouse_exited() -> void:
 
 func _on_delete_pressed() -> void:
 	Global.client_deleted.emit(client_id)
-	$Sprite.play("delete")
-	await get_tree().create_timer(2).timeout
-	queue_free()
 
+func handle_a_client_is_deleted(id: int) -> void:
+	if id == client_id:
+		$Sprite.play("delete")
+		await get_tree().create_timer(2).timeout
+		queue_free()
 
 func _on_info_pressed() -> void:
 	get_tree().paused = true

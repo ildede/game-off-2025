@@ -12,6 +12,16 @@ class_name Main
 var clients_sent_something_today: Array[int]
 var active_clients_count: int
 
+var custom_functions: Dictionary[String, Callable] = {
+	"one": func():
+		print("one is called"),
+	"two": func():
+		print("two is called"),
+	"lose_random_client": func ():
+		print("lose_random_client is called")
+		Global.client_deleted.emit(active_clients.keys().pick_random()),
+}
+
 func _ready() -> void:
 	print("[MAIN] _ready")
 	clients_sent_something_today = []
@@ -24,9 +34,7 @@ func _ready() -> void:
 	Global.client_deleted.connect(handle_client_deleted)
 
 	for client_info in Global.game_state.clients:
-		if client_info.is_removed:
-			active_clients.set(client_info.id, {})
-		else:
+		if not client_info.is_removed:
 			var added = add_new_client_to_scene(client_info)
 			active_clients.set(client_info.id, added)
 
@@ -207,11 +215,33 @@ func open_popup_message_for_new_event(event: Models.EventObject) -> void:
 	var message_lines: Array[String] = [event.description]
 	popup_data.lines = message_lines
 
-	var btns: Array[CustomizablePopupMessage.PopupButton] = []
+	var accept_btn = CustomizablePopupMessage.PopupButton.new()
+	accept_btn.text = event.accept_btn if event.accept_btn != "" else "I hereby accept"
+	accept_btn.action = func():
+		$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+		if not event.default_bill_change == 0:
+			for bill in Global.game_state.bills:
+				bill.amount += event.default_bill_change
+		Global.update_quality.emit(event.quality_change)
+		Global.update_stress.emit(event.stress_change)
+		Global.update_reputation.emit(event.reputation_change)
+		Global.update_productivity.emit(event.productivity_change)
+		for func_name in event.custom_functions:
+			custom_functions[func_name].call()
+		get_tree().paused = false
+
+	var btns: Array[CustomizablePopupMessage.PopupButton] = [accept_btn]
 	popup_data.buttons = btns
 
 	popup_data.on_close = func():
 		$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+		if not event.default_bill_change == 0:
+			for bill in Global.game_state.bills:
+				bill.amount += event.default_bill_change
+		Global.update_quality.emit(event.quality_change)
+		Global.update_stress.emit(event.stress_change)
+		Global.update_reputation.emit(event.reputation_change)
+		Global.update_productivity.emit(event.productivity_change)
 		get_tree().paused = false
 
 	$CustomPopupMessage.show_popup(popup_data)
