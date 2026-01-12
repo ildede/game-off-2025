@@ -168,6 +168,7 @@ class BonusObject:
 	var id: int
 	var name: String
 	var description: String
+	var asset: String
 	var can_spawn: bool
 	var consumable: bool
 	var cost: float

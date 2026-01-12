@@ -1409,6 +1409,7 @@
       "id": 3,
       "name": "Wall planner",
       "description": "Stress reduced, reputation increases.",
+      "asset": "planner",
       "can_spawn": true,
       "cost": 15.0,
       "stress_change": -5.0,
@@ -1418,12 +1419,14 @@
       "id": 4,
       "name": "Cat",
       "description": "Stress reduced, reputation increased. Occasionally affects negatively quality and time spent. (malus: ogni tanto ti fa perdere tempo o qualità)",
+      "asset": "cat",
       "can_spawn": false
     },
     {
       "id": 5,
       "name": "Docking station",
       "description": "Productivity increased.",
+      "asset": "docking",
       "can_spawn": true,
       "cost": 15.0,
       "productivity_change": 100
@@ -1432,6 +1435,7 @@
       "id": 6,
       "name": "Melatonine pills",
       "description": "Quality increased, stress reduced.",
+      "asset": "pills",
       "can_spawn": true,
       "consumable": true,
       "cost": 2.0,
@@ -1442,6 +1446,7 @@
       "id": 7,
       "name": "Gym membership",
       "description": "Less chances to get sick, productivity increases.",
+      "asset": "sport",
       "can_spawn": false
     },
     {
@@ -1458,6 +1463,7 @@
       "id": 9,
       "name": "High speed fiber",
       "description": "Productivity is increased, stress is reduced. Has also a monthly cost.",
+      "asset": "router",
       "can_spawn": true,
       "cost": 30.0,
       "default_bill_change": 20.0,
@@ -1468,6 +1474,7 @@
       "id": 10,
       "name": "CAT tool",
       "description": "Productivity, quality and reputation are increased. Has also a monthly cost.",
+      "asset": "cattool",
       "can_spawn": true,
       "cost": 50.0,
       "default_bill_change": 20.0,
@@ -1479,6 +1486,7 @@
       "id": 11,
       "name": "Mechanical keyboard",
       "description": "Productivity is increased.",
+      "asset": "keyboard",
       "can_spawn": true,
       "cost": 55.5,
       "productivity_change": 50
@@ -1487,6 +1495,7 @@
       "id": 12,
       "name": "Ergonomic chair",
       "description": "Stress is reduced.",
+      "asset": "chair",
       "can_spawn": true,
       "cost": 55.5,
       "stress_change": -20
@@ -1495,12 +1504,14 @@
       "id": 13,
       "name": "Standing desk",
       "description": "Productivity is reduced. Less chances to get sick.",
+      "asset": "standdesk",
       "can_spawn": false
     },
     {
       "id": 14,
       "name": "Triple screen",
       "description": "Productivity is boosted.",
+      "asset": "triplescreen",
       "can_spawn": true,
       "cost": 199.90,
       "productivity_change": 50
@@ -1509,6 +1520,7 @@
       "id": 15,
       "name": "Footrest",
       "description": "Stress is reduced.",
+      "asset": "footrest",
       "can_spawn": true,
       "cost": 24.90,
       "stress_change": -5
@@ -1517,6 +1529,7 @@
       "id": 16,
       "name": "Ergonomic mouse",
       "description": "Productivity increased.",
+      "asset": "ergomouse",
       "can_spawn": true,
       "cost": 99.75,
       "productivity_change": 50
@@ -1525,6 +1538,7 @@
       "id": 17,
       "name": "Heated blanket",
       "description": "Monthly bills are slightly reduced.",
+      "asset": "heatblanket",
       "can_spawn": true,
       "cost": 45.0,
       "default_bill_change": -19.0
@@ -1533,6 +1547,7 @@
       "id": 18,
       "name": "Heated socks",
       "description": "Monthly bills are slightly reduced, less chances to get sick.",
+      "asset": "heatsocks",
       "can_spawn": true,
       "cost": 25.0,
       "default_bill_change": -8.0
@@ -1541,6 +1556,7 @@
       "id": 19,
       "name": "Comfy sweatpants",
       "description": "Stress is reduced.",
+      "asset": "pants",
       "can_spawn": true,
       "cost": 35.0,
       "stress_change": -8.0
@@ -1549,6 +1565,7 @@
       "id": 21,
       "name": "Double screen",
       "description": "Productivity is increased.",
+      "asset": "doublescreen",
       "can_spawn": true,
       "cost": 99.0,
       "productivity_change": 50
@@ -1557,6 +1574,7 @@
       "id": 22,
       "name": "Noise cancelling headphones",
       "description": "Stress is reduced, productivity is increased.",
+      "asset": "headphones",
       "can_spawn": true,
       "cost": 89.0,
       "stress_change": -7.0,
@@ -1566,6 +1584,7 @@
       "id": 23,
       "name": "Wrist-rest for mouse",
       "description": "Stress is reduced.",
+      "asset": "mousewrist",
       "can_spawn": true,
       "cost": 29.0,
       "stress_change": -2.0
@@ -1574,6 +1593,7 @@
       "id": 24,
       "name": "Wrist-rest for keyboard",
       "description": "Stress is reduced. Productivity and quality are increased.",
+      "asset": "keyboardwrist",
       "can_spawn": true,
       "cost": 39.0,
       "stress_change": -2.0,
@@ -1584,6 +1604,7 @@
       "id": 25,
       "name": "Organized desk",
       "description": "Stress is reduced, productivity is increased. (only temporary)",
+      "asset": "organizeddesk",
       "can_spawn": false,
       "consumable": true
     },
@@ -1591,6 +1612,7 @@
       "id": 26,
       "name": "Professional website",
       "description": "Reputation is increased.",
+      "asset": "website",
       "can_spawn": true,
       "cost": 500.0,
       "reputation_change": 40
@@ -1599,6 +1621,7 @@
       "id": 27,
       "name": "Cozy herbal tea",
       "description": "Stress is reduced.",
+      "asset": "tea",
       "can_spawn": true,
       "consumable": true,
       "cost": 9,

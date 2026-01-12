@@ -160,6 +160,7 @@ func dictionary_to_bonus(obj_in: Dictionary) -> Models.BonusObject:
 	event.id = obj_in.get("id")
 	event.name = obj_in.get("name")
 	event.description = obj_in.get("description")
+	event.asset = obj_in.get("asset", "")
 	event.can_spawn = obj_in.get("can_spawn")
 	event.consumable = obj_in.get("consumable", false)
 	event.cost = obj_in.get("cost", 0.0)

@@ -1,10 +1,60 @@
-[gd_scene load_steps=3 format=3 uid="uid://bucgncfhv2yq8"]
+[gd_scene load_steps=27 format=3 uid="uid://bucgncfhv2yq8"]
 
 [ext_resource type="Script" uid="uid://rmuvkl2iy50m" path="res://scenes/game/screens/daily_screen/daily.gd" id="1_n7uhh"]
+[ext_resource type="Texture2D" uid="uid://cejfhdvcnv1p1" path="res://scenes/game/screens/daily_screen/assets/cat.png" id="2_s02k1"]
 [ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://scenes/ui/global_themes/main_theme.tres" id="2_vrdqk"]
+[ext_resource type="Texture2D" uid="uid://bb8g00jeffvnv" path="res://scenes/game/screens/daily_screen/assets/cattool.png" id="3_hekby"]
+[ext_resource type="Texture2D" uid="uid://c6b7e4yc0dxyt" path="res://scenes/game/screens/daily_screen/assets/chair.png" id="4_yv37s"]
+[ext_resource type="Texture2D" uid="uid://dge1qcp00nga8" path="res://scenes/game/screens/daily_screen/assets/docking.png" id="5_2h54p"]
+[ext_resource type="Texture2D" uid="uid://bkjdjqmipakh3" path="res://scenes/game/screens/daily_screen/assets/doublescreen.png" id="6_lr2u3"]
+[ext_resource type="Texture2D" uid="uid://j5yud3elox1h" path="res://scenes/game/screens/daily_screen/assets/energydrink.png" id="7_0a8sc"]
+[ext_resource type="Texture2D" uid="uid://c2l24b15b44va" path="res://scenes/game/screens/daily_screen/assets/ergomouse.png" id="8_w5c3x"]
+[ext_resource type="Texture2D" uid="uid://c58f7d3qxbog6" path="res://scenes/game/screens/daily_screen/assets/footrest.png" id="9_6m1s2"]
+[ext_resource type="Texture2D" uid="uid://b0riveinvbs20" path="res://scenes/game/screens/daily_screen/assets/headphones.png" id="10_f6m2q"]
+[ext_resource type="Texture2D" uid="uid://jdbwuvxnp6ug" path="res://scenes/game/screens/daily_screen/assets/heatblanket.png" id="11_mg4mx"]
+[ext_resource type="Texture2D" uid="uid://bbx112keoa8rc" path="res://scenes/game/screens/daily_screen/assets/heatsocks.png" id="12_c2kar"]
+[ext_resource type="Texture2D" uid="uid://bco06yk45tonc" path="res://scenes/game/screens/daily_screen/assets/keyboard.png" id="13_dihtp"]
+[ext_resource type="Texture2D" uid="uid://diqpfmf8albea" path="res://scenes/game/screens/daily_screen/assets/keyboardwrist.png" id="14_8kgky"]
+[ext_resource type="Texture2D" uid="uid://cl4mwl8w4su6g" path="res://scenes/game/screens/daily_screen/assets/mousewrist.png" id="15_vf1g8"]
+[ext_resource type="Texture2D" uid="uid://5kohisuvwgue" path="res://scenes/game/screens/daily_screen/assets/organizeddesk.png" id="16_ldk2l"]
+[ext_resource type="Texture2D" uid="uid://da7a5rx27vby1" path="res://scenes/game/screens/daily_screen/assets/pants.png" id="17_d5c6y"]
+[ext_resource type="Texture2D" uid="uid://btyufat3a1ncf" path="res://scenes/game/screens/daily_screen/assets/pills.png" id="18_8fmcx"]
+[ext_resource type="Texture2D" uid="uid://c3g3423cxlhjw" path="res://scenes/game/screens/daily_screen/assets/planner.png" id="19_utqpv"]
+[ext_resource type="Texture2D" uid="uid://dcl1e7ikma64d" path="res://scenes/game/screens/daily_screen/assets/router.png" id="20_xlu02"]
+[ext_resource type="Texture2D" uid="uid://c40mq2psed2gw" path="res://scenes/game/screens/daily_screen/assets/sport.png" id="21_m88ml"]
+[ext_resource type="Texture2D" uid="uid://5v4xfn02cwwy" path="res://scenes/game/screens/daily_screen/assets/standdesk.png" id="22_0wj3q"]
+[ext_resource type="Texture2D" uid="uid://2j05gs2gteqv" path="res://scenes/game/screens/daily_screen/assets/tea.png" id="23_2rafb"]
+[ext_resource type="Texture2D" uid="uid://d1igondpylwaf" path="res://scenes/game/screens/daily_screen/assets/triplescreen.png" id="24_xuvtj"]
+[ext_resource type="Texture2D" uid="uid://d23ab5dcuwt16" path="res://scenes/game/screens/daily_screen/assets/website.png" id="25_6igxr"]
 
 [node name="Daily" type="Node"]
 script = ExtResource("1_n7uhh")
+texture = Dictionary[String, Texture2D]({
+"cat": ExtResource("2_s02k1"),
+"cattool": ExtResource("3_hekby"),
+"chair": ExtResource("4_yv37s"),
+"docking": ExtResource("5_2h54p"),
+"doublescreen": ExtResource("6_lr2u3"),
+"energydrink": ExtResource("7_0a8sc"),
+"ergomouse": ExtResource("8_w5c3x"),
+"footrest": ExtResource("9_6m1s2"),
+"headphones": ExtResource("10_f6m2q"),
+"heatblanket": ExtResource("11_mg4mx"),
+"heatsocks": ExtResource("12_c2kar"),
+"keyboard": ExtResource("13_dihtp"),
+"keyboardwrist": ExtResource("14_8kgky"),
+"mousewrist": ExtResource("15_vf1g8"),
+"organizeddesk": ExtResource("16_ldk2l"),
+"pants": ExtResource("17_d5c6y"),
+"pills": ExtResource("18_8fmcx"),
+"planner": ExtResource("19_utqpv"),
+"router": ExtResource("20_xlu02"),
+"sport": ExtResource("21_m88ml"),
+"standdesk": ExtResource("22_0wj3q"),
+"tea": ExtResource("23_2rafb"),
+"triplescreen": ExtResource("24_xuvtj"),
+"website": ExtResource("25_6igxr")
+})
 
 [node name="Panel" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -37,11 +87,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 allow_search = false
 max_text_lines = 10
+auto_width = true
 auto_height = true
 wraparound_items = false
 max_columns = 3
 same_column_width = true
-fixed_column_width = 600
+fixed_column_width = 595
 icon_mode = 0
 
 [node name="Continue" type="Button" parent="Panel/StatisticGrid"]
