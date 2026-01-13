@@ -163,6 +163,7 @@ class EventObject:
 	var name: String
 	var description: String
 	var can_spawn: bool
+	var recurring: bool
 	var accept_btn: String
 	var quality_change: float
 	var stress_change: float

@@ -1173,6 +1173,7 @@
       "description": "Your creative translations make you lose a client.",
       "accept_btn": "They don't need me",
       "can_spawn": true,
+      "recurring": false,
       "custom_functions": ["lose_random_client"]
     },
     {
@@ -1191,7 +1192,9 @@
       "id": 4,
       "name": "WORDY RAPPINGHOOD",
       "description": "Today you feel swag: you can process up to 10k words.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": true,
+      "custom_functions": ["ten_k_words_today"]
     },
     {
       "id": 5,

@@ -40,6 +40,12 @@ func bonus_used(bonus_id: int) -> void:
 		if not bonus_data[found_index].consumable:
 			bonus_data.remove_at(found_index)
 
+func event_fired(event_id: int) -> void:
+	var found_index = events_data.find_custom(func(e): return e.id == event_id);
+	if found_index >= 0:
+		if not events_data[found_index].recurring:
+			events_data.remove_at(found_index)
+
 func get_random_client() -> Models.ClientObject:
 	if clients_data.is_empty():
 		return create_fallback_client()
@@ -152,6 +158,7 @@ func dictionary_to_event(obj_in: Dictionary) -> Models.EventObject:
 	event.name = obj_in.get("name")
 	event.description = obj_in.get("description")
 	event.can_spawn = obj_in.get("can_spawn")
+	event.recurring = obj_in.get("recurring", false)
 	event.accept_btn = obj_in.get("accept_btn", "")
 	event.quality_change = obj_in.get("quality_change", 0.0)
 	event.stress_change = obj_in.get("stress_change", 0.0)

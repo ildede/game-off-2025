@@ -5,15 +5,24 @@ class_name Translator
 
 var tasks: Array[Task]
 var priority_task: Task
+var starting_productivity = 0
+
 
 func _ready() -> void:
 	print("[TRANSLATOR] _ready")
+	starting_productivity = Global.game_state.productivity
 	var max_words_per_day = Global.game_state.productivity as float / Config.WORDS_PER_LETTER
 	$WPM.start(Config.DAY_LENGHT_IN_SECONDS/max_words_per_day)
 	Global.client_send_task.connect(new_task_arrived)
 	Global.letter_hit_task.connect(task_hit)
 	Global.new_priority_task.connect(set_priority_task)
 	Global.task_deleted.connect(handle_task_deleted)
+	Global.ui_update.connect(ui_update)
+
+func ui_update():
+	if starting_productivity != Global.game_state.productivity:
+		var max_words_per_day = Global.game_state.productivity as float / Config.WORDS_PER_LETTER
+		$WPM.start(Config.DAY_LENGHT_IN_SECONDS/max_words_per_day)
 
 func _on_timer_timeout() -> void:
 	if tasks.size() != 0:

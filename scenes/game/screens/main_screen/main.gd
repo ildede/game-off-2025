@@ -20,6 +20,11 @@ var custom_functions: Dictionary[String, Callable] = {
 	"lose_random_client": func ():
 		print("lose_random_client is called")
 		Global.client_deleted.emit(active_clients.keys().pick_random()),
+	"ten_k_words_today": func ():
+		print("ten_k_words_today is called")
+		var tmp = Global.game_state.productivity
+		Global.update_productivity.emit(10000-tmp)
+		$GameClock.timeout.connect(func (): Global.update_productivity.emit(-(10000-tmp)))
 }
 
 func _ready() -> void:
