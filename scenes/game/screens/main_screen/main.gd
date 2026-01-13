@@ -18,13 +18,24 @@ var custom_functions: Dictionary[String, Callable] = {
 	"two": func():
 		print("two is called"),
 	"lose_random_client": func ():
-		print("lose_random_client is called")
 		Global.client_deleted.emit(active_clients.keys().pick_random()),
 	"ten_k_words_today": func ():
-		print("ten_k_words_today is called")
 		var tmp = Global.game_state.productivity
 		Global.update_productivity.emit(10000-tmp)
-		$GameClock.timeout.connect(func (): Global.update_productivity.emit(-(10000-tmp)))
+		$GameClock.timeout.connect(func (): Global.update_productivity.emit(-(10000-tmp))),
+	"double_words_today": func ():
+		var tmp = Global.game_state.productivity
+		Global.update_productivity.emit(tmp)
+		$GameClock.timeout.connect(func (): Global.update_productivity.emit(-tmp)),
+	"qworse_acquires": func ():
+		var choosen = active_clients.values().filter(func(c):
+			print(c._client_data.name)
+			return not "worse" in c._client_data.name
+		).pick_random()
+		print(choosen)
+		if is_instance_valid(choosen):
+			print(choosen._client_data.name)
+			Global.qworse_acquires.emit(choosen.client_id)
 }
 
 func _ready() -> void:

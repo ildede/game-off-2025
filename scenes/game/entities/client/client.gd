@@ -1,13 +1,15 @@
 extends Control
 class_name ClientScene
 
-var client_id = 0;
+var client_id = 0
+var client_name = ""
 var path_to_translator: Path2D
 var _client_data: Models.ClientObject = Models.ClientObject.new()
 
 func _ready() -> void:
 	$Sprite.play("default")
 	Global.client_deleted.connect(handle_a_client_is_deleted)
+	Global.qworse_acquires.connect(handle_a_client_is_acquired)
 
 func initialize(translator_position: Vector2, client_data: Models.ClientObject):
 	_client_data = client_data
@@ -75,6 +77,12 @@ func handle_a_client_is_deleted(id: int) -> void:
 		$Sprite.play("delete")
 		await get_tree().create_timer(2).timeout
 		queue_free()
+
+func handle_a_client_is_acquired(id: int) -> void:
+	if id == client_id:
+		_client_data.payment_per_word = _client_data.payment_per_word / 2
+		_client_data.name = _client_data.name + " (Qworse)"
+		$Name.text = _client_data.name
 
 func _on_info_pressed() -> void:
 	get_tree().paused = true

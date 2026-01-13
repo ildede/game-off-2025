@@ -1218,7 +1218,9 @@
       "id": 8,
       "name": "RESISTANCE IS FUTILE",
       "description": "A random client is suddenly acquired by Q-worse and from now it pays you -50%",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": true,
+      "custom_functions": ["qworse_acquires"]
     },
     {
       "id": 9,
@@ -1236,19 +1238,24 @@
       "id": 11,
       "name": "VARIABLE REX",
       "description": "You learn RegEx and your productivity goes up.",
-      "can_spawn": false
+      "can_spawn": true,
+      "productivity_change": 200
     },
     {
       "id": 12,
       "name": "BENEVOLENT REX",
       "description": "Your colleague helps you with RegEx formulas, you get a productivity boost.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": true,
+      "productivity_change": 20
     },
     {
       "id": 13,
       "name": "MORE THAN NATIVE",
-      "description": "You type twice as fast.",
-      "can_spawn": false
+      "description": "You type twice as fast for today.",
+      "can_spawn": true,
+      "recurring": true,
+      "custom_functions": ["double_words_today"]
     },
     {
       "id": 14,

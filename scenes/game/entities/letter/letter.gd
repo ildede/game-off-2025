@@ -1,7 +1,7 @@
 extends Area2D
 class_name Letter
 
-var speed = 200
+var speed = 500
 var possible_letters = ["A","B","C","D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var target: PathFollow2D
 var target_id: int
@@ -11,7 +11,8 @@ var quality_vector: Vector2
 func _ready() -> void:
 	$Sprite2D.play(possible_letters.pick_random())
 	word_count = Config.WORDS_PER_LETTER
-	quality_vector = Vector2(randi_range(0, 3), randi_range(-1, 1)) * (160 - Global.game_state.quality*1.5)
+	#quality_vector = Vector2(randi_range(0, 3), randi_range(-1, 1)) * (160 - Global.game_state.quality*1.5)
+	quality_vector = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
 	if is_instance_valid(target):
