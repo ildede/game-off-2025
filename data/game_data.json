@@ -1171,6 +1171,7 @@
       "id": 1,
       "name": "CLUMSY-FILHIMBOOSTIER",
       "description": "Your creative translations make you lose a client.",
+      "accept_btn": "They don't need me",
       "can_spawn": true,
       "custom_functions": ["lose_random_client"]
     },

@@ -244,6 +244,7 @@ func open_popup_message_for_new_event(event: Models.EventObject) -> void:
 		Global.update_productivity.emit(event.productivity_change)
 		get_tree().paused = false
 
+	$CustomPopupMessage.add_theme_icon_override("close", ImageTexture.new())
 	$CustomPopupMessage.show_popup(popup_data)
 
 

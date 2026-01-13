@@ -20,8 +20,8 @@ func show_popup(popup_data: PopupData) -> void:
 		$GridContainer/RichTextLabel.append_text(line)
 		$GridContainer/RichTextLabel.newline()
 
-	$GridContainer/GridContainer.columns = popup_data.buttons.size()
-	for n in $GridContainer/GridContainer.get_children(): n.queue_free()
+	$GridContainer/MarginContainer2/GridContainer.columns = popup_data.buttons.size()
+	for n in $GridContainer/MarginContainer2/GridContainer.get_children(): n.queue_free()
 	for button in popup_data.buttons:
 		var b = Button.new()
 		b.text = button.text
@@ -29,7 +29,7 @@ func show_popup(popup_data: PopupData) -> void:
 		b.size_flags_horizontal = Control.SIZE_SHRINK_CENTER + Control.SIZE_EXPAND
 		b.custom_minimum_size = Vector2(250,70)
 		b.disabled = button.disabled
-		$GridContainer/GridContainer.add_child(b)
+		$GridContainer/MarginContainer2/GridContainer.add_child(b)
 
 	close_requested.connect(func():_closing_function(popup_data.on_close))
 	popup_centered()

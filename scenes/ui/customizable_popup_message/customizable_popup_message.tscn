@@ -69,7 +69,12 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="GridContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/MarginContainer2"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
