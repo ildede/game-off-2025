@@ -1237,9 +1237,11 @@
     {
       "id": 11,
       "name": "VARIABLE REX",
-      "description": "You learn RegEx and your productivity goes up.",
+      "description": "You invest some of your time to learn some new tricks with RegEx and your productivity goes up.",
       "can_spawn": true,
-      "productivity_change": 200
+      "recurring": true,
+      "productivity_change": 100,
+      "custom_functions": ["lose_half_of_day"]
     },
     {
       "id": 12,

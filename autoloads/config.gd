@@ -10,5 +10,5 @@ const MAX_QUALITY_LEVEL: float = 100
 const MAX_REPUTATION_LEVEL: float = 100
 const MAX_CLIENT_LOYALTY: float = 100
 const MIN_CLIENT_LOYALTY: float = 10
-const WORDS_PER_DAY: int = 2500
+const WORDS_PER_DAY: int = 1000
 const STRESS_ON_TASK_FAILED: float = 5

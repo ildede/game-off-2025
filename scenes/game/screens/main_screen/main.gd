@@ -35,7 +35,9 @@ var custom_functions: Dictionary[String, Callable] = {
 		print(choosen)
 		if is_instance_valid(choosen):
 			print(choosen._client_data.name)
-			Global.qworse_acquires.emit(choosen.client_id)
+			Global.qworse_acquires.emit(choosen.client_id),
+	"lose_half_of_day": func ():
+		Global.game_clock.start(Global.game_clock.time_left/2),
 }
 
 func _ready() -> void:
