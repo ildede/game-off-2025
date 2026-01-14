@@ -28,8 +28,12 @@ func _on_timer_timeout() -> void:
 	if tasks.size() != 0:
 		$Translator.play("typing")
 		fire()
+		if !$OldKeyboard.is_playing():
+			$OldKeyboard.play()
 	else:
 		$Translator.stop()
+		if $OldKeyboard.is_playing():
+			$OldKeyboard.stop()
 
 func new_task_arrived(item: Task) -> void:
 	tasks.append(item)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dibf4fgjie87y"]
+[gd_scene load_steps=11 format=3 uid="uid://dibf4fgjie87y"]
 
 [ext_resource type="Script" uid="uid://cbc0hxujnugk5" path="res://scenes/game/translator/translator.gd" id="1_ljyet"]
 [ext_resource type="PackedScene" uid="uid://darjd76ufnyvc" path="res://scenes/game/entities/letter/letter.tscn" id="2_jqv1b"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cg0d84etycm8t" path="res://scenes/game/translator/assets/PNG_0003.png" id="5_0b6hu"]
 [ext_resource type="Texture2D" uid="uid://c3f6yalt2bp2r" path="res://scenes/game/translator/assets/PNG_0004.png" id="6_585bd"]
 [ext_resource type="Texture2D" uid="uid://d060mkq5malbq" path="res://scenes/game/translator/assets/PNG_0005.png" id="7_vbttx"]
+[ext_resource type="AudioStream" uid="uid://crykxrhrv3vk8" path="res://audio/old_keyboard.wav" id="8_vxd46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bupml"]
 size = Vector2(710.00037, 2075.0015)
@@ -55,6 +56,9 @@ frame_progress = 0.3035154
 [node name="WPM" type="Timer" parent="."]
 wait_time = 0.24
 autostart = true
+
+[node name="OldKeyboard" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_vxd46")
 
 [connection signal="body_entered" from="StaticBody2D" to="." method="_on_static_body_2d_body_entered"]
 [connection signal="timeout" from="WPM" to="." method="_on_timer_timeout"]
