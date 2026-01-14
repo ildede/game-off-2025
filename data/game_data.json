@@ -1263,13 +1263,18 @@
       "id": 14,
       "name": "I'VE SEEN THINGS YOU PEOPLE WOULDN’T BELIEVE",
       "description": "The client asked ChatGPT to check your text. You lose 30 minutes replying to useless comments.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": true,
+      "custom_functions": ["lose_30_minutes"]
     },
     {
       "id": 15,
       "name": "ROCK THE CASTAH",
       "description": "You spend some time chatting with your close colleagues. Stress is partially restored.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": true,
+      "stress_change": -10.0,
+      "custom_functions": ["lose_30_minutes"]
     },
     {
       "id": 16,
@@ -1287,37 +1292,51 @@
       "id": 18,
       "name": "TRANSLATOR'S BEST FRIEND",
       "description": "You spend some time with your pet and recover some stress.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": true,
+      "stress_change": -10.0,
+      "custom_functions": ["lose_30_minutes"]
     },
     {
       "id": 19,
       "name": "YOUR PARTNER IS A DEV",
       "description": "Your lovely partner creates your website. You save money, you earn reputation and recover some stress.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": false,
+      "reputation_change": 20.0,
+      "stress_change": -10.0
     },
     {
       "id": 20,
       "name": "YOU WEREN’T WORKING, RIGHT?",
       "description": "Your mother keeps you on the phone for 30 minutes in the middle of a task.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": true,
+      "custom_functions": ["lose_30_minutes"]
     },
     {
       "id": 21,
       "name": "NEED FOR SPID",
-      "description": "Your mother needs assistance with bureaucracy and IT stuff. The 30 minutes become 1 hour.",
-      "can_spawn": false
+      "description": "Your mother needs assistance with bureaucracy and IT stuff. The quick call become 1 hour.",
+      "can_spawn": true,
+      "recurring": true,
+      "custom_functions": ["lose_1_hour"]
     },
     {
       "id": 22,
       "name": "PET TAX",
       "description": "You earn reputation by sending one client cute photos of your pet.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": true,
+      "reputation_change": 10.0
     },
     {
       "id": 23,
       "name": "FAST AS LIGHTNING",
       "description": "You install fast fiber and your productivity goes up.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": false,
+      "productivity_change": 20.0
     },
     {
       "id": 24,
@@ -1329,7 +1348,9 @@
       "id": 25,
       "name": "CLOCKWORK ORANGE KEYBOARD",
       "description": "You boost your productivity for today, but waste time arguing with neighbors who knock on your door to complain about the noise.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": true,
+      "custom_functions": ["double_words_today", "lose_1_hour"]
     },
     {
       "id": 26,
@@ -1346,8 +1367,10 @@
     {
       "id": 28,
       "name": "SHEET, I’LL MISS MY DEADLINE!",
-      "description": "The client’s responses to the query sheet have arrived, you need to implement them immediately. (-x minutes, no money)",
-      "can_spawn": false
+      "description": "The client’s responses to the query sheet have arrived, you need to implement them immediately. At least 30 minutes are gone, and for no money.",
+      "can_spawn": true,
+      "recurring": true,
+      "custom_functions": ["lose_30_minutes"]
     },
     {
       "id": 29,
@@ -1365,13 +1388,18 @@
       "id": 31,
       "name": "CUT TOOL",
       "description": "Your localization tool’s server is down. You lose time and your stress increases.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": true,
+      "stress_change": 20.0,
+      "custom_functions": ["lose_1_hour"]
     },
     {
       "id": 32,
       "name": "WHAM! BAM! IT’S IN! THE SPAM!",
       "description": "The client’s email went to spam. You lose reputation for not replying. They’re definitely not enjoying what you do.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": true,
+      "reputation_change": -5.0
     },
     {
       "id": 33,
@@ -1395,7 +1423,9 @@
       "id": 36,
       "name": "THE GREEDS OF SEPARATION",
       "description": "You discover that one of your clients is also a client of another client of yours. You have to drop them due to a conflict of interest.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": false,
+      "custom_functions": ["lose_random_client"]
     },
     {
       "id": 37,
@@ -1407,13 +1437,17 @@
       "id": 38,
       "name": "DID YOU TRY TURNING IT OFF AND ON?",
       "description": "Today your connection is acting up. You are forced to work from an internet café. Your productivity is halved.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": true,
+      "custom_functions": ["half_words_today"]
     },
     {
       "id": 39,
       "name": "Too comfy sweatpants",
       "description": "You forget how to dress properly, wearing your sweatpants even when going out or meeting colleagues. You lose reputation.",
-      "can_spawn": false
+      "can_spawn": true,
+      "recurring": true,
+      "reputation_change": -7.0
     }
   ],
   "bonus": [

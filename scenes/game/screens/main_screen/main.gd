@@ -27,6 +27,12 @@ var custom_functions: Dictionary[String, Callable] = {
 		var tmp = Global.game_state.productivity
 		Global.update_productivity.emit(tmp)
 		$GameClock.timeout.connect(func (): Global.update_productivity.emit(-tmp)),
+	"half_words_today": func ():
+		var tmp = Global.game_state.productivity
+		@warning_ignore("integer_division")
+		Global.update_productivity.emit(tmp/2)
+		@warning_ignore("integer_division")
+		$GameClock.timeout.connect(func (): Global.update_productivity.emit(-(tmp/2))),
 	"qworse_acquires": func ():
 		var choosen = active_clients.values().filter(func(c):
 			print(c._client_data.name)
@@ -38,6 +44,14 @@ var custom_functions: Dictionary[String, Callable] = {
 			Global.qworse_acquires.emit(choosen.client_id),
 	"lose_half_of_day": func ():
 		Global.game_clock.start(Global.game_clock.time_left/2),
+	"lose_30_minutes": func ():
+		var new_time_left = Global.game_clock.time_left - Config.DAY_LENGHT_IN_SECONDS/24
+		new_time_left = new_time_left if new_time_left > 0 else 0.01
+		Global.game_clock.start(new_time_left),
+	"lose_1_hour": func ():
+		var new_time_left = Global.game_clock.time_left - Config.DAY_LENGHT_IN_SECONDS/12
+		new_time_left = new_time_left if new_time_left > 0 else 0.01
+		Global.game_clock.start(new_time_left),
 }
 
 func _ready() -> void:
