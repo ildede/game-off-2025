@@ -1548,6 +1548,7 @@
       "name": "Mechanical keyboard",
       "description": "Productivity is increased.",
       "asset": "keyboard",
+      "flag": "mechanical_keyboard",
       "can_spawn": true,
       "cost": 55.5,
       "productivity_change": 50

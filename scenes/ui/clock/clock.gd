@@ -16,3 +16,5 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Global.game_clock is Timer:
 		progress.value = Global.game_clock.time_left
+	if Global.game_clock.time_left > 0 and Global.game_clock.time_left <= 3.7 and !$EndAlert.is_playing():
+		$EndAlert.play()

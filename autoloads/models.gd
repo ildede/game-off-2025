@@ -42,6 +42,7 @@ class State:
 	var ongoing_task: Array[Models.OngoingTask] = []
 	var pending_payments: Array[PendingPayement] = []
 	var bills: Array[BillObject] = []
+	var mechanical_keyboard: bool = false
 
 const _engagement_mails = [
 		"Dear resource, we would like to work with you. In general, tasks will come to you following this schedule, but sometimes there may be emergencies or irregular flows.\n{workload}\nRates per word: {price}$\nPayment terms: {invoicing}",
@@ -179,6 +180,7 @@ class BonusObject:
 	var asset: String
 	var can_spawn: bool
 	var consumable: bool
+	var flag: String
 	var cost: float
 	var quality_change: float
 	var stress_change: float

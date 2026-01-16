@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dahhp2f70drw"]
+[gd_scene load_steps=6 format=3 uid="uid://dahhp2f70drw"]
 
 [ext_resource type="Texture2D" uid="uid://b7pirf8tdu01g" path="res://scenes/ui/clock/assets/Clock-under.png" id="1_0ul63"]
 [ext_resource type="Script" uid="uid://bdmbys07ti8e2" path="res://scenes/ui/clock/clock.gd" id="1_x3rul"]
 [ext_resource type="Texture2D" uid="uid://decuttlovnxp1" path="res://scenes/ui/clock/assets/Clock-over.png" id="2_x3rul"]
 [ext_resource type="Texture2D" uid="uid://fp2uxwyx7gn2" path="res://scenes/ui/clock/assets/Clock-progress.png" id="3_or4iw"]
+[ext_resource type="AudioStream" uid="uid://cq8kclto14sn6" path="res://audio/alert.mp3" id="5_or4iw"]
 
 [node name="Clock" type="CenterContainer"]
 anchors_preset = 15
@@ -53,3 +54,6 @@ theme_override_font_sizes/font_size = 50
 text = "Jan"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="EndAlert" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_or4iw")
