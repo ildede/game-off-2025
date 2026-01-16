@@ -219,6 +219,7 @@ offset_bottom = 306.0
 
 [node name="CustomPopupMessage" parent="." instance=ExtResource("4_umi8m")]
 visible = false
+notification_sound = true
 
 [connection signal="pressed" from="ClockAndButtons/Buttons/DayOff" to="." method="dispaly_dayoff_message"]
 [connection signal="pressed" from="ClockAndButtons/Buttons/Holiday" to="." method="dispaly_holiday_message"]

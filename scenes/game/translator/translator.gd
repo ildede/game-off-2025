@@ -77,6 +77,7 @@ func task_hit(letter: Letter, task: Task) -> void:
 				priority_task = null
 			Global.task_finished.emit(task_found.get_task_id())
 			task_found.queue_free()
+			$TaskOk.play()
 		letter.queue_free()
 
 func _on_static_body_2d_body_entered(body: Node2D) -> void:

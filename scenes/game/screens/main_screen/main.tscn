@@ -28,6 +28,7 @@ position = Vector2(80, 950)
 
 [node name="CustomPopupMessage" parent="." instance=ExtResource("6_5kqqw")]
 visible = false
+notification_sound = true
 
 [node name="EventSpawner" type="Timer" parent="."]
 wait_time = 0.5

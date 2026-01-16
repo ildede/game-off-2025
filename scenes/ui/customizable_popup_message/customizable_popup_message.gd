@@ -12,6 +12,8 @@ class PopupButton:
 	var action: Callable = func():pass
 	var disabled: bool = false
 
+@export var notification_sound: bool = false
+
 func show_popup(popup_data: PopupData) -> void:
 	title = popup_data.title
 	$GridContainer/MarginContainer/Title.text = popup_data.title
@@ -37,3 +39,8 @@ func show_popup(popup_data: PopupData) -> void:
 func _closing_function(callable):
 	callable.call()
 	hide()
+
+
+func _on_visibility_changed() -> void:
+	if notification_sound and visible:
+		$AudioStreamPlayer.play()

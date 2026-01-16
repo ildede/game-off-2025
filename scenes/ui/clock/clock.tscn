@@ -57,3 +57,4 @@ vertical_alignment = 1
 
 [node name="EndAlert" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_or4iw")
+volume_db = -3.0

@@ -29,6 +29,8 @@ func redraw_invoices() -> void:
 
 func _on_single_invoice_clicked():
 	print("[INVOICES] _on_single_invoice_clicked");
+	if not $AudioStreamPlayer.is_playing():
+		$AudioStreamPlayer.play()
 	elaborate_single_invoice_with_time()
 
 func elaborate_single_invoice_with_time():
