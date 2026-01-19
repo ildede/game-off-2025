@@ -34,6 +34,13 @@ class PendingPayement:
 		money_value = value
 		client_name = client
 
+	func save() -> Dictionary:
+		return {
+			"due_date": due_date,
+			"money_value": money_value,
+			"client_name": client_name
+		}
+
 class State:
 	var current_day = 1
 	var task_received: int = 0
@@ -156,7 +163,7 @@ class OngoingTask:
 	var reputation_on_success: float
 	var reputation_on_failure: float
 
-	func _init(cl_id: int, task: TaskObject):
+	func _init(cl_id: int, task: TaskObject = Models.TaskObject.new()):
 		task_id = randi()
 		client_id = cl_id
 
@@ -169,6 +176,18 @@ class OngoingTask:
 		reputation_on_success = task.reputation_on_success
 		reputation_on_failure = task.reputation_on_failure
 
+	func save() -> Dictionary:
+		return {
+			"task_id": task_id,
+			"client_id": client_id,
+			"total_words": total_words,
+			"remaining_words": remaining_words,
+			"assigned_on": assigned_on,
+			"deadline_days": deadline_days,
+			"reputation_on_success": reputation_on_success,
+			"reputation_on_failure": reputation_on_failure
+		}
+
 class BillObject:
 	var id: int
 	var name: String
@@ -176,6 +195,16 @@ class BillObject:
 	var due_day: int
 	var next_payment_day: int
 	var recurring: bool
+
+	func save() -> Dictionary:
+		return {
+			"id": id,
+			"name": name,
+			"amount": amount,
+			"due_day": due_day,
+			"next_payment_day": next_payment_day,
+			"recurring": recurring
+		}
 
 class EventObject:
 	var id: int

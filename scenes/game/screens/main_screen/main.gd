@@ -346,8 +346,13 @@ func _save_state() -> void:
 	var tasks_waiting_to_be_processed = Global.game_state.tasks_waiting_to_be_processed.map(func(t): return t.save())
 	config.set_value("game_state", "tasks_waiting_to_be_processed", tasks_waiting_to_be_processed)
 
-	#var ongoing_task: Array[Models.OngoingTask] = []
-	#var pending_payments: Array[PendingPayement] = []
-	#var bills: Array[BillObject] = []
+	var ongoing_task = Global.game_state.ongoing_task.map(func(t): return t.save())
+	config.set_value("game_state", "ongoing_task", ongoing_task)
+
+	var pending_payments = Global.game_state.pending_payments.map(func(t): return t.save())
+	config.set_value("game_state", "pending_payments", pending_payments)
+
+	var bills = Global.game_state.bills.map(func(t): return t.save())
+	config.set_value("game_state", "bills", bills)
 
 	config.save(SAVE_PATH)

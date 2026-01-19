@@ -164,12 +164,25 @@ func start_old_game() -> void:
 		var restored_tsk = restore_task(tsk)
 		game_state.tasks_waiting_to_be_processed.append(restored_tsk)
 
-	#var tasks_waiting_to_be_processed: Array[InvoiceObject] = []
+	var ongoing_task = config.get_value("game_state", "ongoing_task")
+	for tsk in ongoing_task:
+		var restored_tsk = restore_ongoing_task(tsk)
+		game_state.ongoing_task.append(restored_tsk)
+
+	var pending_payments = config.get_value("game_state", "pending_payments")
+	for payment in pending_payments:
+		var restored_payment = restore_payment(payment)
+		game_state.pending_payments.append(restored_payment)
+
+	var bills = config.get_value("game_state", "bills")
+	for bill in bills:
+		var restored_bill = restore_bill(bill)
+		game_state.bills.append(restored_bill)
+
 	#var ongoing_task: Array[Models.OngoingTask] = []
 	#var pending_payments: Array[PendingPayement] = []
 	#var bills: Array[BillObject] = []
 
-	game_state.bills = ClientData.bills_data.duplicate()
 
 func restore_client(client: Models.ClientObject, saved_state: Dictionary) -> Models.ClientObject:
 	client.name = saved_state.get("name")
@@ -185,6 +198,35 @@ func restore_task(saved_state: Dictionary) -> Models.InvoiceObject:
 	tsk.money_value = saved_state.get("money_value")
 	tsk.payment_terms = saved_state.get("payment_terms")
 	return tsk
+
+func restore_ongoing_task(saved_state: Dictionary) -> Models.OngoingTask:
+	var on_tsk = Models.OngoingTask.new(0)
+	on_tsk.task_id = saved_state.get("task_id")
+	on_tsk.client_id = saved_state.get("client_id")
+	on_tsk.total_words = saved_state.get("total_words")
+	on_tsk.remaining_words = saved_state.get("remaining_words")
+	on_tsk.assigned_on = saved_state.get("assigned_on")
+	on_tsk.deadline_days = saved_state.get("deadline_days")
+	on_tsk.reputation_on_success = saved_state.get("reputation_on_success")
+	on_tsk.reputation_on_failure = saved_state.get("reputation_on_failure")
+	return on_tsk
+
+func restore_payment(saved_state: Dictionary) -> Models.PendingPayement:
+	var due_date = saved_state.get("due_date")
+	var money_value = saved_state.get("money_value")
+	var client_name = saved_state.get("client_name")
+	var payment = Models.PendingPayement.new(due_date, money_value, client_name)
+	return payment
+
+func restore_bill(saved_state: Dictionary) -> Models.BillObject:
+	var bill = Models.BillObject.new()
+	bill.id = saved_state.get("id")
+	bill.name = saved_state.get("name")
+	bill.amount = saved_state.get("amount")
+	bill.due_day = saved_state.get("due_day")
+	bill.next_payment_day = saved_state.get("next_payment_day")
+	bill.recurring = saved_state.get("recurring")
+	return bill
 
 func start_new_game() -> void:
 	ClientData.load_json_data()
