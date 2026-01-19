@@ -128,6 +128,33 @@ func handle_game_over() -> void:
 		if prop.type == 3:
 			print("game_state.", prop.name)
 
+func start_old_game() -> void:
+	const SAVE_PATH = "user://save_config_file.ini"
+	var config := ConfigFile.new()
+	config.load(SAVE_PATH)
+
+	game_state = Models.State.new()
+	game_state.current_day = config.get_value("game_state", "current_day")
+	game_state.task_received = config.get_value("game_state", "task_received")
+	game_state.task_finished = config.get_value("game_state", "task_finished")
+	game_state.task_failed = config.get_value("game_state", "task_failed")
+	game_state.translated_words = config.get_value("game_state", "translated_words")
+	game_state.reputation = config.get_value("game_state", "reputation")
+	game_state.quality = config.get_value("game_state", "quality")
+	game_state.stress = config.get_value("game_state", "stress")
+	game_state.productivity = config.get_value("game_state", "productivity")
+	game_state.money = config.get_value("game_state", "money")
+	game_state.mechanical_keyboard = config.get_value("game_state", "mechanical_keyboard")
+
+	#var clients: Array[ClientObject] = []
+	#var tasks_waiting_to_be_processed: Array[InvoiceObject] = []
+	#var ongoing_task: Array[Models.OngoingTask] = []
+	#var pending_payments: Array[PendingPayement] = []
+	#var bills: Array[BillObject] = []
+
+	ClientData.load_json_data()
+	game_state.bills = ClientData.bills_data.duplicate()
+
 func start_new_game() -> void:
 	game_state = Models.State.new()
 	game_state.productivity = Config.WORDS_PER_DAY

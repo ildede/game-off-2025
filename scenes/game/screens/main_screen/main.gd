@@ -183,6 +183,7 @@ func handle_end_of_the_day() -> void:
 		var task: Task = active_tasks.get(ongoing_task.task_id)
 		ongoing_task.remaining_words = task.remaining_words
 	get_tree().paused = true
+	_save_state()
 	if Global.game_state.ongoing_task.filter(func(t:Models.OngoingTask):return t.deadline_days <= 2).size() > 0:
 		SceneTransition.fade_to_overtime()
 	else:
@@ -320,3 +321,23 @@ func open_popup_message_for_new_task(client: Models.ClientObject, task: Models.T
 		get_tree().paused = false
 
 	$CustomPopupMessage.show_popup(popup_data)
+
+
+const SAVE_PATH = "user://save_config_file.ini"
+
+func _save_state() -> void:
+	var config := ConfigFile.new()
+	config.set_value("game_state", "current_day", Global.game_state.current_day)
+
+	config.set_value("game_state", "task_received", Global.game_state.task_received)
+	config.set_value("game_state", "task_finished", Global.game_state.task_finished)
+	config.set_value("game_state", "task_failed", Global.game_state.task_failed)
+	config.set_value("game_state", "translated_words", Global.game_state.translated_words)
+	config.set_value("game_state", "reputation", Global.game_state.reputation)
+	config.set_value("game_state", "quality", Global.game_state.quality)
+	config.set_value("game_state", "stress", Global.game_state.stress)
+	config.set_value("game_state", "productivity", Global.game_state.productivity)
+	config.set_value("game_state", "money", Global.game_state.money)
+	config.set_value("game_state", "mechanical_keyboard", Global.game_state.mechanical_keyboard)
+
+	config.save(SAVE_PATH)

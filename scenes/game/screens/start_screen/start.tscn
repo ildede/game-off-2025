@@ -76,7 +76,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="Panel/GridContainer"]
+[node name="GridContainer" type="HBoxContainer" parent="Panel/GridContainer"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
@@ -88,4 +88,14 @@ size_flags_vertical = 6
 theme_override_font_sizes/font_size = 45
 text = "START"
 
+[node name="ContinueButton" type="Button" parent="Panel/GridContainer/GridContainer"]
+visible = false
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 45
+text = "CONTINUE DAY 8"
+
 [connection signal="pressed" from="Panel/GridContainer/GridContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/GridContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

@@ -10,7 +10,7 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 	$Panel/StatisticGrid/Statistics.text = ""
-	$Panel/StatisticGrid/Statistics.append_text("Days survived: {0}\nTranslated words: {1}\nYour budget: {2}$"
+	$Panel/StatisticGrid/Statistics.append_text("GAME SAVED!\n\nDays survived: {0}\nTranslated words: {1}\nYour budget: {2}$"
 		.format([
 			Global.game_state.current_day,
 			Global.game_state.translated_words,
