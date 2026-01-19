@@ -29,7 +29,7 @@ func load_json_data():
 	else:
 		push_error("Failed to load clients.json")
 
-func client_cquired(client_id: int) -> void:
+func client_acquired(client_id: int) -> void:
 	var found_index = clients_data.find_custom(func(c): return c.id == client_id);
 	if found_index >= 0:
 		clients_data[found_index].name = clients_data[found_index].name + " (Qworse)"

@@ -28,6 +28,7 @@ func _ready() -> void:
 	new_client_accepted.connect(handle_new_client_accepted)
 	client_send_task.connect(handle_client_send_task)
 	letter_hit_task.connect(handle_letter_hit_task)
+	qworse_acquires.connect(handle_qworse_acquires)
 	task_finished.connect(handle_task_finished)
 	task_failed.connect(handle_task_failed)
 	task_deleted.connect(handle_task_deleted)
@@ -38,6 +39,7 @@ func _ready() -> void:
 	update_money.connect(handle_update_money)
 	update_day_count.connect(handle_update_day_count)
 	game_over.connect(handle_game_over)
+
 
 func set_clock(timer: Timer):
 	game_clock = timer
@@ -57,6 +59,9 @@ func handle_letter_hit_task(letter: Letter, task: Task) -> void:
 		game_state.translated_words += task.remaining_words
 	else:
 		game_state.translated_words += letter.word_count
+
+func handle_qworse_acquires(id: int):
+	ClientData.client_acquired(id)
 
 func handle_task_finished(_id: int) -> void:
 	print("[GLOBAL] handle_task_finished")
