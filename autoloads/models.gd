@@ -8,12 +8,21 @@ class InvoiceObject:
 	var money_value: float
 	var payment_terms: String
 
-	func _init(ongoing_task: OngoingTask, client: Models.ClientObject) -> void:
+	func _init(ongoing_task: OngoingTask = Models.OngoingTask.new(0, Models.TaskObject.new()), client: Models.ClientObject = Models.ClientObject.new()) -> void:
 		task_id = ongoing_task.task_id
 		client_id = ongoing_task.client_id
 		client_name = client.name
 		money_value = ongoing_task.total_words * client.payment_per_word
 		payment_terms = client.payment_terms
+
+	func save() -> Dictionary:
+		return {
+			"task_id": task_id,
+			"client_id": client_id,
+			"client_name": client_name,
+			"money_value": money_value,
+			"payment_terms": payment_terms
+		}
 
 class PendingPayement:
 	var due_date: int
@@ -106,6 +115,15 @@ class ClientObject:
 			"price": payment_per_word,
 			"invoicing": pay_terms
 		})
+
+	func save() -> Dictionary:
+		return {
+			"id": id,
+			"name": name,
+			"payment_per_word": payment_per_word,
+			"pos_x": position.x,
+			"pos_y": position.y
+		}
 
 class PublicReputationObject:
 	var on_accept: float

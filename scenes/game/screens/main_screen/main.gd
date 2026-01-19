@@ -340,4 +340,14 @@ func _save_state() -> void:
 	config.set_value("game_state", "money", Global.game_state.money)
 	config.set_value("game_state", "mechanical_keyboard", Global.game_state.mechanical_keyboard)
 
+	var clients = Global.game_state.clients.map(func(c): return c.save())
+	config.set_value("game_state", "clients", clients)
+
+	var tasks_waiting_to_be_processed = Global.game_state.tasks_waiting_to_be_processed.map(func(t): return t.save())
+	config.set_value("game_state", "tasks_waiting_to_be_processed", tasks_waiting_to_be_processed)
+
+	#var ongoing_task: Array[Models.OngoingTask] = []
+	#var pending_payments: Array[PendingPayement] = []
+	#var bills: Array[BillObject] = []
+
 	config.save(SAVE_PATH)

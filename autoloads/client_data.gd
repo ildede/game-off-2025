@@ -59,6 +59,10 @@ func get_random_client() -> Models.ClientObject:
 	var tmp = clients_data.filter(func(c): return c.min_reputation <= Global.game_state.reputation)
 	return tmp[randi() % tmp.size()]
 
+func get_client_by_id(client_id: int) -> Models.ClientObject:
+	var found_index = clients_data.find_custom(func(c): return c.id == client_id)
+	return clients_data[found_index]
+
 func get_random_event() -> Models.EventObject:
 	if events_data.is_empty():
 		return create_fallback_event()

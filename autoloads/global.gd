@@ -134,6 +134,8 @@ func handle_game_over() -> void:
 			print("game_state.", prop.name)
 
 func start_old_game() -> void:
+	ClientData.load_json_data()
+
 	const SAVE_PATH = "user://save_config_file.ini"
 	var config := ConfigFile.new()
 	config.load(SAVE_PATH)
@@ -151,19 +153,44 @@ func start_old_game() -> void:
 	game_state.money = config.get_value("game_state", "money")
 	game_state.mechanical_keyboard = config.get_value("game_state", "mechanical_keyboard")
 
-	#var clients: Array[ClientObject] = []
+	var clients = config.get_value("game_state", "clients")
+	for cl in clients:
+		var restored_client = restore_client(ClientData.get_client_by_id(cl.get("id")), cl)
+		game_state.clients.append(restored_client)
+		ClientData.client_accepted(restored_client.id)
+
+	var tasks_waiting_to_be_processed = config.get_value("game_state", "tasks_waiting_to_be_processed")
+	for tsk in tasks_waiting_to_be_processed:
+		var restored_tsk = restore_task(tsk)
+		game_state.tasks_waiting_to_be_processed.append(restored_tsk)
+
 	#var tasks_waiting_to_be_processed: Array[InvoiceObject] = []
 	#var ongoing_task: Array[Models.OngoingTask] = []
 	#var pending_payments: Array[PendingPayement] = []
 	#var bills: Array[BillObject] = []
 
-	ClientData.load_json_data()
 	game_state.bills = ClientData.bills_data.duplicate()
 
+func restore_client(client: Models.ClientObject, saved_state: Dictionary) -> Models.ClientObject:
+	client.name = saved_state.get("name")
+	client.payment_per_word = saved_state.get("payment_per_word")
+	client.position = Vector2(saved_state.get("pos_x"), saved_state.get("pos_y"))
+	return client
+
+func restore_task(saved_state: Dictionary) -> Models.InvoiceObject:
+	var tsk = Models.InvoiceObject.new()
+	tsk.task_id = saved_state.get("task_id")
+	tsk.client_id = saved_state.get("client_id")
+	tsk.client_name = saved_state.get("client_name")
+	tsk.money_value = saved_state.get("money_value")
+	tsk.payment_terms = saved_state.get("payment_terms")
+	return tsk
+
 func start_new_game() -> void:
+	ClientData.load_json_data()
+
 	game_state = Models.State.new()
 	game_state.productivity = Config.WORDS_PER_DAY
-	ClientData.load_json_data()
 	game_state.bills = ClientData.bills_data.duplicate()
 
 class Date:
