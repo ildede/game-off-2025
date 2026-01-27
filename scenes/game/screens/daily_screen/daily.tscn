@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bucgncfhv2yq8"]
+[gd_scene format=3 uid="uid://bucgncfhv2yq8"]
 
 [ext_resource type="Script" uid="uid://rmuvkl2iy50m" path="res://scenes/game/screens/daily_screen/daily.gd" id="1_n7uhh"]
 [ext_resource type="Texture2D" uid="uid://cejfhdvcnv1p1" path="res://scenes/game/screens/daily_screen/assets/cat.png" id="2_s02k1"]
@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://d1igondpylwaf" path="res://scenes/game/screens/daily_screen/assets/triplescreen.png" id="24_xuvtj"]
 [ext_resource type="Texture2D" uid="uid://d23ab5dcuwt16" path="res://scenes/game/screens/daily_screen/assets/website.png" id="25_6igxr"]
 
-[node name="Daily" type="Node"]
+[node name="Daily" type="Node" unique_id=1833805696]
 script = ExtResource("1_n7uhh")
 texture = Dictionary[String, Texture2D]({
 "cat": ExtResource("2_s02k1"),
@@ -56,7 +56,7 @@ texture = Dictionary[String, Texture2D]({
 "website": ExtResource("25_6igxr")
 })
 
-[node name="Panel" type="PanelContainer" parent="."]
+[node name="Panel" type="PanelContainer" parent="." unique_id=1133812148]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -64,12 +64,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_vrdqk")
 
-[node name="StatisticGrid" type="GridContainer" parent="Panel"]
+[node name="StatisticGrid" type="GridContainer" parent="Panel" unique_id=1686965978]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Statistics" type="RichTextLabel" parent="Panel/StatisticGrid"]
+[node name="Statistics" type="RichTextLabel" parent="Panel/StatisticGrid" unique_id=269396011]
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -80,7 +80,7 @@ Your budget: 100.5$"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ItemList" type="ItemList" parent="Panel/StatisticGrid"]
+[node name="ItemList" type="ItemList" parent="Panel/StatisticGrid" unique_id=1597702981]
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -95,7 +95,7 @@ same_column_width = true
 fixed_column_width = 595
 icon_mode = 0
 
-[node name="Continue" type="Button" parent="Panel/StatisticGrid"]
+[node name="Continue" type="Button" parent="Panel/StatisticGrid" unique_id=182315641]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 6

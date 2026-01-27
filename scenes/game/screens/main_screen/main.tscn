@@ -32,7 +32,9 @@ notification_sound = true
 
 [node name="EventSpawner" type="Timer" parent="."]
 wait_time = 0.5
+one_shot = true
 
 [node name="GameClock" type="Timer" parent="."]
 
 [node name="TaskSpawner" type="Timer" parent="."]
+one_shot = true

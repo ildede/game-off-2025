@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cym7llujgpfif"]
+[gd_resource type="Theme" format=3 uid="uid://cym7llujgpfif"]
 
 [ext_resource type="Texture2D" uid="uid://bs86lbkmt0uju" path="res://scenes/ui/global_themes/assets/Rect.png" id="1_goo8p"]
 [ext_resource type="FontFile" uid="uid://bmi24l2afy1uh" path="res://scenes/ui/global_themes/fonts/XTypewriter-Regular.ttf" id="2_goo8p"]
