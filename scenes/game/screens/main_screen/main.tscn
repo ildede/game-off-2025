@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8cdvr2tr0y4c"]
+[gd_scene format=3 uid="uid://b8cdvr2tr0y4c"]
 
 [ext_resource type="Script" uid="uid://b1mqk1kknrr1k" path="res://scenes/game/screens/main_screen/main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c7gpddms8dggn" path="res://scenes/ui/game_information/game_information.tscn" id="2_iu1df"]
@@ -6,35 +6,35 @@
 [ext_resource type="PackedScene" uid="uid://b3cihatsnroda" path="res://scenes/ui/invoices/invoices.tscn" id="5_i25ov"]
 [ext_resource type="PackedScene" uid="uid://b0f5kyiejiap" path="res://scenes/ui/customizable_popup_message/customizable_popup_message.tscn" id="6_5kqqw"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1509494677]
 script = ExtResource("1_ig7tw")
 
-[node name="GameInformation" parent="." instance=ExtResource("2_iu1df")]
+[node name="GameInformation" parent="." unique_id=1640627310 instance=ExtResource("2_iu1df")]
 offset_right = 1920.0
 offset_bottom = 656.0
 
-[node name="WorldPanel" type="PanelContainer" parent="."]
+[node name="WorldPanel" type="PanelContainer" parent="." unique_id=1395105878]
 offset_left = 512.0
 offset_top = 304.0
 offset_right = 1922.0
 offset_bottom = 1079.0
 mouse_filter = 1
 
-[node name="Translator" parent="." instance=ExtResource("3_h2yge")]
+[node name="Translator" parent="." unique_id=1654707453 instance=ExtResource("3_h2yge")]
 position = Vector2(336, 858)
 
-[node name="Invoices" parent="." instance=ExtResource("5_i25ov")]
+[node name="Invoices" parent="." unique_id=1480656047 instance=ExtResource("5_i25ov")]
 position = Vector2(80, 950)
 
-[node name="CustomPopupMessage" parent="." instance=ExtResource("6_5kqqw")]
+[node name="CustomPopupMessage" parent="." unique_id=1309659869 instance=ExtResource("6_5kqqw")]
 visible = false
 notification_sound = true
 
-[node name="EventSpawner" type="Timer" parent="."]
+[node name="EventSpawner" type="Timer" parent="." unique_id=997405676]
 wait_time = 0.5
 one_shot = true
 
-[node name="GameClock" type="Timer" parent="."]
+[node name="GameClock" type="Timer" parent="." unique_id=460357861]
 
-[node name="TaskSpawner" type="Timer" parent="."]
+[node name="TaskSpawner" type="Timer" parent="." unique_id=1377526171]
 one_shot = true

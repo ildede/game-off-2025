@@ -30,9 +30,9 @@ var custom_functions: Dictionary[String, Callable] = {
 	"half_words_today": func ():
 		var tmp = Global.game_state.productivity
 		@warning_ignore("integer_division")
-		Global.update_productivity.emit(tmp/2)
+		Global.update_productivity.emit(-(tmp/2))
 		@warning_ignore("integer_division")
-		$GameClock.timeout.connect(func (): Global.update_productivity.emit(-(tmp/2))),
+		$GameClock.timeout.connect(func (): Global.update_productivity.emit(+(tmp/2))),
 	"qworse_acquires": func ():
 		var choosen = active_clients.values().filter(func(c):
 			print(c._client_data.name)
