@@ -72,6 +72,17 @@ func get_random_event() -> Models.EventObject:
 func get_random_bonus() -> Models.BonusObject:
 	return bonus_data.filter(func(e):return e.can_spawn).pick_random()
 
+func get_random_bonuses(count: int = 3) -> Array[Models.BonusObject]:
+	var available_bonuses = bonus_data.filter(func(e): return e.can_spawn)
+	var selected_bonuses: Array[Models.BonusObject] = []
+	if available_bonuses.size() <= count:
+		return available_bonuses.duplicate()
+	available_bonuses.shuffle()
+	for i in range(count):
+		selected_bonuses.append(available_bonuses[i])
+
+	return selected_bonuses
+
 func create_fallback_event() -> Models.EventObject:
 	var fallback_event = Models.EventObject.new()
 	fallback_event.id = randi()

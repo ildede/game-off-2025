@@ -17,31 +17,14 @@ func _ready() -> void:
 			Global.game_state.money
 		]))
 
-	var bonus1 = ClientData.get_random_bonus()
-	if bonus1:
-		var index_added1 = $Panel/StatisticGrid/ItemList.add_item("{cost}$\n{name}\n{description}".format(bonus1), texture.get(bonus1.asset, texture_default))
-		selectable.set(index_added1, bonus1)
-		$Panel/StatisticGrid/ItemList.set_item_tooltip_enabled(index_added1, false)
-		if bonus1.cost > Global.game_state.money:
-			$Panel/StatisticGrid/ItemList.set_item_disabled(index_added1, true)
+	var bonuses = ClientData.get_random_bonuses()
+	for bonus in bonuses:
+		var index_added = $Panel/StatisticGrid/ItemList.add_item("{cost}$\n{name}\n{description}".format(bonus), texture.get(bonus.asset, texture_default))
+		selectable.set(index_added, bonus)
+		$Panel/StatisticGrid/ItemList.set_item_tooltip_enabled(index_added, false)
+		if bonus.cost > Global.game_state.money:
+			$Panel/StatisticGrid/ItemList.set_item_disabled(index_added, true)
 
-		var bonus2 = ClientData.get_random_bonus()
-		if bonus2:
-			if not bonus2.id == bonus1.id:
-				var index_added2 = $Panel/StatisticGrid/ItemList.add_item("{cost}$\n{name}\n{description}".format(bonus2), texture.get(bonus2.asset, texture_default))
-				selectable.set(index_added2, bonus2)
-				$Panel/StatisticGrid/ItemList.set_item_tooltip_enabled(index_added2, false)
-				if bonus2.cost > Global.game_state.money:
-					$Panel/StatisticGrid/ItemList.set_item_disabled(index_added2, true)
-
-			var bonus3 = ClientData.get_random_bonus()
-			if bonus3:
-				if not bonus3.id == bonus1.id and not bonus3.id == bonus2.id:
-					var index_added3 = $Panel/StatisticGrid/ItemList.add_item("{cost}$\n{name}\n{description}".format(bonus3), texture.get(bonus3.asset, texture_default))
-					selectable.set(index_added3, bonus3)
-					$Panel/StatisticGrid/ItemList.set_item_tooltip_enabled(index_added3, false)
-					if bonus3.cost > Global.game_state.money:
-						$Panel/StatisticGrid/ItemList.set_item_disabled(index_added3, true)
 	if selectable.is_empty():
 		$Panel/StatisticGrid/ItemList.visible = false
 
