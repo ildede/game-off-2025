@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7gpddms8dggn"]
+[gd_scene format=3 uid="uid://c7gpddms8dggn"]
 
 [ext_resource type="Script" uid="uid://b5d226ud6fjao" path="res://scenes/ui/game_information/game_information.gd" id="1_f6qh3"]
 [ext_resource type="PackedScene" uid="uid://dahhp2f70drw" path="res://scenes/ui/clock/clock.tscn" id="2_g6785"]
@@ -14,7 +14,7 @@ bg_color = Color(0, 1, 0, 0.39215687)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
 bg_color = Color(1, 0, 0, 0.3529412)
 
-[node name="GameInformation" type="Control"]
+[node name="GameInformation" type="Control" unique_id=1485239293]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,23 +23,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f6qh3")
 
-[node name="ClockAndButtons" type="GridContainer" parent="."]
+[node name="ClockAndButtons" type="GridContainer" parent="." unique_id=534331728]
 layout_mode = 0
 offset_right = 510.0
 offset_bottom = 261.0
 columns = 2
 
-[node name="Clock" parent="ClockAndButtons" instance=ExtResource("2_g6785")]
+[node name="Clock" parent="ClockAndButtons" unique_id=129999335 instance=ExtResource("2_g6785")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Buttons" type="GridContainer" parent="ClockAndButtons"]
+[node name="Buttons" type="GridContainer" parent="ClockAndButtons" unique_id=784658925]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="DayOff" type="Button" parent="ClockAndButtons/Buttons"]
+[node name="DayOff" type="Button" parent="ClockAndButtons/Buttons" unique_id=1521155130]
 custom_minimum_size = Vector2(175, 60)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -47,7 +47,7 @@ size_flags_vertical = 10
 disabled = true
 text = "Day off"
 
-[node name="Holiday" type="Button" parent="ClockAndButtons/Buttons"]
+[node name="Holiday" type="Button" parent="ClockAndButtons/Buttons" unique_id=691956926]
 custom_minimum_size = Vector2(175, 60)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -56,7 +56,7 @@ tooltip_text = "A week to chill, no more stress"
 disabled = true
 text = "Holiday"
 
-[node name="InfoPanel" type="PanelContainer" parent="."]
+[node name="InfoPanel" type="PanelContainer" parent="." unique_id=614918420]
 layout_mode = 0
 offset_top = 260.0
 offset_right = 510.0
@@ -64,18 +64,18 @@ offset_bottom = 650.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="InfoPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="InfoPanel" unique_id=1266385022]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="GridContainer" type="GridContainer" parent="InfoPanel/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="InfoPanel/MarginContainer" unique_id=1050445708]
 layout_mode = 2
 theme_override_constants/v_separation = 20
 
-[node name="ReputationLabel" type="Label" parent="InfoPanel/MarginContainer/GridContainer"]
+[node name="ReputationLabel" type="Label" parent="InfoPanel/MarginContainer/GridContainer" unique_id=1401866720]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -85,7 +85,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="ReputationBar" type="ProgressBar" parent="InfoPanel/MarginContainer/GridContainer/ReputationLabel"]
+[node name="ReputationBar" type="ProgressBar" parent="InfoPanel/MarginContainer/GridContainer/ReputationLabel" unique_id=1552465655]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -103,7 +103,7 @@ step = 0.1
 value = 45.0
 show_percentage = false
 
-[node name="QualityLabel" type="Label" parent="InfoPanel/MarginContainer/GridContainer"]
+[node name="QualityLabel" type="Label" parent="InfoPanel/MarginContainer/GridContainer" unique_id=866098700]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -113,7 +113,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="QualityBar" type="ProgressBar" parent="InfoPanel/MarginContainer/GridContainer/QualityLabel"]
+[node name="QualityBar" type="ProgressBar" parent="InfoPanel/MarginContainer/GridContainer/QualityLabel" unique_id=1838389006]
 show_behind_parent = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 1
@@ -133,7 +133,7 @@ step = 0.1
 value = 30.0
 show_percentage = false
 
-[node name="StressLabel" type="Label" parent="InfoPanel/MarginContainer/GridContainer"]
+[node name="StressLabel" type="Label" parent="InfoPanel/MarginContainer/GridContainer" unique_id=835678059]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -143,7 +143,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="StressBar" type="ProgressBar" parent="InfoPanel/MarginContainer/GridContainer/StressLabel"]
+[node name="StressBar" type="ProgressBar" parent="InfoPanel/MarginContainer/GridContainer/StressLabel" unique_id=688583644]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -161,7 +161,7 @@ step = 0.1
 value = 50.0
 show_percentage = false
 
-[node name="Productivity" type="GridContainer" parent="InfoPanel/MarginContainer/GridContainer"]
+[node name="Productivity" type="GridContainer" parent="InfoPanel/MarginContainer/GridContainer" unique_id=1119421423]
 layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
@@ -169,16 +169,16 @@ size_flags_vertical = 3
 tooltip_text = "Your productivity, translatable words per day."
 columns = 2
 
-[node name="Symbol" type="Label" parent="InfoPanel/MarginContainer/GridContainer/Productivity"]
+[node name="Symbol" type="Label" parent="InfoPanel/MarginContainer/GridContainer/Productivity" unique_id=191447213]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 25
-text = "PRODUCTIVIY: WPD ~ "
+text = "PRODUCTIVITY: WPD "
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Words" type="Label" parent="InfoPanel/MarginContainer/GridContainer/Productivity"]
+[node name="Words" type="Label" parent="InfoPanel/MarginContainer/GridContainer/Productivity" unique_id=214877873]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 3
@@ -187,14 +187,14 @@ text = "2500"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="InfoPanel/MarginContainer/GridContainer"]
+[node name="GridContainer" type="GridContainer" parent="InfoPanel/MarginContainer/GridContainer" unique_id=1470030036]
 layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 2
 
-[node name="Money" type="Label" parent="InfoPanel/MarginContainer/GridContainer/GridContainer"]
+[node name="Money" type="Label" parent="InfoPanel/MarginContainer/GridContainer/GridContainer" unique_id=1828054160]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 3
@@ -202,7 +202,7 @@ text = "10.05"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Symbol" type="Label" parent="InfoPanel/MarginContainer/GridContainer/GridContainer"]
+[node name="Symbol" type="Label" parent="InfoPanel/MarginContainer/GridContainer/GridContainer" unique_id=1319669820]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 3
@@ -210,14 +210,14 @@ text = "$"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="EventsPanel" parent="." instance=ExtResource("3_g4cjn")]
+[node name="EventsPanel" parent="." unique_id=812087541 instance=ExtResource("3_g4cjn")]
 layout_mode = 0
 offset_left = 510.0
 offset_top = -1.0
 offset_right = 1917.0
 offset_bottom = 306.0
 
-[node name="CustomPopupMessage" parent="." instance=ExtResource("4_umi8m")]
+[node name="CustomPopupMessage" parent="." unique_id=1863662479 instance=ExtResource("4_umi8m")]
 visible = false
 notification_sound = true
 
