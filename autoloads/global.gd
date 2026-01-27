@@ -179,10 +179,6 @@ func start_old_game() -> void:
 		var restored_bill = restore_bill(bill)
 		game_state.bills.append(restored_bill)
 
-	#var ongoing_task: Array[Models.OngoingTask] = []
-	#var pending_payments: Array[PendingPayement] = []
-	#var bills: Array[BillObject] = []
-
 
 func restore_client(client: Models.ClientObject, saved_state: Dictionary) -> Models.ClientObject:
 	client.name = saved_state.get("name")
@@ -232,6 +228,7 @@ func start_new_game() -> void:
 	ClientData.load_json_data()
 
 	game_state = Models.State.new()
+	game_state.money = Config.INITIAL_MONEY
 	game_state.productivity = Config.WORDS_PER_DAY
 	game_state.bills = ClientData.bills_data.duplicate()
 

@@ -53,7 +53,7 @@ class State:
 	var stress: float = 0
 	var productivity: int = 0
 	var clients: Array[ClientObject] = []
-	var money: float = 1200
+	var money: float = 0
 	var tasks_waiting_to_be_processed: Array[InvoiceObject] = []
 	var ongoing_task: Array[Models.OngoingTask] = []
 	var pending_payments: Array[PendingPayement] = []
