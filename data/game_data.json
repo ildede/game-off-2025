@@ -1237,7 +1237,7 @@
     {
       "id": 11,
       "name": "VARIABLE REX",
-      "description": "You invest some of your time to learn some new tricks with RegEx and your productivity goes up.",
+      "description": "You invest some of your time to learn some new tricks with RegEx and your productivity goes up (+100 WPD).",
       "can_spawn": true,
       "recurring": true,
       "productivity_change": 100,
@@ -1246,7 +1246,7 @@
     {
       "id": 12,
       "name": "BENEVOLENT REX",
-      "description": "Your colleague helps you with RegEx formulas, you get a productivity boost.",
+      "description": "Your colleague helps you with RegEx formulas, you get a productivity boost (+20 WPD).",
       "can_spawn": true,
       "recurring": true,
       "productivity_change": 20
@@ -1270,7 +1270,7 @@
     {
       "id": 15,
       "name": "ROCK THE CASTAH",
-      "description": "You spend some time chatting with your close colleagues. Stress is partially restored.",
+      "description": "You spend some time chatting with your close colleagues. Stress is partially restored (-10).",
       "can_spawn": true,
       "recurring": true,
       "stress_change": -10.0,
@@ -1291,7 +1291,7 @@
     {
       "id": 18,
       "name": "TRANSLATOR'S BEST FRIEND",
-      "description": "You spend some time with your pet and recover some stress.",
+      "description": "You spend some time with your pet and recover some stress (-10).",
       "can_spawn": true,
       "recurring": true,
       "stress_change": -10.0,
@@ -1300,7 +1300,7 @@
     {
       "id": 19,
       "name": "YOUR PARTNER IS A DEV",
-      "description": "Your lovely partner creates your website. You save money, you earn reputation and recover some stress.",
+      "description": "Your lovely partner creates your website. You earn reputation (+20) and recover some stress (-10).",
       "can_spawn": true,
       "recurring": false,
       "reputation_change": 20.0,
@@ -1317,7 +1317,7 @@
     {
       "id": 21,
       "name": "NEED FOR SPID",
-      "description": "Your mother needs assistance with bureaucracy and IT stuff. The quick call become 1 hour.",
+      "description": "Your mother needs assistance with bureaucracy and IT stuff. A quick call become 1 hour.",
       "can_spawn": true,
       "recurring": true,
       "custom_functions": ["lose_1_hour"]
@@ -1325,15 +1325,15 @@
     {
       "id": 22,
       "name": "PET TAX",
-      "description": "You earn reputation by sending one client cute photos of your pet.",
+      "description": "You earn reputation (+10) by sending one client cute photos of your pet.",
       "can_spawn": true,
       "recurring": true,
       "reputation_change": 10.0
     },
     {
       "id": 23,
-      "name": "FAST AS LIGHTNING",
-      "description": "You install fast fiber and your productivity goes up.",
+      "name": "UNILATERAL PRICE ADJUSTMENT",
+      "description": "Your internet provider is making a price adjustment, so you'll end up with a higher bill (+$5/month). But at least they justify it by installing a faster connection, your productivity will go up (+20 WPD).",
       "can_spawn": true,
       "recurring": false,
       "productivity_change": 20.0
@@ -1387,16 +1387,16 @@
     {
       "id": 31,
       "name": "CUT TOOL",
-      "description": "Your localization tool’s server is down. You lose time and your stress increases.",
+      "description": "Your localization tool’s server is down. You lose time and your stress increases (+10).",
       "can_spawn": true,
       "recurring": true,
-      "stress_change": 20.0,
+      "stress_change": 10.0,
       "custom_functions": ["lose_1_hour"]
     },
     {
       "id": 32,
       "name": "WHAM! BAM! IT’S IN! THE SPAM!",
-      "description": "The client’s email went to spam. You lose reputation for not replying. They’re definitely not enjoying what you do.",
+      "description": "The client’s email went to spam. You lose reputation (-5) for not replying. They’re definitely not enjoying what you do.",
       "can_spawn": true,
       "recurring": true,
       "reputation_change": -5.0
@@ -1444,7 +1444,7 @@
     {
       "id": 39,
       "name": "Too comfy sweatpants",
-      "description": "You forget how to dress properly, wearing your sweatpants even when going out or meeting colleagues. You lose reputation.",
+      "description": "You forgot how to dress properly, wearing your sweatpants even when going out or meeting colleagues. You lose reputation (-7). But damn, they're comfy!",
       "can_spawn": true,
       "recurring": true,
       "reputation_change": -7.0
@@ -1460,7 +1460,7 @@
     {
       "id": 2,
       "name": "Proper lighting",
-      "description": "Quality increases, monthly bills are slightly reduced.",
+      "description": "Quality increases (+2), monthly bills are slightly reduced (-20$/month).",
       "can_spawn": true,
       "cost": 10.0,
       "quality_change": 2.0,
@@ -1469,7 +1469,7 @@
     {
       "id": 3,
       "name": "Wall planner",
-      "description": "Stress reduced, reputation increases.",
+      "description": "Stress reduced (-5), reputation increases (+5).",
       "asset": "planner",
       "can_spawn": true,
       "cost": 15.0,
@@ -1486,7 +1486,7 @@
     {
       "id": 5,
       "name": "Docking station",
-      "description": "Productivity increased.",
+      "description": "Productivity increased (+100 WPD).",
       "asset": "docking",
       "can_spawn": true,
       "cost": 15.0,
@@ -1495,7 +1495,7 @@
     {
       "id": 6,
       "name": "Melatonine pills",
-      "description": "Quality increased, stress reduced.",
+      "description": "Quality increased (+2), stress reduced (-2).",
       "asset": "pills",
       "can_spawn": true,
       "consumable": true,
@@ -1513,17 +1513,17 @@
     {
       "id": 8,
       "name": "Coffee machine",
-      "description": "Productivity boost, quality increases. Stress is also increased.",
+      "description": "Productivity boost (+50 WPD), quality increases (+1). Stress is also increased (+5).",
       "can_spawn": true,
       "cost": 30.0,
       "productivity_change": 50,
-      "quality_change": 0.9,
+      "quality_change": 1.0,
       "stress_change": 5.0
     },
     {
       "id": 9,
       "name": "High speed fiber",
-      "description": "Productivity is increased, stress is reduced. Has also a monthly cost.",
+      "description": "Productivity is increased (+100 WPD), stress is reduced (-4). Has also a monthly cost (+20$/month).",
       "asset": "router",
       "can_spawn": true,
       "cost": 30.0,
@@ -1534,19 +1534,19 @@
     {
       "id": 10,
       "name": "CAT tool",
-      "description": "Productivity, quality and reputation are increased. Has also a monthly cost.",
+      "description": "Productivity (+200 WPD), quality (+4) and reputation (+5) are increased. Has also a monthly cost (+20$/month).",
       "asset": "cattool",
       "can_spawn": true,
       "cost": 50.0,
       "default_bill_change": 20.0,
       "productivity_change": 200,
       "quality_change": 4.0,
-      "reputation_change": 2.0
+      "reputation_change": 5.0
     },
     {
       "id": 11,
       "name": "Mechanical keyboard",
-      "description": "Productivity is increased.",
+      "description": "Productivity is increased (+50 WPD).",
       "asset": "keyboard",
       "flag": "mechanical_keyboard",
       "can_spawn": true,
@@ -1556,7 +1556,7 @@
     {
       "id": 12,
       "name": "Ergonomic chair",
-      "description": "Stress is reduced.",
+      "description": "Stress is reduced (-20).",
       "asset": "chair",
       "can_spawn": true,
       "cost": 55.5,
@@ -1572,7 +1572,7 @@
     {
       "id": 14,
       "name": "Triple screen",
-      "description": "Productivity is boosted.",
+      "description": "Productivity is boosted (+50 WPD).",
       "asset": "triplescreen",
       "can_spawn": true,
       "cost": 199.90,
@@ -1581,7 +1581,7 @@
     {
       "id": 15,
       "name": "Footrest",
-      "description": "Stress is reduced.",
+      "description": "Stress is reduced (-5).",
       "asset": "footrest",
       "can_spawn": true,
       "cost": 24.90,
@@ -1590,7 +1590,7 @@
     {
       "id": 16,
       "name": "Ergonomic mouse",
-      "description": "Productivity increased.",
+      "description": "Productivity increased (+50 WPD).",
       "asset": "ergomouse",
       "can_spawn": true,
       "cost": 99.75,
@@ -1599,7 +1599,7 @@
     {
       "id": 17,
       "name": "Heated blanket",
-      "description": "Monthly bills are slightly reduced.",
+      "description": "Monthly bills are slightly reduced (-19$/month).",
       "asset": "heatblanket",
       "can_spawn": true,
       "cost": 45.0,
@@ -1608,16 +1608,16 @@
     {
       "id": 18,
       "name": "Heated socks",
-      "description": "Monthly bills are slightly reduced, less chances to get sick.",
+      "description": "Monthly bills are slightly reduced (-8.5$/month), less chances to get sick.",
       "asset": "heatsocks",
       "can_spawn": true,
       "cost": 25.0,
-      "default_bill_change": -8.0
+      "default_bill_change": -8.5
     },
     {
       "id": 19,
       "name": "Comfy sweatpants",
-      "description": "Stress is reduced.",
+      "description": "Stress is reduced (-8).",
       "asset": "pants",
       "can_spawn": true,
       "cost": 35.0,
@@ -1626,7 +1626,7 @@
     {
       "id": 21,
       "name": "Double screen",
-      "description": "Productivity is increased.",
+      "description": "Productivity is increased (+50 WPD).",
       "asset": "doublescreen",
       "can_spawn": true,
       "cost": 99.0,
@@ -1635,17 +1635,17 @@
     {
       "id": 22,
       "name": "Noise cancelling headphones",
-      "description": "Stress is reduced, productivity is increased.",
+      "description": "Stress is reduced (-7), productivity is increased (+45 WPD).",
       "asset": "headphones",
       "can_spawn": true,
       "cost": 89.0,
       "stress_change": -7.0,
-      "productivity_change": 50
+      "productivity_change": 45
     },
     {
       "id": 23,
       "name": "Wrist-rest for mouse",
-      "description": "Stress is reduced.",
+      "description": "Stress is reduced (-2).",
       "asset": "mousewrist",
       "can_spawn": true,
       "cost": 29.0,
@@ -1654,7 +1654,7 @@
     {
       "id": 24,
       "name": "Wrist-rest for keyboard",
-      "description": "Stress is reduced. Productivity and quality are increased.",
+      "description": "Stress is reduced (-2). Productivity (+20 WPD) and quality (+5) are increased.",
       "asset": "keyboardwrist",
       "can_spawn": true,
       "cost": 39.0,
@@ -1673,7 +1673,7 @@
     {
       "id": 26,
       "name": "Professional website",
-      "description": "Reputation is increased.",
+      "description": "Reputation is increased (+40).",
       "asset": "website",
       "can_spawn": true,
       "cost": 500.0,
@@ -1682,20 +1682,20 @@
     {
       "id": 27,
       "name": "Cozy herbal tea",
-      "description": "Stress is reduced.",
+      "description": "Stress is reduced (-3).",
       "asset": "tea",
       "can_spawn": true,
       "consumable": true,
       "cost": 9,
-      "stress_change": -1
+      "stress_change": -3
     },
     {
       "id": 28,
       "name": "Business cards",
-      "description": "Reputation is increased.",
+      "description": "Reputation is increased (+8).",
       "can_spawn": true,
       "cost": 99.0,
-      "reputation_change": 4
+      "reputation_change": 8
     }
   ]
 }
