@@ -1461,6 +1461,7 @@
       "id": 2,
       "name": "Proper lighting",
       "description": "Quality increases (+2), monthly bills are slightly reduced (-20$/month).",
+      "asset": "lights",
       "can_spawn": true,
       "cost": 10.0,
       "quality_change": 2.0,
@@ -1514,6 +1515,7 @@
       "id": 8,
       "name": "Coffee machine",
       "description": "Productivity boost (+50 WPD), quality increases (+1). Stress is also increased (+5).",
+      "asset": "coffee",
       "can_spawn": true,
       "cost": 30.0,
       "productivity_change": 50,
@@ -1693,6 +1695,7 @@
       "id": 28,
       "name": "Business cards",
       "description": "Reputation is increased (+8).",
+      "asset": "businesscards",
       "can_spawn": true,
       "cost": 99.0,
       "reputation_change": 8

@@ -26,13 +26,18 @@
 [ext_resource type="Texture2D" uid="uid://2j05gs2gteqv" path="res://scenes/game/screens/daily_screen/assets/tea.png" id="23_2rafb"]
 [ext_resource type="Texture2D" uid="uid://d1igondpylwaf" path="res://scenes/game/screens/daily_screen/assets/triplescreen.png" id="24_xuvtj"]
 [ext_resource type="Texture2D" uid="uid://d23ab5dcuwt16" path="res://scenes/game/screens/daily_screen/assets/website.png" id="25_6igxr"]
+[ext_resource type="Texture2D" uid="uid://u4tukk5dxdlo" path="res://scenes/game/screens/daily_screen/assets/lights.png" id="26_lr2u3"]
+[ext_resource type="Texture2D" uid="uid://i2fqb8y43o52" path="res://scenes/game/screens/daily_screen/assets/coffee.png" id="27_0a8sc"]
+[ext_resource type="Texture2D" uid="uid://d14v0kir7vkeg" path="res://scenes/game/screens/daily_screen/assets/businesscards.png" id="28_w5c3x"]
 
 [node name="Daily" type="Node" unique_id=1833805696]
 script = ExtResource("1_n7uhh")
 texture = Dictionary[String, Texture2D]({
+"businesscards": ExtResource("28_w5c3x"),
 "cat": ExtResource("2_s02k1"),
 "cattool": ExtResource("3_hekby"),
 "chair": ExtResource("4_yv37s"),
+"coffee": ExtResource("27_0a8sc"),
 "docking": ExtResource("5_2h54p"),
 "doublescreen": ExtResource("6_lr2u3"),
 "energydrink": ExtResource("7_0a8sc"),
@@ -43,6 +48,7 @@ texture = Dictionary[String, Texture2D]({
 "heatsocks": ExtResource("12_c2kar"),
 "keyboard": ExtResource("13_dihtp"),
 "keyboardwrist": ExtResource("14_8kgky"),
+"lights": ExtResource("26_lr2u3"),
 "mousewrist": ExtResource("15_vf1g8"),
 "organizeddesk": ExtResource("16_ldk2l"),
 "pants": ExtResource("17_d5c6y"),
