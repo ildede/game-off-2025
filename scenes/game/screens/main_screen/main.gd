@@ -86,16 +86,13 @@ func _ready() -> void:
 			remaining_payments.append(payment)
 	Global.game_state.pending_payments = remaining_payments
 
-	if Global.game_state.current_day == 1:
-		$EventSpawner.start(0.2)
-	else:
-		$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+	$EventSpawner.start(0.2)
 	$EventSpawner.timeout.connect(handle_spawn_random_event)
 
 	$GameClock.start(Config.DAY_LENGHT_IN_SECONDS)
 	$GameClock.timeout.connect(handle_end_of_the_day)
 
-	$TaskSpawner.start(Config.SECONDS_BETWEEN_TASKS)
+	$TaskSpawner.start(0.5)
 	$TaskSpawner.timeout.connect(handle_spawn_tasks)
 
 	Global.ui_update.emit()
@@ -184,7 +181,7 @@ func handle_end_of_the_day() -> void:
 		ongoing_task.remaining_words = task.remaining_words
 	get_tree().paused = true
 	_save_state()
-	if Global.game_state.ongoing_task.filter(func(t:Models.OngoingTask):return t.deadline_days <= 2).size() > 0:
+	if Global.game_state.ongoing_task.filter(func(t:Models.OngoingTask):return t.deadline_days <= 3).size() > 0:
 		SceneTransition.fade_to_overtime()
 	else:
 		SceneTransition.fade_to_new_day()
@@ -222,21 +219,21 @@ func open_popup_message_for_new_client(client: Models.ClientObject) -> void:
 		Global.new_client_accepted.emit(client)
 		var added = add_new_client_to_scene(client)
 		active_clients.set(client.id, added)
-		$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+		#$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
 		ClientData.client_accepted(client.id)
 		get_tree().paused = false
 
 	var refuse_btn = CustomizablePopupMessage.PopupButton.new()
 	refuse_btn.text = "Refuse"
 	refuse_btn.action = func():
-		$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+		#$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
 		get_tree().paused = false
 
 	var btns: Array[CustomizablePopupMessage.PopupButton] = [accept_btn, refuse_btn]
 	popup_data.buttons = btns
 
 	popup_data.on_close = func():
-		$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+		#$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
 		get_tree().paused = false
 
 	$CustomPopupMessage.show_popup(popup_data)
@@ -251,7 +248,7 @@ func open_popup_message_for_new_event(event: Models.EventObject) -> void:
 	var accept_btn = CustomizablePopupMessage.PopupButton.new()
 	accept_btn.text = event.accept_btn if event.accept_btn != "" else "I hereby accept"
 	accept_btn.action = func():
-		$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+		#$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
 		if not event.default_bill_change == 0:
 			for bill in Global.game_state.bills:
 				bill.amount += event.default_bill_change
@@ -267,7 +264,7 @@ func open_popup_message_for_new_event(event: Models.EventObject) -> void:
 	popup_data.buttons = btns
 
 	popup_data.on_close = func():
-		$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
+		#$EventSpawner.start(Config.SECONDS_BETWEEN_EVENTS)
 		if not event.default_bill_change == 0:
 			for bill in Global.game_state.bills:
 				bill.amount += event.default_bill_change
