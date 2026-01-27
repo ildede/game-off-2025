@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dahhp2f70drw"]
+[gd_scene format=3 uid="uid://dahhp2f70drw"]
 
 [ext_resource type="Texture2D" uid="uid://b7pirf8tdu01g" path="res://scenes/ui/clock/assets/Clock-under.png" id="1_0ul63"]
 [ext_resource type="Script" uid="uid://bdmbys07ti8e2" path="res://scenes/ui/clock/clock.gd" id="1_x3rul"]
 [ext_resource type="Texture2D" uid="uid://decuttlovnxp1" path="res://scenes/ui/clock/assets/Clock-over.png" id="2_x3rul"]
 [ext_resource type="Texture2D" uid="uid://fp2uxwyx7gn2" path="res://scenes/ui/clock/assets/Clock-progress.png" id="3_or4iw"]
-[ext_resource type="AudioStream" uid="uid://cq8kclto14sn6" path="res://audio/alert.mp3" id="5_or4iw"]
 
-[node name="Clock" type="CenterContainer"]
+[node name="Clock" type="CenterContainer" unique_id=2036616731]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -16,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x3rul")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=460785546]
 layout_mode = 2
 max_value = 60.0
 step = 0.1
@@ -28,14 +27,14 @@ texture_progress = ExtResource("3_or4iw")
 tint_under = Color(1, 1, 1, 0.47843137)
 tint_progress = Color(1, 1, 1, 0.78431374)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1896634507]
 wait_time = 60.0
 autostart = true
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="GridContainer" type="GridContainer" parent="." unique_id=71620221]
 layout_mode = 2
 
-[node name="DayCount" type="Label" parent="GridContainer"]
+[node name="DayCount" type="Label" parent="GridContainer" unique_id=1797974587]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 10
@@ -45,7 +44,7 @@ text = "356"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Month" type="Label" parent="GridContainer"]
+[node name="Month" type="Label" parent="GridContainer" unique_id=459298873]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
@@ -55,6 +54,5 @@ text = "Jan"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EndAlert" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_or4iw")
+[node name="EndAlert" type="AudioStreamPlayer" parent="." unique_id=1687027113]
 volume_db = -3.0

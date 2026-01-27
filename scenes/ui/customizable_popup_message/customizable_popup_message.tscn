@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0f5kyiejiap"]
+[gd_scene format=3 uid="uid://b0f5kyiejiap"]
 
 [ext_resource type="Theme" uid="uid://cym7llujgpfif" path="res://scenes/ui/global_themes/main_theme.tres" id="1_d6q5l"]
 [ext_resource type="Script" uid="uid://blpq5wmw1xksb" path="res://scenes/ui/customizable_popup_message/customizable_popup_message.gd" id="2_mh3np"]
 [ext_resource type="AudioStream" uid="uid://bsxrniwt06qst" path="res://audio/new_message.wav" id="3_r6x50"]
 
-[node name="CustomPopupMessage" type="Window"]
+[node name="CustomPopupMessage" type="Window" unique_id=1933565803]
 process_mode = 3
 oversampling_override = 1.0
 title = "Your title"
+position = Vector2i(0, 36)
 size = Vector2i(1056, 594)
 always_on_top = true
 popup_window = true
@@ -16,7 +17,7 @@ content_scale_aspect = 4
 theme = ExtResource("1_d6q5l")
 script = ExtResource("2_mh3np")
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1240970956]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,12 +26,12 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="GridContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer" unique_id=766677333]
 layout_mode = 2
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Title" type="RichTextLabel" parent="GridContainer/MarginContainer"]
+[node name="Title" type="RichTextLabel" parent="GridContainer/MarginContainer" unique_id=1360759284]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 45
@@ -40,7 +41,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Title" type="RichTextLabel" parent="GridContainer/MarginContainer/Title"]
+[node name="Title" type="RichTextLabel" parent="GridContainer/MarginContainer/Title" unique_id=77468557]
 layout_mode = 0
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 45
@@ -50,7 +51,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Title" type="RichTextLabel" parent="GridContainer/MarginContainer/Title/Title"]
+[node name="Title" type="RichTextLabel" parent="GridContainer/MarginContainer/Title/Title" unique_id=1047456518]
 layout_mode = 0
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 45
@@ -60,7 +61,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer" unique_id=1480653944]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -70,18 +71,18 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="GridContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="GridContainer" unique_id=1398520770]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_bottom = 10
 
-[node name="GridContainer" type="GridContainer" parent="GridContainer/MarginContainer2"]
+[node name="GridContainer" type="GridContainer" parent="GridContainer/MarginContainer2" unique_id=1140066823]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 2
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=656368744]
 stream = ExtResource("3_r6x50")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
